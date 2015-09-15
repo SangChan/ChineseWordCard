@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */; };
+		63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7C1BA7CE9700D4A48D /* ViewController.swift */; };
+		63458E801BA7CE9700D4A48D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63458E7E1BA7CE9700D4A48D /* Main.storyboard */; };
+		63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63458E811BA7CE9700D4A48D /* Images.xcassets */; };
+		63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63458E831BA7CE9700D4A48D /* LaunchScreen.xib */; };
+		63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63458E8B1BA7CE9700D4A48D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63458E6D1BA7CE9700D4A48D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63458E741BA7CE9700D4A48D;
+			remoteInfo = ChineseWordCard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63458E751BA7CE9700D4A48D /* ChineseWordCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseWordCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63458E791BA7CE9700D4A48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63458E7C1BA7CE9700D4A48D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63458E7F1BA7CE9700D4A48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63458E811BA7CE9700D4A48D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		63458E841BA7CE9700D4A48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		63458E8A1BA7CE9700D4A48D /* ChineseWordCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseWordCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63458E8F1BA7CE9700D4A48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63458E721BA7CE9700D4A48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63458E871BA7CE9700D4A48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63458E6C1BA7CE9700D4A48D = {
+			isa = PBXGroup;
+			children = (
+				63458E771BA7CE9700D4A48D /* ChineseWordCard */,
+				63458E8D1BA7CE9700D4A48D /* ChineseWordCardTests */,
+				63458E761BA7CE9700D4A48D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63458E761BA7CE9700D4A48D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63458E751BA7CE9700D4A48D /* ChineseWordCard.app */,
+				63458E8A1BA7CE9700D4A48D /* ChineseWordCardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63458E771BA7CE9700D4A48D /* ChineseWordCard */ = {
+			isa = PBXGroup;
+			children = (
+				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
+				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
+				63458E7E1BA7CE9700D4A48D /* Main.storyboard */,
+				63458E811BA7CE9700D4A48D /* Images.xcassets */,
+				63458E831BA7CE9700D4A48D /* LaunchScreen.xib */,
+				63458E781BA7CE9700D4A48D /* Supporting Files */,
+			);
+			path = ChineseWordCard;
+			sourceTree = "<group>";
+		};
+		63458E781BA7CE9700D4A48D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63458E791BA7CE9700D4A48D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63458E8D1BA7CE9700D4A48D /* ChineseWordCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */,
+				63458E8E1BA7CE9700D4A48D /* Supporting Files */,
+			);
+			path = ChineseWordCardTests;
+			sourceTree = "<group>";
+		};
+		63458E8E1BA7CE9700D4A48D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63458E8F1BA7CE9700D4A48D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63458E741BA7CE9700D4A48D /* ChineseWordCard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63458E941BA7CE9700D4A48D /* Build configuration list for PBXNativeTarget "ChineseWordCard" */;
+			buildPhases = (
+				63458E711BA7CE9700D4A48D /* Sources */,
+				63458E721BA7CE9700D4A48D /* Frameworks */,
+				63458E731BA7CE9700D4A48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChineseWordCard;
+			productName = ChineseWordCard;
+			productReference = 63458E751BA7CE9700D4A48D /* ChineseWordCard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63458E891BA7CE9700D4A48D /* ChineseWordCardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63458E971BA7CE9700D4A48D /* Build configuration list for PBXNativeTarget "ChineseWordCardTests" */;
+			buildPhases = (
+				63458E861BA7CE9700D4A48D /* Sources */,
+				63458E871BA7CE9700D4A48D /* Frameworks */,
+				63458E881BA7CE9700D4A48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63458E8C1BA7CE9700D4A48D /* PBXTargetDependency */,
+			);
+			name = ChineseWordCardTests;
+			productName = ChineseWordCardTests;
+			productReference = 63458E8A1BA7CE9700D4A48D /* ChineseWordCardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63458E6D1BA7CE9700D4A48D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = VerandaStudio;
+				TargetAttributes = {
+					63458E741BA7CE9700D4A48D = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					63458E891BA7CE9700D4A48D = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 63458E741BA7CE9700D4A48D;
+					};
+				};
+			};
+			buildConfigurationList = 63458E701BA7CE9700D4A48D /* Build configuration list for PBXProject "ChineseWordCard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63458E6C1BA7CE9700D4A48D;
+			productRefGroup = 63458E761BA7CE9700D4A48D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63458E741BA7CE9700D4A48D /* ChineseWordCard */,
+				63458E891BA7CE9700D4A48D /* ChineseWordCardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63458E731BA7CE9700D4A48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63458E801BA7CE9700D4A48D /* Main.storyboard in Resources */,
+				63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */,
+				63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63458E881BA7CE9700D4A48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63458E711BA7CE9700D4A48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */,
+				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63458E861BA7CE9700D4A48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63458E8C1BA7CE9700D4A48D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63458E741BA7CE9700D4A48D /* ChineseWordCard */;
+			targetProxy = 63458E8B1BA7CE9700D4A48D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63458E7E1BA7CE9700D4A48D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63458E7F1BA7CE9700D4A48D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63458E831BA7CE9700D4A48D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63458E841BA7CE9700D4A48D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63458E921BA7CE9700D4A48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63458E931BA7CE9700D4A48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63458E951BA7CE9700D4A48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChineseWordCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		63458E961BA7CE9700D4A48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ChineseWordCard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		63458E981BA7CE9700D4A48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChineseWordCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChineseWordCard.app/ChineseWordCard";
+			};
+			name = Debug;
+		};
+		63458E991BA7CE9700D4A48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ChineseWordCardTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChineseWordCard.app/ChineseWordCard";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63458E701BA7CE9700D4A48D /* Build configuration list for PBXProject "ChineseWordCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63458E921BA7CE9700D4A48D /* Debug */,
+				63458E931BA7CE9700D4A48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63458E941BA7CE9700D4A48D /* Build configuration list for PBXNativeTarget "ChineseWordCard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63458E951BA7CE9700D4A48D /* Debug */,
+				63458E961BA7CE9700D4A48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63458E971BA7CE9700D4A48D /* Build configuration list for PBXNativeTarget "ChineseWordCardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63458E981BA7CE9700D4A48D /* Debug */,
+				63458E991BA7CE9700D4A48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63458E6D1BA7CE9700D4A48D /* Project object */;
+}
