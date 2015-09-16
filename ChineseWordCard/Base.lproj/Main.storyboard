@@ -37,6 +37,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="nF6-cN-YyQ" secondAttribute="centerX" id="3ha-XN-4wh"/>
                             <constraint firstAttribute="centerX" secondItem="g0Y-yB-24r" secondAttribute="centerX" id="9tw-ns-YeR"/>
@@ -47,10 +48,24 @@
                             <constraint firstAttribute="centerY" secondItem="JqA-4b-TnI" secondAttribute="centerY" constant="32.5" id="uP5-qe-BEH"/>
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="top" secondItem="g0Y-yB-24r" secondAttribute="bottom" constant="8" id="zRa-yk-PF7"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ivF-tv-uXb" appends="YES" id="mHV-yx-8FX"/>
+                        </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="nF6-cN-YyQ" id="urL-hS-JnY"/>
+                        <outlet property="hanyuLabel" destination="JqA-4b-TnI" id="tP0-8p-nKg"/>
+                        <outlet property="pinyinLabel" destination="g0Y-yB-24r" id="0vF-FB-IB2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ivF-tv-uXb">
+                    <connections>
+                        <action selector="handleTap:" destination="vXZ-lx-hvc" id="zc8-Gd-QnW"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="8AR-mB-xri"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
