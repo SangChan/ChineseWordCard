@@ -45,7 +45,7 @@
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="L80-x5-S3h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JqA-4b-TnI" secondAttribute="trailing" constant="19" id="XaL-I7-39p"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="top" secondItem="JqA-4b-TnI" secondAttribute="bottom" constant="8" id="h20-hg-UUZ"/>
-                            <constraint firstAttribute="centerY" secondItem="JqA-4b-TnI" secondAttribute="centerY" constant="32.5" id="uP5-qe-BEH"/>
+                            <constraint firstAttribute="centerY" secondItem="JqA-4b-TnI" secondAttribute="centerY" id="uP5-qe-BEH"/>
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="top" secondItem="g0Y-yB-24r" secondAttribute="bottom" constant="8" id="zRa-yk-PF7"/>
                         </constraints>
                         <connections>
