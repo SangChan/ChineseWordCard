@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -24,7 +25,10 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated);
         resetAll();
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,7 +45,7 @@ class ViewController: UIViewController {
         if(count == 0) {
             return
         }
-         
+        speakWord()
         pinyinLabel.hidden = false;
         if (count%2 == 0) {
             descriptionLabel.hidden = false;
@@ -49,10 +53,18 @@ class ViewController: UIViewController {
         
     }
     
+    func speakWord() {
+        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init();
+        let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!);
+        utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN");
+        synthesize.speakUtterance(utterance);
+    }
+    
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             // handling code
             setLabelHiddenByCount(++touchCount)
+            
         }
     }
 }
