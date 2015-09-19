@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet var hanyuLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
+    var previosWord : ChineseWord?
+    var nowWord : ChineseWord!
+    var nextWord : ChineseWord?
+    
     var touchCount : Int = 0;
     override func viewDidLoad() {
         super.viewDidLoad()
