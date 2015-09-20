@@ -9,10 +9,10 @@
 import Foundation
 
 class ChineseWord: NSObject {
-    var hanyuText : NSString
-    var pinyinText : NSString
-    var descriptionText :NSString
-    init(hanyuInput : NSString, pinyinInput : NSString, descriptionInput : NSString) {
+    var hanyuText : String
+    var pinyinText : String
+    var descriptionText :String
+    init(hanyuInput : String, pinyinInput : String, descriptionInput : String) {
         self.hanyuText = hanyuInput;
         self.pinyinText = pinyinInput;
         self.descriptionText = descriptionInput;

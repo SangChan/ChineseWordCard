@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         resetAll();
+        setNowWord("爸爸", pinyinText: "bàba", descriptionText: "아버지");
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,6 +42,14 @@ class ViewController: UIViewController {
     func resetAll() {
         touchCount = 0;
         setLabelHiddenByCount(touchCount);
+    }
+    
+    func setNowWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
+        nowWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText);
+        
+        self.hanyuLabel.text = nowWord.hanyuText;
+        self.pinyinLabel.text = nowWord.pinyinText;
+        self.descriptionLabel.text = nowWord.descriptionText;
     }
     
     func setLabelHiddenByCount(count : Int) {
