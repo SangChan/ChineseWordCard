@@ -103,3 +103,19 @@
 袜子	wàzi	양말
 书包	shūbāo	책가방
 电脑	diànnǎo	컴퓨터
+
+好喝	hǎohē	(음료가)맛있다
+茶	chá	차
+红茶	hóngchá	홍차
+中国	Zhōngguó	중국
+菜	cài	요리
+好吃	hǎochī	맛있다
+蛋糕	dàngāo	케이크
+葡萄酒	pútáojiǔ	포도주
+听	tīng	듣다
+韩国	Hánguó	한국
+哥儿	gēr	노래
+好听	hǎotīng	듣기좋다
+穿	chuān	입다, 신다
+运动鞋	yùndòngxié	운동화
+好看	hǎokàn	보기좋다,예쁘다
