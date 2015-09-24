@@ -44,12 +44,20 @@ class ViewController: UIViewController {
         setLabelHiddenByCount(touchCount);
     }
     
+    func setPreviousWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
+        self.previosWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText);
+    }
+    
     func setNowWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
         nowWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText);
         
         self.hanyuLabel.text = nowWord.hanyuText;
         self.pinyinLabel.text = nowWord.pinyinText;
         self.descriptionLabel.text = nowWord.descriptionText;
+    }
+    
+    func setNextWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
+        self.nextWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText);
     }
     
     func setLabelHiddenByCount(count : Int) {
