@@ -119,3 +119,32 @@
 穿	chuān	입다, 신다
 运动鞋	yùndòngxié	운동화
 好看	hǎokàn	보기좋다,예쁘다
+
+哪国	nǎguó	어느 나라
+人	rén	사람,인간
+贵姓	guìxìng	성함,존함
+姓	xìng	성이 ~이다
+叫	jiào	~라고 부르다
+大卫	dàwèi	데이비드
+美国	Měiguó	미국
+英语	yīngyǔ	영어
+同事	tóngshì	동료	
+朋友	péngyou	친구
+日本	Rìběn	일본
+大学	dàxué	대학
+同学	tóngxué	학우,동급생
+英国	Yīngguó	영국
+法国	Fǎguó	프랑스
+印度	Yìndù	인도
+
+有	yǒu	~이 있다
+没有	méiyǒu	~이 없다
+相机	xiàngjī	카메라
+眼镜	yǎnjìng	안경
+镜子	jìngzi	거울
+U盘	Upán	USB
+自行车	zìxíngchē	자전거
+家	jiā	집
+小猫	xiǎomāo	고양이,새끼고양이
+小狗	xiǎogǒu	강아지
+
