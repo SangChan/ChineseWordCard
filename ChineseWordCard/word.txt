@@ -148,3 +148,48 @@ U盘	Upán	USB
 小猫	xiǎomāo	고양이,새끼고양이
 小狗	xiǎogǒu	강아지
 
+要	yào	원하다
+几	jǐ	몇
+个	gè	개,명
+橘子	júzi	귤
+两	liǎng	2,둘
+葡萄	pútáo	포도
+斤	jīn	근
+草莓	cǎoméi	딸기
+杯	bēi	잔
+啤酒	píjiǔ	맥주
+听	tīng	캔,깡통
+本	běn	권
+一	yī	일
+二	èr	이
+三	sān	삼
+四	sì	사
+五	wǔ	오
+六	liù	육
+七	qī	칠
+八	bā	팔
+九	jiǔ	구
+十	shí	십
+
+在	zài	~에 있다
+哪儿	nǎr	어디
+书桌	shūzhuō	책상
+这儿	zhèr	여기
+椅子	yǐzi	의자
+桌子	zhuōzi	탁자
+呢	ne	의문 어기조사
+那儿	nàr	그곳,저곳
+空调	kōngtiáo	에어콘
+沙发	shāfā	소파
+冰箱	bīngxiāng	냉장고
+床	chuáng	침대
+上边儿	shàngbianr	위쪽
+下边儿	xiàbianr	아래쪽
+里边儿	lǐbianr	안쪽
+外边儿	wàibianr	바깥쪽
+前边儿	qiánbianr	앞쪽
+后边儿	hòubianr	뒤쪽
+左边儿	zuǒbianr	왼쪽
+右边儿	yòubianr	오른쪽
+旁边儿	pángbiānr	옆쪽
+
