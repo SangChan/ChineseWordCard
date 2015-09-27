@@ -89,13 +89,13 @@
 		63458E771BA7CE9700D4A48D /* ChineseWordCard */ = {
 			isa = PBXGroup;
 			children = (
+				63B829331BAD31090007FE84 /* ChineseWord.swift */,
 				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
 				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
 				63458E7E1BA7CE9700D4A48D /* Main.storyboard */,
 				63458E811BA7CE9700D4A48D /* Images.xcassets */,
 				63458E831BA7CE9700D4A48D /* LaunchScreen.xib */,
 				63458E781BA7CE9700D4A48D /* Supporting Files */,
-				63B829331BAD31090007FE84 /* ChineseWord.swift */,
 			);
 			path = ChineseWordCard;
 			sourceTree = "<group>";
