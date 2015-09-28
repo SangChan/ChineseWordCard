@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var pinyinLabel: UILabel!
     @IBOutlet var hanyuLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var prevButton: UIButton!
     
     var previosWord : ChineseWord?
     var nowWord : ChineseWord!
@@ -25,6 +27,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func nextClicked(sender: AnyObject) {
+    }
+    @IBAction func prevClicked(sender: AnyObject) {
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         resetAll();

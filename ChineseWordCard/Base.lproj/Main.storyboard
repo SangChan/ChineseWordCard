@@ -36,18 +36,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2SL-es-Q3B">
+                                <rect key="frame" x="554" y="285" width="46" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fqw-YO-fjv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6j-64-5po">
+                                <rect key="frame" x="0.0" y="285" width="46" height="30"/>
+                                <state key="normal" title="Prev"/>
+                                <connections>
+                                    <action selector="prevClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NIP-df-ihf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="2SL-es-Q3B" secondAttribute="trailing" constant="-20" id="1mb-hX-aJh"/>
                             <constraint firstAttribute="centerX" secondItem="nF6-cN-YyQ" secondAttribute="centerX" id="3ha-XN-4wh"/>
                             <constraint firstAttribute="centerX" secondItem="g0Y-yB-24r" secondAttribute="centerX" id="9tw-ns-YeR"/>
                             <constraint firstAttribute="centerX" secondItem="JqA-4b-TnI" secondAttribute="centerX" constant="-0.5" id="GLW-N3-vHE"/>
+                            <constraint firstItem="B6j-64-5po" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Gh6-MA-U7t"/>
                             <constraint firstItem="g0Y-yB-24r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="H5P-9c-eiX"/>
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="L80-x5-S3h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="19" id="Qu4-hS-IEi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JqA-4b-TnI" secondAttribute="trailing" constant="19" id="XaL-I7-39p"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="top" secondItem="JqA-4b-TnI" secondAttribute="bottom" constant="8" id="h20-hg-UUZ"/>
+                            <constraint firstItem="B6j-64-5po" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="hbm-HH-7ZJ"/>
+                            <constraint firstItem="2SL-es-Q3B" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iqv-1A-cNC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nF6-cN-YyQ" secondAttribute="trailing" constant="19" id="lGo-X9-7Eb"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="t1Q-Na-KQf"/>
                             <constraint firstAttribute="centerY" secondItem="JqA-4b-TnI" secondAttribute="centerY" id="uP5-qe-BEH"/>
@@ -61,7 +79,9 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="nF6-cN-YyQ" id="urL-hS-JnY"/>
                         <outlet property="hanyuLabel" destination="JqA-4b-TnI" id="tP0-8p-nKg"/>
+                        <outlet property="nextButton" destination="2SL-es-Q3B" id="W9h-BV-FcK"/>
                         <outlet property="pinyinLabel" destination="g0Y-yB-24r" id="0vF-FB-IB2"/>
+                        <outlet property="prevButton" destination="B6j-64-5po" id="ChZ-qa-Oz4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
