@@ -28,8 +28,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextClicked(sender: AnyObject) {
+        resetAll();
+        setNowWord(nextWord!.hanyuText, pinyinText: nextWord!.pinyinText, descriptionText: nextWord!.descriptionText);
     }
     @IBAction func prevClicked(sender: AnyObject) {
+        resetAll();
+        setNowWord(previosWord!.hanyuText, pinyinText: previosWord!.pinyinText, descriptionText: previosWord!.descriptionText);
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
