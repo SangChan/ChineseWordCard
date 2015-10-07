@@ -224,3 +224,33 @@ U盘	Upán	USB
 平日	píngrì	평일
 和	hé	~와
 周末	zhōumò	주말
+
+现在	xiànzài	지금
+点	diǎn	시
+零	líng	0, 영
+分	fēn	분
+上班	shàngbān	출근하다
+下班	xiàbān	퇴근하다
+半	bàn	반, 절반
+早上	zǎoshang	아침
+上午	shàngwǔ	오전
+中午	zhōngwǔ	정오
+下午	xiàwǔ	오후
+晚上	wǎnshang	저녁
+起床	qǐchuáng	기상하다
+早饭	zǎofàn	아침밥
+午饭	wǔfàn	점심밥
+晚饭	wǎnfàn	저녁밥
+刻	kè	15분
+开会	kāihuì	회의하다
+跑步	pǎobù	달리기를 하다
+差	chà	부족하다, 모자라다
+睡觉	shuìjiào	잠자다
+上山	shàngshān	등산하다
+下山	xiàshān	하산하다
+上车	shàngchē	승차하다
+下车	xiàchē	하차하다
+上课	shàngkè	수업하다
+下课	xiàkè	수업을 마치다
+上学	shàngxué	등교하다
+放学	fàngxué	하교하다
