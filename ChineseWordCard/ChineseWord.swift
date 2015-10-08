@@ -9,7 +9,7 @@
 import Foundation
 
 class ChineseWord: NSObject {
-    var previosNumber : Int
+    var previousNumber : Int
     var nowNumber : Int
     var nextNumber : Int
     var hanyuText : String
@@ -17,7 +17,7 @@ class ChineseWord: NSObject {
     var descriptionText :String
     init(hanyuInput : String, pinyinInput : String, descriptionInput : String, nowInput : Int) {
         self.nowNumber = nowInput;
-        self.previosNumber = nowInput - 1;
+        self.previousNumber = nowInput - 1;
         self.nextNumber = nowInput + 1;
         self.hanyuText = hanyuInput;
         self.pinyinText = pinyinInput;
