@@ -263,3 +263,16 @@ U盘	Upán	USB
 梨	lí	배
 西红柿	xīhóngshì	토마토
 毛	máo	마오(화폐단위)
+
+去	qù	가다
+怎么	zěnme	어떻게
+学校	xuéxiào	학교
+坐	zuò	앉다,타다
+地铁	dìtiě	지하철
+开车	kāichē	운전하다
+公共汽车	gōnggòngqìchē	버스
+医院	yīyuàn	병원
+出租车	chūzūchē	택시
+机场	jīchǎng	공항
+骑	qí	올라타다
+
