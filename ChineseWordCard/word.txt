@@ -276,3 +276,23 @@ U盘	Upán	USB
 机场	jīchǎng	공항
 骑	qí	올라타다
 
+什么时候    shénmeshíhòu    언제
+早   zǎo 일찍
+一点儿 yìdiǎnr 조금
+吧   ba  청유 어기조사
+白天  báitiān 낮,대낮
+走路  zǒulù   걷다
+飞机  fēijī   비행기
+船   chuán   배
+回来  huílái  돌아오다
+回去  huíqù   돌아가다
+上来  shànglái    올라오다
+上去  shàngqù 올라가다
+下来  xiàlái  내려오다
+下去  xiàqù   내려가다
+进来  jìnlái  들어오다
+进去  jìnqù   들어가다
+出来  chūlai  나오다
+出去  chūqu   나가다
+过来  guòlái  건너오다
+过去  guòqù   건너가다
