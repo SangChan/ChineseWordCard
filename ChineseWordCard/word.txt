@@ -254,3 +254,12 @@ U盘	Upán	USB
 下课	xiàkè	수업을 마치다
 上学	shàngxué	등교하다
 放学	fàngxué	하교하다
+
+多少	duōshao	얼마, 몇
+钱	qián	돈
+块	kuài	위안(화폐단위)
+一共	yígòng	모두, 합계
+香蕉	xiāngjiāo	바나나
+梨	lí	배
+西红柿	xīhóngshì	토마토
+毛	máo	마오(화폐단위)
