@@ -296,3 +296,20 @@ U盘	Upán	USB
 出去	chūqu	나가다
 过来	guòlái	건너오다
 过去	guòqù	건너가다
+
+住	zhù	살다,거주하다
+前门	qiánmén	치엔먼
+附近	fùjìn	부근,근처
+口	kǒu	식구
+大家庭	dàjiātíng	대가족
+公园	gōngyuán	공원
+药典	yàodiǎn	약국
+车站	chēzhàn	정거장
+银行	yínháng	은행
+书店	shūdiàn	서점
+超市	chāoshì	슈퍼마켓
+对面	duìmiàn	맞은편
+妻子	qīzi	아내
+女儿	nǚ'ér	딸
+儿子	érzi	아들
+兄弟姐妹	xiōngdìjiěmèi	형제자매
