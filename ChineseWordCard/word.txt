@@ -313,3 +313,17 @@ U盘	Upán	USB
 女儿	nǚ'ér	딸
 儿子	érzi	아들
 兄弟姐妹	xiōngdìjiěmèi	형제자매
+
+做	zuò	~하다
+工作	gōngzuò	일,직업
+生意	shēngyi	장사,영업
+在	zài	~에(서)
+教	jiāo	가르치다, 수업하다
+家庭主妇	jiātíngzhǔfù	가정주부
+学习	xuéxí	배우다,공부하다
+学生	xuésheng	학생
+司机	sījī	기사,운전사
+散步	sànbù	산책하다
+餐厅	cāntīng	식당
+饭	fàn	밥,식사
+咖啡厅	kāfēitīng	카페
