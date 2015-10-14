@@ -327,3 +327,22 @@ U盘	Upán	USB
 餐厅	cāntīng	식당
 饭	fàn	밥,식사
 咖啡厅	kāfēitīng	카페
+
+要	yào	~하려 하다
+玩儿	wánr	놀다
+东四医院	Dōngsìyīyuàn	동쓰병원
+天安门	Tiān'ānmén	티엔안먼
+北京	Běijīng	베이징
+市	shì	시(행정구역 단위)
+中心	zhōngxīn	중심,센터
+长城	Chángchéng	창청, 만리장성
+天坛	Tiāntán	티엔탄
+颐和园	Yíhéyuán	이허위안
+北边儿	běibiānr	북쪽
+东北边儿	dōngběibiānr	북동쪽
+东边儿	dōngbiānr	동쪽
+东南边儿	dōngnánbiānr	남동쪽
+南边儿	nánbianr	남쪽
+西南边儿	xīnánbianr	남서쪽
+西边儿	xībianr	서쪽
+西北边儿	xīběibiānr	북서쪽
