@@ -346,3 +346,14 @@ U盘	Upán	USB
 西南边儿	xīnánbianr	남서쪽
 西边儿	xībianr	서쪽
 西北边儿	xīběibiānr	북서쪽
+
+厨房	chúfáng	부엌, 주방
+干	gàn	~하다(노동)
+在	zài	~하고 있다
+晚饭	wǎnfàn	저녁밥
+上网	shàngwǎng	인터넷하다
+网吧	wǎngbā	PC방
+图书馆	túshūguǎn	도서관
+打电话	dǎdiànhuà	전화를 걸다
+音乐	yīnyuè	음악
+说话	shuōhuà	말하다, 이야기하다
