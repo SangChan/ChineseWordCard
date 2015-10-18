@@ -368,3 +368,22 @@ U盘	Upán	USB
 东西	dōngxi	물건
 碗	wǎn	그릇
 休息	xiūxi	쉬다, 휴식
+
+喜欢	xǐhuan	좋아하다
+太	tài	너무
+爱	ài	즐기다, 좋아하다
+点	diǎn	주문하다
+比萨	bǐsà	피자
+药	yào	약
+有点儿	yǒudiǎnr	조금,약간
+四川	Sìchuān	쓰촨
+海水	hǎishuǐ	바닷물,해수
+非常	fēicháng	대단히,매우
+电影	diànyǐng	영화
+运动	yùndòng	운동
+甜	tián	달다
+酸	suān	시다
+苦	kǔ	쓰다
+辣	là	맵다
+咸	xián	짜다
+淡	dàn	싱겁다
