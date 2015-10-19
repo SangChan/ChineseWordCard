@@ -395,3 +395,8 @@ U盘	Upán	USB
 旅游	lǚyóu	여행,여행하다
 上海	Shànghǎi	상하이
 
+来	lái	오다
+首尔	Shǒu'ěr	서울
+火车	huǒchē	기차
+东京	Dōngjīng	도쿄
+纽约	Niǔyuē	뉴욕
