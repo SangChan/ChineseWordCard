@@ -411,3 +411,16 @@ U盘	Upán	USB
 快	kuài	빠르다
 慢	màn	느리다
 的	de	확인,긍정의 어기조사
+
+会	huì	~할 수 있다,~할 줄 알다
+多长时间	duō cháng shíjiān	얼마(시간)
+能	néng	~할 수 있다
+还	hái	아직, 아직도
+天	tiān	하루, 일
+小时	xiǎoshí	시간
+分钟	fēnzhōng	분
+游泳	yóuyǒng	수영하다
+酒	jiǔ	술
+瓶	píng	병
+写	xiě	쓰다
+字	zì	글자
