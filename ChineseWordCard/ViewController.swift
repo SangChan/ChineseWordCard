@@ -45,6 +45,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        test();
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -91,6 +92,12 @@ class ViewController: UIViewController {
         let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!);
         utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN");
         synthesize.speakUtterance(utterance);
+    }
+    
+    func test() {
+        let url: String = "http://www.apple.com/api/v1?test=test#!test";
+        NSLog("old:%@",url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!);
+        NSLog("new:%@",url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!);
     }
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
