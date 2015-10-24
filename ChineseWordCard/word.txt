@@ -435,3 +435,32 @@ U盘	Upán	USB
 漂亮	piàoliang	아름답다, 예쁘다
 唱	chàng	노래하다, (노래를)부르다
 冰	bīng	아이스, 얼음을 넣은
+
+过	guo	~한 적이 있다
+台湾	Táiwān	타이완
+常	cháng	자주, 종종
+因为	yīnwèi	~때문에
+香港	Xiānggǎng	홍콩
+澳门	àomén	마카오
+次	cì	번, 회
+酒店	jiǔdiàn	호텔
+电影院	diànyǐngyuàn	영화관
+每	měi	매, ~마다
+
+huazhuangpin	화장품
+jian	벌(옷을 세는 단위)
+hua	소비하다, 쓰다
+qian	1000,천
+gei	~에게 주다
+baihuo shangchang	백화점
+zhen	정말
+pianyi	싸다
+zhang	장 (종이를 세는 단위)
+ditu	지도
+shuang	쌍, 켤레(신발, 양말을 세는 단위)
+kuangquanshui	광천수, 생수
+he	통,갑(상자를 세는 단위)
+bai	100,백
+yuan	위안(화폐 단위)
+jiuba	술집, 바
+
