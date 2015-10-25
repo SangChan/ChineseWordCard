@@ -447,20 +447,19 @@ U盘	Upán	USB
 电影院	diànyǐngyuàn	영화관
 每	měi	매, ~마다
 
-huazhuangpin	화장품
-jian	벌(옷을 세는 단위)
-hua	소비하다, 쓰다
-qian	1000,천
-gei	~에게 주다
-baihuo shangchang	백화점
-zhen	정말
-pianyi	싸다
-zhang	장 (종이를 세는 단위)
-ditu	지도
-shuang	쌍, 켤레(신발, 양말을 세는 단위)
-kuangquanshui	광천수, 생수
-he	통,갑(상자를 세는 단위)
-bai	100,백
-yuan	위안(화폐 단위)
-jiuba	술집, 바
-
+化妆品	huàzhuāngpǐn	화장품
+件	jiàn	벌(옷을 세는 단위)
+花	huā	소비하다, 쓰다
+千	qiān	1000,천
+给	gěi	~에게 주다
+百货商场 bǎihuò shāngchǎng	백화점
+真	zhēn	정말
+便宜	piányi	싸다
+张	zhāng	장 (종이를 세는 단위)
+地图	dìtú	지도
+双	shuāng	쌍, 켤레(신발, 양말을 세는 단위)
+矿泉水	kuàngquánshuǐ	광천수, 생수
+盒	hé	통,갑(상자를 세는 단위)
+百	bǎi	100,백
+元	yuán	위안(화폐 단위)
+酒吧	jiǔbā	술집, 바
