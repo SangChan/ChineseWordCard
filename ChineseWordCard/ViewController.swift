@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //test();
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,13 +92,7 @@ class ViewController: UIViewController {
         utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN");
         synthesize.speakUtterance(utterance);
     }
-    
-    func test() {
-        let url: String = "http://www.apple.com/api/v1?test=test#!test";
-        NSLog("old:%@",url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!);
-        NSLog("new:%@",url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!);
-    }
-    
+        
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             // handling code
