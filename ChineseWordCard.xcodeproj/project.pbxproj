@@ -13,8 +13,9 @@
 		63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63458E811BA7CE9700D4A48D /* Images.xcassets */; };
 		63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63458E831BA7CE9700D4A48D /* LaunchScreen.xib */; };
 		63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */; };
-		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; settings = {ASSET_TAGS = (); }; };
-		63B829341BAD31090007FE84 /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B829331BAD31090007FE84 /* ChineseWord.swift */; settings = {ASSET_TAGS = (); }; };
+		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
+		63B7559B1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B755991BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld */; };
+		63B829341BAD31090007FE84 /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B829331BAD31090007FE84 /* ChineseWord.swift */; };
 		63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097ED1BABE16500ABC6EA /* AVFoundation.framework */; };
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		63458E8F1BA7CE9700D4A48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
+		63B7559A1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChineseWord.xcdatamodel; sourceTree = "<group>"; };
 		63B829331BAD31090007FE84 /* ChineseWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseWord.swift; sourceTree = "<group>"; };
 		63D097ED1BABE16500ABC6EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -96,6 +98,7 @@
 				63458E811BA7CE9700D4A48D /* Images.xcassets */,
 				63458E831BA7CE9700D4A48D /* LaunchScreen.xib */,
 				63458E781BA7CE9700D4A48D /* Supporting Files */,
+				63B755991BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld */,
 			);
 			path = ChineseWordCard;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				63B829341BAD31090007FE84 /* ChineseWord.swift in Sources */,
 				63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */,
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
+				63B7559B1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63B755991BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63B7559A1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodel */,
+			);
+			currentVersion = 63B7559A1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodel */;
+			path = ChineseWord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 63458E6D1BA7CE9700D4A48D /* Project object */;
 }
