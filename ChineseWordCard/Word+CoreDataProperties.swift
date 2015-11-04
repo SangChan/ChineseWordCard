@@ -15,10 +15,10 @@ import CoreData
 extension Word {
 
     @NSManaged var chapter: NSNumber?
-    @NSManaged var chinese: String?
     @NSManaged var desc: String?
     @NSManaged var id: NSNumber?
     @NSManaged var level: NSNumber?
     @NSManaged var pinyin: String?
+    @NSManaged var word: String?
 
 }
