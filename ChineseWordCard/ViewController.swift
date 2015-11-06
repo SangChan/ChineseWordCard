@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
+    var chineseWord : Word?
+    
     var previosWord : ChineseWord?
     var nowWord : ChineseWord!
     var nextWord : ChineseWord?
@@ -25,6 +27,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        chineseWord?.id = 1;
+        chineseWord?.level = 1;
+        chineseWord?.chapter = 1;
+        chineseWord?.hanyu = "爸爸"
+        chineseWord?.desc = "아버지"
+        chineseWord?.pinyin = "bàba"
     }
     
     @IBAction func nextClicked(sender: AnyObject) {
