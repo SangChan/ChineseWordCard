@@ -16,32 +16,25 @@ class ViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
+
     
-    var chineseWord : Word?
-    
-    var previosWord : ChineseWord?
-    var nowWord : ChineseWord!
-    var nextWord : ChineseWord?
+    var previosWord : Word?
+    var nowWord : Word!
+    var nextWord : Word?
     
     var touchCount : Int = 0;
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        chineseWord?.id = 1;
-        chineseWord?.level = 1;
-        chineseWord?.chapter = 1;
-        chineseWord?.hanyu = "爸爸"
-        chineseWord?.desc = "아버지"
-        chineseWord?.pinyin = "bàba"
     }
     
     @IBAction func nextClicked(sender: AnyObject) {
         resetAll();
-        setNowWord(nextWord!.hanyuText, pinyinText: nextWord!.pinyinText, descriptionText: nextWord!.descriptionText);
+        setNowWord((nextWord?.hanyu)!, pinyinText: (nextWord?.pinyin)!, descriptionText: (nextWord?.desc)!);
     }
     @IBAction func prevClicked(sender: AnyObject) {
         resetAll();
-        setNowWord(previosWord!.hanyuText, pinyinText: previosWord!.pinyinText, descriptionText: previosWord!.descriptionText);
+        setNowWord(previosWord!.hanyu!, pinyinText: previosWord!.pinyin!, descriptionText: previosWord!.desc!);
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -65,19 +58,19 @@ class ViewController: UIViewController {
     }
     
     func setPreviousWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        self.previosWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 0);
+        self.previosWord = Word.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 0);
     }
     
     func setNowWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        nowWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 1);
+        nowWord = Word.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 1);
         
-        self.hanyuLabel.text = nowWord.hanyuText;
-        self.pinyinLabel.text = nowWord.pinyinText;
-        self.descriptionLabel.text = nowWord.descriptionText;
+        self.hanyuLabel.text = nowWord.hanyu;
+        self.pinyinLabel.text = nowWord.pinyin;
+        self.descriptionLabel.text = nowWord.desc;
     }
     
     func setNextWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        self.nextWord = ChineseWord.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 2);
+        self.nextWord = Word.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 2);
     }
     
     func setLabelHiddenByCount(count : Int) {

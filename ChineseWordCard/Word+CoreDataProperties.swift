@@ -20,5 +20,4 @@ extension Word {
     @NSManaged var level: NSNumber?
     @NSManaged var pinyin: String?
     @NSManaged var hanyu: String?
-
 }
