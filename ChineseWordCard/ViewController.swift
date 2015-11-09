@@ -58,11 +58,17 @@ class ViewController: UIViewController {
     }
     
     func setPreviousWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        self.previosWord = Word.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 0);
+        self.previosWord = Word.init();
+        self.previosWord?.hanyu = hanyuText;
+        self.previosWord?.pinyin = pinyinText
+        self.previosWord?.desc = descriptionText
     }
     
     func setNowWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        nowWord = Word.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 1);
+        nowWord = Word.init();
+        nowWord.hanyu = hanyuText
+        nowWord.pinyin = pinyinText
+        nowWord.desc = descriptionText
         
         self.hanyuLabel.text = nowWord.hanyu;
         self.pinyinLabel.text = nowWord.pinyin;
@@ -70,7 +76,10 @@ class ViewController: UIViewController {
     }
     
     func setNextWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        self.nextWord = Word.init(hanyuInput: hanyuText, pinyinInput: pinyinText, descriptionInput: descriptionText,nowInput: 2);
+        self.nextWord = Word.init();
+        nextWord?.hanyu = hanyuText
+        nextWord?.pinyin = pinyinText
+        nextWord?.desc = descriptionText
     }
     
     func setLabelHiddenByCount(count : Int) {
