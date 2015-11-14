@@ -18,9 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
 
     
-    var previosWord : Word?
+    var previosWord : Word!
     var nowWord : Word!
-    var nextWord : Word?
+    var nextWord : Word!
     
     var touchCount : Int = 0;
     override func viewDidLoad() {
@@ -58,10 +58,10 @@ class ViewController: UIViewController {
     }
     
     func setPreviousWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        self.previosWord = Word.init();
-        self.previosWord?.hanyu = hanyuText;
-        self.previosWord?.pinyin = pinyinText
-        self.previosWord?.desc = descriptionText
+        previosWord = Word.init();
+        previosWord.hanyu = hanyuText;
+        previosWord.pinyin = pinyinText
+        previosWord.desc = descriptionText
     }
     
     func setNowWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
@@ -76,10 +76,10 @@ class ViewController: UIViewController {
     }
     
     func setNextWord(hanyuText : String ,pinyinText : String, descriptionText : String) {
-        self.nextWord = Word.init();
-        nextWord?.hanyu = hanyuText
-        nextWord?.pinyin = pinyinText
-        nextWord?.desc = descriptionText
+        nextWord = Word.init();
+        nextWord.hanyu = hanyuText
+        nextWord.pinyin = pinyinText
+        nextWord.desc = descriptionText
     }
     
     func setLabelHiddenByCount(count : Int) {
