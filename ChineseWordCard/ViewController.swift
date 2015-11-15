@@ -103,6 +103,14 @@ class ViewController: UIViewController {
         synthesize.speakUtterance(utterance);
     }
         
+    @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
+    }
+    
+    
+    @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
+    }
+    
+    
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             // handling code

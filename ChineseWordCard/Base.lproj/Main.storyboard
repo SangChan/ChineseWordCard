@@ -79,6 +79,8 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ivF-tv-uXb" appends="YES" id="mHV-yx-8FX"/>
+                            <outletCollection property="gestureRecognizers" destination="QaY-Za-9md" appends="YES" id="geM-OR-VWP"/>
+                            <outletCollection property="gestureRecognizers" destination="DT1-Di-Z7b" appends="YES" id="dSF-FX-HcJ"/>
                         </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -97,6 +99,18 @@
                         <outlet property="delegate" destination="vXZ-lx-hvc" id="8AR-mB-xri"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="QaY-Za-9md">
+                    <connections>
+                        <action selector="handleSwipeLeft:" destination="vXZ-lx-hvc" id="99Q-dS-ctY"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="e56-Lf-jM5"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="DT1-Di-Z7b">
+                    <connections>
+                        <action selector="handleSwipeRight:" destination="vXZ-lx-hvc" id="Dkn-kh-JRg"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="nrd-vA-eVI"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="555" y="433"/>
         </scene>
