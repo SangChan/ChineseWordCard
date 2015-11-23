@@ -14,6 +14,7 @@
 		63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63458E831BA7CE9700D4A48D /* LaunchScreen.xib */; };
 		63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
+		63B01C861C034949005BA0CD /* ChineseWordCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */; };
 		63B7559B1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63B755991BE65F7A00A4CEC1 /* ChineseWord.xcdatamodeld */; };
 		63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097ED1BABE16500ABC6EA /* AVFoundation.framework */; };
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
@@ -23,6 +24,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		63458E8B1BA7CE9700D4A48D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63458E6D1BA7CE9700D4A48D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63458E741BA7CE9700D4A48D;
+			remoteInfo = ChineseWordCard;
+		};
+		63B01C881C034949005BA0CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63458E6D1BA7CE9700D4A48D /* Project object */;
 			proxyType = 1;
@@ -43,6 +51,9 @@
 		63458E8F1BA7CE9700D4A48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
+		63B01C831C034949005BA0CD /* ChineseWordCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseWordCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardUITests.swift; sourceTree = "<group>"; };
+		63B01C871C034949005BA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63B7559A1BE65F7A00A4CEC1 /* ChineseWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChineseWord.xcdatamodel; sourceTree = "<group>"; };
 		63D097ED1BABE16500ABC6EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -67,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63B01C801C034949005BA0CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +95,7 @@
 				63D097ED1BABE16500ABC6EA /* AVFoundation.framework */,
 				63458E771BA7CE9700D4A48D /* ChineseWordCard */,
 				63458E8D1BA7CE9700D4A48D /* ChineseWordCardTests */,
+				63B01C841C034949005BA0CD /* ChineseWordCardUITests */,
 				63458E761BA7CE9700D4A48D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +105,7 @@
 			children = (
 				63458E751BA7CE9700D4A48D /* ChineseWordCard.app */,
 				63458E8A1BA7CE9700D4A48D /* ChineseWordCardTests.xctest */,
+				63B01C831C034949005BA0CD /* ChineseWordCardUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +152,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		63B01C841C034949005BA0CD /* ChineseWordCardUITests */ = {
+			isa = PBXGroup;
+			children = (
+				63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */,
+				63B01C871C034949005BA0CD /* Info.plist */,
+			);
+			path = ChineseWordCardUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,13 +199,31 @@
 			productReference = 63458E8A1BA7CE9700D4A48D /* ChineseWordCardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		63B01C821C034949005BA0CD /* ChineseWordCardUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63B01C8A1C034949005BA0CD /* Build configuration list for PBXNativeTarget "ChineseWordCardUITests" */;
+			buildPhases = (
+				63B01C7F1C034949005BA0CD /* Sources */,
+				63B01C801C034949005BA0CD /* Frameworks */,
+				63B01C811C034949005BA0CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63B01C891C034949005BA0CD /* PBXTargetDependency */,
+			);
+			name = ChineseWordCardUITests;
+			productName = ChineseWordCardUITests;
+			productReference = 63B01C831C034949005BA0CD /* ChineseWordCardUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		63458E6D1BA7CE9700D4A48D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = VerandaStudio;
 				TargetAttributes = {
@@ -185,6 +232,10 @@
 					};
 					63458E891BA7CE9700D4A48D = {
 						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 63458E741BA7CE9700D4A48D;
+					};
+					63B01C821C034949005BA0CD = {
+						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = 63458E741BA7CE9700D4A48D;
 					};
 				};
@@ -204,6 +255,7 @@
 			targets = (
 				63458E741BA7CE9700D4A48D /* ChineseWordCard */,
 				63458E891BA7CE9700D4A48D /* ChineseWordCardTests */,
+				63B01C821C034949005BA0CD /* ChineseWordCardUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -221,6 +273,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		63458E881BA7CE9700D4A48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63B01C811C034949005BA0CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -250,6 +309,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63B01C7F1C034949005BA0CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B01C861C034949005BA0CD /* ChineseWordCardUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -257,6 +324,11 @@
 			isa = PBXTargetDependency;
 			target = 63458E741BA7CE9700D4A48D /* ChineseWordCard */;
 			targetProxy = 63458E8B1BA7CE9700D4A48D /* PBXContainerItemProxy */;
+		};
+		63B01C891C034949005BA0CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63458E741BA7CE9700D4A48D /* ChineseWordCard */;
+			targetProxy = 63B01C881C034949005BA0CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -422,6 +494,33 @@
 			};
 			name = Release;
 		};
+		63B01C8B1C034949005BA0CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = ChineseWordCardUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.ChineseWordCardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ChineseWordCard;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		63B01C8C1C034949005BA0CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ChineseWordCardUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.ChineseWordCardUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ChineseWordCard;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +550,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		63B01C8A1C034949005BA0CD /* Build configuration list for PBXNativeTarget "ChineseWordCardUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63B01C8B1C034949005BA0CD /* Debug */,
+				63B01C8C1C034949005BA0CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
