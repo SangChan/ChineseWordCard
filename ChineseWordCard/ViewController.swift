@@ -30,18 +30,18 @@ class ViewController: UIViewController {
     
     @IBAction func nextClicked(sender: AnyObject) {
         resetAll();
-        setNowWord((nextWord?.hanyu)!, pinyinText: (nextWord?.pinyin)!, descriptionText: (nextWord?.desc)!);
+        //setNowWord((nextWord?.hanyu)!, pinyinText: (nextWord?.pinyin)!, descriptionText: (nextWord?.desc)!);
     }
     @IBAction func prevClicked(sender: AnyObject) {
         resetAll();
-        setNowWord(previosWord!.hanyu!, pinyinText: previosWord!.pinyin!, descriptionText: previosWord!.desc!);
+        //setNowWord(previosWord!.hanyu!, pinyinText: previosWord!.pinyin!, descriptionText: previosWord!.desc!);
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         resetAll();
-        setPreviousWord("爸爸", pinyinText: "bàba", descriptionText: "아버지");
-        setNowWord("妈妈", pinyinText: "māma", descriptionText: "어머니");
-        setNextWord("弟弟", pinyinText: "dìdi", descriptionText: "남동생");
+        //setPreviousWord("爸爸", pinyinText: "bàba", descriptionText: "아버지");
+        //setNowWord("妈妈", pinyinText: "māma", descriptionText: "어머니");
+        //setNextWord("弟弟", pinyinText: "dìdi", descriptionText: "남동생");
     }
     
     override func viewDidAppear(animated: Bool) {
