@@ -30,11 +30,11 @@ class ViewController: UIViewController {
     
     @IBAction func nextClicked(sender: AnyObject) {
         resetAll();
-        //setNowWord((nextWord?.hanyu)!, pinyinText: (nextWord?.pinyin)!, descriptionText: (nextWord?.desc)!);
+        setNowWord((nextWord?.hanyu)!, pinyinText: (nextWord?.pinyin)!, descriptionText: (nextWord?.desc)!);
     }
     @IBAction func prevClicked(sender: AnyObject) {
         resetAll();
-        //setNowWord(previosWord!.hanyu!, pinyinText: previosWord!.pinyin!, descriptionText: previosWord!.desc!);
+        setNowWord(previosWord!.hanyu!, pinyinText: previosWord!.pinyin!, descriptionText: previosWord!.desc!);
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
