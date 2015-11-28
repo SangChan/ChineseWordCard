@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
-
+    
+    var wordList : NSMutableArray = [];
     
     var previosWord : ChineseWord!
     var nowWord : ChineseWord!
