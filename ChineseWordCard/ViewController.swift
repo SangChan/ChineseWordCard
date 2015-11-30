@@ -101,10 +101,12 @@ class ViewController: UIViewController {
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
+        setLabelHiddenByCount(++touchCount)
     }
     
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
+        setLabelHiddenByCount(--touchCount)
     }
     
     
