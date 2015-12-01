@@ -29,13 +29,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func nextClicked(sender: AnyObject) {
+    func goToNext() {
         resetAll();
         setNowWord((nextWord?.hanyu)!, pinyinText: (nextWord?.pinyin)!, descriptionText: (nextWord?.desc)!);
     }
-    @IBAction func prevClicked(sender: AnyObject) {
+    
+    func goToPrev() {
         resetAll();
         setNowWord(previosWord!.hanyu!, pinyinText: previosWord!.pinyin!, descriptionText: previosWord!.desc!);
+    }
+    @IBAction func nextClicked(sender: AnyObject) {
+        self.goToNext();
+    }
+    @IBAction func prevClicked(sender: AnyObject) {
+        self.goToPrev();
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -101,12 +108,12 @@ class ViewController: UIViewController {
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        setLabelHiddenByCount(++touchCount)
+        self.goToPrev();
     }
     
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        setLabelHiddenByCount(--touchCount)
+        self.goToNext();
     }
     
     
