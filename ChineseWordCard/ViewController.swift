@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     var nextWord : ChineseWord!
     
     var touchCount : Int = 0;
+    var wordIndex : Int = 0;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,11 +33,13 @@ class ViewController: UIViewController {
     
     func goToNext() {
         resetAll();
+        ++wordIndex;
         self.updateUIonView();
     }
     
     func goToPrev() {
         resetAll();
+        --wordIndex;
         self.updateUIonView();
     }
     @IBAction func nextClicked(sender: AnyObject) {
@@ -63,6 +67,8 @@ class ViewController: UIViewController {
     }
     
     func updateUIonView() {
+        self.nowWord = wordList.objectAtIndex(wordIndex) as! ChineseWord;
+        
         self.hanyuLabel.text = nowWord.hanyu;
         self.pinyinLabel.text = nowWord.pinyin;
         self.descriptionLabel.text = nowWord.desc;
@@ -79,7 +85,6 @@ class ViewController: UIViewController {
     func resetAll() {
         touchCount = 0;
         setLabelHiddenByCount(touchCount);
-        self.wordList = [];
     }
     
     func setLabelHiddenByCount(count : Int) {
