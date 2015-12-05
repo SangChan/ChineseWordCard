@@ -34,12 +34,18 @@ class ViewController: UIViewController {
     func goToNext() {
         resetAll();
         ++wordIndex;
+        if (wordIndex > wordList.count-1) {
+            wordIndex == wordList.count-1;
+        }
         self.updateUIonView();
     }
     
     func goToPrev() {
         resetAll();
         --wordIndex;
+        if (wordIndex <= 0) {
+            wordIndex = 0;
+        }
         self.updateUIonView();
     }
     @IBAction func nextClicked(sender: AnyObject) {
