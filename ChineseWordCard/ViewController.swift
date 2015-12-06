@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var nextWord : ChineseWord!
     
     var touchCount : Int = 0;
-    var wordIndex : Int = 0;
+    var wordIndex : Int = 1;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         resetAll();
         ++wordIndex;
         if (wordIndex > wordList.count-1) {
-            wordIndex == wordList.count-1;
+            wordIndex = wordList.count-1;
         }
         self.updateUIonView();
     }
@@ -73,6 +73,15 @@ class ViewController: UIViewController {
     }
     
     func updateUIonView() {
+        self.prevButton.enabled = true;
+        if (wordIndex <= 0) {
+            self.prevButton.enabled = false;
+        }
+        self.nextButton.enabled = true;
+        if (wordIndex >= wordList.count-1) {
+            self.nextButton.enabled = false;
+        }
+        
         self.nowWord = wordList.objectAtIndex(wordIndex) as! ChineseWord;
         
         self.hanyuLabel.text = nowWord.hanyu;
@@ -115,11 +124,17 @@ class ViewController: UIViewController {
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
+        if (wordIndex <= 0) {
+            return ;
+        }
         self.goToPrev();
     }
     
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
+        if (wordIndex >= wordList.count - 1) {
+            return ;
+        }
         self.goToNext();
     }
     
