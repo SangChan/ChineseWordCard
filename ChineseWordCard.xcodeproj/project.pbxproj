@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		54CB0261447F1F66CC0BCE6C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F780F9F3BAB68D9D342D638 /* libPods.a */; };
 		6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321B9F51C05E70F00E2186C /* ChineseWord.swift */; };
 		63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */; };
 		63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7C1BA7CE9700D4A48D /* ViewController.swift */; };
@@ -22,6 +21,7 @@
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
 		63D381841BF623BF00176CF3 /* Word+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D381821BF623BF00176CF3 /* Word+CoreDataProperties.swift */; };
 		63D381851BF623BF00176CF3 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D381831BF623BF00176CF3 /* Word.swift */; };
+		AA1B6E354B340AF5EC7395A8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BF1ABAF0B6E1248BF9E93E /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		63D381821BF623BF00176CF3 /* Word+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Word+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		63D381831BF623BF00176CF3 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		6452B5AB643AF79070660F4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		7F780F9F3BAB68D9D342D638 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97BF1ABAF0B6E1248BF9E93E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			files = (
 				63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */,
 				63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */,
-				54CB0261447F1F66CC0BCE6C /* libPods.a in Frameworks */,
+				AA1B6E354B340AF5EC7395A8 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +174,7 @@
 		D537103A42283B907FE93EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F780F9F3BAB68D9D342D638 /* libPods.a */,
+				97BF1ABAF0B6E1248BF9E93E /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

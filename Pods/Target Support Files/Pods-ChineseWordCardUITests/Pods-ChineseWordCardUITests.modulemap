@@ -1,0 +1,6 @@
+framework module Pods_ChineseWordCardUITests {
+  umbrella header "Pods-ChineseWordCardUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
