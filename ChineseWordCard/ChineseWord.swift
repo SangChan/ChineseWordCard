@@ -6,24 +6,13 @@
 //  Copyright © 2015년 VerandaStudio. All rights reserved.
 //
 
-import UIKit
+import RealmSwift
 
-class ChineseWord: NSObject {
-    var prevWord : ChineseWord!
-    var id: Int16
-    var level: Int16
-    var chapter: Int16
-    var desc: String?
-    var hanyu: String?
-    var pinyin: String?
-    var nextWord : ChineseWord!
-
-    init(id:Int16,level:Int16,chapter:Int16,hanyu:String,pinyin:String,desc:String) {
-        self.id = id
-        self.level = level
-        self.chapter = chapter
-        self.hanyu = hanyu
-        self.pinyin = pinyin
-        self.desc = desc
-    }
+class ChineseWord: Object {
+    var id: Int16!
+    var level: Int16!
+    var chapter: Int16!
+    dynamic var desc: String?
+    dynamic var hanyu: String?
+    dynamic var pinyin: String?
 }
