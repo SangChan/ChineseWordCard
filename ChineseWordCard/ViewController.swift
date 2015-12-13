@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -58,12 +59,14 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated);
         resetAll();
         
-        wordList = [
-            ChineseWord.init(id: 0, level: 0, chapter: 0, hanyu: "爸爸", pinyin: "bàba", desc: "아버지"),
-            ChineseWord.init(id: 1, level: 0, chapter: 0, hanyu: "妈妈", pinyin: "māma", desc: "어머니"),
-            ChineseWord.init(id: 2, level: 0, chapter: 0, hanyu: "弟弟", pinyin: "dìdi", desc: "남동생")
-        ];
+        let realm = try! Realm()
         
+        try! realm.write() {
+            let papa = realm.create(ChineseWord.self, value: ["id":0,"level":0,"chapter":0,"hanyu":"爸爸","pinyin":"bàba","desc":"아버지"])
+            let mama = realm.create(ChineseWord.self, value: ["id":1,"level":0,"chapter":0,"hanyu":"妈妈","pinyin":"māma","desc":"어머니"]);
+            let brother = realm.create(ChineseWord.self, value: ["id":2,"level":0,"chapter":0,"hanyu":"弟弟","pinyin":"dìdi","desc":"남동생"]);
+            self.wordList = [papa,mama,brother];
+        }
         
         self.previosWord = wordList.objectAtIndex(0) as! ChineseWord;
         self.nowWord = wordList.objectAtIndex(1) as! ChineseWord;
