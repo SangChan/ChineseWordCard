@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        makeDictionaryDB();
         return true
     }
 
@@ -42,9 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func makeDictionaryDB() {
-        let sourcePath = NSBundle.mainBundle().resourcePath! + "word.txt";
-        let fileContents = try! NSString.init(contentsOfFile: sourcePath, encoding:NSUTF8StringEncoding)
+        let sourcePath = NSBundle.mainBundle().resourcePath;
+        let fileContents = try! NSString.init(contentsOfFile:(sourcePath?.stringByAppendingString("/word.txt"))!, encoding:NSUTF8StringEncoding)
         let lines = [fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())];
+        for(n,c) in lines.enumerate() {
+            print("\(n):\(c)");
+        }
     }
     
     /*
