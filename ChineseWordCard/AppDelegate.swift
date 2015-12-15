@@ -40,6 +40,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func makeDictionaryDB() {
+        let sourcePath = NSBundle.mainBundle().resourcePath! + "word.txt";
+        let fileContents = try! NSString.init(contentsOfFile: sourcePath, encoding:NSUTF8StringEncoding)
+        let lines = [fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())];
+    }
+    
+    /*
+    
+    - (void)makeDictionaryDB
+    {
+        NSManagedObjectContext *context = [self managedObjectContext];
+        NSError *error;
+        NSCharacterSet *newlineCharSet = [NSCharacterSet newlineCharacterSet];
+        NSString *sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"able.txt"];
+    
+        NSString* fileContents = [NSString stringWithContentsOfFile:sourcePath encoding:NSUTF8StringEncoding error:nil];
+        NSArray *lines = [fileContents componentsSeparatedByCharactersInSet:newlineCharSet];
+    
+        int i = 0;
+        for (NSString *line in lines) {
+            NSLog(@"%d:%@",i,line);
+            NSArray *words = [line componentsSeparatedByString:@"\t"];
+            for (NSString *word in words) {
+                NSLog(@"%@",word);
+            }
+            NSManagedObject *wordInfo = [NSEntityDescription insertNewObjectForEntityForName:@"Dictionary" inManagedObjectContext:context];
+            [wordInfo setValue:[words objectAtIndex:0] forKey:@"word"];
+            [wordInfo setValue:[words objectAtIndex:1] forKey:@"word_description"];
+            if (![context save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+            i++;
+        }
+    }
+    
+    */
 
 
 }
