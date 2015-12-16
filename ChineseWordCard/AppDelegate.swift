@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func makeDictionaryDB() {
         let sourcePath = NSBundle.mainBundle().resourcePath;
         let fileContents = try! NSString.init(contentsOfFile:(sourcePath?.stringByAppendingString("/word.txt"))!, encoding:NSUTF8StringEncoding)
-        let lines = [fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())];
+        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet());
         for(n,c) in lines.enumerate() {
             print("\(n):\(c)");
         }
