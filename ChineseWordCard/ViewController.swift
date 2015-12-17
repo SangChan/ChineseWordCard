@@ -18,14 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
-    var wordList : NSMutableArray = [];
+    var wordList : Results<ChineseWord>!;
     
-    var previosWord : ChineseWord!
     var nowWord : ChineseWord!
-    var nextWord : ChineseWord!
     
     var touchCount : Int = 0;
-    var wordIndex : Int = 1;
+    var wordIndex : Int = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,19 +57,10 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated);
         resetAll();
         
-        let realm = try! Realm()
-        
-        try! realm.write() {
-            self.wordList = [
-                realm.create(ChineseWord.self, value: ["id":0,"level":0,"chapter":0,"hanyu":"爸爸","pinyin":"bàba","desc":"아버지"]),
-                realm.create(ChineseWord.self, value: ["id":1,"level":0,"chapter":0,"hanyu":"妈妈","pinyin":"māma","desc":"어머니"]),
-                realm.create(ChineseWord.self, value: ["id":2,"level":0,"chapter":0,"hanyu":"弟弟","pinyin":"dìdi","desc":"남동생"])
-            ];
-        }
-        
-        self.previosWord = wordList.objectAtIndex(0) as! ChineseWord;
-        self.nowWord = wordList.objectAtIndex(1) as! ChineseWord;
-        self.nextWord = wordList.objectAtIndex(2) as! ChineseWord;
+        let realm = try! Realm();
+        self.wordList = realm.objects(ChineseWord);
+    
+        self.nowWord = wordList[1];
         
         self.updateUIonView();
     }
@@ -86,7 +75,7 @@ class ViewController: UIViewController {
             self.nextButton.enabled = false;
         }
         
-        self.nowWord = wordList.objectAtIndex(wordIndex) as! ChineseWord;
+        self.nowWord = wordList[wordIndex]
         
         self.hanyuLabel.text = nowWord.hanyu;
         self.pinyinLabel.text = nowWord.pinyin;

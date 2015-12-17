@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -46,8 +47,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sourcePath = NSBundle.mainBundle().resourcePath;
         let fileContents = try! NSString.init(contentsOfFile:(sourcePath?.stringByAppendingString("/word.txt"))!, encoding:NSUTF8StringEncoding)
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet());
-        for(n,c) in lines.enumerate() {
-            print("\(n):\(c)");
+        let realm = try! Realm()
+        for(index,text) in lines.enumerate() {
+            print("\(index):\(text)");
+            var chapter = 0;
+            var id_num = 0;
+            if(text.hasPrefix("//")) {
+                chapter++;
+            }
+            else {
+                let wordsInfo = text.componentsSeparatedByString("\t");
+                wordsInfo.first
+                try! realm.write() {
+                    realm.create(ChineseWord.self,value: ["id":id_num,"level":0,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2]]);
+                }
+                id_num++
+            }
         }
     }
     
