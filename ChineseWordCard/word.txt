@@ -453,7 +453,7 @@ U盘	Upán	USB
 花	huā	소비하다, 쓰다
 千	qiān	1000,천
 给	gěi	~에게 주다
-百货商场 bǎihuò shāngchǎng	백화점
+百货商场	bǎihuò shāngchǎng	백화점
 真	zhēn	정말
 便宜	piányi	싸다
 张	zhāng	장 (종이를 세는 단위)
