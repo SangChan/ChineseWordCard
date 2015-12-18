@@ -117,18 +117,18 @@ class ViewController: UIViewController {
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        if (wordIndex <= 0) {
-            return ;
-        }
-        self.goToPrev();
-    }
-    
-    
-    @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
         if (wordIndex >= wordList.count - 1) {
             return ;
         }
         self.goToNext();
+    }
+    
+    
+    @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
+        if (wordIndex <= 0) {
+            return ;
+        }
+        self.goToPrev();
     }
     
     
