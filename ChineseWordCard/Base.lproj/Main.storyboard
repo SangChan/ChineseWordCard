@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="māma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0Y-yB-24r">
-                                <rect key="frame" x="40" y="232" width="521" height="24"/>
+                                <rect key="frame" x="70" y="232" width="460" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마. 어머니" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF6-cN-YyQ">
-                                <rect key="frame" x="40" y="344" width="521" height="24"/>
+                                <rect key="frame" x="70" y="344" width="460" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -57,20 +57,32 @@
                             <constraint firstAttribute="trailingMargin" secondItem="2SL-es-Q3B" secondAttribute="trailing" constant="-20" id="1mb-hX-aJh"/>
                             <constraint firstAttribute="centerX" secondItem="nF6-cN-YyQ" secondAttribute="centerX" id="3ha-XN-4wh"/>
                             <constraint firstAttribute="centerX" secondItem="g0Y-yB-24r" secondAttribute="centerX" id="9tw-ns-YeR"/>
-                            <constraint firstAttribute="centerX" secondItem="JqA-4b-TnI" secondAttribute="centerX" constant="-0.5" id="GLW-N3-vHE"/>
+                            <constraint firstAttribute="centerX" secondItem="JqA-4b-TnI" secondAttribute="centerX" priority="750" id="GLW-N3-vHE"/>
                             <constraint firstItem="B6j-64-5po" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Gh6-MA-U7t"/>
                             <constraint firstItem="g0Y-yB-24r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="H5P-9c-eiX"/>
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="L80-x5-S3h"/>
+                            <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="QrK-h9-Bgu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="19" id="Qu4-hS-IEi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="50" id="TNf-cA-7jt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JqA-4b-TnI" secondAttribute="trailing" constant="19" id="XaL-I7-39p"/>
-                            <constraint firstItem="nF6-cN-YyQ" firstAttribute="top" secondItem="JqA-4b-TnI" secondAttribute="bottom" constant="8" id="h20-hg-UUZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nF6-cN-YyQ" secondAttribute="trailing" constant="50" id="dif-gY-a36"/>
+                            <constraint firstItem="g0Y-yB-24r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="gW0-RY-r8v"/>
+                            <constraint firstItem="nF6-cN-YyQ" firstAttribute="top" secondItem="JqA-4b-TnI" secondAttribute="bottom" priority="250" constant="8" id="h20-hg-UUZ"/>
                             <constraint firstItem="B6j-64-5po" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="hbm-HH-7ZJ"/>
                             <constraint firstItem="2SL-es-Q3B" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iqv-1A-cNC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nF6-cN-YyQ" secondAttribute="trailing" constant="19" id="lGo-X9-7Eb"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="t1Q-Na-KQf"/>
                             <constraint firstAttribute="centerY" secondItem="JqA-4b-TnI" secondAttribute="centerY" id="uP5-qe-BEH"/>
-                            <constraint firstItem="JqA-4b-TnI" firstAttribute="top" secondItem="g0Y-yB-24r" secondAttribute="bottom" constant="8" id="zRa-yk-PF7"/>
+                            <constraint firstItem="JqA-4b-TnI" firstAttribute="top" secondItem="g0Y-yB-24r" secondAttribute="bottom" priority="250" constant="8" id="zRa-yk-PF7"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="H5P-9c-eiX"/>
+                                <exclude reference="Qu4-hS-IEi"/>
+                                <exclude reference="lGo-X9-7Eb"/>
+                                <exclude reference="t1Q-Na-KQf"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="ivF-tv-uXb" appends="YES" id="mHV-yx-8FX"/>
                             <outletCollection property="gestureRecognizers" destination="QaY-Za-9md" appends="YES" id="geM-OR-VWP"/>
