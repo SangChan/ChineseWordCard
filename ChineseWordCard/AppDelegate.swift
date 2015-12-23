@@ -43,9 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func makeDictionaryDB() {
-        //TODO : If there is existing data from text, quit from here
-        
+    func makeDictionaryDB() {        
         let sourcePath = NSBundle.mainBundle().resourcePath;
         let fileContents = try! NSString.init(contentsOfFile:(sourcePath?.stringByAppendingString("/word.txt"))!, encoding:NSUTF8StringEncoding)
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet());
@@ -59,11 +57,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t");
-                wordsInfo.first
-                try! realm.write() {
-                    realm.create(ChineseWord.self,value: ["id":id_num,"level":0,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2]]);
+                if (realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil) {
+                    try! realm.write() {
+                        realm.create(ChineseWord.self,value: ["id":id_num,"level":0,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2]]);
+                    }
+                    id_num++;
                 }
-                id_num++
             }
         }
     }
