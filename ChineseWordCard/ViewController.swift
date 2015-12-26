@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     var touchCount : Int = 0;
     var wordIndex : Int = 0;
+    var maxWordCount : Int = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,8 @@ class ViewController: UIViewController {
         
         let realm = try! Realm();
         self.wordList = realm.objects(ChineseWord);
+        
+        self.maxWordCount = self.wordList.count;
     
         self.nowWord = wordList[1];
         

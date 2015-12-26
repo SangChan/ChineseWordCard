@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for(index,text) in lines.enumerate() {
             print("\(index):\(text)");
             var chapter = 0;
+            var level = 0;
             var id_num = 0;
             if(text.hasPrefix("//")) {
                 chapter++;
