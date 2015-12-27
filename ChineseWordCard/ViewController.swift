@@ -62,13 +62,12 @@ class ViewController: UIViewController {
         self.wordList = realm.objects(ChineseWord);
         
         self.maxWordCount = self.wordList.count;
-    
-        self.nowWord = wordList[1];
-        
+        // TODO : load word index
         self.updateUIonView();
     }
     
     func updateUIonView() {
+        // TODO : save word index
         self.prevButton.enabled = true;
         if (wordIndex <= 0) {
             self.prevButton.enabled = false;
