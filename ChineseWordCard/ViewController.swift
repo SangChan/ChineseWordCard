@@ -34,36 +34,35 @@ class ViewController: UIViewController {
     func goToNext() {
         resetAll();
         ++wordIndex;
-        if (wordIndex > wordList.count-1) {
+        if wordIndex > wordList.count-1 {
             wordIndex = wordList.count-1;
         }
-        self.updateUIonView();
+        self.updateUIonView()
     }
     
     func goToPrev() {
         resetAll();
         --wordIndex;
-        if (wordIndex <= 0) {
+        if wordIndex <= 0 {
             wordIndex = 0;
         }
-        self.updateUIonView();
+        self.updateUIonView()
     }
     @IBAction func nextClicked(sender: AnyObject) {
-        self.goToNext();
+        self.goToNext()
     }
     @IBAction func prevClicked(sender: AnyObject) {
-        self.goToPrev();
+        self.goToPrev()
     }
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated);
-        resetAll();
+        super.viewWillAppear(animated)
+        resetAll()
         
-        let realm = try! Realm();
-        self.wordList = realm.objects(ChineseWord);
+        let realm = try! Realm()
+        self.wordList = realm.objects(ChineseWord)
         
-        self.maxWordCount = self.wordList.count;
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        self.wordIndex = defaults.integerForKey("wordIndex")
+        self.maxWordCount = self.wordList.count
+        self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey("wordIndex")
         self.updateUIonView();
     }
     
@@ -72,20 +71,12 @@ class ViewController: UIViewController {
         defaults.setInteger(wordIndex, forKey: "wordIndex")
         defaults.synchronize()
         
-        self.prevButton.enabled = true;
-        if (wordIndex <= 0) {
-            self.prevButton.enabled = false;
-        }
-        self.nextButton.enabled = true;
-        if (wordIndex >= wordList.count-1) {
-            self.nextButton.enabled = false;
-        }
-        
+        self.prevButton.enabled = (wordIndex > 0) ? true : false
+        self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
         self.nowWord = wordList[wordIndex]
-        
-        self.hanyuLabel.text = nowWord.hanyu;
-        self.pinyinLabel.text = nowWord.pinyin;
-        self.descriptionLabel.text = nowWord.desc;
+        self.hanyuLabel.text = nowWord.hanyu
+        self.pinyinLabel.text = nowWord.pinyin
+        self.descriptionLabel.text = nowWord.desc
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -97,44 +88,36 @@ class ViewController: UIViewController {
     }
 
     func resetAll() {
-        touchCount = 0;
-        setLabelHiddenByCount(touchCount);
+        touchCount = 0
+        setLabelHiddenByCount(touchCount)
     }
     
     func setLabelHiddenByCount(count : Int) {
-        descriptionLabel.hidden = true;
-        pinyinLabel.hidden = true;
-        if(count == 0) {
-            return
+        pinyinLabel.hidden = (count == 0) ? true : false
+        descriptionLabel.hidden = (count == 0 || count%2 == 1) ? true : false
+        if count > 0 {
+            speakWord()
         }
-        speakWord()
-        pinyinLabel.hidden = false;
-        if (count%2 == 0) {
-            descriptionLabel.hidden = false;
-        }
-        
     }
     
     func speakWord() {
-        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init();
-        let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!);
-        utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN");
-        synthesize.speakUtterance(utterance);
+        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
+        let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!)
+        utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN")
+        synthesize.speakUtterance(utterance)
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        if (wordIndex >= wordList.count - 1) {
-            return ;
+        if wordIndex < wordList.count - 1 {
+            self.goToNext()
         }
-        self.goToNext();
     }
     
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        if (wordIndex <= 0) {
-            return ;
+        if wordIndex > 0 {
+            self.goToPrev()
         }
-        self.goToPrev();
     }
     
     
