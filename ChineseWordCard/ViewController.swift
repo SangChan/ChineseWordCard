@@ -18,13 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     
-    var wordList : Results<ChineseWord>!;
+    var wordList : Results<ChineseWord>!
     
     var nowWord : ChineseWord!
     
-    var touchCount : Int = 0;
-    var wordIndex : Int = 0;
-    var maxWordCount : Int = 0;
+    var touchCount : Int = 0
+    var wordIndex : Int = 0
+    var maxWordCount : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     }
     
     func goToNext() {
-        resetAll();
-        ++wordIndex;
+        resetAll()
+        ++wordIndex
         if wordIndex > wordList.count-1 {
             wordIndex = wordList.count-1;
         }
@@ -41,8 +41,8 @@ class ViewController: UIViewController {
     }
     
     func goToPrev() {
-        resetAll();
-        --wordIndex;
+        resetAll()
+        --wordIndex
         if wordIndex <= 0 {
             wordIndex = 0;
         }
@@ -103,6 +103,7 @@ class ViewController: UIViewController {
     func speakWord() {
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
         let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!)
+        utterance.rate = AVSpeechUtteranceMinimumSpeechRate
         utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN")
         synthesize.speakUtterance(utterance)
     }
