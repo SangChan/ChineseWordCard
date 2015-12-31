@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        makeDictionaryDB();
+        makeDictionaryDB()
         return true
     }
 
@@ -44,21 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func makeDictionaryDB() {        
-        let sourcePath = NSBundle.mainBundle().resourcePath;
+        let sourcePath = NSBundle.mainBundle().resourcePath
         let fileContents = try! NSString.init(contentsOfFile:(sourcePath?.stringByAppendingString("/word.txt"))!, encoding:NSUTF8StringEncoding)
-        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet());
+        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
         let realm = try! Realm()
         for(index,text) in lines.enumerate() {
             print("\(index):\(text)")
             var chapter = 0
             var level = 0
             var id_num = 0
-            if(text.hasPrefix("//")) {
+            if text.hasPrefix("//") {
                 ++chapter
             }
             else {
-                let wordsInfo = text.componentsSeparatedByString("\t");
-                if (realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil) {
+                let wordsInfo = text.componentsSeparatedByString("\t")
+                if realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil {
                     try! realm.write() {
                         realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2]])
                     }
