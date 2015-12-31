@@ -50,11 +50,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         for(index,text) in lines.enumerate() {
             print("\(index):\(text)")
-            var chapter = 0
-            var level = 0
-            var id_num = 0
+            var chapter : Int = 0
+            var level : Int  = 0
+            var id_num : Int = 0
             if text.hasPrefix("//") {
                 ++chapter
+                let idx: String.Index = text.startIndex.advancedBy(2)
+                let chapterString : String = text.substringFromIndex(idx)
+                print("\(chapterString)")
+                let chapterInfo = chapterString.componentsSeparatedByString(".")
+                chapter = Int(chapterInfo[0])!
+                level = Int(chapterInfo[1])!
+                print("\(chapter).\(level)")
             }
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t")
