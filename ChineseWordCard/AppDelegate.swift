@@ -49,20 +49,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet());
         let realm = try! Realm()
         for(index,text) in lines.enumerate() {
-            print("\(index):\(text)");
-            var chapter = 0;
-            var level = 0;
-            var id_num = 0;
+            print("\(index):\(text)")
+            var chapter = 0
+            var level = 0
+            var id_num = 0
             if(text.hasPrefix("//")) {
-                chapter++;
+                ++chapter
             }
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t");
                 if (realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil) {
                     try! realm.write() {
-                        realm.create(ChineseWord.self,value: ["id":id_num,"level":0,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2]]);
+                        realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2]])
                     }
-                    id_num++;
+                    ++id_num
                 }
             }
         }
