@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
+    @IBOutlet weak var progessBar: UIProgressView!
     
     var wordList : Results<ChineseWord>!
     

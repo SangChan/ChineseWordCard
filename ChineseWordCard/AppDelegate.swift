@@ -57,11 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 ++chapter
                 let idx: String.Index = text.startIndex.advancedBy(2)
                 let chapterString : String = text.substringFromIndex(idx)
-                print("\(chapterString)")
                 let chapterInfo = chapterString.componentsSeparatedByString(".")
                 chapter = Int(chapterInfo[0])!
                 level = Int(chapterInfo[1])!
-                print("\(chapter).\(level)")
             }
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t")
