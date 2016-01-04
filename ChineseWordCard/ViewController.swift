@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         resetAll()
         ++wordIndex
         if wordIndex > wordList.count-1 {
-            wordIndex = wordList.count-1;
+            wordIndex = wordList.count-1
         }
         self.updateUIonView()
     }
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         resetAll()
         --wordIndex
         if wordIndex <= 0 {
-            wordIndex = 0;
+            wordIndex = 0
         }
         self.updateUIonView()
     }
@@ -54,6 +54,9 @@ class ViewController: UIViewController {
     }
     @IBAction func prevClicked(sender: AnyObject) {
         self.goToPrev()
+    }
+    @IBAction func changedValue(sender: AnyObject) {
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,6 +68,7 @@ class ViewController: UIViewController {
         self.maxWordCount = self.wordList.count
         self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey("wordIndex")
         self.updateUIonView();
+        self.sliderBar.enabled = false
     }
     
     func updateUIonView() {
@@ -78,6 +82,7 @@ class ViewController: UIViewController {
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
         self.descriptionLabel.text = nowWord.desc
+        self.sliderBar.value =  Float.init(wordIndex)/Float.init(wordList.count)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -127,7 +132,6 @@ class ViewController: UIViewController {
         if sender.state == .Ended {
             // handling code
             setLabelHiddenByCount(++touchCount)
-            
         }
     }
 }
