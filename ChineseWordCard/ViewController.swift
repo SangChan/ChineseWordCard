@@ -55,8 +55,9 @@ class ViewController: UIViewController {
     @IBAction func prevClicked(sender: AnyObject) {
         self.goToPrev()
     }
-    @IBAction func changedValue(sender: AnyObject) {
-        
+    @IBAction func valueChanged(sender: AnyObject) {
+        self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
+        self.updateUIonView()
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -68,7 +69,6 @@ class ViewController: UIViewController {
         self.maxWordCount = self.wordList.count
         self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey("wordIndex")
         self.updateUIonView();
-        self.sliderBar.enabled = false
     }
     
     func updateUIonView() {
