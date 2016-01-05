@@ -57,6 +57,11 @@ class ViewController: UIViewController {
     }
     @IBAction func valueChanged(sender: AnyObject) {
         self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
+        if wordIndex <= 0 {
+            wordIndex = 0
+        } else if wordIndex > wordList.count-1 {
+            wordIndex = wordList.count-1
+        }
         self.updateUIonView()
     }
     override func viewWillAppear(animated: Bool) {
