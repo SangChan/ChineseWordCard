@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         self.goToPrev()
     }
     @IBAction func valueChanged(sender: AnyObject) {
+        resetAll()
         self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
         if wordIndex <= 0 {
             wordIndex = 0
