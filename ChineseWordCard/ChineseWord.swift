@@ -15,4 +15,5 @@ class ChineseWord: Object {
     dynamic var desc: String?
     dynamic var hanyu: String?
     dynamic var pinyin: String?
+    var likeIt : Bool!
 }
