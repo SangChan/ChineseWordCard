@@ -92,8 +92,6 @@
 		63458E6C1BA7CE9700D4A48D = {
 			isa = PBXGroup;
 			children = (
-				63D097EF1BABE19100ABC6EA /* UIKit.framework */,
-				63D097ED1BABE16500ABC6EA /* AVFoundation.framework */,
 				63458E771BA7CE9700D4A48D /* ChineseWordCard */,
 				63458E8D1BA7CE9700D4A48D /* ChineseWordCardTests */,
 				63B01C841C034949005BA0CD /* ChineseWordCardUITests */,
@@ -165,6 +163,8 @@
 		D537103A42283B907FE93EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63D097EF1BABE19100ABC6EA /* UIKit.framework */,
+				63D097ED1BABE16500ABC6EA /* AVFoundation.framework */,
 				97BF1ABAF0B6E1248BF9E93E /* Pods.framework */,
 			);
 			name = Frameworks;
