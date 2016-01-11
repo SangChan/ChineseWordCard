@@ -66,6 +66,10 @@
                                     <segue destination="P7Q-t6-GNR" kind="presentation" id="1N2-em-rWJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNt-AI-Hb9">
+                                <rect key="frame" x="277" y="194" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -82,6 +86,7 @@
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="L80-x5-S3h"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="QrK-h9-Bgu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="19" id="Qu4-hS-IEi"/>
+                            <constraint firstItem="hNt-AI-Hb9" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="RKv-gI-tfk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="50" id="TNf-cA-7jt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JqA-4b-TnI" secondAttribute="trailing" constant="19" id="XaL-I7-39p"/>
                             <constraint firstItem="wqo-Js-rYC" firstAttribute="top" secondItem="nF6-cN-YyQ" secondAttribute="bottom" constant="8" id="YYR-Bh-yLh"/>
@@ -90,6 +95,7 @@
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="top" secondItem="JqA-4b-TnI" secondAttribute="bottom" priority="250" constant="8" id="h20-hg-UUZ"/>
                             <constraint firstItem="B6j-64-5po" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="hbm-HH-7ZJ"/>
                             <constraint firstItem="2SL-es-Q3B" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iqv-1A-cNC"/>
+                            <constraint firstItem="g0Y-yB-24r" firstAttribute="top" secondItem="hNt-AI-Hb9" secondAttribute="bottom" constant="8" id="juk-tN-dB4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nF6-cN-YyQ" secondAttribute="trailing" constant="19" id="lGo-X9-7Eb"/>
                             <constraint firstItem="CUp-ah-dNC" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="nkM-V4-7hE"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="t1Q-Na-KQf"/>
@@ -119,6 +125,7 @@
                         <outlet property="pinyinLabel" destination="g0Y-yB-24r" id="0vF-FB-IB2"/>
                         <outlet property="prevButton" destination="B6j-64-5po" id="ChZ-qa-Oz4"/>
                         <outlet property="sliderBar" destination="wqo-Js-rYC" id="CJ4-ju-K2C"/>
+                        <outlet property="starButton" destination="hNt-AI-Hb9" id="wzk-8V-eCX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
