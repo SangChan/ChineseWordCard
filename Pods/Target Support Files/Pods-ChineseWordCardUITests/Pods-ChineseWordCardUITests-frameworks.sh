@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-ChineseWordCardUITests/FontAwesome_swift.framework"
   install_framework "Pods-ChineseWordCardUITests/Realm.framework"
   install_framework "Pods-ChineseWordCardUITests/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-ChineseWordCardUITests/FontAwesome_swift.framework"
   install_framework "Pods-ChineseWordCardUITests/Realm.framework"
   install_framework "Pods-ChineseWordCardUITests/RealmSwift.framework"
 fi

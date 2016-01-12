@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var sliderBar: UISlider!
-    
     @IBOutlet weak var starButton: UIButton!
+    
     var wordList : Results<ChineseWord>!
     
     var nowWord : ChineseWord!
