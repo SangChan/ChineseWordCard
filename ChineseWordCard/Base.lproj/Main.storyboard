@@ -124,6 +124,7 @@
                         <outlet property="nextButton" destination="2SL-es-Q3B" id="W9h-BV-FcK"/>
                         <outlet property="pinyinLabel" destination="g0Y-yB-24r" id="0vF-FB-IB2"/>
                         <outlet property="prevButton" destination="B6j-64-5po" id="ChZ-qa-Oz4"/>
+                        <outlet property="settingButton" destination="CUp-ah-dNC" id="dgs-Go-cGv"/>
                         <outlet property="sliderBar" destination="wqo-Js-rYC" id="CJ4-ju-K2C"/>
                         <outlet property="starButton" destination="hNt-AI-Hb9" id="wzk-8V-eCX"/>
                     </connections>

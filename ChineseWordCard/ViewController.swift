@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import RealmSwift
+import FontAwesome_swift
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var sliderBar: UISlider!
     @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var settingButton: UIButton!
     
     var wordList : Results<ChineseWord>!
     
@@ -68,6 +70,14 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.prevButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        self.prevButton.setTitle(String.fontAwesomeIconWithName(.AngleLeft), forState: .Normal)
+        self.nextButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        self.nextButton.setTitle(String.fontAwesomeIconWithName(.AngleRight), forState: .Normal)
+        self.starButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        self.starButton.setTitle(String.fontAwesomeIconWithName(.StarO), forState: .Normal)
+        self.settingButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
+        self.settingButton.setTitle(String.fontAwesomeIconWithName(.Cog), forState: .Normal)
         resetAll()
         
         let realm = try! Realm()
