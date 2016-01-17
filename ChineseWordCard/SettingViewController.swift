@@ -11,7 +11,7 @@ import UIKit
 class SettingViewController: UITableViewController {
     @IBAction func clickedDoneButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) { () -> Void in
-            
+            NSLog("dissmiss setting vc")
         }
     }
     
