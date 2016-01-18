@@ -116,6 +116,7 @@
 		63458E771BA7CE9700D4A48D /* ChineseWordCard */ = {
 			isa = PBXGroup;
 			children = (
+				6321B9F51C05E70F00E2186C /* ChineseWord.swift */,
 				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
 				638FF3601C48A16C00A5D366 /* SettingViewController.swift */,
 				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
@@ -123,7 +124,6 @@
 				63458E811BA7CE9700D4A48D /* Images.xcassets */,
 				63458E831BA7CE9700D4A48D /* LaunchScreen.xib */,
 				63458E781BA7CE9700D4A48D /* Supporting Files */,
-				6321B9F51C05E70F00E2186C /* ChineseWord.swift */,
 			);
 			path = ChineseWordCard;
 			sourceTree = "<group>";
