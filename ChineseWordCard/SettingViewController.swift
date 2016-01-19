@@ -27,4 +27,25 @@ class SettingViewController: UITableViewController {
             
         }
     }
+    
+    func addPickerView() {
+        var pickerView = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
+        pickerView.backgroundColor = .whiteColor()
+        pickerView.showsSelectionIndicator = true
+        
+        var toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        
+        var doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Bordered, target: self, action: "donePicker")
+        var spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        var cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Bordered, target: self, action: "canclePicker")
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        
+    }
 }
