@@ -19,6 +19,8 @@ class SettingViewController: UITableViewController {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 // TODO : Show selection for 3 type of speak speed
+                let pickerView = UIPickerView.init()
+                self.view.addSubview(pickerView)
             }
         }
         else if indexPath.section == 1 {
