@@ -19,6 +19,7 @@
 		63B01C861C034949005BA0CD /* ChineseWordCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */; };
 		63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097ED1BABE16500ABC6EA /* AVFoundation.framework */; };
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
+		63D542511C50E72700E1937B /* SpeechRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542501C50E72700E1937B /* SpeechRateViewController.swift */; };
 		AA1B6E354B340AF5EC7395A8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BF1ABAF0B6E1248BF9E93E /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		63B01C871C034949005BA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63D097ED1BABE16500ABC6EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		63D542501C50E72700E1937B /* SpeechRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRateViewController.swift; sourceTree = "<group>"; };
 		6452B5AB643AF79070660F4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		97BF1ABAF0B6E1248BF9E93E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			children = (
 				6321B9F51C05E70F00E2186C /* ChineseWord.swift */,
 				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
+				63D542501C50E72700E1937B /* SpeechRateViewController.swift */,
 				638FF3601C48A16C00A5D366 /* SettingViewController.swift */,
 				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
 				63458E7E1BA7CE9700D4A48D /* Main.storyboard */,
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */,
+				63D542511C50E72700E1937B /* SpeechRateViewController.swift in Sources */,
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
 				6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */,
 				638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */,
