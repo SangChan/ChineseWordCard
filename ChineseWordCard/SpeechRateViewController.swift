@@ -9,5 +9,7 @@
 import UIKit
 
 class SpeechRateViewController: UITableViewController {
+    
+    // TODO : implement check mark and setting data to AppInfo object
 
 }

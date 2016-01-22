@@ -11,14 +11,12 @@ import UIKit
 class SettingViewController: UITableViewController {
     @IBAction func clickedDoneButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) { () -> Void in
-            NSLog("dissmiss setting vc")
         }
     }
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // TODO : is it necesarry?
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                // TODO : Show selection for 3 type of speak speed
             }
         }
         else if indexPath.section == 1 {
