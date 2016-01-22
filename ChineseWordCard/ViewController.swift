@@ -126,7 +126,7 @@ class ViewController: UIViewController {
     func speakWord() {
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
         let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!)
-        utterance.rate = AVSpeechUtteranceMinimumSpeechRate
+        utterance.rate = AppInfo.sharedInstance.speechRate
         utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN")
         synthesize.speakUtterance(utterance)
     }
