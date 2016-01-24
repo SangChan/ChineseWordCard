@@ -12,8 +12,9 @@ import AVFoundation
 class SpeechRateViewController: UITableViewController {
     
     // TODO : implement check mark and setting data to AppInfo object
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
+            tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
             if indexPath.row == 0 {
                 AppInfo.sharedInstance.speechRate = AVSpeechUtteranceMinimumSpeechRate
                 
@@ -24,5 +25,8 @@ class SpeechRateViewController: UITableViewController {
                 AppInfo.sharedInstance.speechRate = AVSpeechUtteranceMaximumSpeechRate
             }
         }
+    }
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
     }
 }
