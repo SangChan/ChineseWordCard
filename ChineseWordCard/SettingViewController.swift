@@ -13,15 +13,4 @@ class SettingViewController: UITableViewController {
         self.dismissViewControllerAnimated(true) { () -> Void in
         }
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // TODO : is it necesarry?
-        if indexPath.section == 0 {
-            if indexPath.row == 0 {
-            }
-        }
-        else if indexPath.section == 1 {
-            
-        }
-    }
-
 }
