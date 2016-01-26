@@ -29,4 +29,20 @@ class SpeechRateViewController: UITableViewController {
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if AppInfo.sharedInstance.speechRate ==  AVSpeechUtteranceMinimumSpeechRate {
+            if indexPath.section == 0 && indexPath.row == 0 {
+                cell.accessoryType = .Checkmark
+            }
+        } else if AppInfo.sharedInstance.speechRate == AVSpeechUtteranceDefaultSpeechRate {
+            if indexPath.section == 0 && indexPath.row == 1 {
+                cell.accessoryType = .Checkmark
+            }
+        } else if AppInfo.sharedInstance.speechRate == AVSpeechUtteranceMaximumSpeechRate {
+            if indexPath.section == 0 && indexPath.row == 2 {
+                cell.accessoryType = .Checkmark
+            }
+        }
+    }
 }
