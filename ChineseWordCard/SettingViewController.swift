@@ -13,4 +13,15 @@ class SettingViewController: UITableViewController {
         self.dismissViewControllerAnimated(true) { () -> Void in
         }
     }
+    
+    // TODO : implement check mark and setting data to AppInfo object
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView .deselectRowAtIndexPath(indexPath, animated: true);
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            cell.detailTextLabel?.text = "\(AppInfo.sharedInstance.speechRate)"
+        }
+    }
 }
