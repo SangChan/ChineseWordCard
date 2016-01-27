@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             var level : Int  = 0
             var id_num : Int = 0
             if text.hasPrefix("//") {
-                ++chapter
+                chapter += 1
                 let idx: String.Index = text.startIndex.advancedBy(2)
                 let chapterString : String = text.substringFromIndex(idx)
                 let chapterInfo = chapterString.componentsSeparatedByString(".")
@@ -67,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     try! realm.write() {
                         realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2],"likeIt":false])
                     }
-                    ++id_num
+                    id_num += 1
                 }
             }
         }

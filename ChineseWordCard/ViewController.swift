@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     func goToNext() {
         resetAll()
-        ++wordIndex
+        wordIndex += 1
         if wordIndex > wordList.count-1 {
             wordIndex = wordList.count-1
         }
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
     func goToPrev() {
         resetAll()
-        --wordIndex
+        wordIndex -= 1
         if wordIndex <= 0 {
             wordIndex = 0
         }
@@ -148,7 +148,8 @@ class ViewController: UIViewController {
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             // handling code
-            setLabelHiddenByCount(++touchCount)
+            touchCount += 1
+            setLabelHiddenByCount(touchCount)
         }
     }
 }
