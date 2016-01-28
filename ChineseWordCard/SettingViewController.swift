@@ -10,8 +10,8 @@ import UIKit
 import AVFoundation
 
 class SettingViewController: UITableViewController {
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated);
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated);
         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
     }
     
@@ -22,12 +22,12 @@ class SettingViewController: UITableViewController {
     
     // TODO : implement check mark and setting data to AppInfo object
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView .deselectRowAtIndexPath(indexPath, animated: true);
+        tableView.deselectRowAtIndexPath(indexPath, animated: true);
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
-            //cell.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
+            cell.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
         } else if indexPath.section == 1 && indexPath.row == 0 {
             let versionText = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
             cell.detailTextLabel?.text = versionText
