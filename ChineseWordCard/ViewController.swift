@@ -126,9 +126,16 @@ class ViewController: UIViewController {
     func speakWord() {
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
         let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!)
-        utterance.rate = AppInfo.sharedInstance.speechRate
+        utterance.rate = getSpeechRate(AppInfo.sharedInstance.speechRate)
         utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN")
         synthesize.speakUtterance(utterance)
+    }
+    
+    func getSpeechRate(speechRate : Float) -> Float {
+        if speechRate == AVSpeechUtteranceDefaultSpeechRate {
+            return speechRate
+        }
+        return (speechRate + AVSpeechUtteranceDefaultSpeechRate) / 2.0
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
