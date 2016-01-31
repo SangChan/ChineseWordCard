@@ -135,7 +135,7 @@ class ViewController: UIViewController {
         if speechRate == AVSpeechUtteranceDefaultSpeechRate {
             return speechRate
         }
-        return (speechRate + AVSpeechUtteranceDefaultSpeechRate) / 2.0
+        return (speechRate + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 4.0
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
