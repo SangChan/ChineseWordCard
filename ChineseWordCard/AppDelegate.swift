@@ -44,28 +44,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func makeDictionaryDB() {        
-        let sourcePath = NSBundle.mainBundle().resourcePath
-        let fileContents = try! NSString.init(contentsOfFile:(sourcePath?.stringByAppendingString("/word.txt"))!, encoding:NSUTF8StringEncoding)
+        let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
+        let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+        var chapter : Int = 0
+        var level : Int  = 0
+        var id_num : Int = 0
         let realm = try! Realm()
-        for(index,text) in lines.enumerate() {
-            print("\(index):\(text)")
-            var chapter : Int = 0
-            var level : Int  = 0
-            var id_num : Int = 0
+        for (index,text) in lines.enumerate() {
+            print("[raw]\(index) : \(text)")
             if text.hasPrefix("//") {
                 chapter += 1
                 let idx: String.Index = text.startIndex.advancedBy(2)
                 let chapterString : String = text.substringFromIndex(idx)
                 let chapterInfo = chapterString.componentsSeparatedByString(".")
-                chapter = Int(chapterInfo[0])!
-                level = Int(chapterInfo[1])!
+                level = Int(chapterInfo[0])!
+                chapter = Int(chapterInfo[1])!
             }
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t")
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil {
                     try! realm.write() {
                         realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2],"likeIt":false])
+                        print("[db] id:\(id_num) level:\(level) chapter:\(chapter) hanyu:\(wordsInfo[0]) pinyin:\(wordsInfo[1]) desc:\(wordsInfo[2])")
                     }
                     id_num += 1
                 }
