@@ -70,14 +70,10 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.prevButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
-        self.prevButton.setTitle(String.fontAwesomeIconWithName(.AngleLeft), forState: .Normal)
-        self.nextButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
-        self.nextButton.setTitle(String.fontAwesomeIconWithName(.AngleRight), forState: .Normal)
-        self.starButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
-        self.starButton.setTitle(String.fontAwesomeIconWithName(.StarO), forState: .Normal)
-        self.settingButton.titleLabel?.font = UIFont.fontAwesomeOfSize(30)
-        self.settingButton.setTitle(String.fontAwesomeIconWithName(.Cog), forState: .Normal)
+        setButton(self.prevButton, withSize: 30, withType: .AngleLeft)
+        setButton(self.nextButton, withSize: 30, withType: .AngleRight)
+        setButton(self.starButton, withSize: 30, withType: .StarO)
+        setButton(self.settingButton, withSize: 30, withType: .Cog)
         resetAll()
         
         let realm = try! Realm()
@@ -86,6 +82,11 @@ class ViewController: UIViewController {
         self.maxWordCount = self.wordList.count
         self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey("wordIndex")
         self.updateUIonView();
+    }
+    
+    func setButton(button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
+        button.titleLabel?.font = UIFont.fontAwesomeOfSize(size)
+        button.setTitle(String.fontAwesomeIconWithName(type), forState: .Normal)
     }
     
     func updateUIonView() {
@@ -154,10 +155,14 @@ class ViewController: UIViewController {
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
-            // handling code
             touchCount += 1
             setLabelHiddenByCount(touchCount)
         }
+    }
+    @IBAction func starButtonPressed(sender: AnyObject) {
+        // TODO : going star and star0
+        setButton(self.starButton, withSize: 30, withType: .Star)
+        // TODO : change value about ChineseWord class's data
     }
 }
 

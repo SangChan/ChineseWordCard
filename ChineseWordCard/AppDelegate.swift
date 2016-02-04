@@ -51,8 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var level : Int  = 0
         var id_num : Int = 0
         let realm = try! Realm()
-        for (index,text) in lines.enumerate() {
-            print("[raw]\(index) : \(text)")
+        //realm count:456, txt line count:508
+        if(lines.count - realm.objects(ChineseWord).count < 100) {
+            return;
+        }
+        
+        for (_,text) in lines.enumerate() {
             if text.hasPrefix("//") {
                 chapter += 1
                 let idx: String.Index = text.startIndex.advancedBy(2)
@@ -66,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil {
                     try! realm.write() {
                         realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2],"likeIt":false])
-                        print("[db] id:\(id_num) level:\(level) chapter:\(chapter) hanyu:\(wordsInfo[0]) pinyin:\(wordsInfo[1]) desc:\(wordsInfo[2])")
                     }
                     id_num += 1
                 }
