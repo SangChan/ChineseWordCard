@@ -9,11 +9,11 @@
 import RealmSwift
 
 class ChineseWord: Object {
-    var id: Int16!
-    var level: Int16!
-    var chapter: Int16!
-    dynamic var desc: String?
-    dynamic var hanyu: String?
-    dynamic var pinyin: String?
-    var likeIt : Bool!
+    dynamic var id = 0
+    dynamic var level = 0
+    dynamic var chapter = 0
+    dynamic var desc : String?
+    dynamic var hanyu : String?
+    dynamic var pinyin :String?
+    dynamic var likeIt = false
 }

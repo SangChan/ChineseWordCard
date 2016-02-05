@@ -101,6 +101,7 @@ class ViewController: UIViewController {
         self.pinyinLabel.text = nowWord.pinyin
         self.descriptionLabel.text = nowWord.desc
         self.sliderBar.value =  Float.init(wordIndex)/Float.init(wordList.count)
+        setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -160,9 +161,11 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func starButtonPressed(sender: AnyObject) {
-        // TODO : going star and star0
-        setButton(self.starButton, withSize: 30, withType: .Star)
-        // TODO : change value about ChineseWord class's data
+        let realm = try! Realm()
+        try! realm.write() {
+            self.nowWord.setValue(!self.nowWord.likeIt, forKey: "likeIt")
+        }
+        setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
 }
 
