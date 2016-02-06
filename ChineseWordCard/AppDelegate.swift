@@ -70,7 +70,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil {
                     try! realm.write() {
                         realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2],"likeIt":false])
-                        print("[db] id:\(id_num) level:\(level) chapter:\(chapter) hanyu:\(wordsInfo[0]) pinyin:\(wordsInfo[1]) desc:\(wordsInfo[2])")
                     }
                     id_num += 1
                 }
