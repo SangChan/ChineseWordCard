@@ -13,6 +13,9 @@ class ChineseWord: Object {
     dynamic var level = 0
     dynamic var chapter = 0
     dynamic var desc : String?
+    dynamic var desc_ko : String = ""
+    dynamic var desc_en : String = ""
+    dynamic var desc_es : String = ""
     dynamic var hanyu : String?
     dynamic var pinyin :String?
     dynamic var likeIt = false
