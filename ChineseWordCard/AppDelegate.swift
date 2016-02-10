@@ -67,9 +67,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t")
+                let hanyu = wordsInfo[0]
+                let pinyin = wordsInfo[1]
+                let desc = wordsInfo[2]
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", wordsInfo[0]) == nil {
                     try! realm.write() {
-                        realm.create(ChineseWord.self,value: ["id":id_num,"level":level,"chapter":chapter,"hanyu":wordsInfo[0],"pinyin":wordsInfo[1],"desc":wordsInfo[2],"desc_kr":wordsInfo[2],"desc_en":"","desc_es":"","likeIt":false])
+                        realm.create(ChineseWord.self,value:["id":id_num,
+                            "level":level,
+                            "chapter":chapter,
+                            "hanyu":hanyu,
+                            "pinyin":pinyin,
+                            "desc":desc,
+                            "desc_kr":wordsInfo[2],
+                            "desc_en":"",
+                            "desc_es":"",
+                            "likeIt":false]
+                        )
                     }
                     id_num += 1
                 }
