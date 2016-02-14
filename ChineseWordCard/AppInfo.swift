@@ -11,7 +11,11 @@ class AppInfo {
     static let sharedInstance = AppInfo()
     
     var speechRate:Float
+    var languageInfo : Int
+    var queryWithStar : Bool
     init() {
         speechRate = AVSpeechUtteranceDefaultSpeechRate
+        languageInfo = 0
+        queryWithStar = false
     }
 }
