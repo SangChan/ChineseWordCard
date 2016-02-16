@@ -28,6 +28,10 @@ class SettingViewController: UITableViewController {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
             cell.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
+        } else if indexPath.section == 0 && indexPath.row == 1 {
+            // TODO : set detail Text on setting language
+        } else if indexPath.section == 0 && indexPath.row == 2 {
+            // TODO : set query data
         } else if indexPath.section == 1 && indexPath.row == 0 {
             let versionText = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
             cell.detailTextLabel?.text = versionText
