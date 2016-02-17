@@ -7,15 +7,21 @@
 //
 import AVFoundation
 
+public enum LanguageIndex : Int {
+    case LanguageIndexKR
+    case LanguageIndexEN
+    case LangyageIndexES
+}
+
 class AppInfo {
     static let sharedInstance = AppInfo()
     
     var speechRate:Float
-    var languageInfo : Int
+    var languageInfo : LanguageIndex
     var queryWithStar : Bool
     init() {
         speechRate = AVSpeechUtteranceDefaultSpeechRate
-        languageInfo = 0
+        languageInfo = LanguageIndex.LanguageIndexKR
         queryWithStar = false
     }
 }
