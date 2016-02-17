@@ -70,8 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let hanyu = wordsInfo[0]
                 let pinyin = wordsInfo[1]
                 let desc_kr = wordsInfo[2]
-                var desc_en = ""
-                var desc_es = ""
+                var desc_en = wordsInfo[2]
+                var desc_es = wordsInfo[2]
                 if wordsInfo.count == 5 {
                     desc_en = wordsInfo[3]
                     desc_es = wordsInfo[4]
