@@ -8,7 +8,7 @@
 import AVFoundation
 
 public enum LanguageIndex : Int {
-    case LanguageIndexKR
+    case LanguageIndexKR = 0
     case LanguageIndexEN
     case LangyageIndexES
 }
