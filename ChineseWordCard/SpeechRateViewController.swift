@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SpeechRateViewController: UITableViewController {
+class SpeechRateViewController: DetailSettingTableViewController {
     var previousSelect = NSIndexPath.init(forRow: 0, inSection: 0)
     let rateArray = [AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate, AVSpeechUtteranceMaximumSpeechRate]
     // TODO : implement check mark and setting data to AppInfo object
