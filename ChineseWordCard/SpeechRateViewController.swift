@@ -10,15 +10,10 @@ import UIKit
 import AVFoundation
 
 class SpeechRateViewController: DetailSettingTableViewController {
-    var previousSelect = NSIndexPath.init(forRow: 0, inSection: 0)
     let rateArray = [AVSpeechUtteranceMinimumSpeechRate, AVSpeechUtteranceDefaultSpeechRate, AVSpeechUtteranceMaximumSpeechRate]
-    // TODO : implement check mark and setting data to AppInfo object
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.cellForRowAtIndexPath(previousSelect)?.accessoryType = .None
+        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         AppInfo.sharedInstance.speechRate = rateArray[indexPath.row]
-        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
-        tableView.deselectRowAtIndexPath(indexPath, animated: true);
-        previousSelect = indexPath
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
