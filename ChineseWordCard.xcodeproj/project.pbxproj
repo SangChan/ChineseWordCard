@@ -17,6 +17,7 @@
 		63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */; };
 		638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FF3601C48A16C00A5D366 /* SettingViewController.swift */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
+		63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */; };
 		63B01C861C034949005BA0CD /* ChineseWordCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */; };
 		63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097ED1BABE16500ABC6EA /* AVFoundation.framework */; };
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
@@ -58,6 +59,7 @@
 		63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
+		63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectViewController.swift; sourceTree = "<group>"; };
 		63B01C831C034949005BA0CD /* ChineseWordCardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseWordCardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardUITests.swift; sourceTree = "<group>"; };
 		63B01C871C034949005BA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,9 +127,10 @@
 				63D542551C52177900E1937B /* AppInfo.swift */,
 				6321B9F51C05E70F00E2186C /* ChineseWord.swift */,
 				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
+				638FF3601C48A16C00A5D366 /* SettingViewController.swift */,
 				631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */,
 				63D542501C50E72700E1937B /* SpeechRateViewController.swift */,
-				638FF3601C48A16C00A5D366 /* SettingViewController.swift */,
+				63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */,
 				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
 				63458E7E1BA7CE9700D4A48D /* Main.storyboard */,
 				63458E811BA7CE9700D4A48D /* Images.xcassets */,
@@ -375,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */,
 				63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */,
 				63D542511C50E72700E1937B /* SpeechRateViewController.swift in Sources */,
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
