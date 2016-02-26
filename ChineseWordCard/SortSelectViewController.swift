@@ -9,7 +9,7 @@
 import UIKit
 
 class SortSelectViewController: DetailSettingTableViewController {
-
+    let rateArray = ["Alphabet", "Star", "None"]
     override func viewDidLoad() {
         super.viewDidLoad()
 

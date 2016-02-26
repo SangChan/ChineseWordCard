@@ -9,7 +9,7 @@
 import UIKit
 
 class LanguageSelectViewController: DetailSettingTableViewController {
-
+    let rateArray = ["English", "Espanõl", "한국어"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
