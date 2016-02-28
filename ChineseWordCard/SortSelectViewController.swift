@@ -9,8 +9,9 @@
 import UIKit
 
 class SortSelectViewController: DetailSettingTableViewController {
-    let rateArray = ["Alphabet", "Star", "None"]
+    let rateArray = [SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar]
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+        AppInfo.sharedInstance.queryWithStar = rateArray[indexPath.row]
     }
 }

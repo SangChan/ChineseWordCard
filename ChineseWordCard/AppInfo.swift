@@ -8,9 +8,15 @@
 import AVFoundation
 
 public enum LanguageIndex : Int {
-    case LanguageIndexKR = 0
-    case LanguageIndexEN
+    case LanguageIndexEN = 0
     case LangyageIndexES
+    case LanguageIndexKR
+}
+
+public enum SortIndex : Int {
+    case SortIndexNone = 0
+    case SortIndexAlphabet
+    case SortIndexStar
 }
 
 class AppInfo {
@@ -18,10 +24,10 @@ class AppInfo {
     
     var speechRate:Float
     var languageInfo : LanguageIndex
-    var queryWithStar : Bool
+    var queryWithStar : SortIndex
     init() {
         speechRate = AVSpeechUtteranceDefaultSpeechRate
         languageInfo = LanguageIndex.LanguageIndexKR
-        queryWithStar = false
+        queryWithStar = SortIndex.SortIndexNone
     }
 }
