@@ -14,5 +14,14 @@ class LanguageSelectViewController: DetailSettingTableViewController {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         AppInfo.sharedInstance.languageInfo = rateArray[indexPath.row]
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if AppInfo.sharedInstance.languageInfo ==  rateArray[indexPath.row] {
+            cell.accessoryType = .Checkmark
+            previousSelect = indexPath
+        } else {
+            cell.accessoryType = .None
+        }
+    }
 
 }

@@ -14,4 +14,13 @@ class SortSelectViewController: DetailSettingTableViewController {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         AppInfo.sharedInstance.queryWithStar = rateArray[indexPath.row]
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if AppInfo.sharedInstance.queryWithStar ==  rateArray[indexPath.row] {
+            cell.accessoryType = .Checkmark
+            previousSelect = indexPath
+        } else {
+            cell.accessoryType = .None
+        }
+    }
 }
