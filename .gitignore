@@ -52,3 +52,5 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 
+## CocoaPods
+Pods
