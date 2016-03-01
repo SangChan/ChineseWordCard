@@ -29,9 +29,9 @@ class SettingViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0 {
             cell.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
         } else if indexPath.section == 0 && indexPath.row == 1 {
-            // TODO : set detail Text on setting language
+            cell.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
         } else if indexPath.section == 0 && indexPath.row == 2 {
-            // TODO : set query data
+            cell.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
         } else if indexPath.section == 1 && indexPath.row == 0 {
             let versionText = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
             cell.detailTextLabel?.text = versionText
@@ -45,6 +45,24 @@ class SettingViewController: UITableViewController {
             return "Fast"
         }
         return "Normal"
+    }
+    
+    func stringLanguage(index:LanguageIndex) -> String {
+        if index == .LanguageIndexEN {
+            return "English"
+        } else if index == .LangyageIndexES {
+            return "Espanõl"
+        }
+        return "한국어"
+    }
+    
+    func stringSort(index:SortIndex) -> String {
+        if index == .SortIndexStar {
+            return "By Star"
+        } else if index == .SortIndexAlphabet {
+            return "By Alphabet"
+        }
+        return "All"
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
