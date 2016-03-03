@@ -13,6 +13,8 @@ class SettingViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
+         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
+         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
     }
     
     @IBAction func clickedDoneButton(sender: AnyObject) {
