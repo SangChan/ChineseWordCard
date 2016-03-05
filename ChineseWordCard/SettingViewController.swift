@@ -12,7 +12,7 @@ import AVFoundation
 class SettingViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
+        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
          self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
          self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
     }
@@ -29,7 +29,7 @@ class SettingViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
-            cell.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
+            cell.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
         } else if indexPath.section == 0 && indexPath.row == 1 {
             cell.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
         } else if indexPath.section == 0 && indexPath.row == 2 {
@@ -40,10 +40,10 @@ class SettingViewController: UITableViewController {
         }
     }
     
-    func stringSpeechRate(speechRate:Float) -> String {
-        if speechRate == AVSpeechUtteranceMinimumSpeechRate {
+    func stringSpeechSpeed(index:SpeechSpeedIndex) -> String {
+        if index == SpeechSpeedIndex.SpeechSpeedSlow {
             return "Slow"
-        } else if speechRate == AVSpeechUtteranceMaximumSpeechRate {
+        } else if index == SpeechSpeedIndex.SpeechSpeedFast {
             return "Fast"
         }
         return "Normal"
@@ -69,7 +69,7 @@ class SettingViewController: UITableViewController {
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         if segue.identifier == "speechRate" {
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechRate(AppInfo.sharedInstance.speechRate))"
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
         }
     }
 }

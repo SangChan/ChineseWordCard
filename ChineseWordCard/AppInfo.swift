@@ -28,12 +28,10 @@ public enum SortIndex : Int {
 class AppInfo {
     static let sharedInstance = AppInfo()
     var speechSpeed : SpeechSpeedIndex
-    var speechRate:Float
     var languageInfo : LanguageIndex
     var queryWithStar : SortIndex
     init() {
         speechSpeed = .SpeechSpeedNormal
-        speechRate = AVSpeechUtteranceDefaultSpeechRate
         languageInfo = .LanguageIndexKR
         queryWithStar = .SortIndexNone
     }
