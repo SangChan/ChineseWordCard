@@ -68,8 +68,12 @@ class SettingViewController: UITableViewController {
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        if segue.identifier == "speechRate" {
+        if segue.identifier == "selectSpeed" {
             self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
+        } else if segue.identifier == "selectLanguage" {
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
+        } else if segue.identifier == "selectSort" {
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
         }
     }
 }
