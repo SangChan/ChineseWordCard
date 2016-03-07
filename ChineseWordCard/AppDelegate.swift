@@ -77,7 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     desc_es = wordsInfo[4]
                 }
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", hanyu) == nil {
-                    //TODO : check iOS language setting and choose desc_*
+                    // TODO : check iOS language setting and choose desc_*
+                    // TODO : using AppInfo.LanguageIndex
                     let desc = desc_kr
                     try! realm.write() {
                         realm.create(ChineseWord.self,value:["id":id_num,
