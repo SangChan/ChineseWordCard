@@ -29,10 +29,10 @@ class AppInfo {
     static let sharedInstance = AppInfo()
     var speechSpeed : SpeechSpeedIndex
     var languageInfo : LanguageIndex
-    var queryWithStar : SortIndex
+    var sortInfo : SortIndex
     init() {
         speechSpeed = .SpeechSpeedNormal
         languageInfo = .LanguageIndexKR
-        queryWithStar = .SortIndexNone
+        sortInfo = .SortIndexNone
     }
 }

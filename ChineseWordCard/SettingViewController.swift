@@ -12,9 +12,9 @@ import AVFoundation
 class SettingViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
-         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
-         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
+        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed)
+        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = stringLanguage(AppInfo.sharedInstance.languageInfo)
+        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = stringSort(AppInfo.sharedInstance.sortInfo)
     }
     
     @IBAction func clickedDoneButton(sender: AnyObject) {
@@ -29,11 +29,11 @@ class SettingViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 0 {
-            cell.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
+            cell.detailTextLabel?.text = stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed)
         } else if indexPath.section == 0 && indexPath.row == 1 {
-            cell.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
+            cell.detailTextLabel?.text = stringLanguage(AppInfo.sharedInstance.languageInfo)
         } else if indexPath.section == 0 && indexPath.row == 2 {
-            cell.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
+            cell.detailTextLabel?.text = stringSort(AppInfo.sharedInstance.sortInfo)
         } else if indexPath.section == 1 && indexPath.row == 0 {
             let versionText = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
             cell.detailTextLabel?.text = versionText
@@ -69,11 +69,11 @@ class SettingViewController: UITableViewController {
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
         if segue.identifier == "selectSpeed" {
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = "\(stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed))"
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = stringSpeechSpeed(AppInfo.sharedInstance.speechSpeed)
         } else if segue.identifier == "selectLanguage" {
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = "\(stringLanguage(AppInfo.sharedInstance.languageInfo))"
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = stringLanguage(AppInfo.sharedInstance.languageInfo)
         } else if segue.identifier == "selectSort" {
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = "\(stringSort(AppInfo.sharedInstance.queryWithStar))"
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = stringSort(AppInfo.sharedInstance.sortInfo)
         }
     }
 }
