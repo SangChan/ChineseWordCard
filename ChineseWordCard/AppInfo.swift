@@ -35,4 +35,32 @@ class AppInfo {
         languageInfo = .LanguageIndexKR
         sortInfo = .SortIndexNone
     }
+    
+    func stringSpeechSpeed() -> String {
+        if speechSpeed == .SpeechSpeedSlow {
+            return "Slow"
+        } else if speechSpeed == .SpeechSpeedFast {
+            return "Fast"
+        }
+        return "Normal"
+    }
+    
+    func stringLanguageInfo() -> String {
+        if languageInfo == .LanguageIndexEN {
+            return "English"
+        } else if languageInfo == .LangyageIndexES {
+            return "Espanõl"
+        }
+        return "한국어"
+    }
+    
+    func stringSortInfo() -> String {
+        if sortInfo == .SortIndexStar {
+            return "By Star"
+        } else if sortInfo == .SortIndexAlphabet {
+            return "By Alphabet"
+        }
+        return "All"
+    }
+
 }
