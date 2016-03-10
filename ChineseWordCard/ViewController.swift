@@ -100,8 +100,7 @@ class ViewController: UIViewController {
         self.nowWord = wordList[wordIndex]
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
-        // TODO : using AppInfo.LanguageIndex
-        self.descriptionLabel.text = nowWord.desc
+        self.descriptionLabel.text = nowWord.desc_kr
         self.sliderBar.value =  Float.init(wordIndex)/Float.init(wordList.count)
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
