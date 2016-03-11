@@ -27,40 +27,32 @@ public enum SortIndex : Int {
 
 class AppInfo {
     static let sharedInstance = AppInfo()
-    var speechSpeed : SpeechSpeedIndex
-    var languageInfo : LanguageIndex
-    var sortInfo : SortIndex
-    init() {
-        speechSpeed = .SpeechSpeedNormal
-        languageInfo = .LanguageIndexKR
-        sortInfo = .SortIndexNone
-    }
+    var speechSpeed : SpeechSpeedIndex = .SpeechSpeedNormal
+    var languageInfo : LanguageIndex = .LanguageIndexKR
+    var sortInfo : SortIndex = .SortIndexNone
     
     func stringSpeechSpeed() -> String {
-        if speechSpeed == .SpeechSpeedSlow {
-            return "Slow"
-        } else if speechSpeed == .SpeechSpeedFast {
-            return "Fast"
+        switch speechSpeed {
+        case .SpeechSpeedSlow: return "Slow"
+        case .SpeechSpeedFast: return "Fase"
+        default : return "Normal"
         }
-        return "Normal"
     }
     
     func stringLanguageInfo() -> String {
-        if languageInfo == .LanguageIndexEN {
-            return "English"
-        } else if languageInfo == .LangyageIndexES {
-            return "Espanõl"
+        switch languageInfo {
+        case .LanguageIndexEN : return "English"
+        case .LangyageIndexES : return "Espanõl"
+        default : return "한국어"
         }
-        return "한국어"
     }
     
     func stringSortInfo() -> String {
-        if sortInfo == .SortIndexStar {
-            return "By Star"
-        } else if sortInfo == .SortIndexAlphabet {
-            return "By Alphabet"
+        switch sortInfo {
+        case .SortIndexStar : return "By Star"
+        case .SortIndexAlphabet : return "By Alphabet"
+        default : return "All"
         }
-        return "All"
     }
 
 }
