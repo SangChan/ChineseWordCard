@@ -34,7 +34,7 @@ class AppInfo {
     func stringSpeechSpeed() -> String {
         switch speechSpeed {
         case .SpeechSpeedSlow: return "Slow"
-        case .SpeechSpeedFast: return "Fase"
+        case .SpeechSpeedFast: return "Fast"
         default : return "Normal"
         }
     }
