@@ -36,8 +36,7 @@ class SettingViewController: UITableViewController {
         } else if indexPath.section == 0 && indexPath.row == 2 {
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringSortInfo()
         } else if indexPath.section == 1 && indexPath.row == 0 {
-            let versionText = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
-            cell.detailTextLabel?.text = versionText
+            cell.detailTextLabel?.text = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
         }
     }
     
