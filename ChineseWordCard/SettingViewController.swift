@@ -29,24 +29,30 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
+        switch (indexPath.section, indexPath.row) {
+        case (0,0) :
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringSpeechSpeed()
-        } else if indexPath.section == 0 && indexPath.row == 1 {
+        case (0,1) :
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringLanguageInfo()
-        } else if indexPath.section == 0 && indexPath.row == 2 {
+        case (0,2) :
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringSortInfo()
-        } else if indexPath.section == 1 && indexPath.row == 0 {
+        case (1,0) :
             cell.detailTextLabel?.text = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
+        default :
+            return
         }
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        if segue.identifier == "selectSpeed" {
+        switch segue.identifier as String? {
+        case "selectSpeed"? :
             self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringSpeechSpeed()
-        } else if segue.identifier == "selectLanguage" {
+        case "selectLanguage"? :
             self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringLanguageInfo()
-        } else if segue.identifier == "selectSort" {
+        case "selectSort"? :
             self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringSortInfo()
+        default :
+            return;
         }
     }
 }
