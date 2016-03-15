@@ -13,9 +13,9 @@ class SettingViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringSpeechSpeed()
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringLanguageInfo()
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringSortInfo()
+        for index in 1 ... self.tableView.numberOfRowsInSection(0) {
+            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: index-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(index)
+        }
     }
     
     @IBAction func clickedDoneButton(sender: AnyObject) {
@@ -30,12 +30,8 @@ class SettingViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (0,0) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringSpeechSpeed()
-        case (0,1) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringLanguageInfo()
-        case (0,2) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringSortInfo()
+        case (0,0 ... 2) :
+            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(indexPath.row+1)
         case (1,0) :
             cell.detailTextLabel?.text = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as? String
         default :

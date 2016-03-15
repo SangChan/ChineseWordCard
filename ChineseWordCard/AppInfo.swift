@@ -31,6 +31,14 @@ class AppInfo {
     var languageInfo : LanguageIndex = .LanguageIndexKR
     var sortInfo : SortIndex = .SortIndexNone
     
+    func stringFromCellIndex(index : Int) -> String {
+        switch index {
+        case 1 : return stringSpeechSpeed()
+        case 2 : return stringLanguageInfo()
+        default : return stringSortInfo()
+        }
+    }
+    
     func stringSpeechSpeed() -> String {
         switch speechSpeed {
         case .SpeechSpeedSlow: return "Slow"
