@@ -77,7 +77,15 @@ class ViewController: UIViewController {
         resetAll()
         
         let realm = try! Realm()
-        // TODO : using AppInfo.queryWithStar
+        
+        if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexStar {
+            // TODO : query
+        } else if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexAlphabet {
+            // TODO : query
+        } else {
+            // TODO : all
+        }
+        
         self.wordList = realm.objects(ChineseWord)
         
         self.maxWordCount = self.wordList.count
