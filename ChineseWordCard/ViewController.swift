@@ -79,14 +79,12 @@ class ViewController: UIViewController {
         let realm = try! Realm()
         
         if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexStar {
-            // TODO : query
+            self.wordList = realm.objects(ChineseWord).filter("likeIt == true")
         } else if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexAlphabet {
-            // TODO : query
+            self.wordList = realm.objects(ChineseWord).sorted("pinyin")
         } else {
-            // TODO : all
+            self.wordList = realm.objects(ChineseWord)
         }
-        
-        self.wordList = realm.objects(ChineseWord)
         
         self.maxWordCount = self.wordList.count
         self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey("wordIndex")
