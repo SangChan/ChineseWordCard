@@ -9,6 +9,7 @@
 import UIKit
 
 class SortSelectViewController: DetailSettingTableViewController {
+    // TODO : If there is no likiIt, have to prevent to select sort by star.
     let rateArray = [SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar]
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)

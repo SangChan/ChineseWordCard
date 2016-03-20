@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         }
         
         self.maxWordCount = self.wordList.count
-        self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey("wordIndex")
+        self.wordIndex = (AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone) ? NSUserDefaults.standardUserDefaults().integerForKey("wordIndex") : 0
         self.updateUIonView();
     }
     
