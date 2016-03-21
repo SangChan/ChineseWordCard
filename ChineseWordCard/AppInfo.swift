@@ -7,6 +7,8 @@
 //
 import AVFoundation
 
+public let WORDINDEX : String = "wordIndex"
+
 public enum SpeechSpeedIndex : Int {
     case SpeechSpeedSlow = 0
     case SpeechSpeedNormal

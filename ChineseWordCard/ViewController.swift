@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         }
         
         self.maxWordCount = self.wordList.count
-        self.wordIndex = (AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone) ? NSUserDefaults.standardUserDefaults().integerForKey("wordIndex") : 0
+        self.wordIndex = (AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone) ? NSUserDefaults.standardUserDefaults().integerForKey(WORDINDEX) : 0
         self.updateUIonView();
     }
     
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     
     func updateUIonView() {
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(wordIndex, forKey: "wordIndex")
+        defaults.setInteger(wordIndex, forKey: WORDINDEX)
         defaults.synchronize()
         
         self.prevButton.enabled = (wordIndex > 0) ? true : false
