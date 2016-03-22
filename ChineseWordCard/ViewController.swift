@@ -106,9 +106,17 @@ class ViewController: UIViewController {
         self.nowWord = wordList[wordIndex]
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
-        self.descriptionLabel.text = nowWord.desc_kr
+        self.descriptionLabel.text = getDescWithLanguageIndex(AppInfo.sharedInstance.languageInfo)
         self.sliderBar.value =  Float.init(wordIndex)/Float.init(wordList.count)
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
+    }
+    
+    func getDescWithLanguageIndex(index : LanguageIndex) -> String {
+        switch index {
+        case .LanguageIndexEN : return nowWord.desc_en
+        case .LangyageIndexES : return nowWord.desc_es
+        default : return nowWord.desc_kr
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
