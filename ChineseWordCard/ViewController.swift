@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     func goToNext() {
-        resetAll()
+        resetView()
         wordIndex += 1
         if wordIndex > wordList.count-1 {
             wordIndex = wordList.count-1
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     }
     
     func goToPrev() {
-        resetAll()
+        resetView()
         wordIndex -= 1
         if wordIndex <= 0 {
             wordIndex = 0
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         self.goToPrev()
     }
     @IBAction func valueChanged(sender: AnyObject) {
-        resetAll()
+        resetView()
         self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
         if wordIndex <= 0 {
             wordIndex = 0
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         setButton(self.nextButton, withSize: 30, withType: .AngleRight)
         setButton(self.starButton, withSize: 30, withType: .StarO)
         setButton(self.settingButton, withSize: 30, withType: .Cog)
-        resetAll()
+        resetView()
         
         let realm = try! Realm()
         
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func resetAll() {
+    func resetView() {
         touchCount = 0
         setLabelHiddenByCount(touchCount)
     }
