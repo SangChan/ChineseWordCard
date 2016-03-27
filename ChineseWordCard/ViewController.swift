@@ -97,9 +97,11 @@ class ViewController: UIViewController {
     }
     
     func updateUIonView() {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(wordIndex, forKey: WORDINDEX)
-        defaults.synchronize()
+        if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone {
+            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            defaults.setInteger(wordIndex, forKey: WORDINDEX)
+            defaults.synchronize()
+        }
         
         self.prevButton.enabled = (wordIndex > 0) ? true : false
         self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
