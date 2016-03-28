@@ -7,7 +7,10 @@
 //
 import AVFoundation
 
-public let WORDINDEX : String = "wordIndex"
+public let WORD_INDEX : String = "wordIndex"
+public let SPEECH_SPEED_INDEX : String = "speechSpeed"
+public let LANGUAGE_INDEX : String = "languageIndex"
+public let SORT_INDEX : String = "sortIndex"
 
 public enum SpeechSpeedIndex : Int {
     case SpeechSpeedSlow = 0
@@ -63,6 +66,15 @@ class AppInfo {
         case .SortIndexAlphabet : return "By Alphabet"
         default : return "All"
         }
+    }
+    
+    // TODO : setter and getter need to save and load from UserDefaults
+    
+    func setSpeechSpeed(speechSpeed : SpeechSpeedIndex) {
+        self.speechSpeed = speechSpeed
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(self.speechSpeed.rawValue, forKey: SPEECH_SPEED_INDEX)
+        defaults.synchronize()
     }
 
 }

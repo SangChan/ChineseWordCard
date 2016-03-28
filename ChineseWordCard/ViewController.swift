@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         }
         
         self.maxWordCount = self.wordList.count
-        self.wordIndex = (AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone) ? NSUserDefaults.standardUserDefaults().integerForKey(WORDINDEX) : 0
+        self.wordIndex = (AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone) ? NSUserDefaults.standardUserDefaults().integerForKey(WORD_INDEX) : 0
         self.updateUIonView();
     }
     
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
     func updateUIonView() {
         if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone {
             let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            defaults.setInteger(wordIndex, forKey: WORDINDEX)
+            defaults.setInteger(wordIndex, forKey: WORD_INDEX)
             defaults.synchronize()
         }
         
