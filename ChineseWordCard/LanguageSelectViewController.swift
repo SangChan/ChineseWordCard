@@ -12,7 +12,7 @@ class LanguageSelectViewController: DetailSettingTableViewController {
     let rateArray = [LanguageIndex.LanguageIndexEN,LanguageIndex.LangyageIndexES,LanguageIndex.LanguageIndexKR]
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-        AppInfo.sharedInstance.languageInfo = rateArray[indexPath.row]
+        AppInfo.sharedInstance.setLanguageInfo(rateArray[indexPath.row])
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

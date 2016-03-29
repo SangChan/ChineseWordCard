@@ -70,11 +70,24 @@ class AppInfo {
     
     // TODO : setter and getter need to save and load from UserDefaults
     
-    func setSpeechSpeed(speechSpeed : SpeechSpeedIndex) {
-        self.speechSpeed = speechSpeed
+    func setSpeechSpeed(index : SpeechSpeedIndex) {
+        self.speechSpeed = index
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(self.speechSpeed.rawValue, forKey: SPEECH_SPEED_INDEX)
         defaults.synchronize()
     }
-
+    
+    func setLanguageInfo(index : LanguageIndex) {
+        self.languageInfo = index
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(self.languageInfo.rawValue, forKey: LANGUAGE_INDEX)
+        defaults.synchronize()
+    }
+    
+    func setSortInfo(index : SortIndex) {
+        self.sortInfo = index
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(self.sortInfo.rawValue, forKey: SORT_INDEX)
+        defaults.synchronize()
+    }
 }
