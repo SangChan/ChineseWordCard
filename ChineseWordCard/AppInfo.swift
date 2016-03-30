@@ -44,6 +44,14 @@ class AppInfo {
         }
     }
     
+    func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
+        switch index {
+        case 0: return .SpeechSpeedSlow
+        case 2: return .SpeechSpeedFast
+        default : return .SpeechSpeedNormal
+        }
+    }
+    
     func stringSpeechSpeed() -> String {
         switch speechSpeed {
         case .SpeechSpeedSlow: return "Slow"
@@ -52,11 +60,27 @@ class AppInfo {
         }
     }
     
+    func languageIndexFromIndex(index : Int) -> LanguageIndex {
+        switch index {
+        case 0: return .LanguageIndexEN
+        case 1: return .LangyageIndexES
+        default : return .LanguageIndexKR
+        }
+    }
+    
     func stringLanguageInfo() -> String {
         switch languageInfo {
         case .LanguageIndexEN : return "English"
         case .LangyageIndexES : return "Espanõl"
         default : return "한국어"
+        }
+    }
+    
+    func sortIndexFromIndex(index : Int) -> SortIndex {
+        switch index {
+        case 1: return .SortIndexStar
+        case 2: return .SortIndexAlphabet
+        default : return .SortIndexNone
         }
     }
     
