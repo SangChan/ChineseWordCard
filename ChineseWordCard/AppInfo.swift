@@ -32,9 +32,9 @@ public enum SortIndex : Int {
 
 class AppInfo {
     static let sharedInstance = AppInfo()
-    var speechSpeed : SpeechSpeedIndex = .SpeechSpeedNormal
-    var languageInfo : LanguageIndex = .LanguageIndexKR
-    var sortInfo : SortIndex = .SortIndexNone
+    internal var speechSpeed : SpeechSpeedIndex = .SpeechSpeedNormal
+    internal var languageInfo : LanguageIndex = .LanguageIndexKR
+    internal var sortInfo : SortIndex = .SortIndexNone
     
     func stringFromCellIndex(index : Int) -> String {
         switch index {
@@ -92,7 +92,11 @@ class AppInfo {
         }
     }
     
-    // TODO : setter and getter need to save and load from UserDefaults
+    func getAllDataFromUserDefaults() {
+        self.getSpeechSpeed()
+        self.getSortInfo()
+        self.getLanguageInfo()
+    }
     
     func setSpeechSpeed(index : SpeechSpeedIndex) {
         self.speechSpeed = index

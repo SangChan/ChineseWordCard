@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         makeDictionaryDB()
-        AppInfo.sharedInstance.getSortInfo()
-        AppInfo.sharedInstance.getLanguageInfo()
-        AppInfo.sharedInstance.getSpeechSpeed()
+        AppInfo.sharedInstance.getAllDataFromUserDefaults()
         return true
     }
 
