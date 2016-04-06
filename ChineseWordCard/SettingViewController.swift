@@ -40,15 +40,13 @@ class SettingViewController: UITableViewController {
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        switch segue.identifier as String? {
-        case "selectSpeed"? :
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 0, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringSpeechSpeed()
-        case "selectLanguage"? :
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringLanguageInfo()
-        case "selectSort"? :
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: 2, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringSortInfo()
-        default :
-            return;
+        var previousSegueNumber : Int = 1
+        if segue.identifier == "selectLanguage" {
+            previousSegueNumber = 2
+        } else if segue.identifier == "selectSort" {
+            previousSegueNumber = 3
         }
+        
+        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: previousSegueNumber-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(previousSegueNumber)
     }
 }
