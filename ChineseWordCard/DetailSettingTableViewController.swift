@@ -10,7 +10,6 @@ import UIKit
 
 class DetailSettingTableViewController: UITableViewController {
     var previousSelect = NSIndexPath.init(forRow: 0, inSection: 0)
-    // TODO : implement check mark and setting data to AppInfo object
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(previousSelect)?.accessoryType = .None
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark

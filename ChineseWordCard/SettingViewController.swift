@@ -22,8 +22,7 @@ class SettingViewController: UITableViewController {
         self.dismissViewControllerAnimated(true) { () -> Void in
         }
     }
-    
-    // TODO : implement check mark and setting data to AppInfo object
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
     }

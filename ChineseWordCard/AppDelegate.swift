@@ -52,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var level : Int  = 0
         var id_num : Int = 0
         let realm = try! Realm()
-        //realm count:456, txt line count:508
         if(lines.count - realm.objects(ChineseWord).count < 100) {
             return;
         }

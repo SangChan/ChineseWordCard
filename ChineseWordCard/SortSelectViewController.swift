@@ -9,13 +9,13 @@
 import UIKit
 
 class SortSelectViewController: DetailSettingTableViewController {
-    // TODO : If there is no likiIt, have to prevent to select sort by star.
     let rateArray = [SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar]
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
         AppInfo.sharedInstance.setSortInfo(rateArray[indexPath.row])
     }
     
+    // TODO : If there is no likiIt, have to prevent to select sort by star.
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if AppInfo.sharedInstance.sortInfo ==  rateArray[indexPath.row] {
             cell.accessoryType = .Checkmark
