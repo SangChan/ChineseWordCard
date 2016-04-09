@@ -93,9 +93,9 @@ class AppInfo {
     }
     
     func getAllDataFromUserDefaults() {
-        self.getSpeechSpeed()
-        self.getSortInfo()
-        self.getLanguageInfo()
+        self.speechSpeed = self.getSpeechSpeed()
+        self.sortInfo = self.getSortInfo()
+        self.languageInfo = self.getLanguageInfo()
     }
     
     func setSpeechSpeed(index : SpeechSpeedIndex) {
@@ -103,8 +103,8 @@ class AppInfo {
         self.setDataToUserDefaults(self.speechSpeed.rawValue, WithKey: SPEECH_SPEED_INDEX)
     }
     
-    func getSpeechSpeed(){
-        self.speechSpeed = speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX));
+    func getSpeechSpeed() -> SpeechSpeedIndex{
+        return speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX));
     }
     
     func setLanguageInfo(index : LanguageIndex) {
@@ -112,8 +112,8 @@ class AppInfo {
         self.setDataToUserDefaults(self.languageInfo.rawValue, WithKey: LANGUAGE_INDEX)
     }
     
-    func getLanguageInfo(){
-        self.languageInfo = languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX));
+    func getLanguageInfo() -> LanguageIndex {
+        return languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX));
     }
     
     func setSortInfo(index : SortIndex) {
@@ -121,8 +121,8 @@ class AppInfo {
         self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
     }
     
-    func getSortInfo(){
-        self.sortInfo = sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
+    func getSortInfo() -> SortIndex {
+        return sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
     }
     
     func setDataToUserDefaults(value : Int, WithKey key:String) {
