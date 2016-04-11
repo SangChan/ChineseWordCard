@@ -18,7 +18,8 @@ class SortSelectViewController: DetailSettingTableViewController {
     
     // TODO : If there is no likiIt, have to prevent to select sort by star.
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if AppInfo.sharedInstance.sortInfo == .SortIndexStar {
+        if indexPath.row == 2 {
+            //no data for LikeIt, this cell is inactivate.
         }
         
         if AppInfo.sharedInstance.sortInfo ==  rateArray[indexPath.row] {
