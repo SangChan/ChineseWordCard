@@ -16,17 +16,17 @@ class SortSelectViewController: DetailSettingTableViewController {
         AppInfo.sharedInstance.setSortInfo(rateArray[indexPath.row])
     }
     
-    // TODO : If there is no likiIt, have to prevent to select sort by star.
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 2 {
-            //no data for LikeIt, this cell is inactivate.
-        }
-        
         if AppInfo.sharedInstance.sortInfo ==  rateArray[indexPath.row] {
             cell.accessoryType = .Checkmark
             previousSelect = indexPath
         } else {
             cell.accessoryType = .None
         }
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //no data for LikeIt, this cell is inactivate.
+        return 2
     }
 }
