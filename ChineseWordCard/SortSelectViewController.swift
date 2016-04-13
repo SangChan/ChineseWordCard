@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SortSelectViewController: DetailSettingTableViewController {
     let rateArray = [SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar]
@@ -27,6 +28,7 @@ class SortSelectViewController: DetailSettingTableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //no data for LikeIt, this cell is inactivate.
-        return 2
+        let realm = try! Realm()
+        return (realm.objects(ChineseWord).filter("likeIt == true").count > 0) ? 3 : 2
     }
 }
