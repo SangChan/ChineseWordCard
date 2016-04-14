@@ -104,6 +104,9 @@ class AppInfo {
     }
     
     func getSpeechSpeed() -> SpeechSpeedIndex{
+        if (NSUserDefaults.standardUserDefaults().objectForKey(SPEECH_SPEED_INDEX) == nil) {
+            return .SpeechSpeedNormal
+        }
         return speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX));
     }
     
@@ -113,6 +116,9 @@ class AppInfo {
     }
     
     func getLanguageInfo() -> LanguageIndex {
+        if (NSUserDefaults.standardUserDefaults().objectForKey(LANGUAGE_INDEX) == nil) {
+            return .LanguageIndexKR
+        }
         return languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX));
     }
     
@@ -122,6 +128,9 @@ class AppInfo {
     }
     
     func getSortInfo() -> SortIndex {
+        if (NSUserDefaults.standardUserDefaults().objectForKey(SORT_INDEX) == nil) {
+            return .SortIndexNone
+        }
         return sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
     }
     
