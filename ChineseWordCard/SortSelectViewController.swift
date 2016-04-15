@@ -27,7 +27,6 @@ class SortSelectViewController: DetailSettingTableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //no data for LikeIt, this cell is inactivate.
         let realm = try! Realm()
         return (realm.objects(ChineseWord).filter("likeIt == true").count > 0) ? 3 : 2
     }
