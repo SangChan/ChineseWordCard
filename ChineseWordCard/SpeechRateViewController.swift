@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class SpeechRateViewController: DetailSettingTableViewController {
     let rateArray = [SpeechSpeedIndex.SpeechSpeedSlow, SpeechSpeedIndex.SpeechSpeedNormal, SpeechSpeedIndex.SpeechSpeedFast]
