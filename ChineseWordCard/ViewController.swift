@@ -97,6 +97,7 @@ class ViewController: UIViewController {
     }
     
     func updateUIonView() {
+        //Save data for each Sort Index
         if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone {
             let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
             defaults.setInteger(wordIndex, forKey: WORD_INDEX)
