@@ -98,10 +98,14 @@ class ViewController: UIViewController {
     
     func updateUIonView() {
         //Save data for each Sort Index
-        if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone {
+        if AppInfo.sharedInstance.sortInfo == .SortIndexNone {
             let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
             defaults.setInteger(wordIndex, forKey: WORD_INDEX)
             defaults.synchronize()
+        } else if AppInfo.sharedInstance.sortInfo == .SortIndexAlphabet {
+            
+        } else if AppInfo.sharedInstance.sortInfo == .SortIndexStar{
+            
         }
         
         self.prevButton.enabled = (wordIndex > 0) ? true : false
