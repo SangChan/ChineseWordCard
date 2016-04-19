@@ -86,8 +86,10 @@ class ViewController: UIViewController {
             self.wordList = realm.objects(ChineseWord)
         }
         
+        
         self.maxWordCount = self.wordList.count
-        self.wordIndex = (AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexNone) ? NSUserDefaults.standardUserDefaults().integerForKey(WORD_INDEX) : 0
+        let wordIndexKey = "\(WORD_INDEX):\(AppInfo.sharedInstance.stringSortInfo())"
+        self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey(wordIndexKey)
         self.updateUIonView();
     }
     
@@ -97,16 +99,8 @@ class ViewController: UIViewController {
     }
     
     func updateUIonView() {
-        //Save data for each Sort Index
-        if AppInfo.sharedInstance.sortInfo == .SortIndexNone {
-            let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-            defaults.setInteger(wordIndex, forKey: WORD_INDEX)
-            defaults.synchronize()
-        } else if AppInfo.sharedInstance.sortInfo == .SortIndexAlphabet {
-            
-        } else if AppInfo.sharedInstance.sortInfo == .SortIndexStar{
-            
-        }
+        let wordIndexKey = "\(WORD_INDEX):\(AppInfo.sharedInstance.stringSortInfo())"
+        AppInfo.sharedInstance.setDataToUserDefaults(wordIndex, WithKey: wordIndexKey)
         
         self.prevButton.enabled = (wordIndex > 0) ? true : false
         self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
