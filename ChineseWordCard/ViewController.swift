@@ -88,8 +88,7 @@ class ViewController: UIViewController {
         
         
         self.maxWordCount = self.wordList.count
-        let wordIndexKey = "\(WORD_INDEX):\(AppInfo.sharedInstance.stringSortInfo())"
-        self.wordIndex = NSUserDefaults.standardUserDefaults().integerForKey(wordIndexKey)
+        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         self.updateUIonView();
     }
     
@@ -99,9 +98,7 @@ class ViewController: UIViewController {
     }
     
     func updateUIonView() {
-        let wordIndexKey = "\(WORD_INDEX):\(AppInfo.sharedInstance.stringSortInfo())"
-        AppInfo.sharedInstance.setDataToUserDefaults(wordIndex, WithKey: wordIndexKey)
-        
+        AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.prevButton.enabled = (wordIndex > 0) ? true : false
         self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
         self.nowWord = wordList[wordIndex]

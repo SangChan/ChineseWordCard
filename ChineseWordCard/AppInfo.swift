@@ -139,4 +139,16 @@ class AppInfo {
         defaults.setInteger(value, forKey: key)
         defaults.synchronize()
     }
+    
+    func getWordIndex() ->  Int {
+        return NSUserDefaults.standardUserDefaults().integerForKey(self.getWordIndexKey())
+    }
+    
+    func setWordIndex(index : Int) {
+        self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
+    }
+    
+    func getWordIndexKey() -> String {
+        return "\(WORD_INDEX):\(self.stringSortInfo())"
+    }
 }
