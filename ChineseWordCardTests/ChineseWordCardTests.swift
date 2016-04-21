@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import AppInfo
 
 class ChineseWordCardTests: XCTestCase {
     
@@ -31,6 +32,10 @@ class ChineseWordCardTests: XCTestCase {
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testAppInfoData() {
+        
     }
     
 }
