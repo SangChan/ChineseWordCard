@@ -8,7 +8,6 @@
 
 import UIKit
 import XCTest
-import AppInfo
 
 class ChineseWordCardTests: XCTestCase {
     
@@ -35,7 +34,7 @@ class ChineseWordCardTests: XCTestCase {
     }
     
     func testAppInfoData() {
-        
+
     }
     
 }
