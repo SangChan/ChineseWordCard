@@ -85,8 +85,6 @@ class ViewController: UIViewController {
         } else {
             self.wordList = realm.objects(ChineseWord)
         }
-        
-        
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         self.updateUIonView();
@@ -161,13 +159,11 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
         if wordIndex > 0 {
             self.goToPrev()
         }
     }
-    
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {

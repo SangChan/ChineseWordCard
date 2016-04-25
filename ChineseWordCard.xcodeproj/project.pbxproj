@@ -16,6 +16,7 @@
 		63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63458E831BA7CE9700D4A48D /* LaunchScreen.xib */; };
 		63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */; };
 		6387744C1C7C5DFF0075013B /* SortSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */; };
+		638861751CCE4C3D00EE24B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542551C52177900E1937B /* AppInfo.swift */; };
 		638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FF3601C48A16C00A5D366 /* SettingViewController.swift */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
 		63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */; };
@@ -397,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638861751CCE4C3D00EE24B5 /* AppInfo.swift in Sources */,
 				63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ class ChineseWordCardTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        AppInfo.sharedInstance.getAllDataFromUserDefaults()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -34,7 +35,8 @@ class ChineseWordCardTests: XCTestCase {
     }
     
     func testAppInfoData() {
-
+        XCTAssert(AppInfo.sharedInstance.getSortInfo() == .SortIndexNone,"\(AppInfo.sharedInstance.stringSortInfo())")
     }
+    
     
 }
