@@ -36,6 +36,8 @@ class ChineseWordCardTests: XCTestCase {
     
     func testAppInfoData() {
         XCTAssert(AppInfo.sharedInstance.getSortInfo() == .SortIndexNone,"\(AppInfo.sharedInstance.stringSortInfo())")
+        XCTAssert(AppInfo.sharedInstance.getSpeechSpeed() == .SpeechSpeedNormal,"\(AppInfo.sharedInstance.stringSpeechSpeed())")
+        XCTAssert(AppInfo.sharedInstance.getLanguageInfo() == .LanguageIndexKR,"\(AppInfo.sharedInstance.stringLanguageInfo())")
     }
     
     
