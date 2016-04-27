@@ -40,5 +40,26 @@ class ChineseWordCardTests: XCTestCase {
         XCTAssert(AppInfo.sharedInstance.getLanguageInfo() == .LanguageIndexKR,"\(AppInfo.sharedInstance.stringLanguageInfo())")
     }
     
+    func testAppInfoSaveIndex() {
+        var wordIndex : Int = 99
+        AppInfo.sharedInstance.setSortInfo(.SortIndexNone)
+        AppInfo.sharedInstance.setWordIndex(wordIndex)
+        XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
+        
+        wordIndex = 12
+        AppInfo.sharedInstance.setSortInfo(.SortIndexAlphabet)
+        AppInfo.sharedInstance.setWordIndex(wordIndex)
+        XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
+        
+        wordIndex = 58
+        AppInfo.sharedInstance.setSortInfo(.SortIndexStar)
+        AppInfo.sharedInstance.setWordIndex(wordIndex)
+        XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
+        
+        AppInfo.sharedInstance.setWordIndex(wordIndex)
+        AppInfo.sharedInstance.setSortInfo(.SortIndexNone)
+        XCTAssert(AppInfo.sharedInstance.getWordIndex() != wordIndex,"Pass")
+
+    }
     
 }
