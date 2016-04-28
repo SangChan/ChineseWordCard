@@ -38,4 +38,23 @@ class ChineseWordCardUITests: XCTestCase {
         
     }
     
+    func testTapSetting() {
+        
+        let app = XCUIApplication()
+        app.buttons[""].tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["Normal"].tap()
+        
+        let slowStaticText = tablesQuery.staticTexts["Slow"]
+        slowStaticText.tap()
+        
+        let settingButton = app.navigationBars["Speak Rate"].buttons["Setting"]
+        settingButton.tap()
+        slowStaticText.tap()
+        tablesQuery.staticTexts["Fast"].tap()
+        settingButton.tap()
+        
+    }
+    
 }
