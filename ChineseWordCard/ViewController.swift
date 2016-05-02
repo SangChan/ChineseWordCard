@@ -129,11 +129,20 @@ class ViewController: UIViewController {
     }
     
     func setLabelHiddenByCount(count : Int) {
-        //TODO : add a animation to change Alpha value.
-        pinyinLabel.hidden = (count == 0) ? true : false
-        descriptionLabel.hidden = (count == 0 || count%2 == 1) ? true : false
-        if count > 0 {
-            speakWord()
+        switch count%3 {
+        case 1:
+            UIView .animateWithDuration(0.5, animations: {
+                self.pinyinLabel.alpha = 1.0
+                }, completion: { (true) in
+                    self.speakWord()
+            })
+        case 2:
+            UIView .animateWithDuration(0.5, animations: {
+                self.descriptionLabel.alpha = 1.0
+            })
+        default:
+            pinyinLabel.alpha = 0.0
+            descriptionLabel.alpha = 0.0
         }
     }
     
