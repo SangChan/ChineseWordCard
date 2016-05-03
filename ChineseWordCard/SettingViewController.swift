@@ -38,13 +38,17 @@ class SettingViewController: UITableViewController {
         }
     }
     
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        var previousSegueNumber : Int = 1
+    func indexFromSegue(segue:UIStoryboardSegue) -> Int {
         if segue.identifier == "selectLanguage" {
-            previousSegueNumber = 2
+            return 2
         } else if segue.identifier == "selectSort" {
-            previousSegueNumber = 3
+            return 3
         }
+        return 1
+    }
+    
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+        let previousSegueNumber = self.indexFromSegue(segue)
         
         self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: previousSegueNumber-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(previousSegueNumber)
     }
