@@ -76,18 +76,22 @@ class ViewController: UIViewController {
         setButton(self.settingButton, withSize: 30, withType: .Cog)
         resetView()
         
-        let realm = try! Realm()
-        
-        if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexStar {
-            self.wordList = realm.objects(ChineseWord).filter("likeIt == true")
-        } else if AppInfo.sharedInstance.sortInfo == SortIndex.SortIndexAlphabet {
-            self.wordList = realm.objects(ChineseWord).sorted("pinyin")
-        } else {
-            self.wordList = realm.objects(ChineseWord)
-        }
+        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo)
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         self.updateUIonView();
+    }
+    
+    func getDataFromSort(index : SortIndex) -> Results<ChineseWord>{
+        let realm = try! Realm()
+        switch index {
+        case .SortIndexStar:
+            return realm.objects(ChineseWord).filter("likeIt == true")
+        case .SortIndexAlphabet :
+            return realm.objects(ChineseWord).sorted("pinyin")
+        default:
+            return realm.objects(ChineseWord)
+        }
     }
     
     func setButton(button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
