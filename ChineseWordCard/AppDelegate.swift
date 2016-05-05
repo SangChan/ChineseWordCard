@@ -70,8 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let hanyu = wordsInfo[0]
                 let pinyin = wordsInfo[1]
                 let desc_kr = wordsInfo[2]
-                var desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
-                var desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
+                let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
+                let desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", hanyu) == nil {
                     try! realm.write() {
                         realm.create(ChineseWord.self,value:["id":id_num,
