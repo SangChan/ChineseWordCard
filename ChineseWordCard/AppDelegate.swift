@@ -68,18 +68,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else {
                 let wordsInfo = text.componentsSeparatedByString("\t")
                 let hanyu = wordsInfo[0]
-                let pinyin = wordsInfo[1]
-                let desc_kr = wordsInfo[2]
                 let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
                 let desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", hanyu) == nil {
                     try! realm.write() {
-                        realm.create(ChineseWord.self,value:["id":id_num,
+                        realm.create(ChineseWord.self,value:[
+                            "id":id_num,
                             "level":level,
                             "chapter":chapter,
-                            "hanyu":hanyu,
-                            "pinyin":pinyin,
-                            "desc_kr":desc_kr,
+                            "hanyu": hanyu,
+                            "pinyin":wordsInfo[1],
+                            "desc_kr":wordsInfo[2],
                             "desc_en":desc_en,
                             "desc_es":desc_es,
                             "likeIt":false]
