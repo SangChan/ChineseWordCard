@@ -20,6 +20,7 @@ class SettingViewController: UITableViewController {
     
     @IBAction func clickedDoneButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) { () -> Void in
+            // TODO : If nothing changed, ViewController.swift's viewWillApear method should doing nothing.
         }
     }
 
