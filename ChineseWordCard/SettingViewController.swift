@@ -39,6 +39,10 @@ class SettingViewController: UITableViewController {
         }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
+    }
+    
     func indexFromSegue(segue:UIStoryboardSegue) -> Int {
         if segue.identifier == "selectLanguage" {
             return 2

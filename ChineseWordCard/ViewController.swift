@@ -69,6 +69,7 @@ class ViewController: UIViewController {
         self.updateUIonView()
     }
     override func viewWillAppear(animated: Bool) {
+        preferredStatusBarStyle()
         super.viewWillAppear(animated)
         setButton(self.prevButton, withSize: 30, withType: .AngleLeft)
         setButton(self.nextButton, withSize: 30, withType: .AngleRight)
@@ -80,6 +81,10 @@ class ViewController: UIViewController {
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         self.updateUIonView();
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     func getDataFromSort(index : SortIndex) -> Results<ChineseWord>{
