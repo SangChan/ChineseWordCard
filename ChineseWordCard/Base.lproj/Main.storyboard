@@ -41,6 +41,9 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="nextClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fqw-YO-fjv"/>
                                 </connections>
@@ -49,6 +52,9 @@
                                 <rect key="frame" x="0.0" y="285" width="31" height="30"/>
                                 <state key="normal" title="Prev">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="prevClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NIP-df-ihf"/>
