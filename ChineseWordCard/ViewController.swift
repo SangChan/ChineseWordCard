@@ -171,6 +171,12 @@ class ViewController: UIViewController {
         
         return (standardSpeed + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 4.0
     }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        // TODO : generate randomize number
+        wordIndex = 0;
+        updateUIonView();
+    }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
         if wordIndex < wordList.count - 1 {
