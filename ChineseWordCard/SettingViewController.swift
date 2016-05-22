@@ -42,12 +42,15 @@ class SettingViewController: UITableViewController {
     }
     
     func indexFromSegue(segue:UIStoryboardSegue) -> Int {
-        if segue.identifier == "selectLanguage" {
+        let segueIdentifier : String! = segue.identifier
+        switch segueIdentifier {
+        case "selectLanguage":
             return 2
-        } else if segue.identifier == "selectSort" {
+        case "selectSort" :
             return 3
+        default:
+            return 1
         }
-        return 1
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
