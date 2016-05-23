@@ -35,23 +35,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    func wordIndexIncrease(increase : Bool) -> Int {
+        var index : Int = wordIndex
+        if increase {
+            index += 1
+        } else {
+            index -= 1
+        }
+        if index >= 0 && index < wordList.count {
+            return index
+        }
+        return wordIndex
+    }
+    
     func goToNext() {
         resetView()
-        wordIndex += 1
-        if wordIndex > wordList.count-1 {
-            wordIndex = wordList.count-1
-        }
+        wordIndex = self.wordIndexIncrease(true);
         self.updateUIonView()
     }
     
     func goToPrev() {
         resetView()
-        wordIndex -= 1
-        if wordIndex <= 0 {
-            wordIndex = 0
-        }
+        wordIndex = self.wordIndexIncrease(false);
         self.updateUIonView()
     }
+    
     @IBAction func nextClicked(sender: AnyObject) {
         self.goToNext()
     }
