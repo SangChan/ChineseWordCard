@@ -270,6 +270,11 @@
 					63458E741BA7CE9700D4A48D = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = CBUJK8CFZ3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					63458E891BA7CE9700D4A48D = {
 						CreatedOnToolsVersion = 6.4;
