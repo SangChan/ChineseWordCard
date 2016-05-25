@@ -134,6 +134,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.becomeFirstResponder()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -180,10 +181,16 @@ class ViewController: UIViewController {
         return (standardSpeed + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 4.0
     }
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        // TODO : generate randomize number
-        wordIndex = 0;
-        updateUIonView();
+        if motion == .MotionShake {
+            wordIndex = 0
+            updateUIonView()
+        }
     }
         
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
