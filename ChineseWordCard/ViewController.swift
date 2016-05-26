@@ -30,10 +30,98 @@ class ViewController: UIViewController {
     var wordIndex : Int = 0
     var maxWordCount : Int = 0
     
+    // override section
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        preferredStatusBarStyle()
+        super.viewWillAppear(animated)
+        setButton(self.prevButton, withSize: 30, withType: .AngleLeft)
+        setButton(self.nextButton, withSize: 30, withType: .AngleRight)
+        setButton(self.starButton, withSize: 30, withType: .StarO)
+        setButton(self.settingButton, withSize: 30, withType: .Cog)
+        resetView()
+        
+        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo)
+        self.maxWordCount = self.wordList.count
+        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        self.updateUIonView();
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.becomeFirstResponder()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if motion == .MotionShake {
+            wordIndex = 0
+            updateUIonView()
+        }
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    // action section
+    @IBAction func nextClicked(sender: AnyObject) {
+        self.goToNext()
+    }
+    @IBAction func prevClicked(sender: AnyObject) {
+        self.goToPrev()
+    }
+    @IBAction func valueChanged(sender: AnyObject) {
+        resetView()
+        self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
+        if wordIndex <= 0 {
+            wordIndex = 0
+        } else if wordIndex > wordList.count-1 {
+            wordIndex = wordList.count-1
+        }
+        self.updateUIonView()
+    }
+    
+    @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
+        if wordIndex < wordList.count - 1 {
+            self.goToNext()
+        }
+    }
+    
+    @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
+        if wordIndex > 0 {
+            self.goToPrev()
+        }
+    }
+    
+    @IBAction func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended {
+            touchCount += 1
+            setLabelHiddenByCount(touchCount)
+        }
+    }
+    
+    @IBAction func starButtonPressed(sender: AnyObject) {
+        let realm = try! Realm()
+        try! realm.write() {
+            self.nowWord.setValue(!self.nowWord.likeIt, forKey: "likeIt")
+        }
+        setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
+    }
+
+    // private method section
     
     func wordIndexIncrease(increase : Bool) -> Int {
         var index : Int = wordIndex
@@ -59,41 +147,7 @@ class ViewController: UIViewController {
         wordIndex = self.wordIndexIncrease(false);
         self.updateUIonView()
     }
-    
-    @IBAction func nextClicked(sender: AnyObject) {
-        self.goToNext()
-    }
-    @IBAction func prevClicked(sender: AnyObject) {
-        self.goToPrev()
-    }
-    @IBAction func valueChanged(sender: AnyObject) {
-        resetView()
-        self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
-        if wordIndex <= 0 {
-            wordIndex = 0
-        } else if wordIndex > wordList.count-1 {
-            wordIndex = wordList.count-1
-        }
-        self.updateUIonView()
-    }
-    override func viewWillAppear(animated: Bool) {
-        preferredStatusBarStyle()
-        super.viewWillAppear(animated)
-        setButton(self.prevButton, withSize: 30, withType: .AngleLeft)
-        setButton(self.nextButton, withSize: 30, withType: .AngleRight)
-        setButton(self.starButton, withSize: 30, withType: .StarO)
-        setButton(self.settingButton, withSize: 30, withType: .Cog)
-        resetView()
-        
-        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo)
-        self.maxWordCount = self.wordList.count
-        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        self.updateUIonView();
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
+
     
     func getDataFromSort(index : SortIndex) -> Results<ChineseWord>{
         let realm = try! Realm()
@@ -132,15 +186,6 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.becomeFirstResponder()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func resetView() {
         touchCount = 0
         setLabelHiddenByCount(touchCount)
@@ -179,44 +224,6 @@ class ViewController: UIViewController {
         let standardSpeed:Float = (index == .SpeechSpeedSlow) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceMaximumSpeechRate
         
         return (standardSpeed + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 4.0
-    }
-    
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
-    
-    
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
-            wordIndex = 0
-            updateUIonView()
-        }
-    }
-        
-    @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        if wordIndex < wordList.count - 1 {
-            self.goToNext()
-        }
-    }
-    
-    @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        if wordIndex > 0 {
-            self.goToPrev()
-        }
-    }
-    
-    @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .Ended {
-            touchCount += 1
-            setLabelHiddenByCount(touchCount)
-        }
-    }
-    @IBAction func starButtonPressed(sender: AnyObject) {
-        let realm = try! Realm()
-        try! realm.write() {
-            self.nowWord.setValue(!self.nowWord.likeIt, forKey: "likeIt")
-        }
-        setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
 }
 
