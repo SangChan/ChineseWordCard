@@ -10,18 +10,13 @@ import UIKit
 import AVFoundation
 
 class SettingViewController: UITableViewController {
-    
+    // overrise section
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
         for index in 1 ... self.tableView.numberOfRowsInSection(0) {
             self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: index-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(index)
         }
     }
-    
-    @IBAction func clickedDoneButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
     }
@@ -40,7 +35,17 @@ class SettingViewController: UITableViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .Default
     }
+    //ibaction section
+    @IBAction func clickedDoneButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+        let previousSegueNumber = self.indexFromSegue(segue)
+        
+        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: previousSegueNumber-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(previousSegueNumber)
+    }
+    //private method section
     func indexFromSegue(segue:UIStoryboardSegue) -> Int {
         let segueIdentifier : String! = segue.identifier
         switch segueIdentifier {
@@ -51,11 +56,5 @@ class SettingViewController: UITableViewController {
         default:
             return 1
         }
-    }
-    
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        let previousSegueNumber = self.indexFromSegue(segue)
-        
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: previousSegueNumber-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(previousSegueNumber)
     }
 }
