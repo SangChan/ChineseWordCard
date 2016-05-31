@@ -9,7 +9,7 @@
 import RealmSwift
 
 class SettingData: Object {
-    dynamic var speechSpeedIndex = 0;
-    dynamic var languageIndex = 0;
+    dynamic var speechSpeedIndex = 1;
+    dynamic var languageIndex = 2;
     dynamic var sortIndex = 0;
 }
