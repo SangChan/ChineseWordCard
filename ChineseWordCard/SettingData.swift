@@ -12,5 +12,5 @@ class SettingData: Object {
     dynamic var speechSpeedIndex = 1;
     dynamic var languageIndex = 2;
     dynamic var sortIndex = 0;
-    dynamic var wordIndex = [0,0,0];
+    dynamic var wordIndex = 0;
 }
