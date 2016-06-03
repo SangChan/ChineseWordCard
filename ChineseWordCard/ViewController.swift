@@ -162,7 +162,8 @@ class ViewController: UIViewController {
     }
     
     func setButton(button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
-        button.titleLabel?.font = UIFont.fontAwesomeOfSize(size)
+        let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .Regular && self.view.traitCollection.verticalSizeClass == .Regular) ? size * 1.5 : size
+        button.titleLabel?.font = UIFont.fontAwesomeOfSize(sizeFromTrait)
         button.setTitle(String.fontAwesomeIconWithName(type), forState: .Normal)
     }
     

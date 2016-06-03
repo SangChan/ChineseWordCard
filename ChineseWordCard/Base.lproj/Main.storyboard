@@ -53,9 +53,6 @@
                                 <state key="disabled">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                </variation>
                                 <connections>
                                     <action selector="nextClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fqw-YO-fjv"/>
                                 </connections>
@@ -68,9 +65,6 @@
                                 <state key="disabled">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                </variation>
                                 <connections>
                                     <action selector="prevClicked:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NIP-df-ihf"/>
                                 </connections>
@@ -102,9 +96,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                </variation>
                                 <connections>
                                     <action selector="starButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U1X-qF-DLl"/>
                                 </connections>
