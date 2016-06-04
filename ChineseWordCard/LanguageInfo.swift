@@ -17,7 +17,6 @@ public enum LanguageIndex : Int {
 }
 
 class LanguageInfo {
-    static let sharedInstance = LanguageInfo()
     internal var languageInfo : LanguageIndex = .LanguageIndexKR
     
     func languageIndexFromIndex(index : Int) -> LanguageIndex {

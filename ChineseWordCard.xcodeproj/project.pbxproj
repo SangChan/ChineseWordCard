@@ -23,6 +23,8 @@
 		63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */; };
 		63B01C861C034949005BA0CD /* ChineseWordCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */; };
 		63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */; };
+		63C8DB8D1D03322500FAEC52 /* SpeechSpeedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8C1D03322500FAEC52 /* SpeechSpeedInfo.swift */; };
+		63C8DB8F1D03344600FAEC52 /* SortInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8E1D03344600FAEC52 /* SortInfo.swift */; };
 		63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097ED1BABE16500ABC6EA /* AVFoundation.framework */; };
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
 		63D542511C50E72700E1937B /* SpeechRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542501C50E72700E1937B /* SpeechRateViewController.swift */; };
@@ -70,6 +72,8 @@
 		63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardUITests.swift; sourceTree = "<group>"; };
 		63B01C871C034949005BA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageInfo.swift; sourceTree = "<group>"; };
+		63C8DB8C1D03322500FAEC52 /* SpeechSpeedInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSpeedInfo.swift; sourceTree = "<group>"; };
+		63C8DB8E1D03344600FAEC52 /* SortInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortInfo.swift; sourceTree = "<group>"; };
 		63D097ED1BABE16500ABC6EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63D542501C50E72700E1937B /* SpeechRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRateViewController.swift; sourceTree = "<group>"; };
@@ -185,9 +189,11 @@
 			isa = PBXGroup;
 			children = (
 				63D542551C52177900E1937B /* AppInfo.swift */,
+				63C8DB8C1D03322500FAEC52 /* SpeechSpeedInfo.swift */,
 				63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */,
 				631CE02F1CF9D76C0036DE72 /* SettingData.swift */,
 				6321B9F51C05E70F00E2186C /* ChineseWord.swift */,
+				63C8DB8E1D03344600FAEC52 /* SortInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -417,7 +423,9 @@
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
 				6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */,
 				631B79CC1C771E1A009FBA45 /* DetailSettingTableViewController.swift in Sources */,
+				63C8DB8F1D03344600FAEC52 /* SortInfo.swift in Sources */,
 				6387744C1C7C5DFF0075013B /* SortSelectViewController.swift in Sources */,
+				63C8DB8D1D03322500FAEC52 /* SpeechSpeedInfo.swift in Sources */,
 				638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */,
 				63D542561C52177900E1937B /* AppInfo.swift in Sources */,
 			);
