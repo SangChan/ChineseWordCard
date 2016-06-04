@@ -9,19 +9,12 @@ import AVFoundation
 
 public let WORD_INDEX : String = "wordIndex"
 public let SPEECH_SPEED_INDEX : String = "speechSpeed"
-public let LANGUAGE_INDEX : String = "languageIndex"
 public let SORT_INDEX : String = "sortIndex"
 
 public enum SpeechSpeedIndex : Int {
     case SpeechSpeedSlow = 0
     case SpeechSpeedNormal
     case SpeechSpeedFast
-}
-
-public enum LanguageIndex : Int {
-    case LanguageIndexEN = 0
-    case LangyageIndexES
-    case LanguageIndexKR
 }
 
 public enum SortIndex : Int {
@@ -33,13 +26,13 @@ public enum SortIndex : Int {
 class AppInfo {
     static let sharedInstance = AppInfo()
     internal var speechSpeed : SpeechSpeedIndex = .SpeechSpeedNormal
-    internal var languageInfo : LanguageIndex = .LanguageIndexKR
+    
     internal var sortInfo : SortIndex = .SortIndexNone
     
     func stringFromCellIndex(index : Int) -> String {
         switch index {
         case 1 : return stringSpeechSpeed()
-        case 2 : return stringLanguageInfo()
+        //case 2 : return stringLanguageInfo()
         default : return stringSortInfo()
         }
     }
@@ -60,21 +53,7 @@ class AppInfo {
         }
     }
     
-    func languageIndexFromIndex(index : Int) -> LanguageIndex {
-        switch index {
-        case 0: return .LanguageIndexEN
-        case 1: return .LangyageIndexES
-        default : return .LanguageIndexKR
-        }
-    }
     
-    func stringLanguageInfo() -> String {
-        switch languageInfo {
-        case .LanguageIndexEN : return "English"
-        case .LangyageIndexES : return "Espanõl"
-        default : return "한국어"
-        }
-    }
     
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
@@ -95,7 +74,7 @@ class AppInfo {
     func getAllDataFromUserDefaults() {
         self.speechSpeed = self.getSpeechSpeed()
         self.sortInfo = self.getSortInfo()
-        self.languageInfo = self.getLanguageInfo()
+        //self.languageInfo = self.getLanguageInfo()
     }
     
     func setSpeechSpeed(index : SpeechSpeedIndex) {
@@ -108,18 +87,6 @@ class AppInfo {
             return .SpeechSpeedNormal
         }
         return speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX));
-    }
-    
-    func setLanguageInfo(index : LanguageIndex) {
-        self.languageInfo = index
-        self.setDataToUserDefaults(self.languageInfo.rawValue, WithKey: LANGUAGE_INDEX)
-    }
-    
-    func getLanguageInfo() -> LanguageIndex {
-        if (NSUserDefaults.standardUserDefaults().objectForKey(LANGUAGE_INDEX) == nil) {
-            return .LanguageIndexKR
-        }
-        return languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX));
     }
     
     func setSortInfo(index : SortIndex) {
