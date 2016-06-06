@@ -35,9 +35,15 @@ class LanguageInfo {
         }
     }
     
+    func setDataToUserDefaults(value : Int, WithKey key:String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(value, forKey: key)
+        defaults.synchronize()
+    }
+    
     func setLanguageInfo(index : LanguageIndex) {
         self.languageInfo = index
-        //self.setDataToUserDefaults(self.languageInfo.rawValue, WithKey: LANGUAGE_INDEX)
+        self.setDataToUserDefaults(self.languageInfo.rawValue, WithKey: LANGUAGE_INDEX)
     }
     
     func getLanguageInfo() -> LanguageIndex {

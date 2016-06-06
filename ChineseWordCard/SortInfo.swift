@@ -36,9 +36,15 @@ class SortInfo {
         }
     }
     
+    func setDataToUserDefaults(value : Int, WithKey key:String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(value, forKey: key)
+        defaults.synchronize()
+    }
+    
     func setSortInfo(index : SortIndex) {
         self.sortInfo = index
-        //self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
+        self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
     }
     
     func getSortInfo() -> SortIndex {

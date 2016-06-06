@@ -35,9 +35,15 @@ class SpeechSpeedInfo {
         }
     }
     
+    func setDataToUserDefaults(value : Int, WithKey key:String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(value, forKey: key)
+        defaults.synchronize()
+    }
+    
     func setSpeechSpeed(index : SpeechSpeedIndex) {
         self.speechSpeed = index
-        //self.setDataToUserDefaults(self.speechSpeed.rawValue, WithKey: SPEECH_SPEED_INDEX)
+        self.setDataToUserDefaults(self.speechSpeed.rawValue, WithKey: SPEECH_SPEED_INDEX)
     }
     
     func getSpeechSpeed() -> SpeechSpeedIndex{
