@@ -40,10 +40,7 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         preferredStatusBarStyle()
         super.viewWillAppear(animated)
-        setButton(self.prevButton, withSize: 30, withType: .AngleLeft)
-        setButton(self.nextButton, withSize: 30, withType: .AngleRight)
-        setButton(self.starButton, withSize: 30, withType: .StarO)
-        setButton(self.settingButton, withSize: 30, withType: .Cog)
+        setButtonDefault()
         resetView()
         
         self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
@@ -185,6 +182,13 @@ class ViewController: UIViewController {
         case .LangyageIndexES : return nowWord.desc_es
         default : return nowWord.desc_kr
         }
+    }
+    
+    func setButtonDefault() {
+        setButton(self.prevButton, withSize: 30, withType: .AngleLeft)
+        setButton(self.nextButton, withSize: 30, withType: .AngleRight)
+        setButton(self.starButton, withSize: 30, withType: .StarO)
+        setButton(self.settingButton, withSize: 30, withType: .Cog)
     }
     
     func resetView() {
