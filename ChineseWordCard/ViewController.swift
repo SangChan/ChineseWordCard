@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if motion == .MotionShake {
-            wordIndex = 0
+            wordIndex = Int(arc4random_uniform(UInt32(wordList.count)))
             updateUIonView()
         }
     }
