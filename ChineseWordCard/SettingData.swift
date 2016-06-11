@@ -6,11 +6,10 @@
 //  Copyright © 2016년 VerandaStudio. All rights reserved.
 //
 
-import RealmSwift
 
-class SettingData: Object {
-    dynamic var speechSpeedIndex = 1;
-    dynamic var languageIndex = 2;
-    dynamic var sortIndex = 0;
-    dynamic var wordIndex = 0;
+class SettingData {
+    var speechSpeedIndex = 1;
+    var languageIndex = 2;
+    var sortIndex = 0;
+    var wordIndex = 0;
 }
