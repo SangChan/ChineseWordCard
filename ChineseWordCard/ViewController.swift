@@ -75,10 +75,10 @@ class ViewController: UIViewController {
     
     // action section
     @IBAction func nextClicked(sender: AnyObject) {
-        self.goToNext()
+        self.goToNext(true)
     }
     @IBAction func prevClicked(sender: AnyObject) {
-        self.goToPrev()
+        self.goToNext(false)
     }
     @IBAction func valueChanged(sender: AnyObject) {
         resetView()
@@ -93,13 +93,13 @@ class ViewController: UIViewController {
     
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
         if wordIndex < wordList.count - 1 {
-            self.goToNext()
+            self.goToNext(true)
         }
     }
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
         if wordIndex > 0 {
-            self.goToPrev()
+            self.goToNext(false)
         }
     }
     
@@ -133,18 +133,11 @@ class ViewController: UIViewController {
         return wordIndex
     }
     
-    func goToNext() {
+    func goToNext(isNext : Bool) {
         resetView()
-        wordIndex = self.wordIndexIncrease(true);
+        wordIndex = self.wordIndexIncrease(isNext);
         self.updateUIonView()
     }
-    
-    func goToPrev() {
-        resetView()
-        wordIndex = self.wordIndexIncrease(false);
-        self.updateUIonView()
-    }
-
     
     func getDataFromSort(index : SortIndex) -> Results<ChineseWord>{
         let realm = try! Realm()
