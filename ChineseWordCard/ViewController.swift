@@ -82,7 +82,7 @@ class ViewController: UIViewController {
     }
     @IBAction func valueChanged(sender: AnyObject) {
         resetView()
-        self.wordIndex = Int.init(self.sliderBar.value * Float.init(wordList.count))
+        self.wordIndex = Int(self.sliderBar.value * Float(wordList.count))
         if wordIndex <= 0 {
             wordIndex = 0
         } else if wordIndex > wordList.count-1 {
@@ -92,15 +92,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        if wordIndex < wordList.count - 1 {
-            self.goToNext(true)
-        }
+        self.goToNext(true)
     }
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        if wordIndex > 0 {
-            self.goToNext(false)
-        }
+        self.goToNext(false)
     }
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
