@@ -58,9 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for (_,text) in lines.enumerate() {
             if text.hasPrefix("//") {
                 chapter += 1
-                let idx: String.Index = text.startIndex.advancedBy(2)
-                let chapterString : String = text.substringFromIndex(idx)
-                let chapterInfo = chapterString.componentsSeparatedByString(".")
+                let chapterInfo = text.substringFromIndex(text.startIndex.advancedBy(2)).componentsSeparatedByString(".")
                 level = Int(chapterInfo[0])!
                 chapter = Int(chapterInfo[1])!
             }
