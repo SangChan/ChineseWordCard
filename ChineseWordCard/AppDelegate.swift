@@ -61,8 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let chapterInfo = text.substringFromIndex(text.startIndex.advancedBy(2)).componentsSeparatedByString(".")
                 level = Int(chapterInfo[0])!
                 chapter = Int(chapterInfo[1])!
-            }
-            else {
+            } else {
                 let wordsInfo = text.componentsSeparatedByString("\t")
                 let hanyu = wordsInfo[0]
                 let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]

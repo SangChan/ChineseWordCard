@@ -123,6 +123,7 @@ class ViewController: UIViewController {
         } else {
             index -= 1
         }
+        
         if index >= 0 && index < wordList.count {
             return index
         }
