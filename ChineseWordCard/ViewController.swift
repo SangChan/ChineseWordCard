@@ -218,7 +218,7 @@ class ViewController: UIViewController {
         }
         let standardSpeed:Float = (index == .SpeechSpeedSlow) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceMaximumSpeechRate
         
-        return (standardSpeed + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 4.0
+        return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
     }
 }
 
