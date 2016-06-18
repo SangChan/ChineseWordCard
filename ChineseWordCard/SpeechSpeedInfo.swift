@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let SPEECH_SPEED_INDEX : String = "speechSpeed"
+public let SPEECH_SPEED_INDEX : String = "SpeechSpeed"
 
 public enum SpeechSpeedIndex : Int {
     case SpeechSpeedSlow = 0

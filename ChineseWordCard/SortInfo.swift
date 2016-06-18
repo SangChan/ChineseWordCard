@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let SORT_INDEX : String = "sortIndex"
+public let SORT_INDEX : String = "SortIndex"
 
 public enum SortIndex : Int {
     case SortIndexNone = 0

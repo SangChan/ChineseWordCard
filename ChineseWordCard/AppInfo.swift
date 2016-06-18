@@ -7,7 +7,7 @@
 //
 import AVFoundation
 
-public let WORD_INDEX : String = "wordIndex"
+public let WORD_INDEX : String = "WordIndex"
 
 class AppInfo {
     static let sharedInstance = AppInfo()

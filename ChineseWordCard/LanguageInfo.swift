@@ -8,7 +8,7 @@
 
 import Foundation
 
-public let LANGUAGE_INDEX : String = "languageIndex"
+public let LANGUAGE_INDEX : String = "LanguageIndex"
 
 public enum LanguageIndex : Int {
     case LanguageIndexEN = 0
