@@ -9,6 +9,9 @@
 import UIKit
 import AVFoundation
 
+public let SELECT_LANGUAGE : String = "selectLanguage"
+public let SELECT_SORT : String = "selectSort"
+
 class SettingViewController: UITableViewController {
     // overrise section
     override func viewWillAppear(animated: Bool) {
@@ -50,9 +53,9 @@ class SettingViewController: UITableViewController {
     func indexFromSegue(segue:UIStoryboardSegue) -> Int {
         let segueIdentifier : String! = segue.identifier
         switch segueIdentifier {
-        case "selectLanguage":
+        case SELECT_LANGUAGE :
             return 2
-        case "selectSort" :
+        case SELECT_SORT :
             return 3
         default:
             return 1
