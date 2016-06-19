@@ -21,17 +21,23 @@ class SpeechSpeedInfo {
     
     func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
         switch index {
-        case 0: return .SpeechSpeedSlow
-        case 2: return .SpeechSpeedFast
-        default : return .SpeechSpeedNormal
+        case 0:
+            return .SpeechSpeedSlow
+        case 2:
+            return .SpeechSpeedFast
+        default :
+            return .SpeechSpeedNormal
         }
     }
     
     func stringSpeechSpeed(speechSpeed : SpeechSpeedIndex) -> String {
         switch speechSpeed {
-        case .SpeechSpeedSlow: return "Slow"
-        case .SpeechSpeedFast: return "Fast"
-        default : return "Normal"
+        case .SpeechSpeedSlow:
+            return "Slow"
+        case .SpeechSpeedFast:
+            return "Fast"
+        default :
+            return "Normal"
         }
     }
     

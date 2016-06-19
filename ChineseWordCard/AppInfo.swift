@@ -17,9 +17,12 @@ class AppInfo {
     
     func stringFromCellIndex(index : Int) -> String {
         switch index {
-        case 1 : return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeed)
-        case 2 : return languageInfo.stringLanguageInfo(languageInfo.languageInfo)
-        default : return sortInfo.stringSortInfo(sortInfo.sortInfo)
+        case 1 :
+            return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeed)
+        case 2 :
+            return languageInfo.stringLanguageInfo(languageInfo.languageInfo)
+        default :
+            return sortInfo.stringSortInfo(sortInfo.sortInfo)
         }
     }
     

@@ -21,17 +21,23 @@ class LanguageInfo {
     
     func languageIndexFromIndex(index : Int) -> LanguageIndex {
         switch index {
-        case 0: return .LanguageIndexEN
-        case 1: return .LangyageIndexES
-        default : return .LanguageIndexKR
+        case 0:
+            return .LanguageIndexEN
+        case 1:
+            return .LangyageIndexES
+        default :
+            return .LanguageIndexKR
         }
     }
     
     func stringLanguageInfo(languageInfo : LanguageIndex) -> String {
         switch languageInfo {
-        case .LanguageIndexEN : return "English"
-        case .LangyageIndexES : return "Espanõl"
-        default : return "한국어"
+        case .LanguageIndexEN :
+            return "English"
+        case .LangyageIndexES :
+            return "Espanõl"
+        default :
+            return "한국어"
         }
     }
     
