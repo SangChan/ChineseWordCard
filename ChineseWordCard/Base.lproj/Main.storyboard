@@ -270,7 +270,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="3tO-xD-7aE" kind="show" identifier="selectSort" id="IAC-zV-DzD"/>
+                                            <segue destination="3tO-xD-7aE" kind="show" identifier="SelectSort" id="IAC-zV-DzD"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
