@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class SortSelectViewController: DetailSettingTableViewController {
-    let rateArray = [SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar]
+    let rateArray = Array(arrayLiteral:SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar)
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
