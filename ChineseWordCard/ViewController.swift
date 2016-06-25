@@ -168,9 +168,9 @@ class ViewController: UIViewController {
     
     func getDescWithLanguageIndex(index : LanguageIndex) -> String {
         switch index {
-        case .LanguageIndexEN : return nowWord.desc_en
-        case .LangyageIndexES : return nowWord.desc_es
-        default : return nowWord.desc_kr
+        case .LanguageIndexEN : return nowWord.desc_en!
+        case .LangyageIndexES : return nowWord.desc_es!
+        default : return nowWord.desc_kr!
         }
     }
     
