@@ -9,7 +9,13 @@
 import UIKit
 
 class SpeechRateViewController: DetailSettingTableViewController {
-    let rateArray = Array(arrayLiteral:SpeechSpeedIndex.SpeechSpeedSlow, SpeechSpeedIndex.SpeechSpeedNormal, SpeechSpeedIndex.SpeechSpeedFast);
+    let rateArray = Array(arrayLiteral:SpeechSpeedIndex.SpeechSpeedSlow, SpeechSpeedIndex.SpeechSpeedNormal, SpeechSpeedIndex.SpeechSpeedFast)
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        detailName = "SpeechRate"
+        detailArray = [SpeechSpeedIndex.SpeechSpeedSlow.rawValue, SpeechSpeedIndex.SpeechSpeedNormal.rawValue, SpeechSpeedIndex.SpeechSpeedFast.rawValue]
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
