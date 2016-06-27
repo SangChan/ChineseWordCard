@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return;
         }
         
-        for (_,text) in lines.enumerate() {
+        for text in lines {
             if text.hasPrefix("//") {
                 chapter += 1
                 let chapterInfo = text.substringFromIndex(text.startIndex.advancedBy(2)).componentsSeparatedByString(".")
