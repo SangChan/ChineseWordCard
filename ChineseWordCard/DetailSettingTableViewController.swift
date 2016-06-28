@@ -18,5 +18,7 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
         previousSelect = indexPath
+        print("detailName : \(detailName)")
     }
+    
 }
