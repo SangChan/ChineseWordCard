@@ -18,7 +18,18 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
         previousSelect = indexPath
-        print("detailName : \(detailName)")
+        switch detailName {
+        case "SpeechRate":
+            //AppInfo.sharedInstance.speechSpeedInfo.setSpeechSpeed(detailArray[indexPath.row])
+            break
+        case "LanguageSelect":
+            //AppInfo.sharedInstance.languageInfo.setLanguageInfo(detailArray[indexPath.row])
+            break
+        case "SortSelect":
+            //AppInfo.sharedInstance.sortInfo.setSortInfo(detailArray[indexPath.row])
+            break
+        default:
+            return
+        }
     }
-    
 }
