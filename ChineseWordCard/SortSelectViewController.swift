@@ -18,10 +18,10 @@ class SortSelectViewController: DetailSettingTableViewController {
         detailArray = [SortIndex.SortIndexNone.rawValue,SortIndex.SortIndexAlphabet.rawValue,SortIndex.SortIndexStar.rawValue]
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-        AppInfo.sharedInstance.sortInfo.setSortInfo(rateArray[indexPath.row])
-    }
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+//        AppInfo.sharedInstance.sortInfo.setSortInfo(rateArray[indexPath.row])
+//    }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if AppInfo.sharedInstance.sortInfo.sortInfo ==  rateArray[indexPath.row] {

@@ -20,13 +20,13 @@ class DetailSettingTableViewController: UITableViewController {
         previousSelect = indexPath
         switch detailName {
         case "SpeechRate":
-            //AppInfo.sharedInstance.speechSpeedInfo.setSpeechSpeed(detailArray[indexPath.row])
+            AppInfo.sharedInstance.speechSpeedInfo.setSpeechSpeed(AppInfo.sharedInstance.speechSpeedInfo.speechSpeedIndexFromIndex(detailArray[indexPath.row]))
             break
         case "LanguageSelect":
-            //AppInfo.sharedInstance.languageInfo.setLanguageInfo(detailArray[indexPath.row])
+            AppInfo.sharedInstance.languageInfo.setLanguageInfo(AppInfo.sharedInstance.languageInfo.languageIndexFromIndex(detailArray[indexPath.row]))
             break
         case "SortSelect":
-            //AppInfo.sharedInstance.sortInfo.setSortInfo(detailArray[indexPath.row])
+            AppInfo.sharedInstance.sortInfo.setSortInfo(AppInfo.sharedInstance.sortInfo.sortIndexFromIndex(detailArray[indexPath.row]))
             break
         default:
             return
