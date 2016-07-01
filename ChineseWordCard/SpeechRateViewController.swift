@@ -17,11 +17,6 @@ class SpeechRateViewController: DetailSettingTableViewController {
         detailArray = [SpeechSpeedIndex.SpeechSpeedSlow.rawValue, SpeechSpeedIndex.SpeechSpeedNormal.rawValue, SpeechSpeedIndex.SpeechSpeedFast.rawValue]
     }
     
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
-//        AppInfo.sharedInstance.speechSpeedInfo.setSpeechSpeed(rateArray[indexPath.row])
-//    }
-    
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if AppInfo.sharedInstance.speechSpeedInfo.speechSpeed ==  rateArray[indexPath.row] {
             cell.accessoryType = .Checkmark
