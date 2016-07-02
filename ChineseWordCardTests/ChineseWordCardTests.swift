@@ -35,29 +35,29 @@ class ChineseWordCardTests: XCTestCase {
     }
     
     func testAppInfoData() {
-        XCTAssert(AppInfo.sharedInstance.getSortInfo() == .SortIndexNone,"\(AppInfo.sharedInstance.stringSortInfo())")
-        XCTAssert(AppInfo.sharedInstance.getSpeechSpeed() == .SpeechSpeedNormal,"\(AppInfo.sharedInstance.stringSpeechSpeed())")
-        XCTAssert(AppInfo.sharedInstance.getLanguageInfo() == .LanguageIndexKR,"\(AppInfo.sharedInstance.stringLanguageInfo())")
+        XCTAssert(AppInfo.sharedInstance.sortInfo.getSortInfo() == .SortIndexNone,"\(AppInfo.sharedInstance.sortInfo.stringSortInfo())")
+        XCTAssert(AppInfo.sharedInstance.speechSpeedInfo.getSpeechSpeed() == .SpeechSpeedNormal,"\(AppInfo.sharedInstance.speechSpeedInfo.stringSpeechSpeed())")
+        XCTAssert(AppInfo.sharedInstance.languageInfo.getLanguageInfo() == .LanguageIndexKR,"\(AppInfo.sharedInstance.languageInfo.stringLanguageInfo())")
     }
     
     func testAppInfoSaveIndex() {
         var wordIndex : Int = 99
-        AppInfo.sharedInstance.setSortInfo(.SortIndexNone)
+        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexNone)
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
         
         wordIndex = 12
-        AppInfo.sharedInstance.setSortInfo(.SortIndexAlphabet)
+        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexAlphabet)
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
         
         wordIndex = 58
-        AppInfo.sharedInstance.setSortInfo(.SortIndexStar)
+        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexStar)
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
         
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        AppInfo.sharedInstance.setSortInfo(.SortIndexNone)
+        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexNone)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() != wordIndex,"Pass")
 
     }
