@@ -56,7 +56,8 @@ class SpeechSpeedInfo {
         if (NSUserDefaults.standardUserDefaults().objectForKey(SPEECH_SPEED_INDEX) == nil) {
             return .SpeechSpeedNormal
         }
-        return speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX));
+        self.speechSpeed = speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX))
+        return self.speechSpeed
     }
 
 }

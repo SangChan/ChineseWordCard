@@ -57,6 +57,7 @@ class SortInfo {
         if (NSUserDefaults.standardUserDefaults().objectForKey(SORT_INDEX) == nil) {
             return .SortIndexNone
         }
-        return sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
+        self.sortInfo = sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
+        return self.sortInfo
     }
 }

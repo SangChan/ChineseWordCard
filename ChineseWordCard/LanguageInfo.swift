@@ -56,6 +56,7 @@ class LanguageInfo {
         if (NSUserDefaults.standardUserDefaults().objectForKey(LANGUAGE_INDEX) == nil) {
             return .LanguageIndexKR
         }
-        return languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX));
+        self.languageInfo = languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX))
+        return self.languageInfo
     }
 }

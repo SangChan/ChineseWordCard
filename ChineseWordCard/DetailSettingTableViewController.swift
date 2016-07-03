@@ -32,4 +32,7 @@ class DetailSettingTableViewController: UITableViewController {
             return
         }
     }
+    // TODO : tableview check makr thing.
+    //override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    //}
 }
