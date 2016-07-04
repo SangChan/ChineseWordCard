@@ -33,6 +33,26 @@ class DetailSettingTableViewController: UITableViewController {
         }
     }
     // TODO : tableview check makr thing.
-    //override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-    //}
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var infoIndex : Int = 0
+        switch detailName {
+        case "SpeechRate":
+            infoIndex = AppInfo.sharedInstance.speechSpeedInfo.getSpeechSpeed().rawValue
+            break
+        case "LanguageSelect":
+            infoIndex = AppInfo.sharedInstance.languageInfo.getLanguageInfo().rawValue
+            break
+        case "SortSelect":
+            infoIndex = AppInfo.sharedInstance.sortInfo.getSortInfo().rawValue
+            break
+        default:
+            return
+        }
+        if infoIndex ==  detailArray[indexPath.row] {
+            cell.accessoryType = .Checkmark
+            previousSelect = indexPath
+        } else {
+            cell.accessoryType = .None
+        }
+    }
 }

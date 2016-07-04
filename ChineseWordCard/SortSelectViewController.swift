@@ -10,21 +10,10 @@ import UIKit
 import RealmSwift
 
 class SortSelectViewController: DetailSettingTableViewController {
-    let rateArray = Array(arrayLiteral:SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar)
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         detailName = "SortSelect"
         detailArray = [SortIndex.SortIndexNone.rawValue,SortIndex.SortIndexAlphabet.rawValue,SortIndex.SortIndexStar.rawValue]
-    }
-        
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if AppInfo.sharedInstance.sortInfo.sortInfo ==  rateArray[indexPath.row] {
-            cell.accessoryType = .Checkmark
-            previousSelect = indexPath
-        } else {
-            cell.accessoryType = .None
-        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
