@@ -55,4 +55,15 @@ class DetailSettingTableViewController: UITableViewController {
             cell.accessoryType = .None
         }
     }
+    
+    func infoObject(name : String) -> AnyObject{
+        switch name {
+        case "SpeechRate":
+            return AppInfo.sharedInstance.speechSpeedInfo
+        case "SortSelect" :
+            return AppInfo.sharedInstance.sortInfo
+        default:
+            return AppInfo.sharedInstance.languageInfo
+        }
+    }
 }
