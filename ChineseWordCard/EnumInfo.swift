@@ -10,5 +10,5 @@ import Foundation
 
 protocol EnumInfo {
     func enumFromIndex(index:Int) -> Any
-    func indexFromEnum(enumIndex:Any) -> Int
+    func indexFromEnum() -> Int
 }

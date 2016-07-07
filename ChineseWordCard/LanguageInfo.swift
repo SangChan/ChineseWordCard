@@ -16,7 +16,7 @@ public enum LanguageIndex : Int {
     case LanguageIndexKR
 }
 
-class LanguageInfo {
+class LanguageInfo : EnumInfo {
     internal var languageInfo : LanguageIndex = .LanguageIndexKR
     
     func languageIndexFromIndex(index : Int) -> LanguageIndex {
@@ -28,6 +28,14 @@ class LanguageInfo {
         default :
             return .LanguageIndexKR
         }
+    }
+    
+    func enumFromIndex(index:Int) -> Any {
+        return self.languageIndexFromIndex(index)
+    }
+    
+    func indexFromEnum() -> Int {
+        return self.languageInfo.rawValue
     }
     
     func stringLanguageInfo(languageInfo : LanguageIndex) -> String {
