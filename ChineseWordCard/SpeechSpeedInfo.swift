@@ -16,9 +16,16 @@ public enum SpeechSpeedIndex : Int {
     case SpeechSpeedFast
 }
 
-class SpeechSpeedInfo {
+class SpeechSpeedInfo : EnumInfo {
     internal var speechSpeed : SpeechSpeedIndex = .SpeechSpeedNormal
     
+    func enumFromIndex(index:Int) -> Any {
+        return self.speechSpeedIndexFromIndex(index)
+    }
+    
+    func indexFromEnum() -> Int {
+        return self.speechSpeed.rawValue
+    }
     func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
         switch index {
         case 0:

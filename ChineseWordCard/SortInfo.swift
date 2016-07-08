@@ -17,9 +17,17 @@ public enum SortIndex : Int {
 }
 
 
-class SortInfo {
+class SortInfo :EnumInfo {
     internal var sortInfo : SortIndex = .SortIndexNone
     
+    func enumFromIndex(index:Int) -> Any {
+        return self.sortIndexFromIndex(index)
+    }
+    
+    func indexFromEnum() -> Int {
+        return sortInfo.rawValue
+    }
+
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
         case 1:
