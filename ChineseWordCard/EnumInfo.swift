@@ -11,4 +11,5 @@ import Foundation
 protocol EnumInfo {
     func enumFromIndex(index:Int) -> Any
     func indexFromEnum() -> Int
+    func setIndex(index:Int)
 }

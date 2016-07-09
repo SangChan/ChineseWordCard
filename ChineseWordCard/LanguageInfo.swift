@@ -38,6 +38,11 @@ class LanguageInfo : EnumInfo {
         return self.languageInfo.rawValue
     }
     
+    func setIndex(index: Int) {
+        self.setLanguageInfo(self.languageIndexFromIndex(index))
+    }
+
+    
     func stringLanguageInfo(languageInfo : LanguageIndex) -> String {
         switch languageInfo {
         case .LanguageIndexEN :

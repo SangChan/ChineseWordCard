@@ -27,6 +27,10 @@ class SortInfo :EnumInfo {
     func indexFromEnum() -> Int {
         return sortInfo.rawValue
     }
+    
+    func setIndex(index: Int) {
+        self.setSortInfo(self.sortIndexFromIndex(index))
+    }
 
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
