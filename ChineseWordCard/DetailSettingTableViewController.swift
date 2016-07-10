@@ -18,21 +18,10 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
         previousSelect = indexPath
-        switch detailName {
-        case "SpeechRate":
-            AppInfo.sharedInstance.speechSpeedInfo.setSpeechSpeed(AppInfo.sharedInstance.speechSpeedInfo.speechSpeedIndexFromIndex(detailArray[indexPath.row]))
-            break
-        case "LanguageSelect":
-            AppInfo.sharedInstance.languageInfo.setLanguageInfo(AppInfo.sharedInstance.languageInfo.languageIndexFromIndex(detailArray[indexPath.row]))
-            break
-        case "SortSelect":
-            AppInfo.sharedInstance.sortInfo.setSortInfo(AppInfo.sharedInstance.sortInfo.sortIndexFromIndex(detailArray[indexPath.row]))
-            break
-        default:
-            return
-        }
+        let indexObject : EnumInfo = self.infoObject(detailName)
+        indexObject.setIndex(detailArray[indexPath.row])
     }
-    // TODO : tableview check makr thing.
+    
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         let indexObject : EnumInfo = self.infoObject(detailName)
         let infoIndex : Int = indexObject.indexFromEnum()
