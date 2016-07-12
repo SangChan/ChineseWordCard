@@ -12,8 +12,6 @@ protocol EnumInfo {
     func enumFromIndex(index:Int) -> Any
     func indexFromEnum() -> Int
     func setIndex(index:Int)
-    //func saveValue()
-    //func loadValue()
 }
 
 class EnumInfoImlp : EnumInfo{
@@ -26,6 +24,14 @@ class EnumInfoImlp : EnumInfo{
     }
     
     func setIndex(index:Int) {
+        
+    }
+    
+    func saveValue() {
+        
+    }
+    
+    func loadValue() {
         
     }
 }
