@@ -6,8 +6,9 @@
 //  Copyright © 2016년 VerandaStudio. All rights reserved.
 //
 
+import RealmSwift
 
-class SettingData {
+class SettingData : Object {
     var speechSpeedIndex = 1;
     var languageIndex = 2;
     var sortIndex = 0;
