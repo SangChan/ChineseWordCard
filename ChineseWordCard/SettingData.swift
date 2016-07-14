@@ -9,8 +9,8 @@
 import RealmSwift
 
 class SettingData : Object {
-    var speechSpeedIndex = 1;
-    var languageIndex = 2;
-    var sortIndex = 0;
-    var wordIndex = 0;
+    var speechSpeedIndex = 1
+    var languageIndex = 2
+    var sortIndex = 0
+    var wordIndex = [0,0,0]
 }
