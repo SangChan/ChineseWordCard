@@ -16,7 +16,7 @@ protocol EnumInfo {
 
 class EnumInfoImlp : EnumInfo{
     func enumFromIndex(index:Int) -> Any {
-        return ""
+        return 0
     }
     
     func indexFromEnum() -> Int {
