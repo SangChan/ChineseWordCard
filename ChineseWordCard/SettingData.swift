@@ -13,4 +13,8 @@ class SettingData : Object {
     var languageIndex = 2
     var sortIndex = 0
     var wordIndex = [0,0,0]
+    
+    func setWordIndex(index:Int, value:Int) {
+        wordIndex[index] = value
+    }
 }
