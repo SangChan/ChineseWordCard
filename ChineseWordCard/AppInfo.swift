@@ -6,6 +6,7 @@
 //  Copyright © 2016 VerandaStudio. All rights reserved.
 //
 import AVFoundation
+import RealmSwift
 
 public let WORD_INDEX : String = "WordIndex"
 
@@ -44,6 +45,11 @@ class AppInfo {
     
     func setWordIndex(index : Int) {
         self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
+        let realm = try! Realm()
+        let settingDatas : Results<SettingData> = realm.objects(SettingData)
+        let settingData : SettingData = settingDatas.first!
+        settingData.setWordIndex(sortInfo.indexFromEnum(),value: index)
+        
     }
     
     func getWordIndexKey() -> String {
