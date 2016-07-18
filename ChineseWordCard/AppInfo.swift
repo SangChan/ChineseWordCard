@@ -46,10 +46,10 @@ class AppInfo {
     func setWordIndex(index : Int) {
         self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
         let realm = try! Realm()
-        let settingDatas : Results<SettingData> = realm.objects(SettingData)
-        let settingData : SettingData = settingDatas.first!
-        settingData.setWordIndex(sortInfo.indexFromEnum(),value: index)
-        
+        try! realm.write() {
+            let settingData : SettingData = realm.objects(SettingData).first!
+            settingData.setWordIndex(sortInfo.indexFromEnum(),value: index)
+        }
     }
     
     func getWordIndexKey() -> String {
