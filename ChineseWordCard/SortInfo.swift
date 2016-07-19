@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 public let SORT_INDEX : String = "SortIndex"
 
@@ -63,6 +64,11 @@ class SortInfo :EnumInfo {
     func setSortInfo(index : SortIndex) {
         self.sortInfo = index
         self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
+        let realm = try! Realm()
+        try! realm.write() {
+            let settingData : SettingData = realm.objects(SettingData).first!
+            settingData.setValue(self.sortInfo.rawValue, forKey: "sortIndex")
+        }
     }
     
     func getSortInfo() -> SortIndex {

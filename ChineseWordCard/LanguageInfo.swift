@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 public let LANGUAGE_INDEX : String = "LanguageIndex"
 
@@ -63,6 +64,11 @@ class LanguageInfo : EnumInfo {
     func setLanguageInfo(index : LanguageIndex) {
         self.languageInfo = index
         self.setDataToUserDefaults(self.languageInfo.rawValue, WithKey: LANGUAGE_INDEX)
+        let realm = try! Realm()
+        try! realm.write() {
+            let settingData : SettingData = realm.objects(SettingData).first!
+            settingData.setValue(self.languageInfo.rawValue, forKey: "languageIndex")
+        }
     }
     
     func getLanguageInfo() -> LanguageIndex {

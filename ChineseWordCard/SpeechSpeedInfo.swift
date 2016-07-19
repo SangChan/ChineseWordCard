@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 public let SPEECH_SPEED_INDEX : String = "SpeechSpeed"
 
@@ -62,6 +63,11 @@ class SpeechSpeedInfo : EnumInfo {
     func setSpeechSpeed(index : SpeechSpeedIndex) {
         self.speechSpeed = index
         self.setDataToUserDefaults(self.speechSpeed.rawValue, WithKey: SPEECH_SPEED_INDEX)
+        let realm = try! Realm()
+        try! realm.write() {
+            let settingData : SettingData = realm.objects(SettingData).first!
+            settingData.setValue(self.speechSpeed.rawValue, forKey: "speechSpeedIndex")
+        }
     }
     
     func getSpeechSpeed() -> SpeechSpeedIndex{
