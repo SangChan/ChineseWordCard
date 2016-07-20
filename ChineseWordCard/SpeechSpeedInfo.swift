@@ -71,6 +71,9 @@ class SpeechSpeedInfo : EnumInfo {
     }
     
     func getSpeechSpeed() -> SpeechSpeedIndex{
+        //let realm = try! Realm()
+        //let settingData : SettingData = realm.objects(SettingData).first!
+        //print("speechSpeedIndex from realm : \(settingData.speechSpeedIndex)")
         if (NSUserDefaults.standardUserDefaults().objectForKey(SPEECH_SPEED_INDEX) == nil) {
             return .SpeechSpeedNormal
         }

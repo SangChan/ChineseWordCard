@@ -51,6 +51,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var level : Int  = 0
         var id_num : Int = 0
         let realm = try! Realm()
+        
+        if realm.objects(SettingData).count == 0 {
+            try! realm.write() {
+                realm.create(SettingData.self, value: [
+                    "speechSpeedIndex":1,
+                    "languageIndex":2,
+                    "sortIndex":0,
+                    "wordIndexForAll":0,
+                    "wordIndexForStar":0,
+                    "wordIndexForAlphabet":0])
+            }
+        }
+        
         if(lines.count - realm.objects(ChineseWord).count < 100) {
             return;
         }
