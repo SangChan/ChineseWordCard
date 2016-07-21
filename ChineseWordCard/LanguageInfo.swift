@@ -20,17 +20,6 @@ public enum LanguageIndex : Int {
 class LanguageInfo : EnumInfo {
     internal var languageInfo : LanguageIndex = .LanguageIndexKR
     
-    func languageIndexFromIndex(index : Int) -> LanguageIndex {
-        switch index {
-        case 0:
-            return .LanguageIndexEN
-        case 1:
-            return .LangyageIndexES
-        default :
-            return .LanguageIndexKR
-        }
-    }
-    
     func enumFromIndex(index:Int) -> Any {
         return self.languageIndexFromIndex(index)
     }
@@ -42,17 +31,9 @@ class LanguageInfo : EnumInfo {
     func setIndex(index: Int) {
         self.setLanguageInfo(self.languageIndexFromIndex(index))
     }
-
     
-    func stringLanguageInfo(languageInfo : LanguageIndex) -> String {
-        switch languageInfo {
-        case .LanguageIndexEN :
-            return "English"
-        case .LangyageIndexES :
-            return "Espanõl"
-        default :
-            return "한국어"
-        }
+    func stringFromIndex(index:Int) -> String {
+        return stringLanguageInfo(languageIndexFromIndex(index))
     }
     
     func setDataToUserDefaults(value : Int, WithKey key:String) {
@@ -72,10 +53,37 @@ class LanguageInfo : EnumInfo {
     }
     
     func getLanguageInfo() -> LanguageIndex {
+        let realm = try! Realm()
+        let settingData : SettingData = realm.objects(SettingData).first!
+        print("languageInfo from realm : \(settingData.languageIndex)")
         if (NSUserDefaults.standardUserDefaults().objectForKey(LANGUAGE_INDEX) == nil) {
             return .LanguageIndexKR
         }
         self.languageInfo = languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX))
         return self.languageInfo
+    }
+}
+
+extension LanguageInfo {
+    func languageIndexFromIndex(index : Int) -> LanguageIndex {
+        switch index {
+        case 0:
+            return .LanguageIndexEN
+        case 1:
+            return .LangyageIndexES
+        default :
+            return .LanguageIndexKR
+        }
+    }
+    
+    func stringLanguageInfo(languageInfo : LanguageIndex) -> String {
+        switch languageInfo {
+        case .LanguageIndexEN :
+            return "English"
+        case .LangyageIndexES :
+            return "Espanõl"
+        default :
+            return "한국어"
+        }
     }
 }

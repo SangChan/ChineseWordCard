@@ -32,7 +32,40 @@ class SortInfo :EnumInfo {
     func setIndex(index: Int) {
         self.setSortInfo(self.sortIndexFromIndex(index))
     }
+    
+    func stringFromIndex(index:Int) -> String {
+        return stringSortInfo(sortIndexFromIndex(index))
+    }
+    
+    func setDataToUserDefaults(value : Int, WithKey key:String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(value, forKey: key)
+        defaults.synchronize()
+    }
+    
+    func setSortInfo(index : SortIndex) {
+        self.sortInfo = index
+        self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
+        let realm = try! Realm()
+        try! realm.write() {
+            let settingData : SettingData = realm.objects(SettingData).first!
+            settingData.setValue(self.sortInfo.rawValue, forKey: "sortIndex")
+        }
+    }
+    
+    func getSortInfo() -> SortIndex {
+        let realm = try! Realm()
+        let settingData : SettingData = realm.objects(SettingData).first!
+        print("sortInfo from realm : \(settingData.sortIndex)")
+        if (NSUserDefaults.standardUserDefaults().objectForKey(SORT_INDEX) == nil) {
+            return .SortIndexNone
+        }
+        self.sortInfo = sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
+        return self.sortInfo
+    }
+}
 
+extension SortInfo {
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
         case 1:
@@ -53,29 +86,5 @@ class SortInfo :EnumInfo {
         default :
             return "All"
         }
-    }
-    
-    func setDataToUserDefaults(value : Int, WithKey key:String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(value, forKey: key)
-        defaults.synchronize()
-    }
-    
-    func setSortInfo(index : SortIndex) {
-        self.sortInfo = index
-        self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
-        let realm = try! Realm()
-        try! realm.write() {
-            let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setValue(self.sortInfo.rawValue, forKey: "sortIndex")
-        }
-    }
-    
-    func getSortInfo() -> SortIndex {
-        if (NSUserDefaults.standardUserDefaults().objectForKey(SORT_INDEX) == nil) {
-            return .SortIndexNone
-        }
-        self.sortInfo = sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
-        return self.sortInfo
     }
 }

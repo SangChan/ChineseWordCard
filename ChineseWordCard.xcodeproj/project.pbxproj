@@ -194,9 +194,9 @@
 				634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */,
 				63C8DB8C1D03322500FAEC52 /* SpeechSpeedInfo.swift */,
 				63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */,
+				63C8DB8E1D03344600FAEC52 /* SortInfo.swift */,
 				631CE02F1CF9D76C0036DE72 /* SettingData.swift */,
 				6321B9F51C05E70F00E2186C /* ChineseWord.swift */,
-				63C8DB8E1D03344600FAEC52 /* SortInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

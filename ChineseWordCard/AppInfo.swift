@@ -47,7 +47,7 @@ class AppInfo {
         self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
         let realm = try! Realm()
         try! realm.write() {
-            let settingData : SettingData = (realm.objects(SettingData).first)!
+            let settingData : SettingData = realm.objects(SettingData).first!
             settingData.setWordIndex(sortInfo.indexFromEnum(),value: index)
         }
     }

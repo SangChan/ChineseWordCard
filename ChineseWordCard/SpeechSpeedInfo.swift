@@ -31,7 +31,41 @@ class SpeechSpeedInfo : EnumInfo {
     func setIndex(index: Int) {
         self.setSpeechSpeed(self.speechSpeedIndexFromIndex(index))
     }
+
+    func stringFromIndex(index:Int) -> String {
+        return stringSpeechSpeed(speechSpeedIndexFromIndex(index))
+    }
     
+    func setDataToUserDefaults(value : Int, WithKey key:String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(value, forKey: key)
+        defaults.synchronize()
+    }
+    
+    func setSpeechSpeed(index : SpeechSpeedIndex) {
+        self.speechSpeed = index
+        self.setDataToUserDefaults(self.speechSpeed.rawValue, WithKey: SPEECH_SPEED_INDEX)
+        let realm = try! Realm()
+        try! realm.write() {
+            let settingData : SettingData = realm.objects(SettingData).first!
+            settingData.setValue(self.speechSpeed.rawValue, forKey: "speechSpeedIndex")
+        }
+    }
+    
+    func getSpeechSpeed() -> SpeechSpeedIndex{
+        let realm = try! Realm()
+        let settingData : SettingData = realm.objects(SettingData).first!
+        print("speechSpeedIndex from realm : \(settingData.speechSpeedIndex)")
+        if (NSUserDefaults.standardUserDefaults().objectForKey(SPEECH_SPEED_INDEX) == nil) {
+            return .SpeechSpeedNormal
+        }
+        self.speechSpeed = speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX))
+        return self.speechSpeed
+    }
+
+}
+
+extension SpeechSpeedInfo {
     func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
         switch index {
         case 0:
@@ -53,33 +87,5 @@ class SpeechSpeedInfo : EnumInfo {
             return "Normal"
         }
     }
-    
-    func setDataToUserDefaults(value : Int, WithKey key:String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(value, forKey: key)
-        defaults.synchronize()
-    }
-    
-    func setSpeechSpeed(index : SpeechSpeedIndex) {
-        self.speechSpeed = index
-        self.setDataToUserDefaults(self.speechSpeed.rawValue, WithKey: SPEECH_SPEED_INDEX)
-        let realm = try! Realm()
-        try! realm.write() {
-            let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setValue(self.speechSpeed.rawValue, forKey: "speechSpeedIndex")
-        }
-    }
-    
-    func getSpeechSpeed() -> SpeechSpeedIndex{
-        //let realm = try! Realm()
-        //let settingData : SettingData = realm.objects(SettingData).first!
-        //print("speechSpeedIndex from realm : \(settingData.speechSpeedIndex)")
-        if (NSUserDefaults.standardUserDefaults().objectForKey(SPEECH_SPEED_INDEX) == nil) {
-            return .SpeechSpeedNormal
-        }
-        self.speechSpeed = speechSpeedIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SPEECH_SPEED_INDEX))
-        return self.speechSpeed
-    }
-
 }
 
