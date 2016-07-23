@@ -33,26 +33,18 @@ class AppInfo {
         languageInfo.getLanguageInfo()
     }
     
-    func setDataToUserDefaults(value : Int, WithKey key:String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(value, forKey: key)
-        defaults.synchronize()
-    }
-    
     func getWordIndex() ->  Int {
-        return NSUserDefaults.standardUserDefaults().integerForKey(self.getWordIndexKey())
+        let realm = try! Realm()
+        let settingData : SettingData = realm.objects(SettingData).first!
+        return settingData.wordIndex(sortInfo.indexFromEnum())
     }
     
     func setWordIndex(index : Int) {
-        self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
+        //self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
             settingData.setWordIndex(sortInfo.indexFromEnum(),value: index)
         }
-    }
-    
-    func getWordIndexKey() -> String {
-        return "\(WORD_INDEX):\(sortInfo.stringSortInfo(sortInfo.sortInfo))"
     }
 }

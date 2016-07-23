@@ -36,15 +36,8 @@ class LanguageInfo : EnumInfo {
         return stringLanguageInfo(languageIndexFromIndex(index))
     }
     
-    func setDataToUserDefaults(value : Int, WithKey key:String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(value, forKey: key)
-        defaults.synchronize()
-    }
-    
     func setLanguageInfo(index : LanguageIndex) {
         self.languageInfo = index
-        self.setDataToUserDefaults(self.languageInfo.rawValue, WithKey: LANGUAGE_INDEX)
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
@@ -55,11 +48,7 @@ class LanguageInfo : EnumInfo {
     func getLanguageInfo() -> LanguageIndex {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
-        print("languageInfo from realm : \(settingData.languageIndex)")
-        if (NSUserDefaults.standardUserDefaults().objectForKey(LANGUAGE_INDEX) == nil) {
-            return .LanguageIndexKR
-        }
-        self.languageInfo = languageIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(LANGUAGE_INDEX))
+        self.languageInfo = languageIndexFromIndex(settingData.languageIndex)
         return self.languageInfo
     }
 }

@@ -37,15 +37,8 @@ class SortInfo :EnumInfo {
         return stringSortInfo(sortIndexFromIndex(index))
     }
     
-    func setDataToUserDefaults(value : Int, WithKey key:String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(value, forKey: key)
-        defaults.synchronize()
-    }
-    
     func setSortInfo(index : SortIndex) {
         self.sortInfo = index
-        self.setDataToUserDefaults(self.sortInfo.rawValue, WithKey: SORT_INDEX)
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
@@ -56,11 +49,7 @@ class SortInfo :EnumInfo {
     func getSortInfo() -> SortIndex {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
-        print("sortInfo from realm : \(settingData.sortIndex)")
-        if (NSUserDefaults.standardUserDefaults().objectForKey(SORT_INDEX) == nil) {
-            return .SortIndexNone
-        }
-        self.sortInfo = sortIndexFromIndex(NSUserDefaults.standardUserDefaults().integerForKey(SORT_INDEX));
+        self.sortInfo = sortIndexFromIndex(settingData.sortIndex);
         return self.sortInfo
     }
 }

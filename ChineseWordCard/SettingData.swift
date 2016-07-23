@@ -9,23 +9,34 @@
 import RealmSwift
 
 class SettingData : Object {
-    var speechSpeedIndex = 1
-    var languageIndex = 2
-    var sortIndex = 0
-    var wordIndexForAll = 0
-    var wordIndexForStar = 0
-    var wordIndexForAlphabet = 0
+    dynamic var speechSpeedIndex = 1
+    dynamic var languageIndex = 2
+    dynamic var sortIndex = 0
+    dynamic var wordIndexForAll = 0
+    dynamic var wordIndexForStar = 0
+    dynamic var wordIndexForAlphabet = 0
     
     func setWordIndex(index:Int, value:Int) {
         switch index {
         case 0:
-            wordIndexForAll = value
+            self.wordIndexForAll = value
         case 1 :
-            wordIndexForAlphabet = value
+            self.wordIndexForAlphabet = value
         case 2 :
-            wordIndexForStar = value
+            self.wordIndexForStar = value
         default :
             return
+        }
+    }
+    
+    func wordIndex(index:Int) -> Int{
+        switch index {
+        case 1 :
+            return self.wordIndexForAlphabet
+        case 2 :
+            return self.wordIndexForStar
+        default :
+            return self.wordIndexForAll
         }
     }
 }
