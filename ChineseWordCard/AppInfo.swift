@@ -27,7 +27,7 @@ class AppInfo {
         }
     }
     
-    func getAllDataFromUserDefaults() {
+    func getAllDataFromRealm() {
         speechSpeedInfo.getSpeechSpeed()
         sortInfo.getSortInfo()
         languageInfo.getLanguageInfo()
@@ -40,7 +40,6 @@ class AppInfo {
     }
     
     func setWordIndex(index : Int) {
-        //self.setDataToUserDefaults(index, WithKey: self.getWordIndexKey())
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
