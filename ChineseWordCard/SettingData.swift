@@ -16,6 +16,10 @@ class SettingData : Object {
     dynamic var wordIndexForStar = 0
     dynamic var wordIndexForAlphabet = 0
     
+    func setWordIndex(value: Int) {
+        setWordIndex(self.sortIndex, value: value)
+    }
+    
     func setWordIndex(index:Int, value:Int) {
         switch index {
         case 0:
@@ -27,6 +31,10 @@ class SettingData : Object {
         default :
             return
         }
+    }
+    
+    func wordIndex() -> Int {
+        return wordIndex(self.sortIndex);
     }
     
     func wordIndex(index:Int) -> Int{
