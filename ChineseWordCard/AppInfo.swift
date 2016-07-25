@@ -36,14 +36,14 @@ class AppInfo {
     func getWordIndex() ->  Int {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
-        return settingData.wordIndex(sortInfo.indexFromEnum())
+        return settingData.wordIndex()
     }
     
     func setWordIndex(index : Int) {
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setWordIndex(sortInfo.indexFromEnum(),value: index)
+            settingData.setWordIndex(index)
         }
     }
 }
