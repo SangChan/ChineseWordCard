@@ -58,9 +58,9 @@ extension SortInfo {
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
         case 1:
-            return .SortIndexStar
-        case 2:
             return .SortIndexAlphabet
+        case 2:
+            return .SortIndexStar
         default :
             return .SortIndexNone
         }
