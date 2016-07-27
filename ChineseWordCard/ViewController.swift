@@ -46,6 +46,10 @@ class ViewController: UIViewController {
         self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        if self.wordIndex > self.maxWordCount {
+            AppInfo.sharedInstance.setWordIndex(0)
+            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        }
         self.updateUIonView();
     }
     
