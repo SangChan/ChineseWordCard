@@ -17,6 +17,11 @@
 		63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63458E831BA7CE9700D4A48D /* LaunchScreen.xib */; };
 		63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */; };
 		634AF3E41D2CEF1B00C3BE99 /* EnumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */; };
+		636AF53B1D4A402F0078CE23 /* EnumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */; };
+		636AF53C1D4A402F0078CE23 /* SpeechSpeedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8C1D03322500FAEC52 /* SpeechSpeedInfo.swift */; };
+		636AF53D1D4A402F0078CE23 /* LanguageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */; };
+		636AF53E1D4A402F0078CE23 /* SortInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8E1D03344600FAEC52 /* SortInfo.swift */; };
+		636AF5431D4A40EF0078CE23 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636AF5421D4A40EF0078CE23 /* RealmSwift.framework */; };
 		6387744C1C7C5DFF0075013B /* SortSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */; };
 		638861751CCE4C3D00EE24B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542551C52177900E1937B /* AppInfo.swift */; };
 		638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FF3601C48A16C00A5D366 /* SettingViewController.swift */; };
@@ -66,6 +71,7 @@
 		63458E8F1BA7CE9700D4A48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63458E901BA7CE9700D4A48D /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
 		634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumInfo.swift; sourceTree = "<group>"; };
+		636AF5421D4A40EF0078CE23 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/ChineseWordCard-buaosyfvjhgdwzaymiwrgdxklcwo/Build/Products/Debug-iphonesimulator/RealmSwift.framework"; sourceTree = "<group>"; };
 		6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSelectViewController.swift; sourceTree = "<group>"; };
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636AF5431D4A40EF0078CE23 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +220,7 @@
 		D537103A42283B907FE93EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				636AF5421D4A40EF0078CE23 /* RealmSwift.framework */,
 				63D097EF1BABE19100ABC6EA /* UIKit.framework */,
 				63D097ED1BABE16500ABC6EA /* AVFoundation.framework */,
 				97BF1ABAF0B6E1248BF9E93E /* Pods.framework */,
@@ -439,6 +447,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636AF53B1D4A402F0078CE23 /* EnumInfo.swift in Sources */,
+				636AF53C1D4A402F0078CE23 /* SpeechSpeedInfo.swift in Sources */,
+				636AF53D1D4A402F0078CE23 /* LanguageInfo.swift in Sources */,
+				636AF53E1D4A402F0078CE23 /* SortInfo.swift in Sources */,
 				638861751CCE4C3D00EE24B5 /* AppInfo.swift in Sources */,
 				63458E911BA7CE9700D4A48D /* ChineseWordCardTests.swift in Sources */,
 			);

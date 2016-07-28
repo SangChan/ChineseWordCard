@@ -8,12 +8,13 @@
 
 import UIKit
 import XCTest
+import RealmSwift
 
 class ChineseWordCardTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        AppInfo.sharedInstance.getAllDataFromUserDefaults()
+        AppInfo.sharedInstance.getAllDataFromRealm()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -35,9 +36,9 @@ class ChineseWordCardTests: XCTestCase {
     }
     
     func testAppInfoData() {
-        XCTAssert(AppInfo.sharedInstance.sortInfo.getSortInfo() == .SortIndexNone,"\(AppInfo.sharedInstance.sortInfo.stringSortInfo())")
-        XCTAssert(AppInfo.sharedInstance.speechSpeedInfo.getSpeechSpeed() == .SpeechSpeedNormal,"\(AppInfo.sharedInstance.speechSpeedInfo.stringSpeechSpeed())")
-        XCTAssert(AppInfo.sharedInstance.languageInfo.getLanguageInfo() == .LanguageIndexKR,"\(AppInfo.sharedInstance.languageInfo.stringLanguageInfo())")
+        XCTAssert(AppInfo.sharedInstance.sortInfo.getSortInfo() == .SortIndexNone)
+        XCTAssert(AppInfo.sharedInstance.speechSpeedInfo.getSpeechSpeed() == .SpeechSpeedNormal)
+        XCTAssert(AppInfo.sharedInstance.languageInfo.getLanguageInfo() == .LanguageIndexKR)
     }
     
     func testAppInfoSaveIndex() {
