@@ -2,13 +2,12 @@
 //  ChineseWordCardTests.swift
 //  ChineseWordCardTests
 //
-//  Created by SangChan on 2015. 9. 15..
-//  Copyright (c) 2015년 VerandaStudio. All rights reserved.
+//  Created by SangChan Lee on 7/29/16.
+//  Copyright © 2016 VerandaStudio. All rights reserved.
 //
 
-import UIKit
 import XCTest
-import RealmSwift
+@testable import ChineseWordCard
 
 class ChineseWordCardTests: XCTestCase {
     
@@ -25,16 +24,15 @@ class ChineseWordCardTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
-    
     func testAppInfoData() {
         XCTAssert(AppInfo.sharedInstance.sortInfo.getSortInfo() == .SortIndexNone)
         XCTAssert(AppInfo.sharedInstance.speechSpeedInfo.getSpeechSpeed() == .SpeechSpeedNormal)
@@ -60,7 +58,6 @@ class ChineseWordCardTests: XCTestCase {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexNone)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() != wordIndex,"Pass")
-
+        
     }
-    
 }
