@@ -313,12 +313,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="iiK-Zw-38m">
                             <connections>
                                 <action selector="clickedDoneButton:" destination="1SD-2L-XkU" id="Esh-OH-coX"/>
+                                <segue destination="sjg-l6-yf7" kind="unwind" unwindAction="unwindToSegue:" id="lkP-NP-JiS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKz-FD-hGJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sjg-l6-yf7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1314" y="1243"/>
         </scene>
