@@ -224,5 +224,10 @@ class ViewController: UIViewController {
         
         return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
     }
+    
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+        print("previous segue = \(segue.identifier)")
+        
+    }
 }
 
