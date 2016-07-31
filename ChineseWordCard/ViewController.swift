@@ -38,13 +38,7 @@ class ViewController: UIViewController {
         preferredStatusBarStyle()
         setButtonDefault()
         resetView()
-        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
-        self.maxWordCount = self.wordList.count
-        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        if self.wordIndex > self.maxWordCount {
-            AppInfo.sharedInstance.setWordIndex(0)
-            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        }
+        getWordData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -118,13 +112,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
-        self.maxWordCount = self.wordList.count
-        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        if self.wordIndex > self.maxWordCount {
-            AppInfo.sharedInstance.setWordIndex(0)
-            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        }
+        getWordData()
     }
 }
 
@@ -198,6 +186,16 @@ extension ViewController {
     func resetView() {
         touchCount = 0
         setLabelHiddenByCount(touchCount)
+    }
+    
+    func getWordData() {
+        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
+        self.maxWordCount = self.wordList.count
+        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        if self.wordIndex > self.maxWordCount {
+            AppInfo.sharedInstance.setWordIndex(0)
+            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        }
     }
     
     func setLabelHiddenByCount(count : Int) {
