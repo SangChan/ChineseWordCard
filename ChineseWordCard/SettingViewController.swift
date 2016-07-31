@@ -43,22 +43,4 @@ class SettingViewController: UITableViewController {
     @IBAction func clickedDoneButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        let previousSegueNumber = self.indexFromSegue(segue)
-        
-        self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: previousSegueNumber-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(previousSegueNumber)
-    }
-    //private method section
-    func indexFromSegue(segue:UIStoryboardSegue) -> Int {
-        let segueIdentifier : String! = segue.identifier
-        switch segueIdentifier {
-        case SELECT_LANGUAGE :
-            return 2
-        case SELECT_SORT :
-            return 3
-        default:
-            return 1
-        }
-    }
 }
