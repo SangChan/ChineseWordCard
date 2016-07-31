@@ -35,14 +35,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
         preferredStatusBarStyle()
-        super.viewWillAppear(animated)
         setButtonDefault()
         resetView()
-        
         self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
@@ -50,6 +45,10 @@ class ViewController: UIViewController {
             AppInfo.sharedInstance.setWordIndex(0)
             self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.updateUIonView();
     }
     
@@ -117,8 +116,19 @@ class ViewController: UIViewController {
         }
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
+    
+    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
+        self.maxWordCount = self.wordList.count
+        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        if self.wordIndex > self.maxWordCount {
+            AppInfo.sharedInstance.setWordIndex(0)
+            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        }
+    }
+}
 
-    // private method section
+extension ViewController {
     
     func wordIndexIncrease(increase : Bool) -> Int {
         var index : Int = wordIndex
@@ -223,11 +233,6 @@ class ViewController: UIViewController {
         let standardSpeed:Float = (index == .SpeechSpeedSlow) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceMaximumSpeechRate
         
         return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
-    }
-    
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
-        print("previous segue = \(segue.identifier)")
-        
     }
 }
 
