@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        makeDictionaryDB()
         AppInfo.sharedInstance.getAllDataFromRealm()
         return true
     }
@@ -43,60 +42,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func makeDictionaryDB() {        
-        let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
-        let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
-        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-        var chapter : Int = 0
-        var level : Int  = 0
-        var id_num : Int = 0
-        let realm = try! Realm()
-        
-        if realm.objects(SettingData).count == 0 {
-            try! realm.write() {
-                realm.create(SettingData.self, value: [
-                    "speechSpeedIndex":1,
-                    "languageIndex":2,
-                    "sortIndex":0,
-                    "wordIndexForAll":0,
-                    "wordIndexForStar":0,
-                    "wordIndexForAlphabet":0])
-            }
-        }
-        
-        if(lines.count - realm.objects(ChineseWord).count < 100) {
-            return;
-        }
-        
-        for text in lines {
-            if text.hasPrefix("//") {
-                chapter += 1
-                let chapterInfo = text.substringFromIndex(text.startIndex.advancedBy(2)).componentsSeparatedByString(".")
-                level = Int(chapterInfo[0])!
-                chapter = Int(chapterInfo[1])!
-            } else {
-                let wordsInfo = text.componentsSeparatedByString("\t")
-                let hanyu = wordsInfo[0]
-                let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
-                let desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
-                if realm.objects(ChineseWord).indexOf("hanyu == %@", hanyu) == nil {
-                    try! realm.write() {
-                        realm.create(ChineseWord.self,value:[
-                            "id":id_num,
-                            "level":level,
-                            "chapter":chapter,
-                            "hanyu": hanyu,
-                            "pinyin":wordsInfo[1],
-                            "desc_kr":wordsInfo[2],
-                            "desc_en":desc_en,
-                            "desc_es":desc_es,
-                            "likeIt":false]
-                        )
-                    }
-                    id_num += 1
-                }
-            }
-        }
-    }
 }
 
