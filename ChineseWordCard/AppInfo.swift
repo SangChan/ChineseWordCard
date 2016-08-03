@@ -28,6 +28,7 @@ class AppInfo {
     }
     
     func getAllDataFromRealm() {
+        makeSettingDataDB()
         makeDictionaryDB()
         speechSpeedInfo.getSpeechSpeed()
         sortInfo.getSortInfo()
@@ -50,15 +51,8 @@ class AppInfo {
 }
 
 extension AppInfo {
-    func makeDictionaryDB() {
-        let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
-        let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
-        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-        var chapter : Int = 0
-        var level : Int  = 0
-        var id_num : Int = 0
+    func makeSettingDataDB() {
         let realm = try! Realm()
-        
         if realm.objects(SettingData).count == 0 {
             try! realm.write() {
                 realm.create(SettingData.self, value: [
@@ -70,7 +64,16 @@ extension AppInfo {
                     "wordIndexForAlphabet":0])
             }
         }
-        
+
+    }
+    func makeDictionaryDB() {
+        let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
+        let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
+        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+        var chapter : Int = 0
+        var level : Int  = 0
+        var id_num : Int = 0
+        let realm = try! Realm()
         if(lines.count - realm.objects(ChineseWord).count < 100) {
             return;
         }
