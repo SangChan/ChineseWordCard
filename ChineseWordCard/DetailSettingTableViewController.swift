@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailSettingTableViewController: UITableViewController {
-    var previousSelect = NSIndexPath.init(forRow: 0, inSection: 0)
+    internal var previousSelect : NSIndexPath!
     internal var detailName : String!
     internal var detailArray : Array<Int>!
     
