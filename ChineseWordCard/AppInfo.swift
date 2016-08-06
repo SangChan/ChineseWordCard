@@ -71,7 +71,7 @@ extension AppInfo {
         let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
         let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-        if(lines.count - realm.objects(ChineseWord).count < 100) {
+        if(lines.count - realm.objects(ChineseWord).count < 10) {
             return;
         }
         
