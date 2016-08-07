@@ -19,20 +19,20 @@ class AppInfo {
     func stringFromCellIndex(index : Int) -> String {
         switch index {
         case 1 :
-            return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeed)
+            return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeedValue)
         case 2 :
-            return languageInfo.stringLanguageInfo(languageInfo.languageInfo)
+            return languageInfo.stringLanguageInfo(languageInfo.languageValue)
         default :
-            return sortInfo.stringSortInfo(sortInfo.sortInfo)
+            return sortInfo.stringSortInfo(sortInfo.sortValue)
         }
     }
     
     func getAllDataFromRealm() {
         makeSettingDataDB()
         makeDictionaryDB()
-        speechSpeedInfo.getSpeechSpeed()
-        sortInfo.getSortInfo()
-        languageInfo.getLanguageInfo()
+        speechSpeedInfo.getSpeechSpeedValue()
+        sortInfo.getSortValue()
+        languageInfo.getLanguageValue()
     }
     
     func getWordIndex() ->  Int {

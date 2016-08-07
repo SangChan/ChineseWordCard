@@ -18,38 +18,38 @@ public enum LanguageIndex : Int {
 }
 
 class LanguageInfo : EnumInfo {
-    internal var languageInfo : LanguageIndex = .LanguageIndexKR
+    internal var languageValue : LanguageIndex = .LanguageIndexKR
     
     func enumFromIndex(index:Int) -> Any {
         return self.languageIndexFromIndex(index)
     }
     
     func indexFromEnum() -> Int {
-        return self.languageInfo.rawValue
+        return self.languageValue.rawValue
     }
     
     func setIndex(index: Int) {
-        self.setLanguageInfo(self.languageIndexFromIndex(index))
+        self.setLanguageValue(self.languageIndexFromIndex(index))
     }
     
     func stringFromIndex(index:Int) -> String {
         return stringLanguageInfo(languageIndexFromIndex(index))
     }
     
-    func setLanguageInfo(index : LanguageIndex) {
-        self.languageInfo = index
+    func setLanguageValue(index : LanguageIndex) {
+        self.languageValue = index
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setValue(self.languageInfo.rawValue, forKey: "languageIndex")
+            settingData.setValue(self.languageValue.rawValue, forKey: "languageIndex")
         }
     }
     
-    func getLanguageInfo() -> LanguageIndex {
+    func getLanguageValue() -> LanguageIndex {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
-        self.languageInfo = languageIndexFromIndex(settingData.languageIndex)
-        return self.languageInfo
+        self.languageValue = languageIndexFromIndex(settingData.languageIndex)
+        return self.languageValue
     }
 }
 

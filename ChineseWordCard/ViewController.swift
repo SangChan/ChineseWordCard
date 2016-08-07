@@ -163,7 +163,7 @@ extension ViewController {
         self.nowWord = wordList[wordIndex]
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
-        self.descriptionLabel.text = getDescWithLanguageIndex(AppInfo.sharedInstance.languageInfo.languageInfo)
+        self.descriptionLabel.text = getDescWithLanguageIndex(AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float.init(wordIndex)/Float.init(wordList.count)
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
@@ -189,7 +189,7 @@ extension ViewController {
     }
     
     func getWordData() {
-        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortInfo)
+        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortValue)
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         if self.wordIndex > self.maxWordCount {
@@ -219,7 +219,7 @@ extension ViewController {
     func speakWord() {
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
         let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!)
-        utterance.rate = getSpeechSpeed(AppInfo.sharedInstance.speechSpeedInfo.speechSpeed)
+        utterance.rate = getSpeechSpeed(AppInfo.sharedInstance.speechSpeedInfo.speechSpeedValue)
         utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN")
         synthesize.speakUtterance(utterance)
     }

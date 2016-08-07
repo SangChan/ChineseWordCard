@@ -19,38 +19,38 @@ public enum SortIndex : Int {
 
 
 class SortInfo :EnumInfo {
-    internal var sortInfo : SortIndex = .SortIndexNone
+    internal var sortValue : SortIndex = .SortIndexNone
     
     func enumFromIndex(index:Int) -> Any {
         return self.sortIndexFromIndex(index)
     }
     
     func indexFromEnum() -> Int {
-        return sortInfo.rawValue
+        return sortValue.rawValue
     }
     
     func setIndex(index: Int) {
-        self.setSortInfo(self.sortIndexFromIndex(index))
+        self.setSortValue(self.sortIndexFromIndex(index))
     }
     
     func stringFromIndex(index:Int) -> String {
         return stringSortInfo(sortIndexFromIndex(index))
     }
     
-    func setSortInfo(index : SortIndex) {
-        self.sortInfo = index
+    func setSortValue(index : SortIndex) {
+        self.sortValue = index
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setValue(self.sortInfo.rawValue, forKey: "sortIndex")
+            settingData.setValue(self.sortValue.rawValue, forKey: "sortIndex")
         }
     }
     
-    func getSortInfo() -> SortIndex {
+    func getSortValue() -> SortIndex {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
-        self.sortInfo = sortIndexFromIndex(settingData.sortIndex);
-        return self.sortInfo
+        self.sortValue = sortIndexFromIndex(settingData.sortIndex);
+        return self.sortValue
     }
 }
 

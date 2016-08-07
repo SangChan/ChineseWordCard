@@ -18,38 +18,38 @@ public enum SpeechSpeedIndex : Int {
 }
 
 class SpeechSpeedInfo : EnumInfo {
-    internal var speechSpeed : SpeechSpeedIndex = .SpeechSpeedNormal
+    internal var speechSpeedValue : SpeechSpeedIndex = .SpeechSpeedNormal
     
     func enumFromIndex(index:Int) -> Any {
         return self.speechSpeedIndexFromIndex(index)
     }
     
     func indexFromEnum() -> Int {
-        return self.speechSpeed.rawValue
+        return self.speechSpeedValue.rawValue
     }
     
     func setIndex(index: Int) {
-        self.setSpeechSpeed(self.speechSpeedIndexFromIndex(index))
+        self.setSpeechSpeedValue(self.speechSpeedIndexFromIndex(index))
     }
 
     func stringFromIndex(index:Int) -> String {
         return stringSpeechSpeed(speechSpeedIndexFromIndex(index))
     }
     
-    func setSpeechSpeed(index : SpeechSpeedIndex) {
-        self.speechSpeed = index
+    func setSpeechSpeedValue(index : SpeechSpeedIndex) {
+        self.speechSpeedValue = index
         let realm = try! Realm()
         try! realm.write() {
             let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setValue(self.speechSpeed.rawValue, forKey: "speechSpeedIndex")
+            settingData.setValue(self.speechSpeedValue.rawValue, forKey: "speechSpeedIndex")
         }
     }
     
-    func getSpeechSpeed() -> SpeechSpeedIndex{
+    func getSpeechSpeedValue() -> SpeechSpeedIndex{
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
-        self.speechSpeed = speechSpeedIndexFromIndex(settingData.speechSpeedIndex)
-        return self.speechSpeed
+        self.speechSpeedValue = speechSpeedIndexFromIndex(settingData.speechSpeedIndex)
+        return self.speechSpeedValue
     }
 
 }
