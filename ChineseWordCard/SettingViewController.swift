@@ -9,9 +9,6 @@
 import UIKit
 import AVFoundation
 
-public let SELECT_LANGUAGE : String = "SelectLanguage"
-public let SELECT_SORT : String = "SelectSort"
-
 class SettingViewController: UITableViewController {
     // overrise section
     override func viewWillAppear(animated: Bool) {
