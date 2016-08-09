@@ -9,8 +9,6 @@
 import Foundation
 import RealmSwift
 
-public let SORT_INDEX : String = "SortIndex"
-
 public enum SortIndex : Int {
     case SortIndexNone = 0
     case SortIndexAlphabet

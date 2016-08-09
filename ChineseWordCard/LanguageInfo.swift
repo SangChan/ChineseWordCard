@@ -9,8 +9,6 @@
 import Foundation
 import RealmSwift
 
-public let LANGUAGE_INDEX : String = "LanguageIndex"
-
 public enum LanguageIndex : Int {
     case LanguageIndexEN = 0
     case LangyageIndexES

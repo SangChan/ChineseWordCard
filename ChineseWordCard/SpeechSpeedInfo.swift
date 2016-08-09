@@ -9,8 +9,6 @@
 import Foundation
 import RealmSwift
 
-public let SPEECH_SPEED_INDEX : String = "SpeechSpeed"
-
 public enum SpeechSpeedIndex : Int {
     case SpeechSpeedSlow = 0
     case SpeechSpeedNormal
