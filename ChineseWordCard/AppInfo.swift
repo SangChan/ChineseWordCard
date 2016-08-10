@@ -8,8 +8,6 @@
 import AVFoundation
 import RealmSwift
 
-public let WORD_INDEX : String = "WordIndex"
-
 class AppInfo {
     static let sharedInstance = AppInfo()
     let sortInfo : SortInfo = SortInfo()
