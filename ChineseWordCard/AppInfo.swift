@@ -51,7 +51,7 @@ class AppInfo {
 extension AppInfo {
     func makeSettingDataDB() {
         let realm = try! Realm()
-        if realm.objects(SettingData).count == 0 {
+        guard realm.objects(SettingData).count != 0 else {
             try! realm.write() {
                 realm.create(SettingData.self, value: [
                     "speechSpeedIndex":1,
@@ -61,6 +61,7 @@ extension AppInfo {
                     "wordIndexForStar":0,
                     "wordIndexForAlphabet":0])
             }
+            return
         }
 
     }
