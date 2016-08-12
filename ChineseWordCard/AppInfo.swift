@@ -51,7 +51,7 @@ class AppInfo {
 extension AppInfo {
     func makeSettingDataDB() {
         let realm = try! Realm()
-        guard realm.objects(SettingData).count != 0 else {
+        guard realm.objects(SettingData).count > 0 else {
             try! realm.write() {
                 realm.create(SettingData.self, value: [
                     "speechSpeedIndex":1,
@@ -70,8 +70,8 @@ extension AppInfo {
         let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
         let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-        if(lines.count - realm.objects(ChineseWord).count < 10) {
-            return;
+        guard (lines.count - realm.objects(ChineseWord).count) > 100 else {
+            return
         }
         
         var chapter : Int = 0
