@@ -105,6 +105,9 @@ class ViewController: UIViewController {
     
     @IBAction func starButtonPressed(sender: AnyObject) {
         //TODO: Change this logic for likeit, cause create bug when delete like it.
+        if AppInfo.sharedInstance.sortInfo.sortValue == .SortIndexStar {
+            return
+        }
         let realm = try! Realm()
         try! realm.write() {
             self.nowWord.setValue(!self.nowWord.likeIt, forKey: "likeIt")
