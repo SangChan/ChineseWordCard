@@ -37,10 +37,10 @@ class SpeechSpeedInfo : EnumInfo {
     func setSpeechSpeedValue(index : SpeechSpeedIndex) {
         self.speechSpeedValue = index
         let realm = try! Realm()
-        try! realm.write() {
+        try! realm.write({ 
             let settingData : SettingData = realm.objects(SettingData).first!
             settingData.setValue(self.speechSpeedValue.rawValue, forKey: "speechSpeedIndex")
-        }
+        })
     }
     
     func getSpeechSpeedValue() -> SpeechSpeedIndex{

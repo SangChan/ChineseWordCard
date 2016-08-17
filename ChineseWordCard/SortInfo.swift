@@ -38,10 +38,10 @@ class SortInfo :EnumInfo {
     func setSortValue(index : SortIndex) {
         self.sortValue = index
         let realm = try! Realm()
-        try! realm.write() {
+        try! realm.write({ 
             let settingData : SettingData = realm.objects(SettingData).first!
             settingData.setValue(self.sortValue.rawValue, forKey: "sortIndex")
-        }
+        })
     }
     
     func getSortValue() -> SortIndex {

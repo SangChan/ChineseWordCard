@@ -37,10 +37,10 @@ class LanguageInfo : EnumInfo {
     func setLanguageValue(index : LanguageIndex) {
         self.languageValue = index
         let realm = try! Realm()
-        try! realm.write() {
+        try! realm.write({ 
             let settingData : SettingData = realm.objects(SettingData).first!
             settingData.setValue(self.languageValue.rawValue, forKey: "languageIndex")
-        }
+        })
     }
     
     func getLanguageValue() -> LanguageIndex {
