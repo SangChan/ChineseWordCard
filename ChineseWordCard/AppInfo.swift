@@ -41,7 +41,7 @@ class AppInfo {
     
     func setWordIndex(index : Int) {
         let realm = try! Realm()
-        try! realm.write() {
+        try! realm.write {
             let settingData : SettingData = realm.objects(SettingData).first!
             settingData.setWordIndex(index)
         }
@@ -52,7 +52,7 @@ extension AppInfo {
     func makeSettingDataDB() {
         let realm = try! Realm()
         guard realm.objects(SettingData).count > 0 else {
-            try! realm.write() {
+            try! realm.write {
                 realm.create(SettingData.self, value: [
                     "speechSpeedIndex":1,
                     "languageIndex":2,
@@ -90,7 +90,7 @@ extension AppInfo {
                 let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
                 let desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
                 if realm.objects(ChineseWord).indexOf("hanyu == %@", hanyu) == nil {
-                    try! realm.write() {
+                    try! realm.write {
                         realm.create(ChineseWord.self,value:[
                             "id":id_num,
                             "level":level,
