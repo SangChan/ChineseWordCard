@@ -28,7 +28,7 @@
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
 		63D542511C50E72700E1937B /* SpeechRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542501C50E72700E1937B /* SpeechRateViewController.swift */; };
 		63D542561C52177900E1937B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542551C52177900E1937B /* AppInfo.swift */; };
-		AA1B6E354B340AF5EC7395A8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BF1ABAF0B6E1248BF9E93E /* Pods.framework */; };
+		69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4C0FE019DAB133C916C0755C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseWordCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseWordCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard.debug.xcconfig"; sourceTree = "<group>"; };
 		631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingTableViewController.swift; sourceTree = "<group>"; };
 		631CE02F1CF9D76C0036DE72 /* SettingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
 		6321B9F51C05E70F00E2186C /* ChineseWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseWord.swift; sourceTree = "<group>"; };
@@ -73,7 +74,7 @@
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63D542501C50E72700E1937B /* SpeechRateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechRateViewController.swift; sourceTree = "<group>"; };
 		63D542551C52177900E1937B /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
-		6452B5AB643AF79070660F4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseWordCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard.release.xcconfig"; sourceTree = "<group>"; };
 		97BF1ABAF0B6E1248BF9E93E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,7 +92,7 @@
 			files = (
 				63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */,
 				63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */,
-				AA1B6E354B340AF5EC7395A8 /* Pods.framework in Frameworks */,
+				69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +129,8 @@
 				63B01C841C034949005BA0CD /* ChineseWordCardUITests */,
 				6327733F1D4B01FE00A3BB0B /* ChineseWordCardTests */,
 				63458E761BA7CE9700D4A48D /* Products */,
-				FE9A11E29420767567071F80 /* Pods */,
 				D537103A42283B907FE93EBF /* Frameworks */,
+				F01BBC3F1CBACB29EF187526 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,15 +221,16 @@
 				63D097EF1BABE19100ABC6EA /* UIKit.framework */,
 				63D097ED1BABE16500ABC6EA /* AVFoundation.framework */,
 				97BF1ABAF0B6E1248BF9E93E /* Pods.framework */,
+				2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FE9A11E29420767567071F80 /* Pods */ = {
+		F01BBC3F1CBACB29EF187526 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C0FE019DAB133C916C0755C /* Pods.debug.xcconfig */,
-				6452B5AB643AF79070660F4C /* Pods.release.xcconfig */,
+				3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */,
+				8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -258,12 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63458E941BA7CE9700D4A48D /* Build configuration list for PBXNativeTarget "ChineseWordCard" */;
 			buildPhases = (
-				E0FCBDF8BB1BE3C4F81788F2 /* Check Pods Manifest.lock */,
+				1557E6DCAA4E96A3F3B5183B /* [CP] Check Pods Manifest.lock */,
 				63458E711BA7CE9700D4A48D /* Sources */,
 				63458E721BA7CE9700D4A48D /* Frameworks */,
 				63458E731BA7CE9700D4A48D /* Resources */,
-				CCF41570BFC704ABD48FF181 /* Embed Pods Frameworks */,
-				87C3C88FFAE570C7ED053BB9 /* Copy Pods Resources */,
+				156B6A343BD6C1067D031B70 /* [CP] Embed Pods Frameworks */,
+				0C63062F9EE6A72606710B7E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,49 +342,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		87C3C88FFAE570C7ED053BB9 /* Copy Pods Resources */ = {
+		0C63062F9EE6A72606710B7E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CCF41570BFC704ABD48FF181 /* Embed Pods Frameworks */ = {
+		1557E6DCAA4E96A3F3B5183B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E0FCBDF8BB1BE3C4F81788F2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		156B6A343BD6C1067D031B70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -561,7 +563,7 @@
 		};
 		63458E951BA7CE9700D4A48D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C0FE019DAB133C916C0755C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -582,7 +584,7 @@
 		};
 		63458E961BA7CE9700D4A48D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6452B5AB643AF79070660F4C /* Pods.release.xcconfig */;
+			baseConfigurationReference = 8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
