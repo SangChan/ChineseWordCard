@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         }
         let realm = try! Realm()
         try! realm.write {
-            self.nowWord.setValue(!self.nowWord.likeIt, forKey: "likeIt")
+            self.nowWord.likeIt = !self.nowWord.likeIt
         }
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
