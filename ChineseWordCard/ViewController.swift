@@ -164,6 +164,7 @@ extension ViewController {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.prevButton.enabled = (wordIndex > 0) ? true : false
         self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
+        self.starButton.hidden = (AppInfo.sharedInstance.sortInfo.sortValue == .SortIndexStar)
         self.nowWord = wordList[wordIndex]
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
