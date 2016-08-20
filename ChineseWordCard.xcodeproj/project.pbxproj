@@ -108,7 +108,7 @@
 			path = ChineseWordCardTests;
 			sourceTree = "<group>";
 		};
-		6327B59C1D4DB462009F0683 /* ViewController */ = {
+		6327B59C1D4DB462009F0683 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				638FF3601C48A16C00A5D366 /* SettingViewController.swift */,
@@ -118,7 +118,7 @@
 				6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */,
 				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
 			);
-			name = ViewController;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		63458E6C1BA7CE9700D4A48D = {
@@ -146,7 +146,7 @@
 		63458E771BA7CE9700D4A48D /* ChineseWordCard */ = {
 			isa = PBXGroup;
 			children = (
-				6327B59C1D4DB462009F0683 /* ViewController */,
+				6327B59C1D4DB462009F0683 /* Controller */,
 				63C9FE0C1D0020560094164E /* View */,
 				63C9FE0B1D00202C0094164E /* Model */,
 				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
