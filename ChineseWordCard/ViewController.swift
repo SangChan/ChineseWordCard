@@ -206,13 +206,13 @@ extension ViewController {
     func setLabelHiddenByCount(count : Int) {
         switch count%3 {
         case 1:
-            UIView .animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.5, animations: {
                 self.pinyinLabel.alpha = 1.0
                 }, completion: { (true) in
                     self.speakWord()
             })
         case 2:
-            UIView .animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.5, animations: {
                 self.descriptionLabel.alpha = 1.0
             })
         default:
