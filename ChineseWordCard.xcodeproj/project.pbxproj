@@ -10,7 +10,6 @@
 		631B79CC1C771E1A009FBA45 /* DetailSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */; };
 		631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CE02F1CF9D76C0036DE72 /* SettingData.swift */; };
 		6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321B9F51C05E70F00E2186C /* ChineseWord.swift */; };
-		632773411D4B01FE00A3BB0B /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632773401D4B01FE00A3BB0B /* ChineseWordCardTests.swift */; };
 		63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */; };
 		63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7C1BA7CE9700D4A48D /* ViewController.swift */; };
 		63458E801BA7CE9700D4A48D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63458E7E1BA7CE9700D4A48D /* Main.storyboard */; };
@@ -48,8 +47,6 @@
 		631CE02F1CF9D76C0036DE72 /* SettingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
 		6321B9F51C05E70F00E2186C /* ChineseWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseWord.swift; sourceTree = "<group>"; };
 		6327733E1D4B01FD00A3BB0B /* ChineseWordCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseWordCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		632773401D4B01FE00A3BB0B /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
-		632773421D4B01FE00A3BB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63458E751BA7CE9700D4A48D /* ChineseWordCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseWordCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63458E791BA7CE9700D4A48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +62,6 @@
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
 		63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectViewController.swift; sourceTree = "<group>"; };
-		63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardUITests.swift; sourceTree = "<group>"; };
-		63B01C871C034949005BA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageInfo.swift; sourceTree = "<group>"; };
 		63C8DB8C1D03322500FAEC52 /* SpeechSpeedInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSpeedInfo.swift; sourceTree = "<group>"; };
 		63C8DB8E1D03344600FAEC52 /* SortInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortInfo.swift; sourceTree = "<group>"; };
@@ -99,15 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6327733F1D4B01FE00A3BB0B /* ChineseWordCardTests */ = {
-			isa = PBXGroup;
-			children = (
-				632773401D4B01FE00A3BB0B /* ChineseWordCardTests.swift */,
-				632773421D4B01FE00A3BB0B /* Info.plist */,
-			);
-			path = ChineseWordCardTests;
-			sourceTree = "<group>";
-		};
 		6327B59C1D4DB462009F0683 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,8 +112,6 @@
 			children = (
 				63458E771BA7CE9700D4A48D /* ChineseWordCard */,
 				63458E8D1BA7CE9700D4A48D /* ChineseWordCardTests */,
-				63B01C841C034949005BA0CD /* ChineseWordCardUITests */,
-				6327733F1D4B01FE00A3BB0B /* ChineseWordCardTests */,
 				63458E761BA7CE9700D4A48D /* Products */,
 				D537103A42283B907FE93EBF /* Frameworks */,
 				F01BBC3F1CBACB29EF187526 /* Pods */,
@@ -180,15 +164,6 @@
 				63458E8F1BA7CE9700D4A48D /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		63B01C841C034949005BA0CD /* ChineseWordCardUITests */ = {
-			isa = PBXGroup;
-			children = (
-				63B01C851C034949005BA0CD /* ChineseWordCardUITests.swift */,
-				63B01C871C034949005BA0CD /* Info.plist */,
-			);
-			path = ChineseWordCardUITests;
 			sourceTree = "<group>";
 		};
 		63C9FE0B1D00202C0094164E /* Model */ = {
@@ -394,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632773411D4B01FE00A3BB0B /* ChineseWordCardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

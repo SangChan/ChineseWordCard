@@ -34,29 +34,29 @@ class ChineseWordCardTests: XCTestCase {
         }
     }
     func testAppInfoData() {
-        XCTAssert(AppInfo.sharedInstance.sortInfo.getSortInfo() == .SortIndexNone)
-        XCTAssert(AppInfo.sharedInstance.speechSpeedInfo.getSpeechSpeed() == .SpeechSpeedNormal)
-        XCTAssert(AppInfo.sharedInstance.languageInfo.getLanguageInfo() == .LanguageIndexKR)
+        XCTAssert(AppInfo.sharedInstance.sortInfo.sortValue == .SortIndexNone)
+        XCTAssert(AppInfo.sharedInstance.speechSpeedInfo.speechSpeedValue == .SpeechSpeedNormal)
+        XCTAssert(AppInfo.sharedInstance.languageInfo.languageValue == .LanguageIndexKR)
     }
     
     func testAppInfoSaveIndex() {
         var wordIndex : Int = 99
-        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexNone)
+        AppInfo.sharedInstance.sortInfo.setSortVlue(.SortIndexNone)
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
         
         wordIndex = 12
-        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexAlphabet)
+        AppInfo.sharedInstance.sortInfo.setSortValue(.SortIndexAlphabet)
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
         
         wordIndex = 58
-        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexStar)
+        AppInfo.sharedInstance.sortInfo.setSortValue(.SortIndexStar)
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() == wordIndex,"Pass")
         
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        AppInfo.sharedInstance.sortInfo.setSortInfo(.SortIndexNone)
+        AppInfo.sharedInstance.sortInfo.setSortValue(.SortIndexNone)
         XCTAssert(AppInfo.sharedInstance.getWordIndex() != wordIndex,"Pass")
         
     }
