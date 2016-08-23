@@ -9,9 +9,9 @@
 import RealmSwift
 
 class ChineseWord: Object {
-    dynamic var id = -1
-    dynamic var level = -1
-    dynamic var chapter = -1
+    dynamic var id : UInt = 0
+    dynamic var level : UInt = 0
+    dynamic var chapter : UInt = 0
     dynamic var desc_kr : String?
     dynamic var desc_en : String?
     dynamic var desc_es : String?
