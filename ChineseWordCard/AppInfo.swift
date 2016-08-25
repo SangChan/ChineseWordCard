@@ -54,9 +54,9 @@ extension AppInfo {
         guard realm.objects(SettingData).count > 0 else {
             try! realm.write {
                 realm.create(SettingData.self, value: [
-                    "speechSpeedIndex":1,
-                    "languageIndex":2,
-                    "sortIndex":0,
+                    "speechSpeedIndex":SpeechSpeedIndex.SpeechSpeedNormal.rawValue,
+                    "languageIndex":LanguageIndex.LanguageIndexKR.rawValue,
+                    "sortIndex":SortIndex.SortIndexNone.rawValue,
                     "wordIndexForAll":0,
                     "wordIndexForStar":0,
                     "wordIndexForAlphabet":0])

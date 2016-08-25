@@ -9,9 +9,9 @@
 import RealmSwift
 
 class SettingData : Object {
-    dynamic var speechSpeedIndex = 1 //SpeechSpeedNormal
-    dynamic var languageIndex = 2 //LanguageIndexKR
-    dynamic var sortIndex = 0 //SortIndexNone
+    dynamic var speechSpeedIndex = SpeechSpeedIndex.SpeechSpeedNormal.rawValue
+    dynamic var languageIndex = LanguageIndex.LanguageIndexKR.rawValue
+    dynamic var sortIndex = SortIndex.SortIndexNone.rawValue
     dynamic var wordIndexForAll = 0
     dynamic var wordIndexForStar = 0
     dynamic var wordIndexForAlphabet = 0
