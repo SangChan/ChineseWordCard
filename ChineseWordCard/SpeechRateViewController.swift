@@ -9,8 +9,7 @@
 import UIKit
 
 class SpeechRateViewController: DetailSettingTableViewController {
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func setupData() {
         detailName = "SpeechRate"
         detailArray = [SpeechSpeedIndex.SpeechSpeedSlow.rawValue, SpeechSpeedIndex.SpeechSpeedNormal.rawValue, SpeechSpeedIndex.SpeechSpeedFast.rawValue]
     }

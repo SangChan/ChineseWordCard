@@ -13,6 +13,15 @@ class DetailSettingTableViewController: UITableViewController {
     internal var detailName : String!
     internal var detailArray : Array<Int>!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupData()
+    }
+    
+    func setupData() {
+        
+    }
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(previousSelect)?.accessoryType = .None
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark

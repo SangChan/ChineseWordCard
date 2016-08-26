@@ -10,8 +10,7 @@ import UIKit
 import RealmSwift
 
 class SortSelectViewController: DetailSettingTableViewController {
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func setupData() {
         detailName = "SortSelect"
         detailArray = [SortIndex.SortIndexNone.rawValue,SortIndex.SortIndexAlphabet.rawValue,SortIndex.SortIndexStar.rawValue]
     }

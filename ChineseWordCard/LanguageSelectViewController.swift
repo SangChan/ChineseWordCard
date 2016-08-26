@@ -9,10 +9,8 @@
 import UIKit
 
 class LanguageSelectViewController: DetailSettingTableViewController {
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    override func setupData() {
         detailName = "LanguageSelect"
         detailArray = [LanguageIndex.LanguageIndexEN.rawValue,LanguageIndex.LangyageIndexES.rawValue,LanguageIndex.LanguageIndexKR.rawValue]
     }
-
 }
