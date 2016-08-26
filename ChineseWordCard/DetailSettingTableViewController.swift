@@ -18,9 +18,7 @@ class DetailSettingTableViewController: UITableViewController {
         setupData()
     }
     
-    func setupData() {
-        
-    }
+    func setupData(){}
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(previousSelect)?.accessoryType = .None
