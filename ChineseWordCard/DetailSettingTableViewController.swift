@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SetupData {
+   func setupData()
+}
+
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : NSIndexPath!
     internal var detailName : String!
@@ -17,8 +21,6 @@ class DetailSettingTableViewController: UITableViewController {
         super.init(coder: aDecoder)
         setupData()
     }
-    
-    func setupData(){}
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.cellForRowAtIndexPath(previousSelect)?.accessoryType = .None
@@ -49,5 +51,11 @@ class DetailSettingTableViewController: UITableViewController {
         default:
             return AppInfo.sharedInstance.languageInfo
         }
+    }
+}
+
+extension DetailSettingTableViewController : SetupData {
+    func setupData() {
+        //Need to override
     }
 }
