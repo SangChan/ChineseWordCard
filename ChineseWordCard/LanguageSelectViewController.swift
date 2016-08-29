@@ -10,6 +10,7 @@ import UIKit
 
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
+        tableView.allowsSelection = false
         detailName = "LanguageSelect"
         detailArray = [LanguageIndex.LanguageIndexEN.rawValue,LanguageIndex.LangyageIndexES.rawValue,LanguageIndex.LanguageIndexKR.rawValue]
     }
