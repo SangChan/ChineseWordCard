@@ -15,7 +15,6 @@ public enum SortIndex : Int {
     case SortIndexStar
 }
 
-
 class SortInfo :EnumInfo {
     internal var sortValue : SortIndex = .SortIndexNone
     
