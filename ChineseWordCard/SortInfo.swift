@@ -26,7 +26,6 @@ public enum SortIndex : InfoProtocol {
     }
 }
 
-
 class SortInfo :EnumInfo {
     internal var sortValue : SortIndex = .SortIndexNone
     
