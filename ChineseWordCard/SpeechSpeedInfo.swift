@@ -9,16 +9,27 @@
 import Foundation
 import RealmSwift
 
-public enum SpeechSpeedIndex : Int {
-    case SpeechSpeedSlow = 0
+public enum SpeechSpeedIndex : InfoProtocol {
+    case SpeechSpeedSlow
     case SpeechSpeedNormal
     case SpeechSpeedFast
+    
+    var rawValue : Int {
+        switch self {
+        case .SpeechSpeedSlow:
+            return 0
+        case .SpeechSpeedNormal:
+            return 1
+        case .SpeechSpeedFast:
+            return 2
+        }
+    }
 }
 
 class SpeechSpeedInfo : EnumInfo {
     internal var speechSpeedValue : SpeechSpeedIndex = .SpeechSpeedNormal
     
-    func enumFromIndex(index:Int) -> Any {
+    func enumFromIndex(index:Int) -> InfoProtocol {
         return self.speechSpeedIndexFromIndex(index)
     }
     

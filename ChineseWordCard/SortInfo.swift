@@ -9,17 +9,28 @@
 import Foundation
 import RealmSwift
 
-public enum SortIndex : Int {
-    case SortIndexNone = 0
+public enum SortIndex : InfoProtocol {
+    case SortIndexNone
     case SortIndexAlphabet
     case SortIndexStar
+    
+    var rawValue : Int {
+        switch self {
+        case .SortIndexNone:
+            return 0
+        case .SortIndexAlphabet:
+            return 1
+        case .SortIndexStar:
+            return 2
+        }
+    }
 }
 
 
 class SortInfo :EnumInfo {
     internal var sortValue : SortIndex = .SortIndexNone
     
-    func enumFromIndex(index:Int) -> Any {
+    func enumFromIndex(index:Int) -> InfoProtocol {
         return self.sortIndexFromIndex(index)
     }
     

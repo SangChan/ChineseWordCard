@@ -8,8 +8,12 @@
 
 import Foundation
 
+protocol InfoProtocol {
+    var rawValue: Int { get }
+}
+
 protocol EnumInfo {
-    func enumFromIndex(index:Int) -> Any
+    func enumFromIndex(index:Int) -> InfoProtocol
     func indexFromEnum() -> Int
     func setIndex(index:Int)
     func stringFromIndex(index:Int) -> String

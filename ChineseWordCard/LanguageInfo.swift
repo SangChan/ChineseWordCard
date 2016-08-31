@@ -9,16 +9,28 @@
 import Foundation
 import RealmSwift
 
-public enum LanguageIndex : Int {
-    case LanguageIndexEN = 0
+public enum LanguageIndex : InfoProtocol {
+    case LanguageIndexEN
     case LangyageIndexES
     case LanguageIndexKR
+    
+    var rawValue : Int {
+        switch self {
+        case .LanguageIndexEN:
+            return 0
+        case .LangyageIndexES:
+            return 1
+        case .LanguageIndexKR:
+            return 2
+        }
+    }
+
 }
 
 class LanguageInfo : EnumInfo {
     internal var languageValue : LanguageIndex = .LanguageIndexKR
     
-    func enumFromIndex(index:Int) -> Any {
+    func enumFromIndex(index:Int) -> InfoProtocol {
         return self.languageIndexFromIndex(index)
     }
     
