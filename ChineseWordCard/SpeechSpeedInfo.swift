@@ -44,6 +44,10 @@ class SpeechSpeedInfo : EnumInfo {
     func stringFromIndex(index:Int) -> String {
         return stringSpeechSpeed(speechSpeedIndexFromIndex(index))
     }
+
+}
+
+extension SpeechSpeedInfo {
     
     func setSpeechSpeedValue(index : SpeechSpeedIndex) {
         self.speechSpeedValue = index
@@ -60,10 +64,7 @@ class SpeechSpeedInfo : EnumInfo {
         self.speechSpeedValue = speechSpeedIndexFromIndex(settingData.speechSpeedIndex)
         return self.speechSpeedValue
     }
-
-}
-
-extension SpeechSpeedInfo {
+    
     func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
         switch index {
         case 0:

@@ -45,6 +45,9 @@ class SortInfo :EnumInfo {
         return stringSortInfo(sortIndexFromIndex(index))
     }
     
+}
+
+extension SortInfo {
     func setSortValue(index : SortIndex) {
         self.sortValue = index
         let realm = try! Realm()
@@ -60,9 +63,7 @@ class SortInfo :EnumInfo {
         self.sortValue = sortIndexFromIndex(settingData.sortIndex);
         return self.sortValue
     }
-}
-
-extension SortInfo {
+    
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
         case 1:

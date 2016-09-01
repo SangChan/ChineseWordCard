@@ -46,6 +46,11 @@ class LanguageInfo : EnumInfo {
         return stringLanguageInfo(languageIndexFromIndex(index))
     }
     
+    
+}
+
+extension LanguageInfo {
+    
     func setLanguageValue(index : LanguageIndex) {
         self.languageValue = index
         let realm = try! Realm()
@@ -61,9 +66,7 @@ class LanguageInfo : EnumInfo {
         self.languageValue = languageIndexFromIndex(settingData.languageIndex)
         return self.languageValue
     }
-}
-
-extension LanguageInfo {
+    
     func languageIndexFromIndex(index : Int) -> LanguageIndex {
         switch index {
         case 0:
