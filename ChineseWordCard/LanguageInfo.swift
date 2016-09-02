@@ -28,7 +28,7 @@ public enum LanguageIndex : InfoProtocol {
 }
 
 class LanguageInfo : EnumInfo {
-    internal var languageValue : LanguageIndex = .LanguageIndexKR
+    internal var languageValue : InfoProtocol = LanguageIndex.LanguageIndexKR
     
     func enumFromIndex(index:Int) -> InfoProtocol {
         return self.languageIndexFromIndex(index)

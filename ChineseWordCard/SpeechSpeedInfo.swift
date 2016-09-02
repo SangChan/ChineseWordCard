@@ -27,7 +27,7 @@ public enum SpeechSpeedIndex : InfoProtocol {
 }
 
 class SpeechSpeedInfo : EnumInfo {
-    internal var speechSpeedValue : SpeechSpeedIndex = .SpeechSpeedNormal
+    internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.SpeechSpeedNormal
     
     func enumFromIndex(index:Int) -> InfoProtocol {
         return self.speechSpeedIndexFromIndex(index)

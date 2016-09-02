@@ -27,7 +27,7 @@ public enum SortIndex : InfoProtocol {
 }
 
 class SortInfo :EnumInfo {
-    internal var sortValue : SortIndex = .SortIndexNone
+    internal var sortValue : InfoProtocol = SortIndex.SortIndexNone
     
     func enumFromIndex(index:Int) -> InfoProtocol {
         return self.sortIndexFromIndex(index)
