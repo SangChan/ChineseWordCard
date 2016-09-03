@@ -58,7 +58,7 @@ extension SpeechSpeedInfo {
         }
     }
     
-    func getSpeechSpeedValue() -> SpeechSpeedIndex{
+    func getSpeechSpeedValue() -> InfoProtocol{
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
         self.speechSpeedValue = speechSpeedIndexFromIndex(settingData.speechSpeedIndex)

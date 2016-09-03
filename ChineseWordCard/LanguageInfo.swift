@@ -60,7 +60,7 @@ extension LanguageInfo {
         }
     }
     
-    func getLanguageValue() -> LanguageIndex {
+    func getLanguageValue() -> InfoProtocol {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
         self.languageValue = languageIndexFromIndex(settingData.languageIndex)

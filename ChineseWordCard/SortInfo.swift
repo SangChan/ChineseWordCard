@@ -57,7 +57,7 @@ extension SortInfo {
         }
     }
     
-    func getSortValue() -> SortIndex {
+    func getSortValue() -> InfoProtocol {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData).first!
         self.sortValue = sortIndexFromIndex(settingData.sortIndex);
