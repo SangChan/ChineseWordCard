@@ -67,19 +67,19 @@ extension SortInfo {
     func sortIndexFromIndex(index : Int) -> SortIndex {
         switch index {
         case 1:
-            return .SortIndexAlphabet
+            return SortIndex.SortIndexAlphabet
         case 2:
-            return .SortIndexStar
+            return SortIndex.SortIndexStar
         default :
-            return .SortIndexNone
+            return SortIndex.SortIndexNone
         }
     }
     
-    func stringSortInfo(sortInfo : SortIndex) -> String {
+    func stringSortInfo(sortInfo : InfoProtocol) -> String {
         switch sortInfo {
-        case .SortIndexStar :
+        case SortIndex.SortIndexStar :
             return "By Star"
-        case .SortIndexAlphabet :
+        case SortIndex.SortIndexAlphabet :
             return "By Alphabet"
         default :
             return "All"

@@ -105,7 +105,7 @@ class ViewController: UIViewController {
     
     @IBAction func starButtonPressed(sender: AnyObject) {
         //TODO: Change this logic for likeit, cause create bug when delete like it.
-        if AppInfo.sharedInstance.sortInfo.sortValue == .SortIndexStar {
+        if AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.SortIndexStar.rawValue {
             return
         }
         let realm = try! Realm()
@@ -142,12 +142,12 @@ extension ViewController {
         self.updateUIonView()
     }
     
-    func getDataFromSort(index : SortIndex) -> Results<ChineseWord>{
+    func getDataFromSort(index : InfoProtocol) -> Results<ChineseWord>{
         let realm = try! Realm()
         switch index {
-        case .SortIndexStar:
+        case SortIndex.SortIndexStar:
             return realm.objects(ChineseWord).filter("likeIt == true")
-        case .SortIndexAlphabet :
+        case SortIndex.SortIndexAlphabet :
             return realm.objects(ChineseWord).sorted("pinyin")
         default:
             return realm.objects(ChineseWord)
@@ -164,7 +164,7 @@ extension ViewController {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.prevButton.enabled = (wordIndex > 0) ? true : false
         self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
-        self.starButton.hidden = (AppInfo.sharedInstance.sortInfo.sortValue == .SortIndexStar)
+        self.starButton.hidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.SortIndexStar.rawValue)
         self.nowWord = wordList[wordIndex]
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
@@ -173,10 +173,10 @@ extension ViewController {
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
     
-    func getDescWithLanguageIndex(index : LanguageIndex) -> String {
+    func getDescWithLanguageIndex(index : InfoProtocol) -> String {
         switch index {
-        case .LanguageIndexEN : return nowWord.desc_en!
-        case .LangyageIndexES : return nowWord.desc_es!
+        case LanguageIndex.LanguageIndexEN : return nowWord.desc_en!
+        case LanguageIndex.LangyageIndexES : return nowWord.desc_es!
         default : return nowWord.desc_kr!
         }
     }
@@ -229,11 +229,12 @@ extension ViewController {
         synthesize.speakUtterance(utterance)
     }
     
-    func getSpeechSpeed(index : SpeechSpeedIndex) -> Float {
-        if index ==  .SpeechSpeedNormal {
+    func getSpeechSpeed(index : InfoProtocol) -> Float {
+        
+        if index.rawValue == SpeechSpeedIndex.SpeechSpeedNormal.rawValue {
             return AVSpeechUtteranceDefaultSpeechRate
         }
-        let standardSpeed:Float = (index == .SpeechSpeedSlow) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceMaximumSpeechRate
+        let standardSpeed:Float = (index.rawValue == SpeechSpeedIndex.SpeechSpeedSlow.rawValue) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceMaximumSpeechRate
         
         return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
     }

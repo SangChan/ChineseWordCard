@@ -70,19 +70,19 @@ extension LanguageInfo {
     func languageIndexFromIndex(index : Int) -> LanguageIndex {
         switch index {
         case 0:
-            return .LanguageIndexEN
+            return LanguageIndex.LanguageIndexEN
         case 1:
-            return .LangyageIndexES
+            return LanguageIndex.LangyageIndexES
         default :
-            return .LanguageIndexKR
+            return LanguageIndex.LanguageIndexKR
         }
     }
     
-    func stringLanguageInfo(languageInfo : LanguageIndex) -> String {
+    func stringLanguageInfo(languageInfo : InfoProtocol) -> String {
         switch languageInfo {
-        case .LanguageIndexEN :
+        case LanguageIndex.LanguageIndexEN :
             return "English"
-        case .LangyageIndexES :
+        case LanguageIndex.LangyageIndexES :
             return "Espanõl"
         default :
             return "한국어"

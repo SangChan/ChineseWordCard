@@ -68,19 +68,19 @@ extension SpeechSpeedInfo {
     func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
         switch index {
         case 0:
-            return .SpeechSpeedSlow
+            return SpeechSpeedIndex.SpeechSpeedSlow
         case 2:
-            return .SpeechSpeedFast
+            return SpeechSpeedIndex.SpeechSpeedFast
         default :
-            return .SpeechSpeedNormal
+            return SpeechSpeedIndex.SpeechSpeedNormal
         }
     }
     
-    func stringSpeechSpeed(speechSpeed : SpeechSpeedIndex) -> String {
+    func stringSpeechSpeed(speechSpeed : InfoProtocol) -> String {
         switch speechSpeed {
-        case .SpeechSpeedSlow:
+        case SpeechSpeedIndex.SpeechSpeedSlow:
             return "Slow"
-        case .SpeechSpeedFast:
+        case SpeechSpeedIndex.SpeechSpeedFast:
             return "Fast"
         default :
             return "Normal"
