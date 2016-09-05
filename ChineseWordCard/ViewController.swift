@@ -146,7 +146,7 @@ extension ViewController {
         let realm = try! Realm()
         switch index {
         case SortIndex.SortIndexStar:
-            return realm.objects(ChineseWord).filter("likeIt == true")
+            return (realm.objects(ChineseWord).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord).filter("likeIt == true") : realm.objects(ChineseWord)
         case SortIndex.SortIndexAlphabet :
             return realm.objects(ChineseWord).sorted("pinyin")
         default:
