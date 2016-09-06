@@ -230,7 +230,7 @@ extension ViewController {
     }
     
     func getSpeechSpeed(index : InfoProtocol) -> Float {
-        
+        // fast is too fast
         if index.rawValue == SpeechSpeedIndex.SpeechSpeedNormal.rawValue {
             return AVSpeechUtteranceDefaultSpeechRate
         }
