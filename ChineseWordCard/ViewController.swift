@@ -208,8 +208,10 @@ extension ViewController {
         case 1:
             UIView.animateWithDuration(0.5, animations: {
                 self.pinyinLabel.alpha = 1.0
-                }, completion: { (true) in
+            }, completion: { (success) in
+                if success == true {
                     self.speakWord()
+                }
             })
         case 2:
             UIView.animateWithDuration(0.5, animations: {
