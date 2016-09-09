@@ -216,6 +216,10 @@ extension ViewController {
         case 2:
             UIView.animateWithDuration(0.5, animations: {
                 self.descriptionLabel.alpha = 1.0
+            }, completion: { (success) in
+                if success == false {
+                    self.speakWord()
+                }
             })
         default:
             pinyinLabel.alpha = 0.0
