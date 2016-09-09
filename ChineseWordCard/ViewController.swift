@@ -211,6 +211,8 @@ extension ViewController {
             }, completion: { (success) in
                 if success == true {
                     self.speakWord()
+                } else {
+                    
                 }
             })
         case 2:
@@ -238,9 +240,9 @@ extension ViewController {
     func getSpeechSpeed(index : InfoProtocol) -> Float {
         // fast is too fast
         if index.rawValue == SpeechSpeedIndex.SpeechSpeedNormal.rawValue {
-            return AVSpeechUtteranceDefaultSpeechRate
+            return (AVSpeechUtteranceMinimumSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 2.0
         }
-        let standardSpeed:Float = (index.rawValue == SpeechSpeedIndex.SpeechSpeedSlow.rawValue) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceMaximumSpeechRate
+        let standardSpeed:Float = (index.rawValue == SpeechSpeedIndex.SpeechSpeedSlow.rawValue) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceDefaultSpeechRate
         
         return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
     }
