@@ -57,5 +57,7 @@ class DetailSettingTableViewController: UITableViewController {
 extension DetailSettingTableViewController : SetupData {
     func setupData() {
         //Need to override
+        detailName = "default"
+        detailArray = [1,2,3]
     }
 }
