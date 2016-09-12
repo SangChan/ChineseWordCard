@@ -68,7 +68,13 @@ extension AppInfo {
     func makeDictionaryDB() {
         let realm = try! Realm()
         let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
-        let fileContents = try! NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
+        let fileContents : NSString
+        do {
+            fileContents = try NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
+        } catch {
+            return
+        }
+        
         let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
         guard (lines.count - realm.objects(ChineseWord).count) > 100 else {
             return
