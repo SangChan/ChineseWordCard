@@ -16,6 +16,7 @@ class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : NSIndexPath!
     internal var detailName : String!
     internal var detailArray : Array<Int>!
+    internal var details : Array<InfoProtocol>!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

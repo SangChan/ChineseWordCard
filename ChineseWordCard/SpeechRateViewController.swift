@@ -12,5 +12,6 @@ class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "SpeechRate"
         detailArray = [SpeechSpeedIndex.SpeechSpeedSlow.rawValue, SpeechSpeedIndex.SpeechSpeedNormal.rawValue, SpeechSpeedIndex.SpeechSpeedFast.rawValue]
+        details = [SpeechSpeedIndex.SpeechSpeedSlow, SpeechSpeedIndex.SpeechSpeedNormal, SpeechSpeedIndex.SpeechSpeedFast]
     }
 }
