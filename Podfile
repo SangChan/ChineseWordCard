@@ -4,8 +4,8 @@ platform :ios, '8.0'
 use_frameworks!
 
 def default
-	pod 'RealmSwift'
-	pod 'FontAwesome.swift'
+	pod 'RealmSwift', '~> 1.1.0'
+	pod 'FontAwesome.swift', '~> 0.9.0'
 end
 
 target 'ChineseWordCard' do
