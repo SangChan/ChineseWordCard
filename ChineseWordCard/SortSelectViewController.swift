@@ -12,7 +12,6 @@ import RealmSwift
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "SortSelect"
-        detailArray = [SortIndex.SortIndexNone.rawValue,SortIndex.SortIndexAlphabet.rawValue,SortIndex.SortIndexStar.rawValue]
         details = [SortIndex.SortIndexNone,SortIndex.SortIndexAlphabet,SortIndex.SortIndexStar]
     }
     

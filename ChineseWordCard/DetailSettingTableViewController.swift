@@ -15,7 +15,6 @@ protocol SetupData {
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : NSIndexPath!
     internal var detailName : String!
-    internal var detailArray : Array<Int>!
     internal var details : Array<InfoProtocol>!
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,13 +28,13 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true);
         previousSelect = indexPath
         let indexObject : EnumInfo = self.infoObject(detailName)
-        indexObject.setIndex(detailArray[indexPath.row])
+        indexObject.setIndex(details[indexPath.row].rawValue)
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         let indexObject : EnumInfo = self.infoObject(detailName)
         let infoIndex : Int = indexObject.indexFromEnum()
-        if infoIndex ==  detailArray[indexPath.row] {
+        if infoIndex ==  details[indexPath.row].rawValue {
             cell.accessoryType = .Checkmark
             previousSelect = indexPath
         } else {
@@ -59,6 +58,6 @@ extension DetailSettingTableViewController : SetupData {
     func setupData() {
         //Need to override
         detailName = "default"
-        detailArray = [1,2,3]
+        details = []
     }
 }
