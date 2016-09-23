@@ -211,8 +211,6 @@ extension ViewController {
             }, completion: { (success) in
                 if success == true {
                     self.speakWord()
-                } else {
-                    
                 }
             })
         case 2:
