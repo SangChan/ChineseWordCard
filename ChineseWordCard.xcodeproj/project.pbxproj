@@ -431,6 +431,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = CBUJK8CFZ3;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_UNROLL_LOOPS = YES;
 				INFOPLIST_FILE = ChineseWordCard/Info.plist;
@@ -453,6 +454,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CBUJK8CFZ3;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = NO;
 				GCC_UNROLL_LOOPS = YES;
 				INFOPLIST_FILE = ChineseWordCard/Info.plist;
