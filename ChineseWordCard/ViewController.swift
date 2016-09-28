@@ -89,14 +89,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
+        // TODO : should check it's occures at hanyu label
         self.goToNext(true)
     }
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
+        // TODO : should check it's occures at hanyu label
         self.goToNext(false)
     }
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
+        // TODO : should check it's occures at hanyu label
         if sender.state == .Ended {
             touchCount += 1
             setLabelHiddenByCount(touchCount)
