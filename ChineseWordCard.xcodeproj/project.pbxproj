@@ -12,12 +12,13 @@
 		6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321B9F51C05E70F00E2186C /* ChineseWord.swift */; };
 		63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */; };
 		63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7C1BA7CE9700D4A48D /* ViewController.swift */; };
-		63458E801BA7CE9700D4A48D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63458E7E1BA7CE9700D4A48D /* Main.storyboard */; };
 		63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63458E811BA7CE9700D4A48D /* Images.xcassets */; };
-		63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63458E831BA7CE9700D4A48D /* LaunchScreen.xib */; };
 		634AF3E41D2CEF1B00C3BE99 /* EnumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */; };
 		6387744C1C7C5DFF0075013B /* SortSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */; };
 		638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FF3601C48A16C00A5D366 /* SettingViewController.swift */; };
+		639705E71D9E9CC400C52A9D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639705E61D9E9CC400C52A9D /* Info.plist */; };
+		639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639705E81D9E9D9000C52A9D /* LaunchScreen.xib */; };
+		639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639705E91D9E9D9000C52A9D /* Main.storyboard */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
 		63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */; };
 		63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */; };
@@ -39,20 +40,14 @@
 		63458E751BA7CE9700D4A48D /* ChineseWordCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseWordCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63458E7C1BA7CE9700D4A48D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63458E7F1BA7CE9700D4A48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63458E811BA7CE9700D4A48D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		63458E841BA7CE9700D4A48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumInfo.swift; sourceTree = "<group>"; };
 		636AF5421D4A40EF0078CE23 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/ChineseWordCard-buaosyfvjhgdwzaymiwrgdxklcwo/Build/Products/Debug-iphonesimulator/RealmSwift.framework"; sourceTree = "<group>"; };
 		6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSelectViewController.swift; sourceTree = "<group>"; };
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		63A709891D9D0B4F001EFE22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		63A7098B1D9D0C12001EFE22 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		63A7098C1D9D0C12001EFE22 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
-		63A7098D1D9D0C13001EFE22 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ko; path = ko.lproj/Info.plist; sourceTree = "<group>"; };
-		63A7098E1D9D0C1D001EFE22 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		63A7098F1D9D0C1D001EFE22 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
-		63A709901D9D0C1E001EFE22 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ja; path = ja.lproj/Info.plist; sourceTree = "<group>"; };
+		639705E61D9E9CC400C52A9D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639705E81D9E9D9000C52A9D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		639705E91D9E9D9000C52A9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
 		63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectViewController.swift; sourceTree = "<group>"; };
 		63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageInfo.swift; sourceTree = "<group>"; };
@@ -128,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				63A7C8501BB58C1B007548BB /* word.txt */,
-				63A7098A1D9D0B4F001EFE22 /* Info.plist */,
+				639705E61D9E9CC400C52A9D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,8 +145,8 @@
 		63C9FE0C1D0020560094164E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				63458E831BA7CE9700D4A48D /* LaunchScreen.xib */,
-				63458E7E1BA7CE9700D4A48D /* Main.storyboard */,
+				639705E81D9E9D9000C52A9D /* LaunchScreen.xib */,
+				639705E91D9E9D9000C52A9D /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -248,9 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63458E801BA7CE9700D4A48D /* Main.storyboard in Resources */,
-				63458E851BA7CE9700D4A48D /* LaunchScreen.xib in Resources */,
+				639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */,
+				639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */,
 				63A7C8511BB58C1B007548BB /* word.txt in Resources */,
+				639705E71D9E9CC400C52A9D /* Info.plist in Resources */,
 				63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,39 +324,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		63458E7E1BA7CE9700D4A48D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63458E7F1BA7CE9700D4A48D /* Base */,
-				63A7098C1D9D0C12001EFE22 /* ko */,
-				63A7098F1D9D0C1D001EFE22 /* ja */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		63458E831BA7CE9700D4A48D /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63458E841BA7CE9700D4A48D /* Base */,
-				63A7098B1D9D0C12001EFE22 /* ko */,
-				63A7098E1D9D0C1D001EFE22 /* ja */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		63A7098A1D9D0B4F001EFE22 /* Info.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63A709891D9D0B4F001EFE22 /* Base */,
-				63A7098D1D9D0C13001EFE22 /* ko */,
-				63A709901D9D0C1E001EFE22 /* ja */,
-			);
-			name = Info.plist;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		63458E921BA7CE9700D4A48D /* Debug */ = {
@@ -459,7 +422,7 @@
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_UNROLL_LOOPS = YES;
-				INFOPLIST_FILE = ChineseWordCard/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChineseWordCard/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = YES;
@@ -483,7 +446,7 @@
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = NO;
 				GCC_UNROLL_LOOPS = YES;
-				INFOPLIST_FILE = ChineseWordCard/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ChineseWordCard/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = YES;
