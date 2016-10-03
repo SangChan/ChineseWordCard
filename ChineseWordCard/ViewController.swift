@@ -209,7 +209,7 @@ extension ViewController {
     func setLabelHiddenByCount(count : Int) {
         switch count%3 {
         case 1:
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 self.pinyinLabel.alpha = 1.0
             }, completion: { (success) in
                 if success == true {
@@ -217,7 +217,7 @@ extension ViewController {
                 }
             })
         case 2:
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
                 if success == false {
