@@ -16,7 +16,6 @@
 		634AF3E41D2CEF1B00C3BE99 /* EnumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */; };
 		6387744C1C7C5DFF0075013B /* SortSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */; };
 		638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FF3601C48A16C00A5D366 /* SettingViewController.swift */; };
-		639705E71D9E9CC400C52A9D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639705E61D9E9CC400C52A9D /* Info.plist */; };
 		639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639705E81D9E9D9000C52A9D /* LaunchScreen.xib */; };
 		639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639705E91D9E9D9000C52A9D /* Main.storyboard */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
@@ -225,8 +224,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ko,
-				ja,
 			);
 			mainGroup = 63458E6C1BA7CE9700D4A48D;
 			productRefGroup = 63458E761BA7CE9700D4A48D /* Products */;
@@ -246,7 +243,6 @@
 				639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */,
 				639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */,
 				63A7C8511BB58C1B007548BB /* word.txt in Resources */,
-				639705E71D9E9CC400C52A9D /* Info.plist in Resources */,
 				63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

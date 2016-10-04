@@ -89,20 +89,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        // TODO : should check it's occures at hanyu label
-        self.goToNext(true)
+        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) {
+            self.goToNext(true)
+        }
     }
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        // TODO : should check it's occures at hanyu label
-        self.goToNext(false)
+        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) {
+            self.goToNext(false)
+        }
     }
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        // TODO : should check it's occures at hanyu label
-        if sender.state == .Ended {
-            touchCount += 1
-            setLabelHiddenByCount(touchCount)
+        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) {
+            if sender.state == .Ended {
+                touchCount += 1
+                setLabelHiddenByCount(touchCount)
+            }
         }
     }
     
@@ -246,6 +249,13 @@ extension ViewController {
         let standardSpeed:Float = (index.rawValue == SpeechSpeedIndex.SpeechSpeedSlow.rawValue) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceDefaultSpeechRate
         
         return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
+    }
+    
+    func isTouched(location : CGPoint, onRect: CGRect) -> Bool{
+        if location.x >= 0.0 && location.x <= onRect.width && location.y >= 0.0 && location.y <= onRect.height {
+            return true
+        }
+        return false
     }
 }
 
