@@ -242,13 +242,14 @@ extension ViewController {
     }
     
     func getSpeechSpeed(index : InfoProtocol) -> Float {
-        // fast is too fast
-        if index.rawValue == SpeechSpeedIndex.SpeechSpeedNormal.rawValue {
-            return (AVSpeechUtteranceMinimumSpeechRate + AVSpeechUtteranceDefaultSpeechRate) / 2.0
+        switch index.rawValue {
+        case SpeechSpeedIndex.SpeechSpeedSlow.rawValue:
+            return AVSpeechUtteranceDefaultSpeechRate * 0.5
+        case SpeechSpeedIndex.SpeechSpeedFast.rawValue:
+            return AVSpeechUtteranceDefaultSpeechRate
+        default:
+            return AVSpeechUtteranceDefaultSpeechRate * 0.65
         }
-        let standardSpeed:Float = (index.rawValue == SpeechSpeedIndex.SpeechSpeedSlow.rawValue) ? AVSpeechUtteranceMinimumSpeechRate : AVSpeechUtteranceDefaultSpeechRate
-        
-        return (standardSpeed + (3 * AVSpeechUtteranceDefaultSpeechRate)) / 4.0
     }
     
     func isTouched(location : CGPoint, onRect: CGRect) -> Bool{
