@@ -16,11 +16,11 @@ public enum LanguageIndex : InfoProtocol {
     
     var rawValue : Int {
         switch self {
-        case .LanguageIndexEN:
+        case LanguageIndexEN:
             return 0
-        case .LangyageIndexES:
+        case LangyageIndexES:
             return 1
-        case .LanguageIndexKR:
+        case LanguageIndexKR:
             return 2
         }
     }

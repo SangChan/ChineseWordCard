@@ -16,11 +16,11 @@ public enum SortIndex : InfoProtocol {
     
     var rawValue : Int {
         switch self {
-        case .SortIndexNone:
+        case SortIndexNone:
             return 0
-        case .SortIndexAlphabet:
+        case SortIndexAlphabet:
             return 1
-        case .SortIndexStar:
+        case SortIndexStar:
             return 2
         }
     }

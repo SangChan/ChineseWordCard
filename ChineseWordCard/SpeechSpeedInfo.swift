@@ -16,11 +16,11 @@ public enum SpeechSpeedIndex : InfoProtocol {
     
     var rawValue : Int {
         switch self {
-        case .SpeechSpeedSlow:
+        case SpeechSpeedSlow:
             return 0
-        case .SpeechSpeedNormal:
+        case SpeechSpeedNormal:
             return 1
-        case .SpeechSpeedFast:
+        case SpeechSpeedFast:
             return 2
         }
     }
