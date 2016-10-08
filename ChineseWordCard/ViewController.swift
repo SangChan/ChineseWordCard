@@ -89,23 +89,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) {
+        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .Ended {
             self.goToNext(true)
         }
     }
     
     @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) {
+        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .Ended {
             self.goToNext(false)
         }
     }
     
     @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) {
-            if sender.state == .Ended {
-                touchCount += 1
-                setLabelHiddenByCount(touchCount)
-            }
+        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .Ended {
+            touchCount += 1
+            setLabelHiddenByCount(touchCount)
         }
     }
     
