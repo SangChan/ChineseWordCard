@@ -40,6 +40,7 @@ class DetailSettingTableViewController: UITableViewController {
         } else {
             cell.accessoryType = .None
         }
+        cell.textLabel?.text = indexObject.stringFromIndex(infoIndex)
     }
     
     func infoObject(name : String) -> EnumInfo {
