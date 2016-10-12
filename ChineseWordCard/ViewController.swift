@@ -242,7 +242,7 @@ extension ViewController {
     func getSpeechSpeed(index : InfoProtocol) -> Float {
         switch index.rawValue {
         case SpeechSpeedIndex.SpeechSpeedSlow.rawValue:
-            return AVSpeechUtteranceDefaultSpeechRate * 0.5
+            return AVSpeechUtteranceDefaultSpeechRate * 0.35
         case SpeechSpeedIndex.SpeechSpeedFast.rawValue:
             return AVSpeechUtteranceDefaultSpeechRate
         default:
