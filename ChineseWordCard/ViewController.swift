@@ -221,8 +221,7 @@ extension ViewController {
             UIView.animateWithDuration(0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
-                if success == false {
-                    self.speakWord()
+                if success == true {
                 }
             })
         default:
