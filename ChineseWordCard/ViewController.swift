@@ -232,10 +232,10 @@ extension ViewController {
     }
     
     func speakWord() {
-        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer.init()
-        let utterance : AVSpeechUtterance = AVSpeechUtterance.init(string: hanyuLabel.text!)
+        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
+        let utterance : AVSpeechUtterance = AVSpeechUtterance(string: hanyuLabel.text!)
         utterance.rate = getSpeechSpeed(AppInfo.sharedInstance.speechSpeedInfo.speechSpeedValue)
-        utterance.voice = AVSpeechSynthesisVoice.init(language: "zh-CN")
+        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
         synthesize.speakUtterance(utterance)
     }
     
