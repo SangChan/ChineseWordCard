@@ -173,7 +173,7 @@ extension ViewController {
         self.hanyuLabel.text = nowWord.hanyu
         self.pinyinLabel.text = nowWord.pinyin
         self.descriptionLabel.text = getDescWithLanguageIndex(AppInfo.sharedInstance.languageInfo.languageValue)
-        self.sliderBar.value =  Float.init(wordIndex)/Float.init(wordList.count)
+        self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
     }
     
