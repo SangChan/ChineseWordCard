@@ -178,12 +178,8 @@ extension ViewController {
     }
     
     func getDescWithLanguageIndex(index : InfoProtocol) -> String {
+        // TODO : return string using parameter
         return nowWord.desc_kr
-        /*switch index {
-        case LanguageIndex.LanguageIndexEN : return nowWord.desc_en!
-        case LanguageIndex.LangyageIndexES : return nowWord.desc_es!
-        default : return nowWord.desc_kr!
-        }*/
     }
     
     func setButtonDefault() {
