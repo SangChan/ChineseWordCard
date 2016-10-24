@@ -8,6 +8,9 @@
 
 import Foundation
 
-func log(message: String, file: String = #file, function: String = #function, line: Int = #line) {
+func log(message  : String,
+         file     : String = #file,
+         function : String = #function,
+         line     : Int = #line) {
     print("Message \"\(message)\" (File: \(file), Funtion: \(function), Line: \(line))")
 }
