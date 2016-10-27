@@ -41,9 +41,14 @@ class AppInfo {
     
     func setWordIndex(index : Int) {
         let realm = try! Realm()
-        try! realm.write {
-            let settingData : SettingData = realm.objects(SettingData).first!
-            settingData.setWordIndex(index)
+        
+        do {
+            try realm.write {
+                let settingData : SettingData = realm.objects(SettingData).first!
+                settingData.setWordIndex(index)
+            }
+        } catch {
+            log("error : \(error)")
         }
     }
 }
