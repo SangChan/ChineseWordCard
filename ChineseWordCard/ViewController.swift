@@ -211,6 +211,8 @@ extension ViewController {
             }, completion: { (success) in
                 if success == true {
                     self.speakWord()
+                } else {
+                    log("animation fails at complete : \(count)")
                 }
             })
         case 2:
@@ -218,6 +220,8 @@ extension ViewController {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
                 if success == true {
+                } else {
+                    log("animation fails at complete : \(count)")
                 }
             })
         default:
