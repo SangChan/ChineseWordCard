@@ -108,7 +108,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func starButtonPressed(sender: AnyObject) {
-        //TODO: Change this logic for likeit, cause create bug when delete like it.
         if AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.SortIndexStar.rawValue {
             return
         }
