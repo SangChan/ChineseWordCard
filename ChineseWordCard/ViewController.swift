@@ -119,6 +119,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+        log("unwindToSegue : \(segue)")
         getWordData()
     }
 }
