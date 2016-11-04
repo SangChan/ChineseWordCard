@@ -13,6 +13,7 @@ class SettingViewController: UITableViewController {
     // overrise section
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
+        // TODO : as 1.0 version might be only support Korean, so please check this.
         for index in 1 ... self.tableView.numberOfRowsInSection(0) {
             self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: index-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(index)
         }
@@ -23,6 +24,7 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // TODO : as 1.0 version might be only support Korean, so please check this.
         switch (indexPath.section, indexPath.row) {
         case (0,0 ... 2) :
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(indexPath.row+1)
