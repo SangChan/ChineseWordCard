@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     var wordList : Results<ChineseWord>!
     
-    var nowWord : ChineseWord!
+    var currentWord : ChineseWord!
     
     var touchCount : Int = 0
     var wordIndex : Int = 0
@@ -113,9 +113,9 @@ class ViewController: UIViewController {
         }
         let realm = try! Realm()
         try! realm.write {
-            self.nowWord.likeIt = !self.nowWord.likeIt
+            self.currentWord.likeIt = !self.currentWord.likeIt
         }
-        setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
+        setButton(self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .Star:.StarO)
     }
     
     @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
@@ -170,18 +170,18 @@ extension ViewController {
         self.prevButton.enabled = (wordIndex > 0) ? true : false
         self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.hidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.SortIndexStar.rawValue)
-        self.nowWord = wordList[wordIndex]
-        log("currentWord : \(self.nowWord)")
-        self.hanyuLabel.text = nowWord.hanyu
-        self.pinyinLabel.text = nowWord.pinyin
+        self.currentWord = wordList[wordIndex]
+        log("currentWord : \(self.currentWord)")
+        self.hanyuLabel.text = currentWord.hanyu
+        self.pinyinLabel.text = currentWord.pinyin
         self.descriptionLabel.text = getDescWithLanguageIndex(AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
-        setButton(self.starButton, withSize: 30, withType: (nowWord.likeIt == true) ? .Star:.StarO)
+        setButton(self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .Star:.StarO)
     }
     
     func getDescWithLanguageIndex(index : InfoProtocol) -> String {
         // TODO : return string using parameter
-        return nowWord.desc_kr
+        return currentWord.desc_kr
     }
     
     func setButtonDefault() {
