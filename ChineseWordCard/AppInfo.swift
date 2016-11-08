@@ -11,7 +11,7 @@ import RealmSwift
 class AppInfo {
     static let sharedInstance = AppInfo()
     let sortInfo : SortInfo = SortInfo()
-    let speechSpeedInfo : SpeechSpeedInfo = SpeechSpeedInfo()
+    let speechSpeedInfo : SpeechInfo = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
     
     func stringFromCellIndex(index : Int) -> String {
