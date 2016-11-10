@@ -13,6 +13,6 @@ class LanguageSelectViewController: DetailSettingTableViewController {
         // TODO : this gonna never happen on 1.0 release!
         log("i hope never happens..")
         detailName = "LanguageSelect"
-        details = [LanguageIndex.LanguageIndexEN,LanguageIndex.LangyageIndexES,LanguageIndex.LanguageIndexKR]
+        details = [LanguageIndex.languageIndexEN,LanguageIndex.langyageIndexES,LanguageIndex.languageIndexKR]
     }
 }

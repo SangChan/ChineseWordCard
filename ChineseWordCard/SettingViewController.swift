@@ -11,35 +11,35 @@ import AVFoundation
 
 class SettingViewController: UITableViewController {
     // overrise section
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         // TODO : as 1.0 version might be only support Korean, so please check this.
-        for index in 1 ... self.tableView.numberOfRowsInSection(0) {
-            self.tableView.cellForRowAtIndexPath(NSIndexPath.init(forRow: index-1, inSection: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(index)
+        for index in 1 ... self.tableView.numberOfRows(inSection: 0) {
+            self.tableView.cellForRow(at: IndexPath.init(row: index-1, section: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(index)
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true);
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // TODO : as 1.0 version might be only support Korean, so please check this.
-        switch (indexPath.section, indexPath.row) {
+        switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (0,0 ... 2) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(indexPath.row+1)
+            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex((indexPath as NSIndexPath).row+1)
         case (1,0) :
-            cell.detailTextLabel?.text = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")?.string
+            cell.detailTextLabel?.text = (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as AnyObject).string
         default :
             return
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .default
     }
     //ibaction section
-    @IBAction func clickedDoneButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func clickedDoneButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

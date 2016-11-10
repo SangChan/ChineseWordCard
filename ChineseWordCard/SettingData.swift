@@ -9,18 +9,18 @@
 import RealmSwift
 
 class SettingData : Object {
-    dynamic var speechSpeedIndex = SpeechSpeedIndex.SpeechSpeedNormal.rawValue
-    dynamic var languageIndex = LanguageIndex.LanguageIndexKR.rawValue
-    dynamic var sortIndex = SortIndex.SortIndexNone.rawValue
+    dynamic var speechSpeedIndex = SpeechSpeedIndex.speechSpeedNormal.rawValue
+    dynamic var languageIndex = LanguageIndex.languageIndexKR.rawValue
+    dynamic var sortIndex = SortIndex.sortIndexNone.rawValue
     dynamic var wordIndexForAll = 0
     dynamic var wordIndexForStar = 0
     dynamic var wordIndexForAlphabet = 0
     
-    func setWordIndex(value: Int) {
+    func setWordIndex(_ value: Int) {
         setWordIndex(self.sortIndex, value: value)
     }
     
-    func setWordIndex(index:Int, value:Int) {
+    func setWordIndex(_ index:Int, value:Int) {
         switch index {
         case 0:
             self.wordIndexForAll = value
@@ -37,7 +37,7 @@ class SettingData : Object {
         return wordIndex(self.sortIndex);
     }
     
-    func wordIndex(index:Int) -> Int{
+    func wordIndex(_ index:Int) -> Int{
         switch index {
         case 1 :
             return self.wordIndexForAlphabet

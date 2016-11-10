@@ -13,8 +13,8 @@ protocol InfoProtocol {
 }
 
 protocol EnumInfo {
-    func enumFromIndex(index:Int) -> InfoProtocol
+    func enumFromIndex(_ index:Int) -> InfoProtocol
     func indexFromEnum() -> Int
-    func setIndex(index:Int)
-    func stringFromIndex(index:Int) -> String
+    func setIndex(_ index:Int)
+    func stringFromIndex(_ index:Int) -> String
 }

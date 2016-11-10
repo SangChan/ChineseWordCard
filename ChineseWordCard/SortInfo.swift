@@ -10,26 +10,26 @@ import Foundation
 import RealmSwift
 
 public enum SortIndex : InfoProtocol {
-    case SortIndexNone
-    case SortIndexAlphabet
-    case SortIndexStar
+    case sortIndexNone
+    case sortIndexAlphabet
+    case sortIndexStar
     
     var rawValue : Int {
         switch self {
-        case SortIndexNone:
+        case .sortIndexNone:
             return 0
-        case SortIndexAlphabet:
+        case .sortIndexAlphabet:
             return 1
-        case SortIndexStar:
+        case .sortIndexStar:
             return 2
         }
     }
 }
 
 class SortInfo :EnumInfo {
-    internal var sortValue : InfoProtocol = SortIndex.SortIndexNone
+    internal var sortValue : InfoProtocol = SortIndex.sortIndexNone
     
-    func enumFromIndex(index:Int) -> InfoProtocol {
+    func enumFromIndex(_ index:Int) -> InfoProtocol {
         return self.sortIndexFromIndex(index)
     }
     
@@ -37,49 +37,49 @@ class SortInfo :EnumInfo {
         return sortValue.rawValue
     }
     
-    func setIndex(index: Int) {
+    func setIndex(_ index: Int) {
         self.setSortValue(self.sortIndexFromIndex(index))
     }
     
-    func stringFromIndex(index:Int) -> String {
+    func stringFromIndex(_ index:Int) -> String {
         return stringSortInfo(sortIndexFromIndex(index))
     }
     
 }
 
 extension SortInfo {
-    func setSortValue(index : SortIndex) {
+    func setSortValue(_ index : SortIndex) {
         self.sortValue = index
         let realm = try! Realm()
         try! realm.write {
-            let settingData : SettingData = realm.objects(SettingData).first!
+            let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.sortIndex = self.sortValue.rawValue
         }
     }
     
     func getSortValue() -> InfoProtocol {
         let realm = try! Realm()
-        let settingData : SettingData = realm.objects(SettingData).first!
+        let settingData : SettingData = realm.objects(SettingData.self).first!
         self.sortValue = sortIndexFromIndex(settingData.sortIndex);
         return self.sortValue
     }
     
-    func sortIndexFromIndex(index : Int) -> SortIndex {
+    func sortIndexFromIndex(_ index : Int) -> SortIndex {
         switch index {
         case 1:
-            return SortIndex.SortIndexAlphabet
+            return SortIndex.sortIndexAlphabet
         case 2:
-            return SortIndex.SortIndexStar
+            return SortIndex.sortIndexStar
         default :
-            return SortIndex.SortIndexNone
+            return SortIndex.sortIndexNone
         }
     }
     
-    func stringSortInfo(sortInfo : InfoProtocol) -> String {
+    func stringSortInfo(_ sortInfo : InfoProtocol) -> String {
         switch sortInfo {
-        case SortIndex.SortIndexStar :
+        case SortIndex.sortIndexStar :
             return "By Star"
-        case SortIndex.SortIndexAlphabet :
+        case SortIndex.sortIndexAlphabet :
             return "By Alphabet"
         default :
             return "All"

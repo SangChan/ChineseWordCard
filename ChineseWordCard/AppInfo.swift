@@ -14,7 +14,7 @@ class AppInfo {
     let speechSpeedInfo : SpeechInfo = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
     
-    func stringFromCellIndex(index : Int) -> String {
+    func stringFromCellIndex(_ index : Int) -> String {
         switch index {
         case 1 :
             return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeedValue)
@@ -35,16 +35,16 @@ class AppInfo {
     
     func getWordIndex() ->  Int {
         let realm = try! Realm()
-        let settingData : SettingData = realm.objects(SettingData).first!
+        let settingData : SettingData = realm.objects(SettingData.self).first!
         return settingData.wordIndex()
     }
     
-    func setWordIndex(index : Int) {
+    func setWordIndex(_ index : Int) {
         let realm = try! Realm()
         
         do {
             try realm.write {
-                let settingData : SettingData = realm.objects(SettingData).first!
+                let settingData : SettingData = realm.objects(SettingData.self).first!
                 settingData.setWordIndex(index)
             }
         } catch {
@@ -56,12 +56,12 @@ class AppInfo {
 extension AppInfo {
     func makeSettingDataDB() {
         let realm = try! Realm()
-        guard realm.objects(SettingData).count > 0 else {
+        guard realm.objects(SettingData.self).count > 0 else {
             try! realm.write {
                 realm.create(SettingData.self, value: [
-                    "speechSpeedIndex":SpeechSpeedIndex.SpeechSpeedNormal.rawValue,
-                    "languageIndex":LanguageIndex.LanguageIndexKR.rawValue,
-                    "sortIndex":SortIndex.SortIndexNone.rawValue,
+                    "speechSpeedIndex":SpeechSpeedIndex.speechSpeedNormal.rawValue,
+                    "languageIndex":LanguageIndex.languageIndexKR.rawValue,
+                    "sortIndex":SortIndex.sortIndexNone.rawValue,
                     "wordIndexForAll":0,
                     "wordIndexForStar":0,
                     "wordIndexForAlphabet":0])
@@ -72,16 +72,16 @@ extension AppInfo {
     }
     func makeDictionaryDB() {
         let realm = try! Realm()
-        let sourcePath = NSBundle.mainBundle().pathForResource("word", ofType: "txt")
+        let sourcePath = Bundle.main.path(forResource: "word", ofType: "txt")
         let fileContents : NSString
         do {
-            fileContents = try NSString.init(contentsOfFile:sourcePath!, encoding:NSUTF8StringEncoding)
+            fileContents = try NSString.init(contentsOfFile:sourcePath!, encoding:String.Encoding.utf8.rawValue)
         } catch {
             return
         }
         
-        let lines = fileContents.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
-        guard (lines.count - realm.objects(ChineseWord).count) > 100 else {
+        let lines = fileContents.components(separatedBy: CharacterSet.newlines)
+        guard (lines.count - realm.objects(ChineseWord.self).count) > 100 else {
             return
         }
         
@@ -92,15 +92,17 @@ extension AppInfo {
         for text in lines {
             if text.hasPrefix("//") {
                 chapter += 1
-                let chapterInfo = text.substringFromIndex(text.startIndex.advancedBy(2)).componentsSeparatedByString(".")
+                let chapterInfo = text.substring(from: text.characters.index(text.startIndex, offsetBy: 2)).components(separatedBy: ".")
                 level = Int(chapterInfo[0])!
                 chapter = Int(chapterInfo[1])!
             } else {
-                let wordsInfo = text.componentsSeparatedByString("\t")
+                let wordsInfo = text.components(separatedBy: "\t")
                 let hanyu = wordsInfo[0]
                 let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
                 let desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
-                if realm.objects(ChineseWord).indexOf("hanyu == %@", hanyu) == nil {
+                
+                let predicate = NSPredicate(format: "hanyu = %@", hanyu)
+                if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
                     try! realm.write {
                         realm.create(ChineseWord.self,value:[
                             "id":id_num,

@@ -10,17 +10,17 @@ import Foundation
 import RealmSwift
 
 public enum LanguageIndex : InfoProtocol {
-    case LanguageIndexEN
-    case LangyageIndexES
-    case LanguageIndexKR
+    case languageIndexEN
+    case langyageIndexES
+    case languageIndexKR
     
     var rawValue : Int {
         switch self {
-        case LanguageIndexEN:
+        case .languageIndexEN:
             return 0
-        case LangyageIndexES:
+        case .langyageIndexES:
             return 1
-        case LanguageIndexKR:
+        case .languageIndexKR:
             return 2
         }
     }
@@ -28,9 +28,9 @@ public enum LanguageIndex : InfoProtocol {
 }
 
 class LanguageInfo : EnumInfo {
-    internal var languageValue : InfoProtocol = LanguageIndex.LanguageIndexKR
+    internal var languageValue : InfoProtocol = LanguageIndex.languageIndexKR
     
-    func enumFromIndex(index:Int) -> InfoProtocol {
+    func enumFromIndex(_ index:Int) -> InfoProtocol {
         return self.languageIndexFromIndex(index)
     }
     
@@ -38,11 +38,11 @@ class LanguageInfo : EnumInfo {
         return self.languageValue.rawValue
     }
     
-    func setIndex(index: Int) {
+    func setIndex(_ index: Int) {
         self.setLanguageValue(self.languageIndexFromIndex(index))
     }
     
-    func stringFromIndex(index:Int) -> String {
+    func stringFromIndex(_ index:Int) -> String {
         return stringLanguageInfo(languageIndexFromIndex(index))
     }
     
@@ -51,38 +51,38 @@ class LanguageInfo : EnumInfo {
 
 extension LanguageInfo {
     
-    func setLanguageValue(index : LanguageIndex) {
+    func setLanguageValue(_ index : LanguageIndex) {
         self.languageValue = index
         let realm = try! Realm()
         try! realm.write {
-            let settingData : SettingData = realm.objects(SettingData).first!
+            let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.languageIndex = self.languageValue.rawValue
         }
     }
     
     func getLanguageValue() -> InfoProtocol {
         let realm = try! Realm()
-        let settingData : SettingData = realm.objects(SettingData).first!
+        let settingData : SettingData = realm.objects(SettingData.self).first!
         self.languageValue = languageIndexFromIndex(settingData.languageIndex)
         return self.languageValue
     }
     
-    func languageIndexFromIndex(index : Int) -> LanguageIndex {
+    func languageIndexFromIndex(_ index : Int) -> LanguageIndex {
         switch index {
         case 0:
-            return LanguageIndex.LanguageIndexEN
+            return LanguageIndex.languageIndexEN
         case 1:
-            return LanguageIndex.LangyageIndexES
+            return LanguageIndex.langyageIndexES
         default :
-            return LanguageIndex.LanguageIndexKR
+            return LanguageIndex.languageIndexKR
         }
     }
     
-    func stringLanguageInfo(languageInfo : InfoProtocol) -> String {
+    func stringLanguageInfo(_ languageInfo : InfoProtocol) -> String {
         switch languageInfo {
-        case LanguageIndex.LanguageIndexEN :
+        case LanguageIndex.languageIndexEN :
             return "English"
-        case LanguageIndex.LangyageIndexES :
+        case LanguageIndex.langyageIndexES :
             return "Espanõl"
         default :
             return "한국어"

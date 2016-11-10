@@ -8,7 +8,7 @@
 
 import Foundation
 
-func log(message  : String,
+func log(_ message  : String,
          file     : String = #file,
          function : String = #function,
          line     : Int = #line) {

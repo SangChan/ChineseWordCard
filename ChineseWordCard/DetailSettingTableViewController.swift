@@ -13,7 +13,7 @@ protocol SetupData {
 }
 
 class DetailSettingTableViewController: UITableViewController {
-    internal var previousSelect : NSIndexPath!
+    internal var previousSelect : IndexPath!
     internal var detailName : String!
     internal var details : Array<InfoProtocol>!
     
@@ -22,28 +22,28 @@ class DetailSettingTableViewController: UITableViewController {
         self.setupData()
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.cellForRowAtIndexPath(previousSelect)?.accessoryType = .None
-        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
-        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: previousSelect)?.accessoryType = .none
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        tableView.deselectRow(at: indexPath, animated: true);
         previousSelect = indexPath
         let indexObject : EnumInfo = self.infoObject(detailName)
-        indexObject.setIndex(details[indexPath.row].rawValue)
+        indexObject.setIndex(details[(indexPath as NSIndexPath).row].rawValue)
     }
     
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let indexObject : EnumInfo = self.infoObject(detailName)
         let infoIndex : Int = indexObject.indexFromEnum()
-        if infoIndex ==  details[indexPath.row].rawValue {
-            cell.accessoryType = .Checkmark
+        if infoIndex ==  details[(indexPath as NSIndexPath).row].rawValue {
+            cell.accessoryType = .checkmark
             previousSelect = indexPath
         } else {
-            cell.accessoryType = .None
+            cell.accessoryType = .none
         }
-        cell.textLabel?.text = indexObject.stringFromIndex(indexPath.row)
+        cell.textLabel?.text = indexObject.stringFromIndex((indexPath as NSIndexPath).row)
     }
     
-    func infoObject(name : String) -> EnumInfo {
+    func infoObject(_ name : String) -> EnumInfo {
         switch name {
         case "SpeechRate":
             return AppInfo.sharedInstance.speechSpeedInfo

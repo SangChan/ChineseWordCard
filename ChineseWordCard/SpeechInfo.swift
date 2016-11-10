@@ -10,26 +10,26 @@ import Foundation
 import RealmSwift
 
 public enum SpeechSpeedIndex : InfoProtocol {
-    case SpeechSpeedSlow
-    case SpeechSpeedNormal
-    case SpeechSpeedFast
+    case speechSpeedSlow
+    case speechSpeedNormal
+    case speechSpeedFast
     
     var rawValue : Int {
         switch self {
-        case SpeechSpeedSlow:
+        case .speechSpeedSlow:
             return 0
-        case SpeechSpeedNormal:
+        case .speechSpeedNormal:
             return 1
-        case SpeechSpeedFast:
+        case .speechSpeedFast:
             return 2
         }
     }
 }
 
 class SpeechInfo : EnumInfo {
-    internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.SpeechSpeedNormal
+    internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.speechSpeedNormal
     
-    func enumFromIndex(index:Int) -> InfoProtocol {
+    func enumFromIndex(_ index:Int) -> InfoProtocol {
         return self.speechSpeedIndexFromIndex(index)
     }
     
@@ -37,11 +37,11 @@ class SpeechInfo : EnumInfo {
         return self.speechSpeedValue.rawValue
     }
     
-    func setIndex(index: Int) {
+    func setIndex(_ index: Int) {
         self.setSpeechSpeedValue(self.speechSpeedIndexFromIndex(index))
     }
 
-    func stringFromIndex(index:Int) -> String {
+    func stringFromIndex(_ index:Int) -> String {
         return stringSpeechSpeed(speechSpeedIndexFromIndex(index))
     }
 
@@ -49,38 +49,38 @@ class SpeechInfo : EnumInfo {
 
 extension SpeechInfo {
     
-    func setSpeechSpeedValue(index : SpeechSpeedIndex) {
+    func setSpeechSpeedValue(_ index : SpeechSpeedIndex) {
         self.speechSpeedValue = index
         let realm = try! Realm()
         try! realm.write {
-            let settingData : SettingData = realm.objects(SettingData).first!
+            let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.speechSpeedIndex = self.speechSpeedValue.rawValue
         }
     }
     
     func getSpeechSpeedValue() -> InfoProtocol{
         let realm = try! Realm()
-        let settingData : SettingData = realm.objects(SettingData).first!
+        let settingData : SettingData = realm.objects(SettingData.self).first!
         self.speechSpeedValue = speechSpeedIndexFromIndex(settingData.speechSpeedIndex)
         return self.speechSpeedValue
     }
     
-    func speechSpeedIndexFromIndex(index : Int) -> SpeechSpeedIndex {
+    func speechSpeedIndexFromIndex(_ index : Int) -> SpeechSpeedIndex {
         switch index {
         case 0:
-            return SpeechSpeedIndex.SpeechSpeedSlow
+            return SpeechSpeedIndex.speechSpeedSlow
         case 2:
-            return SpeechSpeedIndex.SpeechSpeedFast
+            return SpeechSpeedIndex.speechSpeedFast
         default :
-            return SpeechSpeedIndex.SpeechSpeedNormal
+            return SpeechSpeedIndex.speechSpeedNormal
         }
     }
     
-    func stringSpeechSpeed(speechSpeed : InfoProtocol) -> String {
+    func stringSpeechSpeed(_ speechSpeed : InfoProtocol) -> String {
         switch speechSpeed {
-        case SpeechSpeedIndex.SpeechSpeedSlow:
+        case SpeechSpeedIndex.speechSpeedSlow:
             return "Slow"
-        case SpeechSpeedIndex.SpeechSpeedFast:
+        case SpeechSpeedIndex.speechSpeedFast:
             return "Fast"
         default :
             return "Normal"

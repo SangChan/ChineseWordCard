@@ -35,22 +35,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        preferredStatusBarStyle()
         setButtonDefault()
         resetView()
         getWordData()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.updateUIonView();
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.becomeFirstResponder()
     }
@@ -59,25 +58,25 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if motion == .MotionShake {
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
             wordIndex = Int(arc4random_uniform(UInt32(wordList.count)))
             updateUIonView()
         }
     }
     
-    override func canBecomeFirstResponder() -> Bool {
+    override var canBecomeFirstResponder : Bool {
         return true
     }
     
     // action section
-    @IBAction func nextClicked(sender: AnyObject) {
+    @IBAction func nextClicked(_ sender: AnyObject) {
         self.goToNext(true)
     }
-    @IBAction func prevClicked(sender: AnyObject) {
+    @IBAction func prevClicked(_ sender: AnyObject) {
         self.goToNext(false)
     }
-    @IBAction func valueChanged(sender: AnyObject) {
+    @IBAction func valueChanged(_ sender: AnyObject) {
         resetView()
         self.wordIndex = Int(self.sliderBar.value * Float(wordList.count))
         if wordIndex <= 0 {
@@ -88,27 +87,27 @@ class ViewController: UIViewController {
         self.updateUIonView()
     }
     
-    @IBAction func handleSwipeLeft(sender: UISwipeGestureRecognizer) {
-        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .Ended {
+    @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
+        if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             self.goToNext(true)
         }
     }
     
-    @IBAction func handleSwipeRight(sender: UISwipeGestureRecognizer) {
-        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .Ended {
+    @IBAction func handleSwipeRight(_ sender: UISwipeGestureRecognizer) {
+        if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             self.goToNext(false)
         }
     }
     
-    @IBAction func handleTap(sender: UITapGestureRecognizer) {
-        if isTouched(sender.locationInView(hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .Ended {
+    @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
+        if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             touchCount += 1
             setLabelHiddenByCount(touchCount)
         }
     }
     
-    @IBAction func starButtonPressed(sender: AnyObject) {
-        if AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.SortIndexStar.rawValue {
+    @IBAction func starButtonPressed(_ sender: AnyObject) {
+        if AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue {
             return
         }
         let realm = try! Realm()
@@ -118,7 +117,7 @@ class ViewController: UIViewController {
         setButton(self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .Star:.StarO)
     }
     
-    @IBAction func unwindToSegue(segue: UIStoryboardSegue) {
+    @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
         log("unwindToSegue : \(segue)")
         getWordData()
     }
@@ -126,7 +125,7 @@ class ViewController: UIViewController {
 
 extension ViewController {
     
-    func wordIndexIncrease(increase : Bool) -> Int {
+    func wordIndexIncrease(_ increase : Bool) -> Int {
         var index : Int = wordIndex
         if increase {
             index += 1
@@ -140,36 +139,36 @@ extension ViewController {
         return wordIndex
     }
     
-    func goToNext(isNext : Bool) {
+    func goToNext(_ isNext : Bool) {
         resetView()
         wordIndex = self.wordIndexIncrease(isNext);
         self.updateUIonView()
     }
     
-    func getDataFromSort(index : InfoProtocol) -> Results<ChineseWord>{
+    func getDataFromSort(_ index : InfoProtocol) -> Results<ChineseWord>{
         log("sort index : \(index)")
         let realm = try! Realm()
         switch index {
-        case SortIndex.SortIndexStar:
-            return (realm.objects(ChineseWord).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord).filter("likeIt == true") : realm.objects(ChineseWord)
-        case SortIndex.SortIndexAlphabet :
-            return realm.objects(ChineseWord).sorted("pinyin")
+        case SortIndex.sortIndexStar:
+            return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
+        case SortIndex.sortIndexAlphabet :
+            return realm.objects(ChineseWord.self).sorted(byProperty: "pinyin")
         default:
-            return realm.objects(ChineseWord)
+            return realm.objects(ChineseWord.self)
         }
     }
     
-    func setButton(button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
-        let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .Regular && self.view.traitCollection.verticalSizeClass == .Regular) ? size * 1.5 : size
+    func setButton(_ button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
+        let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
         button.titleLabel?.font = UIFont.fontAwesomeOfSize(sizeFromTrait)
-        button.setTitle(String.fontAwesomeIconWithName(type), forState: .Normal)
+        button.setTitle(String.fontAwesomeIconWithName(type), for: UIControlState())
     }
     
     func updateUIonView() {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        self.prevButton.enabled = (wordIndex > 0) ? true : false
-        self.nextButton.enabled = (wordIndex < wordList.count-1) ? true : false
-        self.starButton.hidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.SortIndexStar.rawValue)
+        self.prevButton.isEnabled = (wordIndex > 0) ? true : false
+        self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
+        self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
         log("currentWord : \(self.currentWord)")
         self.hanyuLabel.text = currentWord.hanyu
@@ -179,7 +178,7 @@ extension ViewController {
         setButton(self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .Star:.StarO)
     }
     
-    func getDescWithLanguageIndex(index : InfoProtocol) -> String {
+    func getDescWithLanguageIndex(_ index : InfoProtocol) -> String {
         // TODO : return string using parameter
         return currentWord.desc_kr
     }
@@ -206,10 +205,10 @@ extension ViewController {
         }
     }
     
-    func setLabelHiddenByCount(count : Int) {
+    func setLabelHiddenByCount(_ count : Int) {
         switch count%3 {
         case 1:
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.pinyinLabel.alpha = 1.0
             }, completion: { (success) in
                 if success == true {
@@ -219,7 +218,7 @@ extension ViewController {
                 }
             })
         case 2:
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
                 if success == true {
@@ -238,21 +237,21 @@ extension ViewController {
         let utterance : AVSpeechUtterance = AVSpeechUtterance(string: hanyuLabel.text!)
         utterance.rate = getSpeechSpeed(AppInfo.sharedInstance.speechSpeedInfo.speechSpeedValue)
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
-        synthesize.speakUtterance(utterance)
+        synthesize.speak(utterance)
     }
     
-    func getSpeechSpeed(index : InfoProtocol) -> Float {
+    func getSpeechSpeed(_ index : InfoProtocol) -> Float {
         switch index.rawValue {
-        case SpeechSpeedIndex.SpeechSpeedSlow.rawValue:
+        case SpeechSpeedIndex.speechSpeedSlow.rawValue:
             return AVSpeechUtteranceDefaultSpeechRate * 0.35
-        case SpeechSpeedIndex.SpeechSpeedFast.rawValue:
+        case SpeechSpeedIndex.speechSpeedFast.rawValue:
             return AVSpeechUtteranceDefaultSpeechRate
         default:
             return AVSpeechUtteranceDefaultSpeechRate * 0.65
         }
     }
     
-    func isTouched(location : CGPoint, onRect: CGRect) -> Bool{
+    func isTouched(_ location : CGPoint, onRect: CGRect) -> Bool{
         log("location : \(location), rect : \(onRect)")
         if location.x > 0.0 && location.x < onRect.width && location.y > 0.0 && location.y < onRect.height {
             return true
