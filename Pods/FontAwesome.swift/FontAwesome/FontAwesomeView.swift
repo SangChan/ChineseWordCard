@@ -23,52 +23,48 @@
 import UIKit
 
 /// A view for FontAwesome icons.
-@IBDesignable class FontAwesomeView : UIView {
-    
+@IBDesignable public class FontAwesomeView : UIView {
+
     @IBInspectable
-    var iconCode:String = "" {
+    public var iconCode:String = "" {
         didSet{
-            self.iconView.text = String.fontAwesomeIconWithCode(iconCode)
+          self.iconView.text = String.fontAwesomeIcon(code: iconCode)
         }
     }
-    
-    private var iconView:UILabel!
-    
+
+    private var iconView = UILabel()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupViews()
     }
-    
-    override func prepareForInterfaceBuilder() {
+
+    override public func prepareForInterfaceBuilder() {
         setupViews()
-        
     }
-    
-    
+
     /// Add a UILabel subview containing FontAwesome icon
-    func setupViews(){
-        self.iconView = UILabel()
+    func setupViews() {
         // Fits icon in the view
-        iconView.font = UIFont.fontAwesomeOfSize(bounds.size.width < bounds.size.height ? bounds.size.width : bounds.size.height)
-        iconView.textAlignment = NSTextAlignment.Center
-        iconView.text = String.fontAwesomeIconWithCode(self.iconCode)
-        iconView.textColor = self.tintColor
+        self.iconView.textAlignment = NSTextAlignment.center
+        self.iconView.text = String.fontAwesomeIcon(code: self.iconCode)
+        self.iconView.textColor = self.tintColor
         self.addSubview(iconView)
     }
-    
-    override func tintColorDidChange() {
-        iconView.textColor = self.tintColor
+
+    override public func tintColorDidChange() {
+        self.iconView.textColor = self.tintColor
     }
-    
-    override func layoutSubviews() {
+
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.clipsToBounds = true
-        iconView.frame = CGRectMake(0, 0, bounds.size.width, bounds.size.height)
+        self.iconView.font = UIFont.fontAwesome(ofSize: bounds.size.width < bounds.size.height ? bounds.size.width : bounds.size.height)
+        self.iconView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: bounds.size.width, height: bounds.size.height))
     }
-    
 }
