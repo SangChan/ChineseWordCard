@@ -160,8 +160,8 @@ extension ViewController {
     
     func setButton(_ button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
         let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
-        //button.titleLabel?.font = Font.fontAwesomeOfSize(sizeFromTrait)
-        //button.setTitle(String.fontAwesomeIconWithName(type), for: UIControlState())
+        button.titleLabel?.font = UIFont.fontAwesome(ofSize: sizeFromTrait)
+        button.setTitle(String.fontAwesomeIcon(name: type), for: UIControlState())
     }
     
     func updateUIonView() {
