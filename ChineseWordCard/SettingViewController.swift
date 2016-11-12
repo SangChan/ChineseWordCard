@@ -29,7 +29,7 @@ class SettingViewController: UITableViewController {
         case (0,0 ... 2) :
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex((indexPath as NSIndexPath).row+1)
         case (1,0) :
-            cell.detailTextLabel?.text = (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as AnyObject).string
+            cell.detailTextLabel?.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String?
         default :
             return
         }
