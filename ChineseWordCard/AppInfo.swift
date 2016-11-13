@@ -19,9 +19,9 @@ class AppInfo {
         case 1 :
             return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeedValue)
         case 2 :
-            return languageInfo.stringLanguageInfo(languageInfo.languageValue)
-        default :
             return sortInfo.stringSortInfo(sortInfo.sortValue)
+        default :
+            return languageInfo.stringLanguageInfo(languageInfo.languageValue)
         }
     }
     
