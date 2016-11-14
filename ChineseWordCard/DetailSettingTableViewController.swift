@@ -46,7 +46,7 @@ class DetailSettingTableViewController: UITableViewController {
     func infoObject(_ name : String) -> EnumInfo {
         switch name {
         case "SpeechRate":
-            return AppInfo.sharedInstance.speechSpeedInfo
+            return AppInfo.sharedInstance.speechInfo
         case "SortSelect" :
             return AppInfo.sharedInstance.sortInfo
         default:

@@ -11,13 +11,13 @@ import RealmSwift
 class AppInfo {
     static let sharedInstance = AppInfo()
     let sortInfo : SortInfo = SortInfo()
-    let speechSpeedInfo : SpeechInfo = SpeechInfo()
+    let speechInfo : SpeechInfo = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
     
     func stringFromCellIndex(_ index : Int) -> String {
         switch index {
         case 1 :
-            return speechSpeedInfo.stringSpeechSpeed(speechSpeedInfo.speechSpeedValue)
+            return speechInfo.stringSpeechSpeed(speechInfo.speechSpeedValue)
         case 2 :
             return sortInfo.stringSortInfo(sortInfo.sortValue)
         default :
@@ -28,7 +28,7 @@ class AppInfo {
     func getAllDataFromRealm() {
         makeSettingDataDB()
         makeDictionaryDB()
-        speechSpeedInfo.getSpeechSpeedValue()
+        speechInfo.getSpeechSpeedValue()
         sortInfo.getSortValue()
         languageInfo.getLanguageValue()
     }
