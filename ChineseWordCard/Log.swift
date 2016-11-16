@@ -8,9 +8,9 @@
 
 import Foundation
 
-func log(_ message  : String,
+func log(_ message: String,
          file     : String = #file,
          function : String = #function,
          line     : Int = #line) {
-    print("Message: \"\(message)\" (File: \(file), Funtion: \(function), Line: \(line))")
+    print("\(message)\" (line #\(line) from \(file.components(separatedBy: "/").last) on method \(function)")
 }
