@@ -28,9 +28,10 @@ class AppInfo {
     func getAllDataFromRealm() {
         makeSettingDataDB()
         makeDictionaryDB()
-        speechInfo.getSpeechSpeedValue()
-        sortInfo.getSortValue()
-        languageInfo.getLanguageValue()
+        let speechSpeedValue = speechInfo.getSpeechSpeedValue()
+        let sortValue = sortInfo.getSortValue()
+        let languageValue = languageInfo.getLanguageValue()
+        log("speechSpeedValue = \(speechSpeedValue), sortValue = \(sortValue), languageValue =\(languageValue)");
     }
     
     func getWordIndex() ->  Int {
