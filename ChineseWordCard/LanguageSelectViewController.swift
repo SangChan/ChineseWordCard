@@ -10,8 +10,6 @@ import UIKit
 
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        // TODO : this gonna never happen on 1.0 release!
-        log("i hope never happens..")
         detailName = "LanguageSelect"
         details = [LanguageIndex.languageIndexEN,LanguageIndex.langyageIndexES,LanguageIndex.languageIndexKR]
     }
