@@ -252,7 +252,6 @@ extension ViewController {
     }
     
     func isTouched(_ location : CGPoint, onRect: CGRect) -> Bool{
-        log("location : \(location), rect : \(onRect)")
         if location.x > 0.0 && location.x < onRect.width && location.y > 0.0 && location.y < onRect.height {
             return true
         }
