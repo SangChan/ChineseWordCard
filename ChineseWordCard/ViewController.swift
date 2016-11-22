@@ -146,7 +146,6 @@ extension ViewController {
     }
     
     func getDataFromSort(_ index : InfoProtocol) -> Results<ChineseWord>{
-        log("sort index : \(index)")
         let realm = try! Realm()
         switch index {
         case SortIndex.sortIndexStar:
