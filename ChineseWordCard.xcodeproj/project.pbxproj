@@ -21,6 +21,7 @@
 		639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639705E91D9E9D9000C52A9D /* Main.storyboard */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
 		63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */; };
+		63C5929F1DE59598002844AD /* ChineseWordCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C5929E1DE59598002844AD /* ChineseWordCardTests.swift */; };
 		63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */; };
 		63C8DB8D1D03322500FAEC52 /* SpeechInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8C1D03322500FAEC52 /* SpeechInfo.swift */; };
 		63C8DB8F1D03344600FAEC52 /* SortInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8E1D03344600FAEC52 /* SortInfo.swift */; };
@@ -30,6 +31,16 @@
 		63D542561C52177900E1937B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542551C52177900E1937B /* AppInfo.swift */; };
 		69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63C592A11DE59598002844AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63458E6D1BA7CE9700D4A48D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63458E741BA7CE9700D4A48D;
+			remoteInfo = ChineseWordCard;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseWordCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +62,9 @@
 		639705E91D9E9D9000C52A9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
 		63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectViewController.swift; sourceTree = "<group>"; };
+		63C5929C1DE59597002844AD /* ChineseWordCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChineseWordCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C5929E1DE59598002844AD /* ChineseWordCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseWordCardTests.swift; sourceTree = "<group>"; };
+		63C592A01DE59598002844AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageInfo.swift; sourceTree = "<group>"; };
 		63C8DB8C1D03322500FAEC52 /* SpeechInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechInfo.swift; sourceTree = "<group>"; };
 		63C8DB8E1D03344600FAEC52 /* SortInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortInfo.swift; sourceTree = "<group>"; };
@@ -70,6 +84,13 @@
 				63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */,
 				63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */,
 				69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C592991DE59597002844AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				63458E771BA7CE9700D4A48D /* ChineseWordCard */,
+				63C5929D1DE59598002844AD /* ChineseWordCardTests */,
 				63458E761BA7CE9700D4A48D /* Products */,
 				D537103A42283B907FE93EBF /* Frameworks */,
 				F01BBC3F1CBACB29EF187526 /* Pods */,
@@ -103,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				63458E751BA7CE9700D4A48D /* ChineseWordCard.app */,
+				63C5929C1DE59597002844AD /* ChineseWordCardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +150,15 @@
 				639705E61D9E9CC400C52A9D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63C5929D1DE59598002844AD /* ChineseWordCardTests */ = {
+			isa = PBXGroup;
+			children = (
+				63C5929E1DE59598002844AD /* ChineseWordCardTests.swift */,
+				63C592A01DE59598002844AD /* Info.plist */,
+			);
+			path = ChineseWordCardTests;
 			sourceTree = "<group>";
 		};
 		63C9FE0B1D00202C0094164E /* Model */ = {
@@ -197,13 +229,31 @@
 			productReference = 63458E751BA7CE9700D4A48D /* ChineseWordCard.app */;
 			productType = "com.apple.product-type.application";
 		};
+		63C5929B1DE59597002844AD /* ChineseWordCardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63C592A51DE59598002844AD /* Build configuration list for PBXNativeTarget "ChineseWordCardTests" */;
+			buildPhases = (
+				63C592981DE59597002844AD /* Sources */,
+				63C592991DE59597002844AD /* Frameworks */,
+				63C5929A1DE59597002844AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63C592A21DE59598002844AD /* PBXTargetDependency */,
+			);
+			name = ChineseWordCardTests;
+			productName = ChineseWordCardTests;
+			productReference = 63C5929C1DE59597002844AD /* ChineseWordCardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		63458E6D1BA7CE9700D4A48D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = VerandaStudio;
 				TargetAttributes = {
@@ -217,6 +267,11 @@
 								enabled = 0;
 							};
 						};
+					};
+					63C5929B1DE59597002844AD = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 63458E741BA7CE9700D4A48D;
 					};
 				};
 			};
@@ -234,6 +289,7 @@
 			projectRoot = "";
 			targets = (
 				63458E741BA7CE9700D4A48D /* ChineseWordCard */,
+				63C5929B1DE59597002844AD /* ChineseWordCardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +303,13 @@
 				639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */,
 				63A7C8511BB58C1B007548BB /* word.txt in Resources */,
 				63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63C5929A1DE59597002844AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +386,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63C592981DE59597002844AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C5929F1DE59598002844AD /* ChineseWordCardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63C592A21DE59598002844AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63458E741BA7CE9700D4A48D /* ChineseWordCard */;
+			targetProxy = 63C592A11DE59598002844AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		63458E921BA7CE9700D4A48D /* Debug */ = {
@@ -466,6 +545,42 @@
 			};
 			name = Release;
 		};
+		63C592A31DE59598002844AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = ChineseWordCardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.ChineseWordCardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChineseWordCard.app/ChineseWordCard";
+			};
+			name = Debug;
+		};
+		63C592A41DE59598002844AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = ChineseWordCardTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.ChineseWordCardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChineseWordCard.app/ChineseWordCard";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -486,6 +601,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		63C592A51DE59598002844AD /* Build configuration list for PBXNativeTarget "ChineseWordCardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63C592A31DE59598002844AD /* Debug */,
+				63C592A41DE59598002844AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
