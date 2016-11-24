@@ -32,4 +32,11 @@ class ChineseWordCardTests: XCTestCase {
         }
     }
     
+    func testTime() {
+        let startTime : CFAbsoluteTime = CFAbsoluteTime()
+        
+        let endTime : CFAbsoluteTime = CFAbsoluteTime() - startTime;
+        print("\(endTime)")
+    }
+    
 }
