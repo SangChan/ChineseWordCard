@@ -71,10 +71,10 @@ class ViewController: UIViewController {
     
     // action section
     @IBAction func nextClicked(_ sender: AnyObject) {
-        self.goToNext(true)
+        self.goTo(next: true)
     }
     @IBAction func prevClicked(_ sender: AnyObject) {
-        self.goToNext(false)
+        self.goTo(next: false)
     }
     @IBAction func valueChanged(_ sender: AnyObject) {
         resetView()
@@ -89,13 +89,13 @@ class ViewController: UIViewController {
     
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goToNext(true)
+            self.goTo(next: true)
         }
     }
     
     @IBAction func handleSwipeRight(_ sender: UISwipeGestureRecognizer) {
         if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goToNext(false)
+            self.goTo(next: false)
         }
     }
     
@@ -139,9 +139,9 @@ extension ViewController {
         return wordIndex
     }
     
-    func goToNext(_ isNext : Bool) {
+    func goTo(next : Bool) {
         resetView()
-        wordIndex = self.wordIndexIncrease(isNext);
+        wordIndex = self.wordIndexIncrease(next);
         self.updateUIonView()
     }
     
