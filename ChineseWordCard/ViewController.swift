@@ -145,9 +145,9 @@ extension ViewController {
         self.updateUIonView()
     }
     
-    func getDataFromSort(_ index : InfoProtocol) -> Results<ChineseWord>{
+    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord>{
         let realm = try! Realm()
-        switch index {
+        switch sortIndex {
         case SortIndex.sortIndexStar:
             return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
         case SortIndex.sortIndexAlphabet :
@@ -195,7 +195,7 @@ extension ViewController {
     }
     
     func getWordData() {
-        self.wordList = self.getDataFromSort(AppInfo.sharedInstance.sortInfo.sortValue)
+        self.wordList = self.getData(sortIndex: AppInfo.sharedInstance.sortInfo.sortValue)
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         if self.wordIndex > self.maxWordCount {
