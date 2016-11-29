@@ -14,8 +14,8 @@ class AppInfo {
     let speechInfo : SpeechInfo = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
     
-    func stringFromCellIndex(_ index : Int) -> String {
-        switch index {
+    func stringFrom(Cellindex : Int) -> String {
+        switch Cellindex {
         case 1 :
             return speechInfo.stringSpeechSpeed(speechInfo.speechSpeedValue)
         case 2 :

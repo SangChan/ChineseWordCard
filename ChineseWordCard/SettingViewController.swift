@@ -15,7 +15,7 @@ class SettingViewController: UITableViewController {
         super.viewWillAppear(animated);
         // TODO : as 1.0 version might be only support Korean, so please check this.
         for index in 1 ... self.tableView.numberOfRows(inSection: 0) {
-            self.tableView.cellForRow(at: IndexPath.init(row: index-1, section: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex(index)
+            self.tableView.cellForRow(at: IndexPath.init(row: index-1, section: 0))?.detailTextLabel?.text = AppInfo.sharedInstance.stringFrom(Cellindex: index)
         }
     }
     
@@ -27,7 +27,7 @@ class SettingViewController: UITableViewController {
         // TODO : as 1.0 version might be only support Korean, so please check this.
         switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (0,0 ... 2) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFromCellIndex((indexPath as NSIndexPath).row+1)
+            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFrom(Cellindex: (indexPath as NSIndexPath).row+1)
         case (1,0) :
             cell.detailTextLabel?.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String?
         default :
