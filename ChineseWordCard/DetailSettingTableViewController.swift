@@ -27,12 +27,12 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true);
         previousSelect = indexPath
-        let indexObject : EnumInfo = self.infoObject(detailName)
+        let indexObject : EnumInfo = self.infoObject(fromName:detailName)
         indexObject.setIndex(details[(indexPath as NSIndexPath).row].rawValue)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let indexObject : EnumInfo = self.infoObject(detailName)
+        let indexObject : EnumInfo = self.infoObject(fromName:detailName)
         let infoIndex : Int = indexObject.indexFromEnum()
         if infoIndex ==  details[(indexPath as NSIndexPath).row].rawValue {
             cell.accessoryType = .checkmark
@@ -43,8 +43,8 @@ class DetailSettingTableViewController: UITableViewController {
         cell.textLabel?.text = indexObject.stringFromIndex((indexPath as NSIndexPath).row)
     }
     
-    func infoObject(_ name : String) -> EnumInfo {
-        switch name {
+    func infoObject(fromName : String) -> EnumInfo {
+        switch fromName {
         case "SpeechRate":
             return AppInfo.sharedInstance.speechInfo
         case "SortSelect" :
