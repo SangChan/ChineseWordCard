@@ -30,7 +30,7 @@ class SpeechInfo : EnumInfo {
     internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.speechSpeedNormal
     
     func enumFromIndex(_ index:Int) -> InfoProtocol {
-        return self.speechSpeedIndexFromIndex(index)
+        return self.speechSpeedIndex(fromIndex:index)
     }
     
     func indexFromEnum() -> Int {
@@ -38,11 +38,11 @@ class SpeechInfo : EnumInfo {
     }
     
     func setIndex(_ index: Int) {
-        self.setSpeechSpeedValue(self.speechSpeedIndexFromIndex(index))
+        self.setSpeechSpeedValue(self.speechSpeedIndex(fromIndex:index))
     }
 
     func stringFromIndex(_ index:Int) -> String {
-        return stringSpeechSpeed(speechSpeedIndexFromIndex(index))
+        return stringSpeechSpeed(speechSpeedIndex(fromIndex:index))
     }
 
 }
@@ -61,12 +61,12 @@ extension SpeechInfo {
     func getSpeechSpeedValue() -> InfoProtocol{
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
-        self.speechSpeedValue = speechSpeedIndexFromIndex(settingData.speechSpeedIndex)
+        self.speechSpeedValue = speechSpeedIndex(fromIndex:settingData.speechSpeedIndex)
         return self.speechSpeedValue
     }
     
-    func speechSpeedIndexFromIndex(_ index : Int) -> SpeechSpeedIndex {
-        switch index {
+    func speechSpeedIndex(fromIndex : Int) -> SpeechSpeedIndex {
+        switch fromIndex {
         case 0:
             return SpeechSpeedIndex.speechSpeedSlow
         case 2:
@@ -76,7 +76,7 @@ extension SpeechInfo {
         }
     }
     
-    func stringSpeechSpeed(_ speechSpeed : InfoProtocol) -> String {
+    func string(speechSpeed : InfoProtocol) -> String {
         switch speechSpeed {
         case SpeechSpeedIndex.speechSpeedSlow:
             return "Slow"
