@@ -42,7 +42,7 @@ class SpeechInfo : EnumInfo {
     }
 
     func stringFromIndex(_ index:Int) -> String {
-        return stringSpeechSpeed(speechSpeedIndex(fromIndex:index))
+        return string(speechSpeed:speechSpeedIndex(fromIndex:index))
     }
 
 }

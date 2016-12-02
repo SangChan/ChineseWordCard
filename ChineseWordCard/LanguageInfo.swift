@@ -31,7 +31,7 @@ class LanguageInfo : EnumInfo {
     internal var languageValue : InfoProtocol = LanguageIndex.languageIndexKR
     
     func enumFromIndex(_ index:Int) -> InfoProtocol {
-        return self.languageIndexFromIndex(index)
+        return self.languageIndex(fromIndex:index)
     }
     
     func indexFromEnum() -> Int {
@@ -39,11 +39,11 @@ class LanguageInfo : EnumInfo {
     }
     
     func setIndex(_ index: Int) {
-        self.setLanguageValue(self.languageIndexFromIndex(index))
+        self.setLanguageValue(self.languageIndex(fromIndex:index))
     }
     
     func stringFromIndex(_ index:Int) -> String {
-        return stringLanguageInfo(languageIndexFromIndex(index))
+        return string(languageInfo:languageIndex(fromIndex:index))
     }
     
     
@@ -63,12 +63,12 @@ extension LanguageInfo {
     func getLanguageValue() -> InfoProtocol {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
-        self.languageValue = languageIndexFromIndex(settingData.languageIndex)
+        self.languageValue = languageIndex(fromIndex:settingData.languageIndex)
         return self.languageValue
     }
     
-    func languageIndexFromIndex(_ index : Int) -> LanguageIndex {
-        switch index {
+    func languageIndex(fromIndex : Int) -> LanguageIndex {
+        switch fromIndex {
         case 0:
             return LanguageIndex.languageIndexEN
         case 1:
@@ -78,7 +78,7 @@ extension LanguageInfo {
         }
     }
     
-    func stringLanguageInfo(_ languageInfo : InfoProtocol) -> String {
+    func string(languageInfo : InfoProtocol) -> String {
         switch languageInfo {
         case LanguageIndex.languageIndexEN :
             return "English"
