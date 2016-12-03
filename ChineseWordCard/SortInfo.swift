@@ -30,7 +30,7 @@ class SortInfo :EnumInfo {
     internal var sortValue : InfoProtocol = SortIndex.sortIndexNone
     
     func enumFromIndex(_ index:Int) -> InfoProtocol {
-        return self.sortIndexFromIndex(index)
+        return self.sortIndex(fromIndex:index)
     }
     
     func indexFromEnum() -> Int {
@@ -38,11 +38,11 @@ class SortInfo :EnumInfo {
     }
     
     func setIndex(_ index: Int) {
-        self.setSortValue(self.sortIndexFromIndex(index))
+        self.setSortValue(self.sortIndex(fromIndex:index))
     }
     
     func stringFromIndex(_ index:Int) -> String {
-        return stringSortInfo(sortIndexFromIndex(index))
+        return string(sortInfo: sortIndex(fromIndex:index))
     }
     
 }
@@ -60,12 +60,12 @@ extension SortInfo {
     func getSortValue() -> InfoProtocol {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
-        self.sortValue = sortIndexFromIndex(settingData.sortIndex);
+        self.sortValue = sortIndex(fromIndex:settingData.sortIndex);
         return self.sortValue
     }
     
-    func sortIndexFromIndex(_ index : Int) -> SortIndex {
-        switch index {
+    func sortIndex(fromIndex : Int) -> SortIndex {
+        switch fromIndex {
         case 1:
             return SortIndex.sortIndexAlphabet
         case 2:
@@ -75,7 +75,7 @@ extension SortInfo {
         }
     }
     
-    func stringSortInfo(_ sortInfo : InfoProtocol) -> String {
+    func string(sortInfo : InfoProtocol) -> String {
         switch sortInfo {
         case SortIndex.sortIndexStar :
             return "By Star"
