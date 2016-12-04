@@ -16,18 +16,18 @@ class SettingData : Object {
     dynamic var wordIndexForStar = 0
     dynamic var wordIndexForAlphabet = 0
     
-    func setWordIndex(_ value: Int) {
-        setWordIndex(self.sortIndex, value: value)
+    func setWordIndex(fromValue: Int) {
+        setWordIndex(fromIndex: self.sortIndex, withValue: fromValue)
     }
     
-    func setWordIndex(_ index:Int, value:Int) {
-        switch index {
+    func setWordIndex(fromIndex:Int, withValue:Int) {
+        switch fromIndex {
         case 0:
-            self.wordIndexForAll = value
+            self.wordIndexForAll = withValue
         case 1 :
-            self.wordIndexForAlphabet = value
+            self.wordIndexForAlphabet = withValue
         case 2 :
-            self.wordIndexForStar = value
+            self.wordIndexForStar = withValue
         default :
             return
         }
