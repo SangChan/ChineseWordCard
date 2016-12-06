@@ -17,11 +17,11 @@ class AppInfo {
     func stringFrom(Cellindex : Int) -> String {
         switch Cellindex {
         case 1 :
-            return speechInfo.stringSpeechSpeed(speechInfo.speechSpeedValue)
+            return speechInfo.string(speechSpeed:speechInfo.speechSpeedValue)
         case 2 :
-            return sortInfo.stringSortInfo(sortInfo.sortValue)
+            return sortInfo.string(sortInfo:sortInfo.sortValue)
         default :
-            return languageInfo.stringLanguageInfo(languageInfo.languageValue)
+            return languageInfo.string(languageInfo:languageInfo.languageValue)
         }
     }
     

@@ -88,19 +88,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
-        if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             self.goTo(next: true)
         }
     }
     
     @IBAction func handleSwipeRight(_ sender: UISwipeGestureRecognizer) {
-        if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             self.goTo(next: false)
         }
     }
     
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        if isTouched(sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             touchCount += 1
             setLabelHiddenByCount(touchCount)
         }
@@ -234,13 +234,13 @@ extension ViewController {
     func speakWord() {
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
         let utterance : AVSpeechUtterance = AVSpeechUtterance(string: hanyuLabel.text!)
-        utterance.rate = getSpeechSpeed(AppInfo.sharedInstance.speechInfo.speechSpeedValue)
+        utterance.rate = getSpeechSpeed(fromIndex:AppInfo.sharedInstance.speechInfo.speechSpeedValue)
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
         synthesize.speak(utterance)
     }
     
-    func getSpeechSpeed(_ index : InfoProtocol) -> Float {
-        switch index.rawValue {
+    func getSpeechSpeed(fromIndex : InfoProtocol) -> Float {
+        switch fromIndex.rawValue {
         case SpeechSpeedIndex.speechSpeedSlow.rawValue:
             return AVSpeechUtteranceDefaultSpeechRate * 0.35
         case SpeechSpeedIndex.speechSpeedFast.rawValue:
@@ -250,8 +250,8 @@ extension ViewController {
         }
     }
     
-    func isTouched(_ location : CGPoint, onRect: CGRect) -> Bool{
-        if location.x > 0.0 && location.x < onRect.width && location.y > 0.0 && location.y < onRect.height {
+    func isTouched(onLocation : CGPoint, onRect: CGRect) -> Bool{
+        if onLocation.x > 0.0 && onLocation.x < onRect.width && onLocation.y > 0.0 && onLocation.y < onRect.height {
             return true
         }
         return false
