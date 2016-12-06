@@ -46,7 +46,7 @@ class AppInfo {
         do {
             try realm.write {
                 let settingData : SettingData = realm.objects(SettingData.self).first!
-                settingData.setWordIndex(index)
+                settingData.setWordIndex(fromValue: index)
             }
         } catch {
             log("error : \(error)")
