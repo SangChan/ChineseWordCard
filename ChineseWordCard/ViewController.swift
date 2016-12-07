@@ -164,7 +164,7 @@ extension ViewController {
     }
     
     func updateUIonView() {
-        AppInfo.sharedInstance.setWordIndex(wordIndex)
+        AppInfo.sharedInstance.setWord(index:wordIndex)
         self.prevButton.isEnabled = (wordIndex > 0) ? true : false
         self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
@@ -199,7 +199,7 @@ extension ViewController {
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         if self.wordIndex > self.maxWordCount {
-            AppInfo.sharedInstance.setWordIndex(0)
+            AppInfo.sharedInstance.setWord(index:0)
             self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         }
     }

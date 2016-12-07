@@ -40,7 +40,7 @@ class AppInfo {
         return settingData.wordIndex()
     }
     
-    func setWordIndex(_ index : Int) {
+    func setWord(index : Int) {
         let realm = try! Realm()
         
         do {
