@@ -34,11 +34,11 @@ class SettingData : Object {
     }
     
     func wordIndex() -> Int {
-        return wordIndex(self.sortIndex);
+        return wordIndex(fromIndex:self.sortIndex);
     }
     
-    func wordIndex(_ index:Int) -> Int{
-        switch index {
+    func wordIndex(fromIndex:Int) -> Int{
+        switch fromIndex {
         case 1 :
             return self.wordIndexForAlphabet
         case 2 :
