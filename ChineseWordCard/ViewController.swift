@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             touchCount += 1
-            setLabelHiddenByCount(touchCount)
+            setLabelHidden(byCount:touchCount)
         }
     }
     
@@ -191,7 +191,7 @@ extension ViewController {
     
     func resetView() {
         touchCount = 0
-        setLabelHiddenByCount(touchCount)
+        setLabelHidden(byCount:touchCount)
     }
     
     func getWordData() {
@@ -204,8 +204,8 @@ extension ViewController {
         }
     }
     
-    func setLabelHiddenByCount(_ count : Int) {
-        switch count%3 {
+    func setLabelHidden(byCount : Int) {
+        switch byCount % 3 {
         case 1:
             UIView.animate(withDuration: 0.3, animations: {
                 self.pinyinLabel.alpha = 1.0
@@ -213,7 +213,7 @@ extension ViewController {
                 if success == true {
                     self.speakWord()
                 } else {
-                    log("animation fails at complete : \(count)")
+                    log("animation fails at complete : \(byCount)")
                 }
             })
         case 2:
@@ -222,7 +222,7 @@ extension ViewController {
             }, completion: { (success) in
                 if success == true {
                 } else {
-                    log("animation fails at complete : \(count)")
+                    log("animation fails at complete : \(byCount)")
                 }
             })
         default:
