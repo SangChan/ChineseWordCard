@@ -125,9 +125,9 @@ class ViewController: UIViewController {
 
 extension ViewController {
     
-    func wordIndexIncrease(_ increase : Bool) -> Int {
+    func wordIndex(toIncrease : Bool) -> Int {
         var index : Int = wordIndex
-        if increase {
+        if toIncrease {
             index += 1
         } else {
             index -= 1
@@ -141,7 +141,7 @@ extension ViewController {
     
     func goTo(next : Bool) {
         resetView()
-        wordIndex = self.wordIndexIncrease(next);
+        wordIndex = self.wordIndex(toIncrease:next);
         self.updateUIonView()
     }
     
