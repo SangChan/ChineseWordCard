@@ -172,12 +172,12 @@ extension ViewController {
         log("currentWord : \(self.currentWord)")
         self.hanyuLabel.text = currentWord.hanyu
         self.pinyinLabel.text = currentWord.pinyin
-        self.descriptionLabel.text = getDescWithLanguageIndex(AppInfo.sharedInstance.languageInfo.languageValue)
+        self.descriptionLabel.text = getDesc(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
     }
     
-    func getDescWithLanguageIndex(_ index : InfoProtocol) -> String {
+    func getDesc(fromLanguageIndex : InfoProtocol) -> String {
         // TODO : return string using parameter
         return currentWord.desc_kr
     }
