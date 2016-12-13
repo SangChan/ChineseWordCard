@@ -29,20 +29,20 @@ public enum SpeechSpeedIndex : InfoProtocol {
 class SpeechInfo : EnumInfo {
     internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.speechSpeedNormal
     
-    func enumFromIndex(_ index:Int) -> InfoProtocol {
-        return self.speechSpeedIndex(fromIndex:index)
+    func enumInfo(fromIndex: Int) -> InfoProtocol {
+        return self.speechSpeedIndex(fromIndex:fromIndex)
     }
     
     func indexFromEnum() -> Int {
         return self.speechSpeedValue.rawValue
     }
     
-    func setIndex(_ index: Int) {
-        self.setSpeechSpeedValue(self.speechSpeedIndex(fromIndex:index))
+    func enumInfo(setIndex: Int) {
+        self.setSpeechSpeedValue(self.speechSpeedIndex(fromIndex:setIndex))
     }
 
-    func stringFromIndex(_ index:Int) -> String {
-        return string(speechSpeed:speechSpeedIndex(fromIndex:index))
+    func string(fromIndex:Int) -> String {
+        return string(speechSpeed:speechSpeedIndex(fromIndex:fromIndex))
     }
 
 }

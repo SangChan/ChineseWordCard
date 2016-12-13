@@ -28,7 +28,7 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true);
         previousSelect = indexPath
         let indexObject : EnumInfo = self.infoObject(fromName:detailName)
-        indexObject.setIndex(details[(indexPath as NSIndexPath).row].rawValue)
+        indexObject.enumInfo(setIndex:details[(indexPath as NSIndexPath).row].rawValue)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -40,7 +40,7 @@ class DetailSettingTableViewController: UITableViewController {
         } else {
             cell.accessoryType = .none
         }
-        cell.textLabel?.text = indexObject.stringFromIndex((indexPath as NSIndexPath).row)
+        cell.textLabel?.text = indexObject.string(fromIndex:(indexPath as NSIndexPath).row)
     }
     
     func infoObject(fromName : String) -> EnumInfo {

@@ -30,20 +30,20 @@ public enum LanguageIndex : InfoProtocol {
 class LanguageInfo : EnumInfo {
     internal var languageValue : InfoProtocol = LanguageIndex.languageIndexKR
     
-    func enumFromIndex(_ index:Int) -> InfoProtocol {
-        return self.languageIndex(fromIndex:index)
+    func enumInfo(fromIndex: Int) -> InfoProtocol {
+        return self.languageIndex(fromIndex:fromIndex)
     }
     
     func indexFromEnum() -> Int {
         return self.languageValue.rawValue
     }
     
-    func setIndex(_ index: Int) {
-        self.setLanguageValue(self.languageIndex(fromIndex:index))
+    func enumInfo(setIndex: Int) {
+        self.setLanguageValue(self.languageIndex(fromIndex:setIndex))
     }
     
-    func stringFromIndex(_ index:Int) -> String {
-        return string(languageInfo:languageIndex(fromIndex:index))
+    func string(fromIndex:Int) -> String {
+        return string(languageInfo:languageIndex(fromIndex:fromIndex))
     }
     
     

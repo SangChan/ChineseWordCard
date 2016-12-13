@@ -29,20 +29,20 @@ public enum SortIndex : InfoProtocol {
 class SortInfo :EnumInfo {
     internal var sortValue : InfoProtocol = SortIndex.sortIndexNone
     
-    func enumFromIndex(_ index:Int) -> InfoProtocol {
-        return self.sortIndex(fromIndex:index)
+    func enumInfo(fromIndex: Int) -> InfoProtocol {
+        return self.sortIndex(fromIndex:fromIndex)
     }
     
     func indexFromEnum() -> Int {
         return sortValue.rawValue
     }
     
-    func setIndex(_ index: Int) {
-        self.setSortValue(self.sortIndex(fromIndex:index))
+    func enumInfo(setIndex: Int) {
+        self.setSortValue(self.sortIndex(fromIndex:setIndex))
     }
     
-    func stringFromIndex(_ index:Int) -> String {
-        return string(sortInfo: sortIndex(fromIndex:index))
+    func string(fromIndex:Int) -> String {
+        return string(sortInfo: sortIndex(fromIndex:fromIndex))
     }
     
 }
