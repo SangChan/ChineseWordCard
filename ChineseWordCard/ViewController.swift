@@ -169,7 +169,6 @@ extension ViewController {
         self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
-        log("currentWord : \(self.currentWord)")
         self.hanyuLabel.text = currentWord.hanyu
         self.pinyinLabel.text = currentWord.pinyin
         self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
