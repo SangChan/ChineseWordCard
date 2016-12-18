@@ -218,8 +218,7 @@ extension ViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
-                if success == true {
-                } else {
+                if success != true {
                     log("animation fails at complete : \(byCount)")
                 }
             })
