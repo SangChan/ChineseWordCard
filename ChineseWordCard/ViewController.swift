@@ -110,6 +110,7 @@ class ViewController: UIViewController {
         if AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue {
             return
         }
+        // TODO : makes only doing UI jobs
         let realm = try! Realm()
         try! realm.write {
             self.currentWord.likeIt = !self.currentWord.likeIt
