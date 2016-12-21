@@ -11,6 +11,13 @@ import AVFoundation
 import RealmSwift
 import FontAwesome_swift
 
+enum Direction {
+    case right
+    case left
+    case up
+    case down
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet var pinyinLabel: UILabel!
