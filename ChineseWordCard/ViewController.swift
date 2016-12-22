@@ -152,6 +152,21 @@ extension ViewController {
         self.updateUIonView()
     }
     
+    func goTo(direction : Direction) {
+        switch direction {
+        case .left:
+            resetView()
+            
+            self.updateUIonView()
+        case .right:
+            resetView()
+            
+            self.updateUIonView()
+        default:
+            log("not supported")
+        }
+    }
+    
     func getData(sortIndex : InfoProtocol) -> Results<ChineseWord>{
         let realm = try! Realm()
         switch sortIndex {
