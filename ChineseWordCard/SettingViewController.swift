@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 class SettingViewController: UITableViewController {
-    // overrise section
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         // TODO : as 1.0 version might be only support Korean, so please check this.
@@ -38,7 +37,10 @@ class SettingViewController: UITableViewController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .default
     }
-    //ibaction section
+    
+}
+
+extension SettingViewController {
     @IBAction func clickedDoneButton(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
