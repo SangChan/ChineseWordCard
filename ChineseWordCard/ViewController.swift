@@ -156,11 +156,11 @@ extension ViewController {
         switch direction {
         case .left:
             resetView()
-            
+            wordIndex = self.wordIndex(toIncrease:false);
             self.updateUIonView()
         case .right:
             resetView()
-            
+            wordIndex = self.wordIndex(toIncrease:true);
             self.updateUIonView()
         default:
             log("not supported")
