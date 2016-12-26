@@ -78,10 +78,10 @@ class ViewController: UIViewController {
     
     // action section
     @IBAction func nextClicked(_ sender: AnyObject) {
-        self.goTo(next: true)
+        self.goTo(direction:.right)
     }
     @IBAction func prevClicked(_ sender: AnyObject) {
-        self.goTo(next: false)
+        self.goTo(direction:.left)
     }
     @IBAction func valueChanged(_ sender: AnyObject) {
         resetView()
