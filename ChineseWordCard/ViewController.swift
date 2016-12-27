@@ -96,13 +96,13 @@ class ViewController: UIViewController {
     
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goTo(next: true)
+            self.goTo(direction:.left)
         }
     }
     
     @IBAction func handleSwipeRight(_ sender: UISwipeGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goTo(next: false)
+            self.goTo(direction:.right)
         }
     }
     
