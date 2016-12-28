@@ -78,10 +78,10 @@ class ViewController: UIViewController {
     
     // action section
     @IBAction func nextClicked(_ sender: AnyObject) {
-        self.goTo(direction:.right)
+        self.goTo(direction:.left)
     }
     @IBAction func prevClicked(_ sender: AnyObject) {
-        self.goTo(direction:.left)
+        self.goTo(direction:.right)
     }
     @IBAction func valueChanged(_ sender: AnyObject) {
         resetView()
@@ -156,11 +156,11 @@ extension ViewController {
         switch direction {
         case .left:
             resetView()
-            wordIndex = self.wordIndex(toIncrease:false);
+            wordIndex = self.wordIndex(toIncrease:true);
             self.updateUIonView()
         case .right:
             resetView()
-            wordIndex = self.wordIndex(toIncrease:true);
+            wordIndex = self.wordIndex(toIncrease:false);
             self.updateUIonView()
         default:
             log("not supported")
