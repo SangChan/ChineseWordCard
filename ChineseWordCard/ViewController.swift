@@ -12,10 +12,9 @@ import RealmSwift
 import FontAwesome_swift
 
 enum Direction {
-    case right
-    case left
-    case up
-    case down
+    case previous
+    case next
+    case draw
 }
 
 class ViewController: UIViewController {
@@ -78,10 +77,10 @@ class ViewController: UIViewController {
     
     // action section
     @IBAction func nextClicked(_ sender: AnyObject) {
-        self.goTo(direction:.left)
+        self.goTo(direction:.next)
     }
     @IBAction func prevClicked(_ sender: AnyObject) {
-        self.goTo(direction:.right)
+        self.goTo(direction:.previous)
     }
     @IBAction func valueChanged(_ sender: AnyObject) {
         resetView()
@@ -96,13 +95,13 @@ class ViewController: UIViewController {
     
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goTo(direction:.left)
+            self.goTo(direction:.next)
         }
     }
     
     @IBAction func handleSwipeRight(_ sender: UISwipeGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goTo(direction:.right)
+            self.goTo(direction:.previous)
         }
     }
     
@@ -154,11 +153,11 @@ extension ViewController {
     
     func goTo(direction : Direction) {
         switch direction {
-        case .left:
+        case .next:
             resetView()
             wordIndex = self.wordIndex(toIncrease:true);
             self.updateUIonView()
-        case .right:
+        case .previous:
             resetView()
             wordIndex = self.wordIndex(toIncrease:false);
             self.updateUIonView()
