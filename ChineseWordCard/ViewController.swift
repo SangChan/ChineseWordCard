@@ -113,10 +113,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
-        if AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue {
+        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else {
             return
         }
-        // TODO : makes only doing UI jobs
         let realm = try! Realm()
         try! realm.write {
             self.currentWord.likeIt = !self.currentWord.likeIt
@@ -198,7 +197,6 @@ extension ViewController {
     }
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
-        // TODO : return string using parameter
         return currentWord.desc_kr
     }
     
