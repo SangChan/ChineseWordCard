@@ -117,10 +117,17 @@ class ViewController: UIViewController {
             return
         }
         let realm = try! Realm()
-        try! realm.write {
-            self.currentWord.likeIt = !self.currentWord.likeIt
+        do {
+            try realm.write {
+                self.currentWord.likeIt = !self.currentWord.likeIt
+            }
+        } catch {
+            log("exeception :\(error)")
         }
-        setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
+        
+        defer {
+            setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
+        }
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
