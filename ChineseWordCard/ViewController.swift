@@ -151,12 +151,6 @@ extension ViewController {
         return wordIndex
     }
     
-    func goTo(next : Bool) {
-        resetView()
-        wordIndex = self.wordIndex(toIncrease:next);
-        self.updateUIonView()
-    }
-    
     func goTo(direction : Direction) {
         switch direction {
         case .next:
