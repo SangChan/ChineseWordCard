@@ -162,7 +162,8 @@ extension ViewController {
             wordIndex = self.wordIndex(toIncrease:false);
             self.updateUIonView()
         default:
-            log("not supported")
+            resetView()
+            self.updateUIonView()
         }
     }
     
