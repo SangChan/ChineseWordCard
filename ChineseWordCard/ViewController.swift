@@ -73,7 +73,9 @@ class ViewController: UIViewController {
         return true
     }
     
-    // action section
+}
+extension ViewController {
+    
     @IBAction func nextClicked(_ sender: AnyObject) {
         self.goTo(direction:.next)
     }
