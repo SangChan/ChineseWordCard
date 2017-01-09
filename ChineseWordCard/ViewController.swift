@@ -69,6 +69,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // TODO : what's this come frome?
     override var canBecomeFirstResponder : Bool {
         return true
     }
@@ -167,7 +168,7 @@ extension ViewController {
         }
     }
     
-    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord>{
+    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord> {
         let realm = try! Realm()
         switch sortIndex {
         case SortIndex.sortIndexStar:
