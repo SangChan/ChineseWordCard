@@ -14,8 +14,8 @@ protocol SetupData {
 
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
-    internal var detailName : String!
-    internal var details : Array<InfoProtocol>!
+    internal var detailName     : String!
+    internal var details        : Array<InfoProtocol>!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

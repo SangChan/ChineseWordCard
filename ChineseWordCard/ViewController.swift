@@ -19,21 +19,21 @@ enum Direction {
 
 class ViewController: UIViewController {
 
-    @IBOutlet var pinyinLabel: UILabel!
-    @IBOutlet var hanyuLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var prevButton: UIButton!
-    @IBOutlet weak var sliderBar: UISlider!
-    @IBOutlet weak var starButton: UIButton!
-    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet var pinyinLabel        : UILabel!
+    @IBOutlet var hanyuLabel         : UILabel!
+    @IBOutlet var descriptionLabel   : UILabel!
+    @IBOutlet weak var nextButton    : UIButton!
+    @IBOutlet weak var prevButton    : UIButton!
+    @IBOutlet weak var sliderBar     : UISlider!
+    @IBOutlet weak var starButton    : UIButton!
+    @IBOutlet weak var settingButton : UIButton!
     
     var wordList : Results<ChineseWord>!
     
     var currentWord : ChineseWord!
     
-    var touchCount : Int = 0
-    var wordIndex : Int = 0
+    var touchCount   : Int = 0
+    var wordIndex    : Int = 0
     var maxWordCount : Int = 0
     
     // override section
