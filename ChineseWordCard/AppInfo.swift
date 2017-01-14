@@ -9,9 +9,9 @@ import AVFoundation
 import RealmSwift
 
 class AppInfo {
-    static let sharedInstance = AppInfo()
-    let sortInfo : SortInfo = SortInfo()
-    let speechInfo : SpeechInfo = SpeechInfo()
+    static let sharedInstance       = AppInfo()
+    let sortInfo     : SortInfo     = SortInfo()
+    let speechInfo   : SpeechInfo   = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
     
     func stringFrom(Cellindex : Int) -> String {

@@ -28,10 +28,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var starButton    : UIButton!
     @IBOutlet weak var settingButton : UIButton!
     
-    var wordList : Results<ChineseWord>!
-    
-    var currentWord : ChineseWord!
-    
+    var wordList     : Results<ChineseWord>!
+    var currentWord  : ChineseWord!
     var touchCount   : Int = 0
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
