@@ -56,12 +56,12 @@ extension AppInfo {
         guard realm.objects(SettingData.self).count > 0 else {
             try! realm.write {
                 realm.create(SettingData.self, value: [
-                    "speechSpeedIndex":SpeechSpeedIndex.speechSpeedNormal.rawValue,
-                    "languageIndex":LanguageIndex.languageIndexKR.rawValue,
-                    "sortIndex":SortIndex.sortIndexNone.rawValue,
-                    "wordIndexForAll":0,
-                    "wordIndexForStar":0,
-                    "wordIndexForAlphabet":0])
+                    "speechSpeedIndex"    : SpeechSpeedIndex.speechSpeedNormal.rawValue,
+                    "languageIndex"       : LanguageIndex.languageIndexKR.rawValue,
+                    "sortIndex"           : SortIndex.sortIndexNone.rawValue,
+                    "wordIndexForAll"     : 0,
+                    "wordIndexForStar"    : 0,
+                    "wordIndexForAlphabet": 0])
             }
             return
         }
@@ -102,15 +102,15 @@ extension AppInfo {
                 if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
                     try! realm.write {
                         realm.create(ChineseWord.self,value:[
-                            "id":id_num,
-                            "level":level,
-                            "chapter":chapter,
-                            "hanyu": hanyu,
-                            "pinyin":wordsInfo[1],
-                            "desc_kr":wordsInfo[2],
-                            "desc_en":desc_en,
-                            "desc_es":desc_es,
-                            "likeIt":false]
+                            "id"      : id_num,
+                            "level"   : level,
+                            "chapter" : chapter,
+                            "hanyu"   : hanyu,
+                            "pinyin"  : wordsInfo[1],
+                            "desc_kr" : wordsInfo[2],
+                            "desc_en" : desc_en,
+                            "desc_es" : desc_es,
+                            "likeIt"  : false]
                         )
                     }
                     id_num += 1
