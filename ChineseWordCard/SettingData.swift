@@ -22,7 +22,7 @@ class SettingData : Object {
     
     func setWordIndex(fromIndex:Int, withValue:Int) {
         switch fromIndex {
-        case 0:
+        case 0 :
             self.wordIndexForAll = withValue
         case 1 :
             self.wordIndexForAlphabet = withValue

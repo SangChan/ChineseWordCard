@@ -16,11 +16,11 @@ public enum SpeechSpeedIndex : InfoProtocol {
     
     var rawValue : Int {
         switch self {
-        case .speechSpeedSlow:
+        case .speechSpeedSlow :
             return 0
-        case .speechSpeedNormal:
+        case .speechSpeedNormal :
             return 1
-        case .speechSpeedFast:
+        case .speechSpeedFast :
             return 2
         }
     }
@@ -67,9 +67,9 @@ extension SpeechInfo {
     
     func speechSpeedIndex(fromIndex : Int) -> SpeechSpeedIndex {
         switch fromIndex {
-        case 0:
+        case 0 :
             return SpeechSpeedIndex.speechSpeedSlow
-        case 2:
+        case 2 :
             return SpeechSpeedIndex.speechSpeedFast
         default :
             return SpeechSpeedIndex.speechSpeedNormal
@@ -78,9 +78,9 @@ extension SpeechInfo {
     
     func string(speechSpeed : InfoProtocol) -> String {
         switch speechSpeed {
-        case SpeechSpeedIndex.speechSpeedSlow:
+        case SpeechSpeedIndex.speechSpeedSlow :
             return "Slow"
-        case SpeechSpeedIndex.speechSpeedFast:
+        case SpeechSpeedIndex.speechSpeedFast :
             return "Fast"
         default :
             return "Normal"

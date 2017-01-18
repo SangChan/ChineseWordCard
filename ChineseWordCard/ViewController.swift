@@ -152,15 +152,15 @@ extension ViewController {
     
     func goTo(direction : Direction) {
         switch direction {
-        case .next:
+        case .next :
             resetView()
             wordIndex = self.wordIndex(toIncrease:true);
             self.updateUIonView()
-        case .previous:
+        case .previous :
             resetView()
             wordIndex = self.wordIndex(toIncrease:false);
             self.updateUIonView()
-        default:
+        default :
             resetView()
             self.updateUIonView()
         }
@@ -169,11 +169,11 @@ extension ViewController {
     func getData(sortIndex : InfoProtocol) -> Results<ChineseWord> {
         let realm = try! Realm()
         switch sortIndex {
-        case SortIndex.sortIndexStar:
+        case SortIndex.sortIndexStar :
             return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
         case SortIndex.sortIndexAlphabet :
             return realm.objects(ChineseWord.self).sorted(byProperty: "pinyin")
-        default:
+        default :
             return realm.objects(ChineseWord.self)
         }
     }
@@ -225,7 +225,7 @@ extension ViewController {
     
     func setLabelHidden(byCount : Int) {
         switch byCount % 3 {
-        case 1:
+        case 1 :
             UIView.animate(withDuration: 0.3, animations: {
                 self.pinyinLabel.alpha = 1.0
             }, completion: { (success) in
@@ -235,7 +235,7 @@ extension ViewController {
                     log("animation fails at complete : \(byCount)")
                 }
             })
-        case 2:
+        case 2 :
             UIView.animate(withDuration: 0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
@@ -259,9 +259,9 @@ extension ViewController {
     
     func getSpeechSpeed(fromIndex : InfoProtocol) -> Float {
         switch fromIndex.rawValue {
-        case SpeechSpeedIndex.speechSpeedSlow.rawValue:
+        case SpeechSpeedIndex.speechSpeedSlow.rawValue :
             return AVSpeechUtteranceDefaultSpeechRate * 0.35
-        case SpeechSpeedIndex.speechSpeedFast.rawValue:
+        case SpeechSpeedIndex.speechSpeedFast.rawValue :
             return AVSpeechUtteranceDefaultSpeechRate
         default:
             return AVSpeechUtteranceDefaultSpeechRate * 0.65

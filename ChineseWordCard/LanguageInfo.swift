@@ -16,11 +16,11 @@ public enum LanguageIndex : InfoProtocol {
     
     var rawValue : Int {
         switch self {
-        case .languageIndexEN:
+        case .languageIndexEN :
             return 0
-        case .langyageIndexES:
+        case .langyageIndexES :
             return 1
-        case .languageIndexKR:
+        case .languageIndexKR :
             return 2
         }
     }
@@ -69,9 +69,9 @@ extension LanguageInfo {
     
     func languageIndex(fromIndex : Int) -> LanguageIndex {
         switch fromIndex {
-        case 0:
+        case 0 :
             return LanguageIndex.languageIndexEN
-        case 1:
+        case 1 :
             return LanguageIndex.langyageIndexES
         default :
             return LanguageIndex.languageIndexKR

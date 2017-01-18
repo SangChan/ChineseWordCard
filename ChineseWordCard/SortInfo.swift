@@ -16,11 +16,11 @@ public enum SortIndex : InfoProtocol {
     
     var rawValue : Int {
         switch self {
-        case .sortIndexNone:
+        case .sortIndexNone :
             return 0
-        case .sortIndexAlphabet:
+        case .sortIndexAlphabet :
             return 1
-        case .sortIndexStar:
+        case .sortIndexStar :
             return 2
         }
     }
@@ -66,9 +66,9 @@ extension SortInfo {
     
     func sortIndex(fromIndex : Int) -> SortIndex {
         switch fromIndex {
-        case 1:
+        case 1 :
             return SortIndex.sortIndexAlphabet
-        case 2:
+        case 2 :
             return SortIndex.sortIndexStar
         default :
             return SortIndex.sortIndexNone
