@@ -24,9 +24,9 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
         case (0,0 ... 2) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFrom(Cellindex: (indexPath as NSIndexPath).row+1)
+            cell.detailTextLabel!.text = AppInfo.sharedInstance.stringFrom(Cellindex: (indexPath as NSIndexPath).row+1)
         case (1,0) :
-            cell.detailTextLabel?.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String?
+            cell.detailTextLabel!.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         default :
             return
         }
