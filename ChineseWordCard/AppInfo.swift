@@ -56,12 +56,12 @@ extension AppInfo {
         guard realm.objects(SettingData.self).count > 0 else {
             try! realm.write {
                 realm.create(SettingData.self, value: [
-                    "speechSpeedIndex"    : SpeechSpeedIndex.speechSpeedNormal.rawValue,
-                    "languageIndex"       : LanguageIndex.languageIndexKR.rawValue,
-                    "sortIndex"           : SortIndex.sortIndexNone.rawValue,
-                    "wordIndexForAll"     : 0,
-                    "wordIndexForStar"    : 0,
-                    "wordIndexForAlphabet": 0])
+                    "speechSpeedIndex"     : SpeechSpeedIndex.speechSpeedNormal.rawValue,
+                    "languageIndex"        : LanguageIndex.languageIndexKR.rawValue,
+                    "sortIndex"            : SortIndex.sortIndexNone.rawValue,
+                    "wordIndexForAll"      : 0,
+                    "wordIndexForStar"     : 0,
+                    "wordIndexForAlphabet" : 0])
             }
             return
         }
@@ -83,8 +83,8 @@ extension AppInfo {
         }
         
         var chapter : Int = 0
-        var level : Int  = 0
-        var id_num : Int = 0
+        var level : Int   = 0
+        var id_num : Int  = 0
         
         for text in lines {
             if text.hasPrefix("//") {
