@@ -53,17 +53,17 @@ class AppInfo {
 extension AppInfo {
     func makeSettingDataDB() {
         let realm = try! Realm()
-        guard realm.objects(SettingData.self).count > 0 else {
-            try! realm.write {
-                realm.create(SettingData.self, value: [
-                    "speechSpeedIndex"     : SpeechSpeedIndex.speechSpeedNormal.rawValue,
-                    "languageIndex"        : LanguageIndex.languageIndexKR.rawValue,
-                    "sortIndex"            : SortIndex.sortIndexNone.rawValue,
-                    "wordIndexForAll"      : 0,
-                    "wordIndexForStar"     : 0,
-                    "wordIndexForAlphabet" : 0])
-            }
-            return
+        guard realm.objects(SettingData.self).count == 0 else { return }
+        
+        try! realm.write {
+            realm.create(SettingData.self, value: [
+                "speechSpeedIndex"     : SpeechSpeedIndex.speechSpeedNormal.rawValue,
+                "languageIndex"        : LanguageIndex.languageIndexKR.rawValue,
+                "sortIndex"            : SortIndex.sortIndexNone.rawValue,
+                "wordIndexForAll"      : 0,
+                "wordIndexForStar"     : 0,
+                "wordIndexForAlphabet" : 0
+            ])
         }
 
     }
@@ -78,9 +78,7 @@ extension AppInfo {
         }
         
         let lines = fileContents.components(separatedBy: CharacterSet.newlines)
-        guard (lines.count - realm.objects(ChineseWord.self).count) > 100 else {
-            return
-        }
+        guard (lines.count - realm.objects(ChineseWord.self).count) > 100 else { return }
         
         var chapter : Int = 0
         var level : Int   = 0
