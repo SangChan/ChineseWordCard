@@ -28,11 +28,18 @@ public enum SpeechSpeedIndex : InfoProtocol {
 
 class SpeechInfo : EnumInfo {
     internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.speechSpeedNormal
-    lazy var speechSpeed = {
+    lazy var speechSpeed : InfoProtocol = {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
-        return settingData.speechSpeedIndex
-    }
+        switch settingData.speechSpeedIndex {
+        case 0 :
+            return SpeechSpeedIndex.speechSpeedSlow
+        case 2 :
+            return SpeechSpeedIndex.speechSpeedFast
+        default :
+            return SpeechSpeedIndex.speechSpeedNormal
+        }
+    }()
     
     func enumInfo(fromIndex: Int) -> InfoProtocol {
         return self.speechSpeedIndex(fromIndex:fromIndex)
