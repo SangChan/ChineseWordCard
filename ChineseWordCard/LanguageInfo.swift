@@ -30,6 +30,19 @@ public enum LanguageIndex : InfoProtocol {
 class LanguageInfo : EnumInfo {
     internal var languageValue : InfoProtocol = LanguageIndex.languageIndexKR
     
+    lazy var language : InfoProtocol = {
+        let realm = try! Realm()
+        let settingData : SettingData = realm.objects(SettingData.self).first!
+        switch settingData.languageIndex {
+        case 0 :
+            return LanguageIndex.languageIndexEN
+        case 1 :
+            return LanguageIndex.langyageIndexES
+        default :
+            return LanguageIndex.languageIndexKR
+        }
+    }()
+    
     func enumInfo(fromIndex: Int) -> InfoProtocol {
         return self.languageIndex(fromIndex:fromIndex)
     }
