@@ -29,6 +29,19 @@ public enum SortIndex : InfoProtocol {
 class SortInfo :EnumInfo {
     internal var sortValue : InfoProtocol = SortIndex.sortIndexNone
     
+    lazy var sortIndex : InfoProtocol = {
+        let realm = try! Realm()
+        let settingData : SettingData = realm.objects(SettingData.self).first!
+        switch settingData.sortIndex {
+        case 1 :
+            return SortIndex.sortIndexAlphabet
+        case 2 :
+            return SortIndex.sortIndexStar
+        default :
+            return SortIndex.sortIndexNone
+        }
+    }()
+    
     func enumInfo(fromIndex: Int) -> InfoProtocol {
         return self.sortIndex(fromIndex:fromIndex)
     }

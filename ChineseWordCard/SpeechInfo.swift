@@ -28,7 +28,7 @@ public enum SpeechSpeedIndex : InfoProtocol {
 
 class SpeechInfo : EnumInfo {
     internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.speechSpeedNormal
-    lazy var speechSpeed : InfoProtocol = {
+    lazy var speechSpeedIndex : InfoProtocol = {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
         switch settingData.speechSpeedIndex {
