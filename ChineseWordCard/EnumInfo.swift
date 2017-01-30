@@ -13,6 +13,7 @@ protocol InfoProtocol {
 }
 
 protocol EnumInfo {
+    var  index : InfoProtocol { get set }
     func enumInfo(fromIndex:Int) -> InfoProtocol
     func indexFromEnum() -> Int
     func enumInfo(setIndex:Int)
