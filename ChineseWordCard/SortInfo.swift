@@ -29,7 +29,7 @@ public enum SortIndex : InfoProtocol {
 class SortInfo :EnumInfo {
     internal var sortValue : InfoProtocol = SortIndex.sortIndexNone
     
-    lazy var sortIndex : InfoProtocol = {
+    lazy var index : InfoProtocol = {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
         switch settingData.sortIndex {

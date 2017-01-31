@@ -30,7 +30,7 @@ public enum LanguageIndex : InfoProtocol {
 class LanguageInfo : EnumInfo {
     internal var languageValue : InfoProtocol = LanguageIndex.languageIndexKR
     
-    lazy var languageIndex : InfoProtocol = {
+    lazy var index : InfoProtocol = {
         let realm = try! Realm()
         let settingData : SettingData = realm.objects(SettingData.self).first!
         switch settingData.languageIndex {
