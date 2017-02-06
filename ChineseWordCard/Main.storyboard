@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="Main" id="vXZ-lx-hvc" customClass="ViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="ViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -188,7 +188,7 @@
         <!--Setting-->
         <scene sceneID="C9Q-0D-JTJ">
             <objects>
-                <tableViewController storyboardIdentifier="Setting" title="Setting" id="1SD-2L-XkU" customClass="SettingViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingViewController" title="Setting" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1SD-2L-XkU" customClass="SettingViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="LkD-X6-EnQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +304,7 @@
         <!--Speak Rate-->
         <scene sceneID="stT-d3-HgH">
             <objects>
-                <tableViewController storyboardIdentifier="Speak" title="Speak Rate" id="5Xk-lU-vva" customClass="SpeechRateViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SpeakRateViewController" title="Speak Rate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xk-lU-vva" customClass="SpeechRateViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1yq-kI-QFy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,8 +379,8 @@
         <!--Navigation Controller-->
         <scene sceneID="ovc-Kj-b41">
             <objects>
-                <navigationController id="P7Q-t6-GNR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="djK-4e-eIs">
+                <navigationController storyboardIdentifier="SettingNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P7Q-t6-GNR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="djK-4e-eIs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -395,7 +395,7 @@
         <!--Language-->
         <scene sceneID="vuN-0m-mTT">
             <objects>
-                <tableViewController storyboardIdentifier="Language" title="Language" id="OZ8-5W-mut" customClass="LanguageSelectViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LanguageSelectViewController" title="Language" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OZ8-5W-mut" customClass="LanguageSelectViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="alM-sV-mN9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -470,7 +470,7 @@
         <!--Sort-->
         <scene sceneID="Q7D-vH-Ete">
             <objects>
-                <tableViewController storyboardIdentifier="Sort" title="Sort" id="3tO-xD-7aE" customClass="SortSelectViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SortSelectViewController" title="Sort" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3tO-xD-7aE" customClass="SortSelectViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1IP-R6-1pk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
