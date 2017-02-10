@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SetupData {
+protocol SetupData : class {
    func setupData()
 }
 
