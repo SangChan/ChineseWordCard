@@ -43,3 +43,7 @@ extension SettingViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+class SettingNavigationController : UINavigationController {
+    
+}

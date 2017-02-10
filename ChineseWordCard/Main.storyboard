@@ -376,10 +376,10 @@
             </objects>
             <point key="canvasLocation" x="2107" y="1243"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Setting Navigation Controller-->
         <scene sceneID="ovc-Kj-b41">
             <objects>
-                <navigationController storyboardIdentifier="SettingNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P7Q-t6-GNR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SettingNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P7Q-t6-GNR" customClass="SettingNavigationController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="djK-4e-eIs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
