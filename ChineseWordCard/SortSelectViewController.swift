@@ -12,7 +12,7 @@ import RealmSwift
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "SortSelect"
-        details = [SortIndex.sortIndexNone,SortIndex.sortIndexAlphabet,SortIndex.sortIndexStar]
+        details    = [SortIndex.sortIndexNone,SortIndex.sortIndexAlphabet,SortIndex.sortIndexStar]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
