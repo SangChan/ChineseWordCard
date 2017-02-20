@@ -17,5 +17,5 @@ class ChineseWord: Object {
     dynamic var desc_es : String? //description from word for Espanol
     dynamic var hanyu   : String! //hanyu from word
     dynamic var pinyin  : String! //pinyin from word
-    dynamic var likeIt  = false   //value for star button
+    dynamic var likeIt  : Bool = false   //value for star button
 }
