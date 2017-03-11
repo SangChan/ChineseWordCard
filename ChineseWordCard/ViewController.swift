@@ -60,13 +60,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    /*override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            wordIndex = Int(arc4random_uniform(UInt32(wordList.count)))
-            updateUIonView()
-        }
-    }*/
-    
     // TODO : what's this come frome?
     override var canBecomeFirstResponder : Bool {
         return true
