@@ -45,7 +45,7 @@ class AppInfo {
                 settingData.setWordIndex(fromValue: index)
             }
         } catch {
-            log("error : \(error)")
+            print("error : \(error)")
         }
     }
 }

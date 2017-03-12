@@ -114,7 +114,7 @@ extension ViewController {
                 self.currentWord.likeIt = !self.currentWord.likeIt
             }
         } catch {
-            log("exeception :\(error)")
+            print("exeception :\(error)")
         }
         
         defer {
