@@ -33,3 +33,15 @@ class LobbyViewController: UIViewController {
     */
 
 }
+
+class StudyProgress : UIView {
+    
+}
+
+class PreviewForWord : UIView {
+    
+}
+
+class SearchWord : UIView {
+    
+}
