@@ -45,3 +45,11 @@ class PreviewForWord : UIView {
 class SearchWord : UIView {
     
 }
+
+class LikeItWord : UIView {
+    
+}
+
+class TodaysWord : UIView {
+    
+}
