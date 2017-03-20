@@ -53,3 +53,12 @@ class LikeItWord : UIView {
 class TodaysWord : UIView {
     
 }
+
+class CircleView : UIView {
+    var maxValue : UInt!
+    var currentValue : UInt!
+    
+    func animate() {
+        
+    }
+}
