@@ -11,7 +11,7 @@
 		631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CE02F1CF9D76C0036DE72 /* SettingData.swift */; };
 		6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321B9F51C05E70F00E2186C /* ChineseWord.swift */; };
 		63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */; };
-		63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7C1BA7CE9700D4A48D /* ViewController.swift */; };
+		63458E7D1BA7CE9700D4A48D /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63458E7C1BA7CE9700D4A48D /* WordViewController.swift */; };
 		63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63458E811BA7CE9700D4A48D /* Images.xcassets */; };
 		634AF3E41D2CEF1B00C3BE99 /* EnumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */; };
 		6387744C1C7C5DFF0075013B /* SortSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */; };
@@ -50,7 +50,7 @@
 		6321B9F51C05E70F00E2186C /* ChineseWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChineseWord.swift; sourceTree = "<group>"; };
 		63458E751BA7CE9700D4A48D /* ChineseWordCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChineseWordCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63458E7C1BA7CE9700D4A48D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63458E7C1BA7CE9700D4A48D /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 		63458E811BA7CE9700D4A48D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumInfo.swift; sourceTree = "<group>"; };
 		636AF5421D4A40EF0078CE23 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/ChineseWordCard-buaosyfvjhgdwzaymiwrgdxklcwo/Build/Products/Debug-iphonesimulator/RealmSwift.framework"; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				63D542501C50E72700E1937B /* SpeechRateViewController.swift */,
 				63AFFB1C1C79A62200F99DA8 /* LanguageSelectViewController.swift */,
 				6387744B1C7C5DFF0075013B /* SortSelectViewController.swift */,
-				63458E7C1BA7CE9700D4A48D /* ViewController.swift */,
+				63458E7C1BA7CE9700D4A48D /* WordViewController.swift */,
 				63EC85001E7A9D83006CE64E /* LobbyViewController.swift */,
 			);
 			name = Controller;
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63AFFB1D1C79A62200F99DA8 /* LanguageSelectViewController.swift in Sources */,
-				63458E7D1BA7CE9700D4A48D /* ViewController.swift in Sources */,
+				63458E7D1BA7CE9700D4A48D /* WordViewController.swift in Sources */,
 				63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */,
 				631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */,
 				63D542511C50E72700E1937B /* SpeechRateViewController.swift in Sources */,

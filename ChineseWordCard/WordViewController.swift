@@ -18,7 +18,7 @@ enum Direction {
 }
 
 // TODO : change name space as WordViewControllerls
-class ViewController: UIViewController {
+class WordViewController: UIViewController {
 
     @IBOutlet var pinyinLabel        : UILabel!
     @IBOutlet var hanyuLabel         : UILabel!
@@ -128,7 +128,7 @@ extension ViewController {
     }
 }
 
-extension ViewController {
+extension WordViewController {
     
     func wordIndex(toIncrease : Bool) -> Int {
         var index : Int = wordIndex
