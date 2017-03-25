@@ -67,7 +67,7 @@ class WordViewController: UIViewController {
     }
     
 }
-extension ViewController {
+extension WordViewController {
     // IBActions only
     @IBAction func nextClicked(_ sender: AnyObject) {
         self.goTo(direction:.next)
