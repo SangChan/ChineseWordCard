@@ -9,8 +9,8 @@
 import UIKit
 
 class LobbyViewController: UIViewController {
-    @IBOutlet var varticalStackView : UIStackView!
-    @IBOutlet var horizontalStackView : UIStackView!
+    @IBOutlet weak var varticalStackView : UIStackView!
+    @IBOutlet weak var horizontalStackView : UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
