@@ -64,3 +64,12 @@ class CircleView : UIView {
         
     }
 }
+
+class ProgressView : UIView {
+    var maxValue : UInt!
+    var currentValue : UInt!
+    
+    func animate() {
+
+    }
+}
