@@ -36,24 +36,29 @@ class LobbyViewController: UIViewController {
 
 }
 
+class GoToWord : UIView {
+    var chineseWord : ChineseWord?
+}
+
 class StudyProgress : UIView {
-    
+    var circleView : CircleView!
 }
 
 class PreviewForWord : UIView {
-    
+    var chineseWord : ChineseWord?
 }
 
 class SearchWord : UIView {
-    
+    var searchKeyword : String?
+    var chineseWord : ChineseWord?
 }
 
 class LikeItWord : UIView {
-    
+    var chineseWord : ChineseWord?
 }
 
 class TodaysWord : UIView {
-    
+    var chineseWord : ChineseWord?
 }
 
 class CircleView : UIView {
