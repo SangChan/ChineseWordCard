@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 protocol SetupData : class {
    func setupData()
@@ -61,3 +62,35 @@ extension DetailSettingTableViewController : SetupData {
         details = []
     }
 }
+
+class SpeechRateViewController: DetailSettingTableViewController {
+    override func setupData() {
+        detailName = "SpeechRate"
+        details    = [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast]
+    }
+}
+
+
+class LanguageSelectViewController: DetailSettingTableViewController {
+    override func setupData() {
+        detailName = "LanguageSelect"
+        details    = [LanguageIndex.languageIndexEN,LanguageIndex.langyageIndexES,LanguageIndex.languageIndexKR]
+    }
+}
+
+class SortSelectViewController: DetailSettingTableViewController {
+    override func setupData() {
+        detailName = "SortSelect"
+        details    = [SortIndex.sortIndexNone,SortIndex.sortIndexAlphabet,SortIndex.sortIndexStar]
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let realm = try! Realm()
+        guard realm.objects(ChineseWord.self).filter("likeIt == true").count > 0 else {
+            return 2
+        }
+        return 3
+    }
+}
+
+
