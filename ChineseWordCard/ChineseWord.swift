@@ -18,4 +18,6 @@ class ChineseWord: Object {
     dynamic var hanyu   : String! //hanyu from word
     dynamic var pinyin  : String! //pinyin from word
     dynamic var likeIt  : Bool = false   //value for star button
+    dynamic var play    : Int = 0 //how many play this word
+    dynamic var isShown : Bool = false  //shown to user
 }
