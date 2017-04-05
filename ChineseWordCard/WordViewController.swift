@@ -189,6 +189,14 @@ extension WordViewController {
         self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
+        let realm = try! Realm()
+        do {
+            try realm.write {
+                self.currentWord.isShown = true
+            }
+        } catch {
+            print("exeception :\(error)")
+        }
     }
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {

@@ -109,7 +109,9 @@ extension AppInfo {
                             "desc_kr" : wordsInfo[2],
                             "desc_en" : desc_en,
                             "desc_es" : desc_es,
-                            "likeIt"  : false]
+                            "likeIt"  : false,
+                            "play"    : 0,
+                            "isShown" : false]
                         )
                     }
                     id_num += 1
