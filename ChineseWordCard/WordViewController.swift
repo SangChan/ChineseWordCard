@@ -193,6 +193,7 @@ extension WordViewController {
         do {
             try realm.write {
                 self.currentWord.isShown = true
+                self.currentWord.play += 1
             }
         } catch {
             print("exeception :\(error)")
