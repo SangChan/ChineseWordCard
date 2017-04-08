@@ -156,7 +156,6 @@ extension WordViewController {
             self.updateUIonView()
         default :
             resetView()
-            self.updateUIonView()
         }
     }
     
