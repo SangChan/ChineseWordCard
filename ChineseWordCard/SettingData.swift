@@ -40,6 +40,8 @@ class SettingData : Object {
     
     func wordIndex(fromIndex:Int) -> Int{
         switch fromIndex {
+        case 0 :
+            return self.wordIndexForAll
         case 1 :
             return self.wordIndexForAlphabet
         case 2 :
