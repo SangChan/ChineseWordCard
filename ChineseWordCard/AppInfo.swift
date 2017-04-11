@@ -73,7 +73,8 @@ extension AppInfo {
         let fileContents : NSString
         do {
             fileContents = try NSString.init(contentsOfFile:sourcePath!, encoding:String.Encoding.utf8.rawValue)
-        } catch {
+        } catch error {
+            print("exeption : \(error)")
             return
         }
         
