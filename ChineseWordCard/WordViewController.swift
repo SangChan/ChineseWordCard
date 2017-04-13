@@ -165,7 +165,7 @@ extension WordViewController {
         case SortIndex.sortIndexStar :
             return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
         case SortIndex.sortIndexAlphabet :
-            return realm.objects(ChineseWord.self).sorted(byProperty: "pinyin")
+            return realm.objects(ChineseWord.self).sorted(byKeyPath: "pinyin")
         default :
             return realm.objects(ChineseWord.self)
         }
