@@ -1,20 +1,20 @@
 PODS:
-  - FontAwesome.swift (1.0.0)
-  - Realm (2.0.3):
-    - Realm/Headers (= 2.0.3)
-  - Realm/Headers (2.0.3)
-  - RealmSwift (2.0.3):
-    - Realm (= 2.0.3)
+  - FontAwesome.swift (1.1.1)
+  - Realm (2.5.1):
+    - Realm/Headers (= 2.5.1)
+  - Realm/Headers (2.5.1)
+  - RealmSwift (2.5.1):
+    - Realm (= 2.5.1)
 
 DEPENDENCIES:
   - FontAwesome.swift
   - RealmSwift
 
 SPEC CHECKSUMS:
-  FontAwesome.swift: 2d32a3d62195343c2004b7c9043294ed2948553a
-  Realm: 5f008bfe3c8c47142eddfc30b8c1584cde22db24
-  RealmSwift: 5afb451f65b682242f272dbb52d5c6f6e343c980
+  FontAwesome.swift: f4ff5a9199dc3b510eba5bb377e834f159aef358
+  Realm: 32f86104d37c8521f864d4274050b38ba6190733
+  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
 
 PODFILE CHECKSUM: 7ddc650976461ecdaef4125fd9afe081e0ffa966
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0
