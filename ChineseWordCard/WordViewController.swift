@@ -109,11 +109,9 @@ extension WordViewController {
         guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else {
             return
         }
-        let realm = try! Realm()
+        
         do {
-            try realm.write {
-                self.currentWord.likeIt = !self.currentWord.likeIt
-            }
+            try self.writeRealm(likeIt: !self.currentWord.likeIt)
         } catch {
             print("exeception :\(error)")
         }
@@ -278,3 +276,22 @@ extension WordViewController {
     }
 }
 
+extension WordViewController {
+    func writeRealm(likeIt : Bool) throws {
+        let realm = try! Realm()
+        
+        try realm.write {
+            self.currentWord.likeIt = likeIt
+        }
+    }
+
+    func writeRealm(isShown : Bool) throws {
+        let realm = try! Realm()
+        
+        try realm.write {
+            self.currentWord.isShown = isShown
+            self.currentWord.play += 1
+        }
+    }
+
+}
