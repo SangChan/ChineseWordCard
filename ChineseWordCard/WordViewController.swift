@@ -163,7 +163,7 @@ extension WordViewController {
         case SortIndex.sortIndexStar :
             return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
         case SortIndex.sortIndexAlphabet :
-            return realm.objects(ChineseWord.self).sorted(byProperty: "pinyin")
+            return realm.objects(ChineseWord.self).sorted(byKeyPath: "pinyin")
         default :
             return realm.objects(ChineseWord.self)
         }
@@ -186,12 +186,8 @@ extension WordViewController {
         self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
-        let realm = try! Realm()
         do {
-            try realm.write {
-                self.currentWord.isShown = true
-                self.currentWord.play += 1
-            }
+            try self.writeRealm(isShown: true)
         } catch {
             print("exeception :\(error)")
         }
