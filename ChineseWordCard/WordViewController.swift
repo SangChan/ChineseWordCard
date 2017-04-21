@@ -235,7 +235,9 @@ extension WordViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
-                if success != true {
+                if success == true {
+                    // TODO : doing somethings,
+                } else {
                     print("animation fails at complete : \(byCount)")
                 }
             })
