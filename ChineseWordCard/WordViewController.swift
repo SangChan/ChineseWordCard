@@ -105,6 +105,10 @@ extension WordViewController {
         }
     }
     
+    @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+        
+    }
+    
     @IBAction func starButtonPressed(_ sender: AnyObject) {
         guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else {
             return
