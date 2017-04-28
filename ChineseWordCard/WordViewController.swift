@@ -106,7 +106,10 @@ extension WordViewController {
     }
     
     @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
-        
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .recognized {
+            let pasteBoard = UIPasteboard.general
+            pasteBoard.string = hanyuLabel.text
+        }
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
