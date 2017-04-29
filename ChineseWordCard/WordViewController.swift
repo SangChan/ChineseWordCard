@@ -106,9 +106,10 @@ extension WordViewController {
     }
     
     @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
-        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .recognized {
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
             let pasteBoard = UIPasteboard.general
             pasteBoard.string = hanyuLabel.text
+            // TODO : showing paste board like copy, etc..
         }
     }
     
