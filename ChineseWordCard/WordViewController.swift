@@ -108,6 +108,12 @@ extension WordViewController {
     @IBAction func handleLongPress(_ sender: UILongPressGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .began {
             // TODO : showing paste board like copy, etc..
+            hanyuLabel.becomeFirstResponder()
+            
+            let copyMenu = UIMenuController.shared
+            copyMenu.setTargetRect(hanyuLabel.frame, in: self.view)
+            copyMenu.arrowDirection = .default
+            copyMenu.setMenuVisible(true, animated: true)
         }
     }
     
