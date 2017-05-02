@@ -110,10 +110,14 @@ extension WordViewController {
             // TODO : showing paste board like copy, etc..
             hanyuLabel.becomeFirstResponder()
             
+            let copyMenuItem = UIMenuItem(title: "Copy", action: #selector(copyText(_:)))
+            
             let copyMenu = UIMenuController.shared
             copyMenu.setTargetRect(hanyuLabel.frame, in: self.view)
             copyMenu.arrowDirection = .default
             copyMenu.setMenuVisible(true, animated: true)
+            copyMenu.menuItems = [copyMenuItem]
+            
         }
     }
     
