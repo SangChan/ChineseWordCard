@@ -289,9 +289,9 @@ extension WordViewController {
         return false
     }
     
-    func copyText(_ text : String) {
+    func copyText(_ sender : UIMenuController) {
         let pasteBoard = UIPasteboard.general
-        pasteBoard.string = text
+        pasteBoard.string = self.hanyuLabel.text
     }
 }
 
