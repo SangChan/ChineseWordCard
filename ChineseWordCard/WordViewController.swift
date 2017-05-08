@@ -290,7 +290,7 @@ extension WordViewController {
     }
     
     func copyText(_ sender : UIMenuController) {
-        print("\(sender.debugDescription)")
+        // TODO : now just do it at hanyuLabel, but ..
         let pasteBoard = UIPasteboard.general
         pasteBoard.string = self.hanyuLabel.text
     }
