@@ -34,6 +34,7 @@ class WordViewController: UIViewController {
     var touchCount   : Int = 0
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
+    var copiedString : String?
     
     // override section
     
@@ -109,14 +110,14 @@ extension WordViewController {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .began {
             hanyuLabel.becomeFirstResponder()
             
-            let copyMenuItem = UIMenuItem(title: "Copy", action: #selector(copyText(_:)))
+            copiedString = hanyuLabel.text
             
+            let copyMenuItem = UIMenuItem(title: "Copy", action: #selector(copyText(_:)))
             let copyMenu = UIMenuController.shared
             copyMenu.setTargetRect(hanyuLabel.frame, in: self.view)
             copyMenu.arrowDirection = .default
             copyMenu.setMenuVisible(true, animated: true)
             copyMenu.menuItems = [copyMenuItem]
-            
         }
     }
     
@@ -289,9 +290,9 @@ extension WordViewController {
     }
     
     func copyText(_ sender : UIMenuController) {
-        // TODO : now just do it at hanyuLabel, but ..
+        guard let _copiedString = self.copiedString else { return }
         let pasteBoard = UIPasteboard.general
-        pasteBoard.string = self.hanyuLabel.text
+        pasteBoard.string = _copiedString
     }
 }
 
