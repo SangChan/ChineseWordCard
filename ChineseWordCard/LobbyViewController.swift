@@ -36,12 +36,17 @@ class LobbyViewController: UIViewController {
 
 }
 
+protocol CircleView {
+    func setup()
+    func animate()
+}
+
 class GoToWord : UIView {
     var chineseWord : ChineseWord?
 }
 
 class StudyProgress : UIView {
-    var circleView : CircleView!
+    var circleView : CircleView
 }
 
 class PreviewForWord : UIView {
@@ -61,7 +66,7 @@ class TodaysWord : UIView {
     var chineseWord : ChineseWord?
 }
 
-class CircleView : UIView {
+class CircleView : CircleView {
     var maxValue : UInt!
     var currentValue : UInt!
     
