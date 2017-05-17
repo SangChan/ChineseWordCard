@@ -41,6 +41,11 @@ protocol Circle {
     func animate()
 }
 
+protocol Progress {
+    func setup()
+    func animate()
+}
+
 class GoToWord : UIView {
     var chineseWord : ChineseWord?
 }
@@ -79,9 +84,13 @@ class CircleView : Circle {
     }
 }
 
-class ProgressView : UIView {
+class ProgressView : Progress {
     var maxValue : UInt!
     var currentValue : UInt!
+    
+    func setup() {
+        
+    }
     
     func animate() {
 
