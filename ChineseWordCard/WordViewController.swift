@@ -88,14 +88,26 @@ extension WordViewController {
     }
     
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
-        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goTo(direction:.next)
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) {
+            if sender.state == .ended {
+                self.goTo(direction:.next)
+            } else if sender.state == .began {
+                
+            } else if sender.state == .changed {
+                
+            }
         }
     }
     
     @IBAction func handleSwipeRight(_ sender: UISwipeGestureRecognizer) {
-        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            self.goTo(direction:.previous)
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) {
+            if sender.state == .ended {
+                self.goTo(direction:.previous)
+            } else if sender.state == .began {
+                
+            } else if sender.state == .changed {
+                
+            }
         }
     }
     
