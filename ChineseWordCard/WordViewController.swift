@@ -253,19 +253,13 @@ extension WordViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 self.pinyinLabel.alpha = 1.0
             }, completion: { (success) in
-                if success == true {
-                    self.speakWord()
-                } else {
-                    print("animation fails at complete : \(byCount)")
-                }
+                self.speakWord()
             })
         case 2 :
             UIView.animate(withDuration: 0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
             }, completion: { (success) in
-                if success == true {
-                    // TODO : doing somethings,
-                } else {
+                if success == false {
                     print("animation fails at complete : \(byCount)")
                 }
             })
