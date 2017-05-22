@@ -258,11 +258,7 @@ extension WordViewController {
         case 2 :
             UIView.animate(withDuration: 0.3, animations: {
                 self.descriptionLabel.alpha = 1.0
-            }, completion: { (success) in
-                if success == false {
-                    print("animation fails at complete : \(byCount)")
-                }
-            })
+            }, completion: nil)
         default:
             pinyinLabel.alpha = 0.0
             descriptionLabel.alpha = 0.0
