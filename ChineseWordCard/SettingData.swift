@@ -29,7 +29,6 @@ class SettingData : Object {
         case 2 :
             self.wordIndexForStar = withValue
         default :
-            print("set wrong data for index = \(fromIndex) with value = \(withValue)")
             return
         }
     }
