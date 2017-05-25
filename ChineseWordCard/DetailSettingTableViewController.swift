@@ -24,6 +24,7 @@ class DetailSettingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard details.count > 0 else { return }
         tableView.cellForRow(at: previousSelect)?.accessoryType = .none
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true);
@@ -33,6 +34,7 @@ class DetailSettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard details.count > 0 else { return }
         let indexObject : EnumInfo = self.infoObject(fromName:detailName)
         let infoIndex : Int = indexObject.indexFromEnum()
         if infoIndex ==  details[(indexPath as NSIndexPath).row].rawValue {
