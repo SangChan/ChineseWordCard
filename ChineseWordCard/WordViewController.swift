@@ -92,9 +92,9 @@ extension WordViewController {
             if sender.state == .ended {
                 self.goTo(direction:.next)
             } else if sender.state == .began {
-                
+                self.hanyuLabel.alpha = 0.9
             } else if sender.state == .changed {
-                
+                self.hanyuLabel.alpha = 0.5
             }
         }
     }
@@ -209,6 +209,7 @@ extension WordViewController {
         self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
+        self.hanyuLabel.alpha = 1.0
         self.hanyuLabel.text = currentWord.hanyu
         self.pinyinLabel.text = currentWord.pinyin
         self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
