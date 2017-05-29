@@ -134,18 +134,16 @@ extension WordViewController {
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
-        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else {
-            return
+        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
+        
+        defer {
+            setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
         }
         
         do {
             try self.writeRealm(likeIt: !self.currentWord.likeIt)
         } catch {
             print("exeception :\(error)")
-        }
-        
-        defer {
-            setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
         }
     }
     
