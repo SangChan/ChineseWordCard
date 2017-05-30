@@ -123,7 +123,7 @@ extension WordViewController {
             hanyuLabel.becomeFirstResponder()
             
             copiedString = hanyuLabel.text
-            
+            let copyMenuItemString = NSLocalizedString("copyString", comment: "Copy")
             let copyMenuItem = UIMenuItem(title: "Copy", action: #selector(copyText(_:)))
             let copyMenu = UIMenuController.shared
             copyMenu.setTargetRect(hanyuLabel.frame, in: self.view)
