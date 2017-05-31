@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LobbyViewController: UIViewController {
     @IBOutlet weak var varticalStackView   : UIStackView!
