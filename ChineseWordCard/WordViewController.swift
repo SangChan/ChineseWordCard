@@ -125,7 +125,7 @@ extension WordViewController {
             copiedString = hanyuLabel.text
             // TODO : how to generate strings file?
             let copyMenuItemString = NSLocalizedString("copyString", comment: "복사")
-            let copyMenuItem = UIMenuItem(title: "Copy", action: #selector(copyText(_:)))
+            let copyMenuItem = UIMenuItem(title: copyMenuItemString, action: #selector(copyText(_:)))
             let copyMenu = UIMenuController.shared
             copyMenu.setTargetRect(hanyuLabel.frame, in: self.view)
             copyMenu.arrowDirection = .default
