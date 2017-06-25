@@ -60,8 +60,8 @@ class DetailSettingTableViewController: UITableViewController {
 
 extension DetailSettingTableViewController : SetupData {
     func setupData() {
-        detailName = ""
-        details = []
+        detailName = nil
+        details = nil
     }
 }
 
