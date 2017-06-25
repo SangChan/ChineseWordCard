@@ -21,3 +21,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate {
+    fileprivate func needToUpdate(_ version : String) -> Bool {
+        guard let appInfo = Bundle.main.infoDictionary else { return false }
+        let bundleShortVersion = appInfo["CFBundleShortVersionString"] as! String
+        
+        let appBuildNumberArray = bundleShortVersion.components(separatedBy: ".")
+        let minBuildNumberArray = version.components(separatedBy: ".")
+        
+        var i = 0
+        for minBuild in minBuildNumberArray {
+            if i > appBuildNumberArray.count-1 {
+                return false
+            }
+            let minBuildNumber : Int = Int(minBuild) ?? 0
+            let appBuildNumber : Int = Int(appBuildNumberArray[i]) ?? 0
+            if (appBuildNumber < minBuildNumber) {
+                return true
+            } else if (appBuildNumber > minBuildNumber) {
+                return false
+            }
+            i += 1
+        }
+        return false
+    }
+}
