@@ -17,17 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         AppInfo.sharedInstance.getAllDataFromRealm()
+        
+        print("1 = \(self.needToUpdate(bundleShortVersion: "2.2.0", minSupportVersion: "2.1.3"))")
+        print("2 = \(self.needToUpdate(bundleShortVersion: "3.0.0", minSupportVersion: "2.1.3"))")
+        print("3 = \(self.needToUpdate(bundleShortVersion: "2.0.0", minSupportVersion: "2.1.3"))")
+        print("4 = \(self.needToUpdate(bundleShortVersion: "2.1.3", minSupportVersion: "2.1.3"))")
+        print("5 = \(self.needToUpdate(bundleShortVersion: "2.1.4", minSupportVersion: "2.1.3"))")
+        print("6 = \(self.needToUpdate(bundleShortVersion: "2.1.6", minSupportVersion: "2.1.3"))")
+        print("7 = \(self.needToUpdate(bundleShortVersion: "2.1.6", minSupportVersion: "2.0.0"))")
+        print("8 = \(self.needToUpdate(bundleShortVersion: "2.0.1", minSupportVersion: "2.0.0"))")
+        print("9 = \(self.needToUpdate(bundleShortVersion: "1.12.12", minSupportVersion: "2.0.0"))")
+        
         return true
     }
 }
 
 extension AppDelegate {
-    fileprivate func needToUpdate(_ version : String) -> Bool {
-        guard let appInfo = Bundle.main.infoDictionary else { return false }
-        let bundleShortVersion = appInfo["CFBundleShortVersionString"] as! String
-        
+    fileprivate func needToUpdate(bundleShortVersion: String,  minSupportVersion : String) -> Bool {
         let appBuildNumberArray = bundleShortVersion.components(separatedBy: ".")
-        let minBuildNumberArray = version.components(separatedBy: ".")
+        let minBuildNumberArray = minSupportVersion.components(separatedBy: ".")
         
         var i = 0
         for minBuild in minBuildNumberArray {
