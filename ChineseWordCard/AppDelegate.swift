@@ -42,4 +42,8 @@ extension AppDelegate {
         }
         return false
     }
+    
+    fileprivate func checkDatabase() -> Bool {
+        return false
+    }
 }
