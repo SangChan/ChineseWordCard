@@ -33,10 +33,10 @@ class ChineseWordCardTests: XCTestCase {
     }
     
     func testTime() {
-        let startTime : CFAbsoluteTime = CFAbsoluteTime()
+        let startTime = Date()
         
-        let endTime : CFAbsoluteTime = CFAbsoluteTime() - startTime;
-        print("\(endTime)")
+        let timeDifference = startTime.timeIntervalSince(Date())
+        print("\(timeDifference)")
     }
     
 }
