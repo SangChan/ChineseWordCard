@@ -73,7 +73,7 @@ class TodaysWord : UIView {
 }
 
 class CircleView : Circle {
-    var maxValue : UInt!
+    var maxValue     : UInt!
     var currentValue : UInt!
     
     func setup() {
@@ -86,7 +86,7 @@ class CircleView : Circle {
 }
 
 class ProgressView : Progress {
-    var maxValue : UInt!
+    var maxValue     : UInt!
     var currentValue : UInt!
     
     func setup() {
