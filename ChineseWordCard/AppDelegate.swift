@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    fileprivate func needToUpdate(bundleShortVersion: String,  minSupportVersion : String) -> Bool {
+    fileprivate func checkToNeedToUpdate(bundleShortVersion: String,  minSupportVersion : String) -> Bool {
         let appBuildNumberArray = bundleShortVersion.components(separatedBy: ".")
         let minBuildNumberArray = minSupportVersion.components(separatedBy: ".")
         
@@ -45,7 +45,7 @@ extension AppDelegate {
         return false
     }
     
-    fileprivate func existForSetting() -> Bool {
+    fileprivate func checkToExistForSetting() -> Bool {
         let realm = try! Realm()
         if realm.objects(SettingData.self).count == 0 {
             return false
@@ -53,7 +53,7 @@ extension AppDelegate {
         return true
     }
     
-    fileprivate func existForWords() -> Bool {
+    fileprivate func checkToExistForWords() -> Bool {
         let realm = try! Realm()
         if realm.objects(ChineseWord.self).count == 0 {
             return false
