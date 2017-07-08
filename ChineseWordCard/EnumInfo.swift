@@ -12,10 +12,18 @@ protocol InfoProtocol {
     var rawValue: Int { get }
 }
 
-protocol EnumInfo : class {
+protocol EnumInfo  {
     var  index : InfoProtocol { get }
     func enumInfo(fromIndex:Int) -> InfoProtocol
     func indexFromEnum() -> Int
-    func enumInfo(setIndex:Int)
-    func string(fromIndex:Int) -> String
+}
+
+extension EnumInfo {
+    func enumInfo(setIndex:Int) {
+        
+    }
+    
+    func string(fromIndex:Int) -> String {
+        return ""
+    }
 }
