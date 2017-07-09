@@ -15,10 +15,13 @@ protocol InfoProtocol {
 protocol EnumInfo  {
     var  index : InfoProtocol { get }
     func enumInfo(fromIndex:Int) -> InfoProtocol
-    func indexFromEnum() -> Int
 }
 
 extension EnumInfo {
+    func indexFromEnum() -> Int {
+        return -1
+    }
+    
     func enumInfo(setIndex:Int) {
         
     }
