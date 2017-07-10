@@ -45,19 +45,4 @@ extension AppDelegate {
         return false
     }
     
-    fileprivate func checkToExistForSetting() -> Bool {
-        let realm = try! Realm()
-        if realm.objects(SettingData.self).count == 0 {
-            return false
-        }
-        return true
-    }
-    
-    fileprivate func checkToExistForWords() -> Bool {
-        let realm = try! Realm()
-        if realm.objects(ChineseWord.self).count == 0 {
-            return false
-        }
-        return true
-    }
 }

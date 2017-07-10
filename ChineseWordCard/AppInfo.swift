@@ -51,6 +51,22 @@ class AppInfo {
 }
 
 extension AppInfo {
+    func checkToExistForSetting() -> Bool {
+        let realm = try! Realm()
+        if realm.objects(SettingData.self).count == 0 {
+            return false
+        }
+        return true
+    }
+    
+    func checkToExistForWords() -> Bool {
+        let realm = try! Realm()
+        if realm.objects(ChineseWord.self).count == 0 {
+            return false
+        }
+        return true
+    }
+    
     func makeSettingDataDB() {
         let realm = try! Realm()
         guard realm.objects(SettingData.self).count == 0 else { return }
