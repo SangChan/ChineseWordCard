@@ -23,7 +23,7 @@ extension EnumInfo {
     }
     
     func enumInfo(setIndex:Int) {
-        
+        // do nothing but should implement at another
     }
     
     func string(fromIndex:Int) -> String {
