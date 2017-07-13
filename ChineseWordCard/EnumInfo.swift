@@ -19,7 +19,7 @@ protocol EnumInfo  {
 
 extension EnumInfo {
     func indexFromEnum() -> Int {
-        return -1
+        return -65535
     }
     
     func enumInfo(setIndex:Int) {
