@@ -42,4 +42,25 @@ extension SettingViewController {
     @IBAction func clickedDoneButton(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    fileprivate func checkToNeedToUpdate(bundleShortVersion: String,  minSupportVersion : String) -> Bool {
+        let appBuildNumberArray = bundleShortVersion.components(separatedBy: ".")
+        let minBuildNumberArray = minSupportVersion.components(separatedBy: ".")
+        
+        var i = 0
+        for minBuildStr in minBuildNumberArray {
+            if i > appBuildNumberArray.count-1 {
+                return false
+            }
+            let minBuildNumber : Int = Int(minBuildStr) ?? 0
+            let appBuildNumber : Int = Int(appBuildNumberArray[i]) ?? 0
+            if (appBuildNumber < minBuildNumber) {
+                return true
+            } else if (appBuildNumber > minBuildNumber) {
+                return false
+            }
+            i += 1
+        }
+        return false
+    }
 }
