@@ -104,9 +104,9 @@ extension WordViewController {
             if sender.state == .ended {
                 self.goTo(direction:.previous)
             } else if sender.state == .began {
-                
+                self.hanyuLabel.alpha = 0.9
             } else if sender.state == .changed {
-                
+                self.hanyuLabel.alpha = 0.5
             }
         }
     }
