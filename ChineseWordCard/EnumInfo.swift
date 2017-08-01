@@ -27,6 +27,6 @@ extension EnumInfo {
     }
     
     func string(fromIndex:Int) -> String {
-        return ""
+        return "test"
     }
 }
