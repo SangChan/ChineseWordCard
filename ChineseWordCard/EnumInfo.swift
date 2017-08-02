@@ -24,6 +24,7 @@ extension EnumInfo {
     
     func enumInfo(setIndex:Int) {
         // do nothing but should implement at another
+        assert(setIndex >= 0,"do nothing!")
     }
     
     func string(fromIndex:Int) -> String {
