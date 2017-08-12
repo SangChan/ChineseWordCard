@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="localizable" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="localizable" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,54 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lobby View Controller-->
-        <scene sceneID="X93-hz-Nb1">
-            <objects>
-                <viewController storyboardIdentifier="LobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y9i-co-waJ" customClass="LobbyViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NLH-Md-euA"/>
-                        <viewControllerLayoutGuide type="bottom" id="yAV-os-T0b"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yAM-aY-eEa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KXV-2z-Orf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="26t-56-EUS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1L-RR-NOg">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="333.5"/>
-                                                <color key="backgroundColor" red="1" green="0.98118225130000003" blue="0.66508478429999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-UM-mNu">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="333.5"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47058823529999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                        </subviews>
-                                    </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spj-K7-D27">
-                                        <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KXV-2z-Orf" firstAttribute="height" secondItem="yAM-aY-eEa" secondAttribute="height" id="8gD-nj-q0X"/>
-                            <constraint firstItem="KXV-2z-Orf" firstAttribute="width" secondItem="yAM-aY-eEa" secondAttribute="width" id="OIB-Wx-ocg"/>
-                            <constraint firstItem="KXV-2z-Orf" firstAttribute="bottom" secondItem="yAV-os-T0b" secondAttribute="top" id="dgu-HE-6ze"/>
-                            <constraint firstItem="KXV-2z-Orf" firstAttribute="leading" secondItem="yAM-aY-eEa" secondAttribute="leading" id="k4Z-Kj-1WM"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ir-jw-Fq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-359.19999999999999" y="431.33433283358323"/>
-        </scene>
         <!--Word View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
