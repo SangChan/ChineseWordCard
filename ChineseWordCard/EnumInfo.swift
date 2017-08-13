@@ -15,19 +15,7 @@ protocol InfoProtocol {
 protocol EnumInfo  {
     var  index : InfoProtocol { get }
     func enumInfo(fromIndex:Int) -> InfoProtocol
-}
-
-extension EnumInfo {
-    func indexFromEnum() -> Int {
-        return -65535
-    }
-    
-    func enumInfo(setIndex:Int) {
-        // do nothing but should implement at another
-        assert(setIndex >= 0,"do nothing!")
-    }
-    
-    func string(fromIndex:Int) -> String {
-        return "test"
-    }
+    func indexFromEnum() -> Int
+    func enumInfo(setIndex:Int)
+    func string(fromIndex:Int) -> String
 }
