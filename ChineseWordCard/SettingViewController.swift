@@ -38,13 +38,12 @@ class SettingViewController: UITableViewController {
         return .default
     }
     
-}
-
-extension SettingViewController {
     @IBAction func clickedDoneButton(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+}
+
+extension SettingViewController {
     fileprivate func checkToNeedToUpdate(bundleShortVersion: String,  minSupportVersion : String) -> Bool {
         let appBuildNumberArray = bundleShortVersion.components(separatedBy: ".")
         let minBuildNumberArray = minSupportVersion.components(separatedBy: ".")
