@@ -13,6 +13,10 @@ class AppInfo {
     let sortInfo     : SortInfo     = SortInfo()
     let speechInfo   : SpeechInfo   = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
+    lazy var realm : Realm = {
+        let _realm = try! Realm()
+        return _realm
+    }()
     
     func stringFrom(Cellindex : Int) -> String {
         switch Cellindex {
