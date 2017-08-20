@@ -13,8 +13,8 @@ class AppInfo {
     let sortInfo     : SortInfo     = SortInfo()
     let speechInfo   : SpeechInfo   = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
-    lazy var realm : Realm = {
-        let _realm = try! Realm()
+    lazy var lazyRealm : Realm? = {
+        let _realm = try? Realm()
         return _realm
     }()
     
@@ -35,7 +35,7 @@ class AppInfo {
     }
     
     func getWordIndex() ->  Int {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return -1 }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         return settingData.wordIndex()
     }
