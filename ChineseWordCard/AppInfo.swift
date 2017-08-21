@@ -41,7 +41,7 @@ class AppInfo {
     }
     
     func setWordIndex(_ index : Int) {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return  }
         
         do {
             try realm.write {
@@ -56,7 +56,7 @@ class AppInfo {
 
 extension AppInfo {
     func checkToExistForSetting() -> Bool {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return false }
         if realm.objects(SettingData.self).count == 0 {
             return false
         }
@@ -64,7 +64,7 @@ extension AppInfo {
     }
     
     func checkToExistForWords() -> Bool {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return false }
         if realm.objects(ChineseWord.self).count == 0 {
             return false
         }
@@ -72,23 +72,26 @@ extension AppInfo {
     }
     
     func makeSettingDataDB() {
-        let realm = try! Realm()
-        guard realm.objects(SettingData.self).count == 0 else { return }
+        guard let realm = self.lazyRealm, realm.objects(SettingData.self).count == 0  else { return }
         
-        try! realm.write {
-            realm.create(SettingData.self, value: [
-                "speechSpeedIndex"     : SpeechSpeedIndex.speechSpeedNormal.rawValue,
-                "languageIndex"        : LanguageIndex.languageIndexKR.rawValue,
-                "sortIndex"            : SortIndex.sortIndexNone.rawValue,
-                "wordIndexForAll"      : 0,
-                "wordIndexForStar"     : 0,
-                "wordIndexForAlphabet" : 0
-            ])
+        do {
+            try realm.write {
+                realm.create(SettingData.self, value: [
+                    "speechSpeedIndex"     : SpeechSpeedIndex.speechSpeedNormal.rawValue,
+                    "languageIndex"        : LanguageIndex.languageIndexKR.rawValue,
+                    "sortIndex"            : SortIndex.sortIndexNone.rawValue,
+                    "wordIndexForAll"      : 0,
+                    "wordIndexForStar"     : 0,
+                    "wordIndexForAlphabet" : 0
+                    ])
+            }
+        } catch {
+            print("error : \(error)")
         }
 
     }
     func makeDictionaryDB() {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return }
         let sourcePath = Bundle.main.path(forResource: "word", ofType: "txt")
         let fileContents : NSString
         do {
