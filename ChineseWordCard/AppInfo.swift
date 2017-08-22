@@ -13,6 +13,7 @@ class AppInfo {
     let sortInfo     : SortInfo     = SortInfo()
     let speechInfo   : SpeechInfo   = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
+    
     lazy var lazyRealm : Realm? = {
         let _realm = try? Realm()
         return _realm
