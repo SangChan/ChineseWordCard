@@ -137,16 +137,8 @@ extension WordViewController {
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
         guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
-        
-        defer {
-            setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
-        }
-        
-        do {
-            try self.writeRealm(likeIt: !self.currentWord.likeIt)
-        } catch {
-            print("exeception :\(error)")
-        }
+        self.writeRealm(likeIt: !self.currentWord.likeIt)
+        setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
@@ -215,11 +207,7 @@ extension WordViewController {
         self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
-        do {
-            try self.writeRealm(isShown: true)
-        } catch {
-            print("exeception :\(error)")
-        }
+        self.writeRealm(isShown: true)
     }
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
@@ -300,18 +288,18 @@ extension WordViewController {
 }
 
 extension WordViewController {
-    func writeRealm(likeIt : Bool) throws {
-        let realm = try! Realm()
+    func writeRealm(likeIt : Bool) {
+        guard let realm = try? Realm() else { return }
         
-        try realm.write {
+        try? realm.write {
             self.currentWord.likeIt = likeIt
         }
     }
 
-    func writeRealm(isShown : Bool) throws {
-        let realm = try! Realm()
+    func writeRealm(isShown : Bool) {
+        guard let realm = try? Realm() else { return }
         
-        try realm.write {
+        try? realm.write {
             self.currentWord.isShown = isShown
             self.currentWord.play += 1
         }
