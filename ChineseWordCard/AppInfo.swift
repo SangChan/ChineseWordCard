@@ -124,21 +124,26 @@ extension AppInfo {
                 
                 let predicate = NSPredicate(format: "hanyu = %@", hanyu)
                 if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
-                    try! realm.write {
+                    do {
+                        try realm.write {
                         realm.create(ChineseWord.self,value:[
-                            "id"      : id_num,
-                            "level"   : level,
-                            "chapter" : chapter,
-                            "hanyu"   : hanyu,
-                            "pinyin"  : wordsInfo[1],
-                            "desc_kr" : wordsInfo[2],
-                            "desc_en" : desc_en,
-                            "desc_es" : desc_es,
-                            "likeIt"  : false,
-                            "play"    : 0,
-                            "isShown" : false]
-                        )
+                                "id"      : id_num,
+                                "level"   : level,
+                                "chapter" : chapter,
+                                "hanyu"   : hanyu,
+                                "pinyin"  : wordsInfo[1],
+                                "desc_kr" : wordsInfo[2],
+                                "desc_en" : desc_en,
+                                "desc_es" : desc_es,
+                                "likeIt"  : false,
+                                "play"    : 0,
+                                "isShown" : false]
+                            )
+                        }
+                    } catch {
+                        print("error on opening file:\(error)")
                     }
+                    
                     id_num += 1
                 }
             }
