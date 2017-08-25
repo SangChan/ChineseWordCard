@@ -124,30 +124,45 @@ extension AppInfo {
                 
                 let predicate = NSPredicate(format: "hanyu = %@", hanyu)
                 if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
-                    do {
-                        try realm.write {
-                        realm.create(ChineseWord.self,value:[
-                                "id"      : id_num,
-                                "level"   : level,
-                                "chapter" : chapter,
-                                "hanyu"   : hanyu,
-                                "pinyin"  : wordsInfo[1],
-                                "desc_kr" : wordsInfo[2],
-                                "desc_en" : desc_en,
-                                "desc_es" : desc_es,
-                                "likeIt"  : false,
-                                "play"    : 0,
-                                "isShown" : false]
-                            )
-                        }
-                    } catch {
-                        print("error on opening file:\(error)")
-                    }
-                    
+                    let chineseWord = ChineseWord(value: [
+                        "id"      : id_num,
+                        "level"   : level,
+                        "chapter" : chapter,
+                        "hanyu"   : hanyu,
+                        "pinyin"  : wordsInfo[1],
+                        "desc_kr" : wordsInfo[2],
+                        "desc_en" : desc_en,
+                        "desc_es" : desc_es,
+                        "likeIt"  : false,
+                        "play"    : 0,
+                        "isShown" : false])
+                    self.write(chineseWord: chineseWord)
                     id_num += 1
                 }
             }
         }
     }
 
+    func write(chineseWord : ChineseWord) {
+        guard let realm = self.lazyRealm else { return }
+        do {
+            try realm.write {
+                realm.create(ChineseWord.self, value:[
+                    "id"      : chineseWord.id,
+                    "level"   : chineseWord.level,
+                    "chapter" : chineseWord.chapter,
+                    "hanyu"   : chineseWord.hanyu,
+                    "pinyin"  : chineseWord.pinyin,
+                    "desc_kr" : chineseWord.desc_kr,
+                    "desc_en" : chineseWord.desc_en ??  chineseWord.desc_kr!,
+                    "desc_es" : chineseWord.desc_es ??  chineseWord.desc_kr!,
+                    "likeIt"  : chineseWord.likeIt,
+                    "play"    : chineseWord.play,
+                    "isShown" : chineseWord.isShown
+                    ])
+            }
+        } catch {
+            print("error on writing:\(error)")
+        }
+    }
 }
