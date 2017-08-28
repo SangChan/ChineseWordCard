@@ -35,7 +35,7 @@ class SpeechInfo : EnumInfo {
     }()
     
     lazy var index : InfoProtocol = {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return SpeechSpeedIndex.speechSpeedNormal }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         switch settingData.speechSpeedIndex {
         case 0 :
