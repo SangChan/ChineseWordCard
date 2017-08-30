@@ -36,7 +36,7 @@ class LanguageInfo : EnumInfo {
     }()
     
     lazy var index : InfoProtocol = {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return LanguageIndex.languageIndexKR }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         switch settingData.languageIndex {
         case 0 :
