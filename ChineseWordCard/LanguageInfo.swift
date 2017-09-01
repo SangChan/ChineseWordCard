@@ -71,7 +71,7 @@ extension LanguageInfo {
     
     func setLanguageValue(_ index : LanguageIndex) {
         self.languageValue = index
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return }
         try! realm.write {
             let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.languageIndex = self.languageValue.rawValue
@@ -79,7 +79,7 @@ extension LanguageInfo {
     }
     
     func getLanguageValue() -> InfoProtocol {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return LanguageIndex.languageIndexKR }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         self.languageValue = languageIndex(fromIndex:settingData.languageIndex)
         return self.languageValue
