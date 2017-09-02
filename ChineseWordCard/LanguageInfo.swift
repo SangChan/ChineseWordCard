@@ -72,7 +72,7 @@ extension LanguageInfo {
     func setLanguageValue(_ index : LanguageIndex) {
         self.languageValue = index
         guard let realm = self.lazyRealm else { return }
-        try! realm.write {
+        try? realm.write {
             let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.languageIndex = self.languageValue.rawValue
         }
