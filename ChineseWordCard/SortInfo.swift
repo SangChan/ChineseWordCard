@@ -35,7 +35,7 @@ class SortInfo :EnumInfo {
     }()
     
     lazy var index : InfoProtocol = {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return SortIndex.sortIndexNone }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         switch settingData.sortIndex {
         case 1 :
@@ -68,15 +68,15 @@ class SortInfo :EnumInfo {
 extension SortInfo {
     func setSortValue(_ index : SortIndex) {
         self.sortValue = index
-        let realm = try! Realm()
-        try! realm.write {
+        guard let realm = self.lazyRealm else { return }
+        try? realm.write {
             let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.sortIndex = self.sortValue.rawValue
         }
     }
     
     func getSortValue() -> InfoProtocol {
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return self.sortValue }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         self.sortValue = sortIndex(fromIndex:settingData.sortIndex);
         return self.sortValue
