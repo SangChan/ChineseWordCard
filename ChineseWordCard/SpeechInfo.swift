@@ -69,15 +69,15 @@ extension SpeechInfo {
     
     func setSpeechSpeedValue(_ index : SpeechSpeedIndex) {
         self.speechSpeedValue = index
-        let realm = try! Realm()
-        try! realm.write {
+        guard let realm = self.lazyRealm else { return }
+        try? realm.write {
             let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.speechSpeedIndex = self.speechSpeedValue.rawValue
         }
     }
     
     func getSpeechSpeedValue() -> InfoProtocol{
-        let realm = try! Realm()
+        guard let realm = self.lazyRealm else { return self.speechSpeedValue }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         self.speechSpeedValue = speechSpeedIndex(fromIndex:settingData.speechSpeedIndex)
         return self.speechSpeedValue
