@@ -178,6 +178,7 @@ extension WordViewController {
     }
     
     func getData(sortIndex : InfoProtocol) -> Results<ChineseWord> {
+        // todo : remove try!
         let realm = try! Realm()
         switch sortIndex {
         case SortIndex.sortIndexStar :

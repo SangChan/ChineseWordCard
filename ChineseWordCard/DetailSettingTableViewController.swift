@@ -87,6 +87,7 @@ class SortSelectViewController: DetailSettingTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // todo : remove try!
         let realm = try! Realm()
         guard realm.objects(ChineseWord.self).filter("likeIt == true").count > 0 else {
             return 2
