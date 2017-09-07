@@ -36,6 +36,11 @@ class WordViewController: UIViewController {
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
     
+    lazy var lazyRealm : Realm? = {
+        let _realm = try? Realm()
+        return _realm
+    }()
+    
     // override section
     
     override func viewDidLoad() {

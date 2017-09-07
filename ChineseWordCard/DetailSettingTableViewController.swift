@@ -18,6 +18,11 @@ class DetailSettingTableViewController: UITableViewController {
     internal var detailName     : String!
     internal var details        : Array<InfoProtocol>!
     
+    lazy var lazyRealm : Realm? = {
+        let _realm = try? Realm()
+        return _realm
+    }()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupData()
