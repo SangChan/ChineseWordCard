@@ -182,9 +182,8 @@ extension WordViewController {
         }
     }
     
-    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord> {
-        // todo : remove try!
-        let realm = try! Realm()
+    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord>? {
+        guard let realm = self.lazyRealm else { return .none }
         switch sortIndex {
         case SortIndex.sortIndexStar :
             return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
