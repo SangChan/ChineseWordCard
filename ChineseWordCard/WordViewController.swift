@@ -232,7 +232,8 @@ extension WordViewController {
     }
     
     func getWordData() {
-        self.wordList = self.getData(sortIndex: AppInfo.sharedInstance.sortInfo.sortValue)
+        guard let wordList = self.getData(sortIndex: AppInfo.sharedInstance.sortInfo.sortValue) else { return }
+        self.wordList = wordList
         self.maxWordCount = self.wordList.count
         self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         if self.wordIndex > self.maxWordCount {
