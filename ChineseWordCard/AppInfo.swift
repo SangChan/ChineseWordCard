@@ -103,7 +103,6 @@ extension AppInfo {
         }
         
         let lines = fileContents.components(separatedBy: CharacterSet.newlines)
-        // TODO : test what if update some data, it's working or not
         guard (lines.count - realm.objects(ChineseWord.self).count) > 100 else { return }
         
         var chapter : Int = 0

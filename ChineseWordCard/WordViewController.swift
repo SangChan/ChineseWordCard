@@ -17,7 +17,6 @@ enum Direction {
     case draw
 }
 
-// TODO : change name space as WordViewControllerls
 class WordViewController: UIViewController {
 
     @IBOutlet var pinyinLabel        : UILabel!
