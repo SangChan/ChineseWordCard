@@ -285,7 +285,7 @@ extension WordViewController {
         return false
     }
     
-    func copyText(_ sender : UIMenuController) {
+    @objc func copyText(_ sender : UIMenuController) {
         guard let _copiedString = self.copiedString else { return }
         let pasteBoard = UIPasteboard.general
         pasteBoard.string = _copiedString

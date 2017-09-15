@@ -64,7 +64,7 @@ class DetailSettingTableViewController: UITableViewController {
 }
 
 extension DetailSettingTableViewController : SetupData {
-    func setupData() {
+    @objc func setupData() {
         detailName = nil
         details = nil
     }
