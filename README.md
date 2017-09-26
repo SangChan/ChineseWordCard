@@ -2,7 +2,7 @@
 
 #TODO
 - [x] XCode9 대응
-- [X] Swift4 대응
+- [x] Swift4 대응
 
 #PHASE2
 - [ ] 서클 애니메이션
