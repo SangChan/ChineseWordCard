@@ -71,6 +71,12 @@ class WordViewController: UIViewController {
         return true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSetting" {
+            //as ipad -> pop over
+            //as iPhone -> show modal
+        }
+    }
 }
 extension WordViewController {
     // IBActions only
