@@ -112,7 +112,8 @@ extension AppInfo {
         for text in lines {
             if text.hasPrefix("//") {
                 chapter += 1
-                let chapterInfo = text.substring(from: text.characters.index(text.startIndex, offsetBy: 2)).components(separatedBy: ".")
+                let index = text.index(text.startIndex, offsetBy: 2)
+                let chapterInfo = text.suffix(from: index).components(separatedBy: ".")
                 level = Int(chapterInfo[0])!
                 chapter = Int(chapterInfo[1])!
             } else {
