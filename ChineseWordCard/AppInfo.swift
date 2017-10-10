@@ -152,8 +152,8 @@ extension AppInfo {
                                                       "hanyu"   : chineseWord.hanyu,
                                                       "pinyin"  : chineseWord.pinyin,
                                                       "desc_kr" : chineseWord.desc_kr,
-                                                      "desc_en" : chineseWord.desc_en ??  chineseWord.desc_kr!,
-                                                      "desc_es" : chineseWord.desc_es ??  chineseWord.desc_kr!,
+                                                      "desc_en" : chineseWord.desc_en ?? chineseWord.desc_kr!,
+                                                      "desc_es" : chineseWord.desc_es ?? chineseWord.desc_kr!,
                                                       "likeIt"  : chineseWord.likeIt,
                                                       "play"    : chineseWord.play,
                                                       "isShown" : chineseWord.isShown])
