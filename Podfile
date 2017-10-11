@@ -6,6 +6,7 @@ use_frameworks!
 def default
 	pod 'RealmSwift'
 	pod 'FontAwesome.swift'
+	pod 'SwiftLint'
 end
 
 target 'ChineseWordCard' do
