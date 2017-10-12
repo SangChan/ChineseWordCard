@@ -19,8 +19,8 @@ class AppInfo {
         return _realm
     }()
     
-    func stringFrom(Cellindex : Int) -> String {
-        switch Cellindex {
+    func stringFrom(cellindex : Int) -> String {
+        switch cellindex {
         case 1 :
             return speechInfo.string(speechSpeed:speechInfo.speechSpeedValue)
         case 2 :

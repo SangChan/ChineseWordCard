@@ -175,6 +175,7 @@
 				63458E731BA7CE9700D4A48D /* Resources */,
 				156B6A343BD6C1067D031B70 /* [CP] Embed Pods Frameworks */,
 				0C63062F9EE6A72606710B7E /* [CP] Copy Pods Resources */,
+				639DFA241F8DC41C00B23F99 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -295,6 +296,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		639DFA241F8DC41C00B23F99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
 		};
 /* End PBXShellScriptBuildPhase section */
 
