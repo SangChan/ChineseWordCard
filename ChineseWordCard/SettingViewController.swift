@@ -20,14 +20,14 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true);
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
-        case (0,0 ... 2) :
+        case (0, 0 ... 2) :
             cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFrom(cellindex: indexPath.row+1)
-        case (1,0) :
+        case (1, 0) :
             cell.detailTextLabel?.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
         default :
             return
@@ -50,7 +50,7 @@ class SettingViewController: UITableViewController {
 }
 
 extension SettingViewController {
-    fileprivate func checkToNeedToUpdate(bundleShortVersion: String,  minSupportVersion : String) -> Bool {
+    fileprivate func checkToNeedToUpdate(bundleShortVersion: String, minSupportVersion : String) -> Bool {
         let appBuildNumberArray = bundleShortVersion.components(separatedBy: ".")
         let minBuildNumberArray = minSupportVersion.components(separatedBy: ".")
         
@@ -61,9 +61,9 @@ extension SettingViewController {
             }
             let minBuildNumber : Int = Int(minBuildStr) ?? 0
             let appBuildNumber : Int = Int(appBuildNumberArray[i]) ?? 0
-            if (appBuildNumber < minBuildNumber) {
+            if appBuildNumber < minBuildNumber {
                 return true
-            } else if (appBuildNumber > minBuildNumber) {
+            } else if appBuildNumber > minBuildNumber {
                 return false
             }
             i += 1

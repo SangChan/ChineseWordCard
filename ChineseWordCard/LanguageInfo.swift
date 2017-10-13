@@ -64,7 +64,6 @@ class LanguageInfo : EnumInfo {
         return string(languageInfo:languageIndex(fromIndex:fromIndex))
     }
     
-    
 }
 
 extension LanguageInfo {

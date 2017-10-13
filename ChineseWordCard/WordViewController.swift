@@ -19,14 +19,14 @@ enum Direction {
 
 class WordViewController: UIViewController {
 
-    @IBOutlet var pinyinLabel        : UILabel!
-    @IBOutlet var hanyuLabel         : UILabel!
-    @IBOutlet var descriptionLabel   : UILabel!
-    @IBOutlet weak var nextButton    : UIButton!
-    @IBOutlet weak var prevButton    : UIButton!
-    @IBOutlet weak var sliderBar     : UISlider!
-    @IBOutlet weak var starButton    : UIButton!
-    @IBOutlet weak var settingButton : UIButton!
+    @IBOutlet fileprivate weak var pinyinLabel : UILabel!
+    @IBOutlet fileprivate weak var hanyuLabel : UILabel!
+    @IBOutlet fileprivate weak var descriptionLabel : UILabel!
+    @IBOutlet fileprivate weak var nextButton : UIButton!
+    @IBOutlet fileprivate weak var prevButton : UIButton!
+    @IBOutlet fileprivate weak var sliderBar : UISlider!
+    @IBOutlet fileprivate weak var starButton : UIButton!
+    @IBOutlet fileprivate weak var settingButton : UIButton!
     
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
@@ -51,7 +51,7 @@ class WordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateUIonView();
+        self.updateUIonView()
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -161,11 +161,11 @@ extension WordViewController {
         switch direction {
         case .next :
             resetView()
-            wordIndex = self.wordIndex(toIncrease:true);
+            wordIndex = self.wordIndex(toIncrease:true)
             self.updateUIonView()
         case .previous :
             resetView()
-            wordIndex = self.wordIndex(toIncrease:false);
+            wordIndex = self.wordIndex(toIncrease:false)
             self.updateUIonView()
         default :
             resetView()
@@ -237,7 +237,7 @@ extension WordViewController {
         case 1 :
             UIView.animate(withDuration: 0.3, animations: {
                 self.pinyinLabel.alpha = 1.0
-            }, completion: { (success) in
+            }, completion: { _ in
                 self.speakWord()
             })
         case 2 :
@@ -269,7 +269,7 @@ extension WordViewController {
         }
     }
     
-    func isTouched(onLocation : CGPoint, onRect: CGRect) -> Bool{
+    func isTouched(onLocation : CGPoint, onRect: CGRect) -> Bool {
         if onLocation.x > 0.0 && onLocation.x < onRect.width && onLocation.y > 0.0 && onLocation.y < onRect.height {
             return true
         }

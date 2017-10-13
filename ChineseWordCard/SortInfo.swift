@@ -78,7 +78,7 @@ extension SortInfo {
     func getSortValue() -> InfoProtocol {
         guard let realm = self.lazyRealm else { return self.sortValue }
         let settingData : SettingData = realm.objects(SettingData.self).first!
-        self.sortValue = sortIndex(fromIndex:settingData.sortIndex);
+        self.sortValue = sortIndex(fromIndex:settingData.sortIndex)
         return self.sortValue
     }
     

@@ -12,7 +12,7 @@ protocol InfoProtocol {
     var rawValue: Int { get }
 }
 
-protocol EnumInfo  {
+protocol EnumInfo {
     var  index : InfoProtocol { get }
     func enumInfo(fromIndex:Int) -> InfoProtocol
     func indexFromEnum() -> Int

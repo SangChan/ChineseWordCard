@@ -35,7 +35,7 @@ class AppInfo {
         makeDictionaryDB()
     }
     
-    func getWordIndex() ->  Int {
+    func getWordIndex() -> Int {
         guard let realm = self.lazyRealm else { return -1 }
         let settingData : SettingData = realm.objects(SettingData.self).first!
         return settingData.wordIndex()

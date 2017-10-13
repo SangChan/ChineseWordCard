@@ -15,8 +15,8 @@ protocol SetupData : class {
 
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
-    internal var detailName     : String!
-    internal var details        : Array<InfoProtocol>!
+    internal var detailName : String!
+    internal var details : [InfoProtocol]!
     
     lazy var lazyRealm : Realm? = {
         let _realm = try? Realm()
@@ -32,7 +32,7 @@ class DetailSettingTableViewController: UITableViewController {
         guard details.count > 0, detailName.lengthOfBytes(using: .utf8) > 0 else { return }
         tableView.cellForRow(at: previousSelect)?.accessoryType = .none
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        tableView.deselectRow(at: indexPath, animated: true);
+        tableView.deselectRow(at: indexPath, animated: true)
         previousSelect = indexPath
         let indexObject : EnumInfo = self.infoObject(fromName:detailName)
         indexObject.enumInfo(setIndex:details[(indexPath as NSIndexPath).row].rawValue)
@@ -77,18 +77,17 @@ class SpeechRateViewController: DetailSettingTableViewController {
     }
 }
 
-
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "LanguageSelect"
-        details    = [LanguageIndex.languageIndexEN,LanguageIndex.langyageIndexES,LanguageIndex.languageIndexKR]
+        details    = [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR]
     }
 }
 
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "SortSelect"
-        details    = [SortIndex.sortIndexNone,SortIndex.sortIndexAlphabet,SortIndex.sortIndexStar]
+        details    = [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar]
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -99,5 +98,3 @@ class SortSelectViewController: DetailSettingTableViewController {
         return 3
     }
 }
-
-
