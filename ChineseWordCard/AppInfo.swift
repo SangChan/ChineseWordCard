@@ -92,11 +92,10 @@ extension AppInfo {
 
     }
     func makeDictionaryDB() {
-        guard let realm = self.lazyRealm else { return }
-        let sourcePath = Bundle.main.path(forResource: "word", ofType: "txt")
+        guard let realm = self.lazyRealm, let sourcePath = Bundle.main.path(forResource: "word", ofType: "txt") else { return }
         let fileContents : NSString
         do {
-            fileContents = try NSString.init(contentsOfFile:sourcePath!, encoding:String.Encoding.utf8.rawValue)
+            fileContents = try NSString.init(contentsOfFile:sourcePath, encoding:String.Encoding.utf8.rawValue)
         } catch {
             print("error on opening file:\(error)")
             return
@@ -114,8 +113,8 @@ extension AppInfo {
                 chapter += 1
                 let index = text.index(text.startIndex, offsetBy: 2)
                 let chapterInfo = text.suffix(from: index).components(separatedBy: ".")
-                level = Int(chapterInfo[0])!
-                chapter = Int(chapterInfo[1])!
+                level = Int(chapterInfo[0]) ?? 0
+                chapter = Int(chapterInfo[1]) ?? 0
             } else {
                 let wordsInfo = text.components(separatedBy: "\t")
                 let hanyu = wordsInfo[0]
