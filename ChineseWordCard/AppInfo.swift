@@ -113,8 +113,8 @@ extension AppInfo {
                 chapter += 1
                 let index = text.index(text.startIndex, offsetBy: 2)
                 let chapterInfo = text.suffix(from: index).components(separatedBy: ".")
-                level = Int(chapterInfo[0]) ?? 0
-                chapter = Int(chapterInfo[1]) ?? 0
+                level = Int(chapterInfo[0]) ?? 1
+                chapter = Int(chapterInfo[1]) ?? 1
             } else {
                 let wordsInfo = text.components(separatedBy: "\t")
                 let hanyu = wordsInfo[0]
@@ -151,8 +151,8 @@ extension AppInfo {
                                                       "hanyu"   : chineseWord.hanyu,
                                                       "pinyin"  : chineseWord.pinyin,
                                                       "desc_kr" : chineseWord.desc_kr,
-                                                      "desc_en" : chineseWord.desc_en ?? chineseWord.desc_kr!,
-                                                      "desc_es" : chineseWord.desc_es ?? chineseWord.desc_kr!,
+                                                      "desc_en" : chineseWord.desc_en,
+                                                      "desc_es" : chineseWord.desc_es,
                                                       "likeIt"  : chineseWord.likeIt,
                                                       "play"    : chineseWord.play,
                                                       "isShown" : chineseWord.isShown])
