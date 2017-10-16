@@ -36,17 +36,15 @@ class AppInfo {
     }
     
     func getWordIndex() -> Int {
-        guard let realm = self.lazyRealm else { return -1 }
-        let settingData : SettingData = realm.objects(SettingData.self).first!
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return -1 }
         return settingData.wordIndex()
     }
     
     func setWordIndex(_ index : Int) {
-        guard let realm = self.lazyRealm else { return  }
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return  }
         
         do {
             try realm.write {
-                let settingData : SettingData = realm.objects(SettingData.self).first!
                 settingData.setWordIndex(fromValue: index)
             }
         } catch {

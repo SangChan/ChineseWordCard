@@ -35,8 +35,8 @@ class SpeechInfo : EnumInfo {
     }()
     
     lazy var index : InfoProtocol = {
-        guard let realm = self.lazyRealm else { return SpeechSpeedIndex.speechSpeedNormal }
-        let settingData : SettingData = realm.objects(SettingData.self).first!
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return SpeechSpeedIndex.speechSpeedNormal }
+        
         switch settingData.speechSpeedIndex {
         case 0 :
             return SpeechSpeedIndex.speechSpeedSlow
@@ -69,16 +69,15 @@ extension SpeechInfo {
     
     func setSpeechSpeedValue(_ index : SpeechSpeedIndex) {
         self.speechSpeedValue = index
-        guard let realm = self.lazyRealm else { return }
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return }
         try? realm.write {
-            let settingData : SettingData = realm.objects(SettingData.self).first!
+            
             settingData.speechSpeedIndex = self.speechSpeedValue.rawValue
         }
     }
     
     func getSpeechSpeedValue() -> InfoProtocol {
-        guard let realm = self.lazyRealm else { return self.speechSpeedValue }
-        let settingData : SettingData = realm.objects(SettingData.self).first!
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return self.speechSpeedValue }
         self.speechSpeedValue = speechSpeedIndex(fromIndex:settingData.speechSpeedIndex)
         return self.speechSpeedValue
     }

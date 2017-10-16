@@ -36,8 +36,7 @@ class LanguageInfo : EnumInfo {
     }()
     
     lazy var index : InfoProtocol = {
-        guard let realm = self.lazyRealm else { return LanguageIndex.languageIndexKR }
-        let settingData : SettingData = realm.objects(SettingData.self).first!
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return LanguageIndex.languageIndexKR }
         switch settingData.languageIndex {
         case 0 :
             return LanguageIndex.languageIndexEN
@@ -70,16 +69,14 @@ extension LanguageInfo {
     
     func setLanguageValue(_ index : LanguageIndex) {
         self.languageValue = index
-        guard let realm = self.lazyRealm else { return }
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return }
         try? realm.write {
-            let settingData : SettingData = realm.objects(SettingData.self).first!
             settingData.languageIndex = self.languageValue.rawValue
         }
     }
     
     func getLanguageValue() -> InfoProtocol {
-        guard let realm = self.lazyRealm else { return LanguageIndex.languageIndexKR }
-        let settingData : SettingData = realm.objects(SettingData.self).first!
+        guard let realm = self.lazyRealm, let settingData : SettingData = realm.objects(SettingData.self).first else { return LanguageIndex.languageIndexKR }
         self.languageValue = languageIndex(fromIndex:settingData.languageIndex)
         return self.languageValue
     }
