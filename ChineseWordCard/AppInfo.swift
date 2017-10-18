@@ -9,9 +9,9 @@ import AVFoundation
 import RealmSwift
 
 class AppInfo {
-    static let sharedInstance       = AppInfo()
-    let sortInfo     : SortInfo     = SortInfo()
-    let speechInfo   : SpeechInfo   = SpeechInfo()
+    static let sharedInstance = AppInfo()
+    let sortInfo : SortInfo = SortInfo()
+    let speechInfo : SpeechInfo = SpeechInfo()
     let languageInfo : LanguageInfo = LanguageInfo()
     
     lazy var lazyRealm : Realm? = {
@@ -121,16 +121,16 @@ extension AppInfo {
                 
                 let predicate = NSPredicate(format: "hanyu = %@", hanyu)
                 if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
-                    let chineseWord = ChineseWord(value: ["id"      : id_num,
-                                                          "level"   : level,
+                    let chineseWord = ChineseWord(value: ["id" : id_num,
+                                                          "level" : level,
                                                           "chapter" : chapter,
-                                                          "hanyu"   : hanyu,
-                                                          "pinyin"  : wordsInfo[1],
+                                                          "hanyu" : hanyu,
+                                                          "pinyin" : wordsInfo[1],
                                                           "desc_kr" : wordsInfo[2],
                                                           "desc_en" : desc_en,
                                                           "desc_es" : desc_es,
-                                                          "likeIt"  : false,
-                                                          "play"    : 0,
+                                                          "likeIt" : false,
+                                                          "play" : 0,
                                                           "isShown" : false])
                     self.write(chineseWord: chineseWord)
                     id_num += 1
@@ -143,16 +143,16 @@ extension AppInfo {
         guard let realm = self.lazyRealm else { return }
         do {
             try realm.write {
-                realm.create(ChineseWord.self, value:["id"      : chineseWord.id,
-                                                      "level"   : chineseWord.level,
+                realm.create(ChineseWord.self, value:["id" : chineseWord.id,
+                                                      "level" : chineseWord.level,
                                                       "chapter" : chineseWord.chapter,
-                                                      "hanyu"   : chineseWord.hanyu,
-                                                      "pinyin"  : chineseWord.pinyin,
+                                                      "hanyu" : chineseWord.hanyu,
+                                                      "pinyin" : chineseWord.pinyin,
                                                       "desc_kr" : chineseWord.desc_kr,
                                                       "desc_en" : chineseWord.desc_en,
                                                       "desc_es" : chineseWord.desc_es,
-                                                      "likeIt"  : chineseWord.likeIt,
-                                                      "play"    : chineseWord.play,
+                                                      "likeIt" : chineseWord.likeIt,
+                                                      "play" : chineseWord.play,
                                                       "isShown" : chineseWord.isShown])
             }
         } catch {
