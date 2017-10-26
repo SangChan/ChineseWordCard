@@ -23,32 +23,32 @@
 import UIKit
 
 protocol FontAwesomeImageRepresentable: class {
-    
+
     typealias ImageConfig = (cssIconName: String, color: UIColor?, backgroundColor: UIColor?)
-    
+
     var imageWidth: CGFloat { get }
     var imageConfigs: [ImageConfig] { get }
-    
-    func createImages(configurationHandler: (_ image: UIImage?, _ index: Int) -> ())
+
+    func createImages(configurationHandler: (_ image: UIImage?, _ index: Int) -> Void)
 }
 
 extension FontAwesomeImageRepresentable {
-    
-    func createImages(configurationHandler: (_ image: UIImage?, _ index: Int) -> ()) {
+
+    func createImages(configurationHandler: (_ image: UIImage?, _ index: Int) -> Void) {
         let imgSize = imageSizeForAspectRatio()
         for (index, config) in imageConfigs.enumerated() {
             let img = createImage(config: config, size: imgSize)
             configurationHandler(img, index)
         }
     }
-    
+
     private func createImage(config: ImageConfig, size: CGSize) -> UIImage? {
         return UIImage.fontAwesomeIcon(code: config.cssIconName,
                                        textColor: config.color ?? .black,
                                        size: size,
                                        backgroundColor: config.backgroundColor ?? .clear)
     }
-    
+
     private func imageSizeForAspectRatio() -> CGSize {
         let fontAspectRatio: CGFloat = 1.28571429
         return CGSize(width: imageWidth, height: imageWidth / fontAspectRatio)
