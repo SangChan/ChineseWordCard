@@ -30,8 +30,8 @@ class SpeechInfo : EnumInfo {
     internal var speechSpeedValue : InfoProtocol = SpeechSpeedIndex.speechSpeedNormal
     
     lazy var lazyRealm : Realm? = {
-        let _realm = try? Realm()
-        return _realm
+        let realm = try? Realm()
+        return realm
     }()
     
     lazy var index : InfoProtocol = {

@@ -36,8 +36,8 @@ class WordViewController: UIViewController {
     var maxWordCount : Int = 0
     
     lazy var lazyRealm : Realm? = {
-        let _realm = try? Realm()
-        return _realm
+        let realm = try? Realm()
+        return realm
     }()
     
     // override section
@@ -278,9 +278,9 @@ extension WordViewController {
     }
     
     @objc func copyText(_ sender : UIMenuController) {
-        guard let _copiedString = self.copiedString else { return }
+        guard let copiedString = self.copiedString else { return }
         let pasteBoard = UIPasteboard.general
-        pasteBoard.string = _copiedString
+        pasteBoard.string = copiedString
     }
 }
 

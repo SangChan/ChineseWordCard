@@ -15,8 +15,8 @@ class AppInfo {
     let languageInfo : LanguageInfo = LanguageInfo()
     
     lazy var lazyRealm : Realm? = {
-        let _realm = try? Realm()
-        return _realm
+        let realm = try? Realm()
+        return realm
     }()
     
     func stringFrom(cellindex : Int) -> String {
@@ -104,7 +104,7 @@ extension AppInfo {
         
         var chapter : Int = 0
         var level : Int   = 0
-        var id_num : Int  = 0
+        var idNum : Int  = 0
         
         for text in lines {
             if text.hasPrefix("//") {
@@ -116,24 +116,24 @@ extension AppInfo {
             } else {
                 let wordsInfo = text.components(separatedBy: "\t")
                 let hanyu = wordsInfo[0]
-                let desc_en = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
-                let desc_es = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
+                let descEn = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
+                let descEs = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
                 
                 let predicate = NSPredicate(format: "hanyu = %@", hanyu)
                 if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
-                    let chineseWord = ChineseWord(value: ["id" : id_num,
+                    let chineseWord = ChineseWord(value: ["id" : idNum,
                                                           "level" : level,
                                                           "chapter" : chapter,
                                                           "hanyu" : hanyu,
                                                           "pinyin" : wordsInfo[1],
                                                           "desc_kr" : wordsInfo[2],
-                                                          "desc_en" : desc_en,
-                                                          "desc_es" : desc_es,
+                                                          "desc_en" : descEn,
+                                                          "desc_es" : descEs,
                                                           "likeIt" : false,
                                                           "play" : 0,
                                                           "isShown" : false])
                     self.write(chineseWord: chineseWord)
-                    id_num += 1
+                    idNum += 1
                 }
             }
         }
