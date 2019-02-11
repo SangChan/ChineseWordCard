@@ -9,12 +9,12 @@
 import RealmSwift
 
 class SettingData : Object {
-    var speechSpeedIndex : Int = SpeechSpeedIndex.speechSpeedNormal.rawValue
-    var languageIndex : Int = LanguageIndex.languageIndexKR.rawValue
-    var sortIndex : Int = SortIndex.sortIndexNone.rawValue
-    var wordIndexForAll : Int = 0
-    var wordIndexForStar : Int = 0
-    var wordIndexForAlphabet : Int = 0
+    @objc dynamic var speechSpeedIndex : Int = SpeechSpeedIndex.speechSpeedNormal.rawValue
+    @objc dynamic var languageIndex : Int = LanguageIndex.languageIndexKR.rawValue
+    @objc dynamic var sortIndex : Int = SortIndex.sortIndexNone.rawValue
+    @objc dynamic var wordIndexForAll : Int = 0
+    @objc dynamic var wordIndexForStar : Int = 0
+    @objc dynamic var wordIndexForAlphabet : Int = 0
     
     func setWordIndex(fromValue: Int) {
         setWordIndex(fromIndex: self.sortIndex, withValue: fromValue)

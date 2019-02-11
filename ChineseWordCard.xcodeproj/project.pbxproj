@@ -174,7 +174,6 @@
 				63458E721BA7CE9700D4A48D /* Frameworks */,
 				63458E731BA7CE9700D4A48D /* Resources */,
 				156B6A343BD6C1067D031B70 /* [CP] Embed Pods Frameworks */,
-				0C63062F9EE6A72606710B7E /* [CP] Copy Pods Resources */,
 				639DFA241F8DC41C00B23F99 /* ShellScript */,
 			);
 			buildRules = (
@@ -199,7 +198,7 @@
 					63458E741BA7CE9700D4A48D = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = CBUJK8CFZ3;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -242,21 +241,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C63062F9EE6A72606710B7E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1557E6DCAA4E96A3F3B5183B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,7 +265,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -294,7 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		639DFA241F8DC41C00B23F99 /* ShellScript */ = {
@@ -462,8 +446,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -488,8 +471,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

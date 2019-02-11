@@ -133,7 +133,7 @@ extension WordViewController {
     @IBAction func starButtonPressed(_ sender: AnyObject) {
         guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
         self.writeRealm(likeIt: !self.currentWord.likeIt)
-        setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
+        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
@@ -184,10 +184,10 @@ extension WordViewController {
         }
     }
     
-    func setButton(button:UIButton, withSize size : CGFloat, withType type:FontAwesome) {
+    func setButton(button: UIButton, withSize size: CGFloat, withType type: FontAwesome, withStyle style: FontAwesomeStyle = .solid) {
         let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
-        button.titleLabel?.font = UIFont.fontAwesome(ofSize: sizeFromTrait)
-        button.setTitle(String.fontAwesomeIcon(name: type), for: UIControlState())
+        button.titleLabel?.font = UIFont.fontAwesome(ofSize: sizeFromTrait, style: style)
+        button.setTitle(String.fontAwesomeIcon(name: type), for: UIControl.State())
     }
     
     func updateUIonView() {
@@ -201,7 +201,7 @@ extension WordViewController {
         self.pinyinLabel.text = currentWord.pinyin
         self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
-        setButton(button:self.starButton, withSize: 30, withType: (currentWord.likeIt == true) ? .star:.starO)
+        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
     }
     
@@ -212,7 +212,7 @@ extension WordViewController {
     func setButtonDefault() {
         setButton(button:self.prevButton, withSize: 30, withType: .angleLeft)
         setButton(button:self.nextButton, withSize: 30, withType: .angleRight)
-        setButton(button:self.starButton, withSize: 30, withType: .starO)
+        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: .regular)
         setButton(button:self.settingButton, withSize: 30, withType: .cog)
     }
     

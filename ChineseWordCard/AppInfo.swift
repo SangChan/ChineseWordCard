@@ -74,15 +74,15 @@ extension AppInfo {
         guard let realm = self.lazyRealm, realm.objects(SettingData.self).count == 0  else { return }
         
         do {
+            let settingData = SettingData(value: ["speechSpeedIndex": SpeechSpeedIndex.speechSpeedNormal.rawValue,
+                                                  "languageIndex": LanguageIndex.languageIndexKR.rawValue,
+                                                  "sortIndex": SortIndex.sortIndexNone.rawValue,
+                                                  "wordIndexForAll": 0,
+                                                  "wordIndexForStar": 0,
+                                                  "wordIndexForAlphabet": 0])
+
             try realm.write {
-                realm.create(SettingData.self, value: [
-                    "speechSpeedIndex"     : SpeechSpeedIndex.speechSpeedNormal.rawValue,
-                    "languageIndex"        : LanguageIndex.languageIndexKR.rawValue,
-                    "sortIndex"            : SortIndex.sortIndexNone.rawValue,
-                    "wordIndexForAll"      : 0,
-                    "wordIndexForStar"     : 0,
-                    "wordIndexForAlphabet" : 0
-                    ])
+                realm.add(settingData)
             }
         } catch {
             print("error : \(error)")
@@ -143,17 +143,7 @@ extension AppInfo {
         guard let realm = self.lazyRealm else { return }
         do {
             try realm.write {
-                realm.create(ChineseWord.self, value:["id" : chineseWord.id,
-                                                      "level" : chineseWord.level,
-                                                      "chapter" : chineseWord.chapter,
-                                                      "hanyu" : chineseWord.hanyu,
-                                                      "pinyin" : chineseWord.pinyin,
-                                                      "desc_kr" : chineseWord.desc_kr,
-                                                      "desc_en" : chineseWord.desc_en,
-                                                      "desc_es" : chineseWord.desc_es,
-                                                      "likeIt" : chineseWord.likeIt,
-                                                      "play" : chineseWord.play,
-                                                      "isShown" : chineseWord.isShown])
+                realm.add(chineseWord)
             }
         } catch {
             print("error on writing:\(error)")
