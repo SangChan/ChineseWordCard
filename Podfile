@@ -7,6 +7,7 @@ def default
 	pod 'RealmSwift'
 	pod 'FontAwesome.swift'
 	pod 'SwiftLint'
+	pod 'Google-Mobile-Ads-SDK'
 end
 
 target 'ChineseWordCard' do

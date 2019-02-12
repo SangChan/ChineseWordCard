@@ -31,8 +31,12 @@ class LanguageInfo : EnumInfo {
     internal var languageValue : InfoProtocol = LanguageIndex.languageIndexKR
     
     lazy var lazyRealm : Realm? = {
-        let realm = try? Realm()
-        return realm
+        do {
+            return try Realm()
+        } catch let error {
+            print("error : \(error)")
+            return nil
+        }
     }()
     
     lazy var index : InfoProtocol = {

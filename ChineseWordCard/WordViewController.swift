@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import RealmSwift
 import FontAwesome_swift
+import GoogleMobileAds
 
 enum Direction {
     case previous
@@ -34,10 +35,15 @@ class WordViewController: UIViewController {
     var touchCount   : Int = 0
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
+    var bannerView: GADBannerView!
     
     lazy var lazyRealm : Realm? = {
-        let realm = try? Realm()
-        return realm
+        do {
+            return try Realm()
+        } catch let error {
+            print("error : \(error)")
+            return nil
+        }
     }()
     
     // override section
@@ -47,6 +53,7 @@ class WordViewController: UIViewController {
         setButtonDefault()
         resetView()
         getWordData()
+        addBanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -230,6 +237,35 @@ extension WordViewController {
             AppInfo.sharedInstance.setWordIndex(0)
             self.wordIndex = AppInfo.sharedInstance.getWordIndex()
         }
+    }
+    
+    func addBanner() {
+        self.bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(self.bannerView)
+        self.bannerView.adUnitID = "ca-app-pub-7672230516236261/8258045034"
+        self.bannerView.rootViewController = self
+        self.bannerView.load(GADRequest())
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: bottomLayoutGuide,
+                                attribute: .top,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
     }
     
     func setLabelHidden(byCount : Int) {

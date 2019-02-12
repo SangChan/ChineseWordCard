@@ -1,5 +1,6 @@
 PODS:
   - FontAwesome.swift (1.4.9)
+  - Google-Mobile-Ads-SDK (7.39.0)
   - Realm (3.13.1):
     - Realm/Headers (= 3.13.1)
   - Realm/Headers (3.13.1)
@@ -9,22 +10,25 @@ PODS:
 
 DEPENDENCIES:
   - FontAwesome.swift
+  - Google-Mobile-Ads-SDK
   - RealmSwift
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FontAwesome.swift
+    - Google-Mobile-Ads-SDK
     - Realm
     - RealmSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
   FontAwesome.swift: 7f831846e85b93d32ded5d86983804b749921760
+  Google-Mobile-Ads-SDK: d0f10a7c4d7015db23075ff316602350d12049db
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
 
-PODFILE CHECKSUM: 0f1cd03dac8e559ac5025e02fe4005e744bd3830
+PODFILE CHECKSUM: db98c9db1f81df325da268bdf1b6d823016c58be
 
 COCOAPODS: 1.6.0
