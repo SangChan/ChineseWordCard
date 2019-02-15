@@ -125,7 +125,6 @@ extension WordViewController {
             hanyuLabel.becomeFirstResponder()
             
             copiedString = hanyuLabel.text
-            // TODO : how to generate strings file?
             let localizedCopyString = NSLocalizedString("popup.copy", comment: "Copy")
             let copyMenuItemString = localizedCopyString
             let copyMenuItem = UIMenuItem(title: copyMenuItemString, action: #selector(copyText(_:)))
