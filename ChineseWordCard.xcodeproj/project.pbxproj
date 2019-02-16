@@ -15,9 +15,9 @@
 		63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63458E811BA7CE9700D4A48D /* Images.xcassets */; };
 		634AF3E41D2CEF1B00C3BE99 /* EnumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */; };
 		63617CCD2216A426004C35F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63617CCF2216A426004C35F8 /* Localizable.strings */; };
+		638A50C2221854150049B2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638A50C4221854150049B2B7 /* Main.storyboard */; };
 		638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FF3601C48A16C00A5D366 /* SettingViewController.swift */; };
 		639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639705E81D9E9D9000C52A9D /* LaunchScreen.xib */; };
-		639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639705E91D9E9D9000C52A9D /* Main.storyboard */; };
 		63A7C8511BB58C1B007548BB /* word.txt in Resources */ = {isa = PBXBuildFile; fileRef = 63A7C8501BB58C1B007548BB /* word.txt */; };
 		63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */; };
 		63C8DB8D1D03322500FAEC52 /* SpeechInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C8DB8C1D03322500FAEC52 /* SpeechInfo.swift */; };
@@ -42,10 +42,12 @@
 		63617CCE2216A426004C35F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63617CD02216A43C004C35F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		636AF5421D4A40EF0078CE23 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/ChineseWordCard-buaosyfvjhgdwzaymiwrgdxklcwo/Build/Products/Debug-iphonesimulator/RealmSwift.framework"; sourceTree = "<group>"; };
+		638A50C3221854150049B2B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		638A50C5221854190049B2B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		638A50C72218541E0049B2B7 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		639705E61D9E9CC400C52A9D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639705E81D9E9D9000C52A9D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		639705E91D9E9D9000C52A9D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		63A7C8501BB58C1B007548BB /* word.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = word.txt; sourceTree = "<group>"; };
 		63C8DB8A1D02966200FAEC52 /* LanguageInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageInfo.swift; sourceTree = "<group>"; };
 		63C8DB8C1D03322500FAEC52 /* SpeechInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechInfo.swift; sourceTree = "<group>"; };
@@ -140,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				639705E81D9E9D9000C52A9D /* LaunchScreen.xib */,
-				639705E91D9E9D9000C52A9D /* Main.storyboard */,
+				638A50C4221854150049B2B7 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -238,7 +240,7 @@
 			files = (
 				63617CCD2216A426004C35F8 /* Localizable.strings in Resources */,
 				639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */,
-				639705EB1D9E9D9000C52A9D /* Main.storyboard in Resources */,
+				638A50C2221854150049B2B7 /* Main.storyboard in Resources */,
 				63A7C8511BB58C1B007548BB /* word.txt in Resources */,
 				63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */,
 			);
@@ -331,6 +333,16 @@
 				63617CD02216A43C004C35F8 /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		638A50C4221854150049B2B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				638A50C3221854150049B2B7 /* Base */,
+				638A50C5221854190049B2B7 /* en */,
+				638A50C72218541E0049B2B7 /* ko */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
