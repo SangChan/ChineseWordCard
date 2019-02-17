@@ -7,3 +7,9 @@
 */
 
 "popup.copy" = "Copy";
+"speed.slow" = "Slow";
+"speed.normal" = "Normal";
+"speed.fast" = "Fast";
+"sort.all" = "All";
+"sort.alphabet" = "By Alphabet";
+"sort.star" = "By Star";
