@@ -100,11 +100,11 @@ extension SpeechInfo {
     func string(speechSpeed : InfoProtocol) -> String {
         switch speechSpeed {
         case SpeechSpeedIndex.speechSpeedSlow :
-            return "Slow"
+            return NSLocalizedString("speed.slow", comment: "Slow")
         case SpeechSpeedIndex.speechSpeedFast :
-            return "Fast"
+            return NSLocalizedString("speed.fast", comment: "Fast")
         default :
-            return "Normal"
+            return NSLocalizedString("speed.normal", comment: "Normal")
         }
     }
 }

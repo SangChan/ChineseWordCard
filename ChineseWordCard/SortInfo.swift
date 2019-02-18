@@ -97,11 +97,11 @@ extension SortInfo {
     func string(sortInfo : InfoProtocol) -> String {
         switch sortInfo {
         case SortIndex.sortIndexStar :
-            return "By Star"
+            return NSLocalizedString("sort.star", comment: "By Star")
         case SortIndex.sortIndexAlphabet :
-            return "By Alphabet"
+            return NSLocalizedString("sort.alphabet", comment: "By Alphabet")
         default :
-            return "All"
+            return NSLocalizedString("sort.all", comment: "All")
         }
     }
 }
