@@ -11,5 +11,5 @@
 "speed.normal" = "보통";
 "speed.fast" = "빠르게";
 "sort.all" = "모두 표시";
-"sort.alphabet" = "알파벳 순서";
-"sort.star" = "별표 기준";
+"sort.alphabet" = "알파벳 순";
+"sort.star" = "별표 순";
