@@ -1,24 +1,24 @@
 //1.1
-爸爸	bàba	아버지
-妈妈	māma	어머니
-弟弟	dìdi	남동생
-妹妹	mèimei	여동생
-姐姐	jiějie	누나/언니
-哥哥	gēge	형/오빠
-奶奶	nǎinai	할머니
-爷爷	yéye	할아버지
-你	nǐ	너, 당신
-好	hǎo	좋다, 안녕하다
-您	nín	你의 존칭표현
-你们	nǐmen	너희들, 당신들
-再见	zàijiàn	또 뵙겠습니다
-老师	lǎoshī	선생님
-大家	dàjiā	모두, 여러분
-谢谢	xièxie	감사합니다, 고맙습니다
-不客气	bú kèqi	천만에요, 별말씀을요
-不谢	bú xiè	천만에요, 별말씀을요
-对不起	duìbuqǐ	미안합니다
-没关系	méi guānxi	괜찮다, 문제없다
+爸爸	bàba	아버지 father
+妈妈	māma	어머니 mother
+弟弟	dìdi	남동생 younger brother
+妹妹	mèimei	여동생 younger sister
+姐姐	jiějie	누나/언니   older sister
+哥哥	gēge	형/오빠    older brother
+奶奶	nǎinai	할머니 grand mother
+爷爷	yéye	할아버지    grand father
+你	nǐ	너, 당신   you
+好	hǎo	좋다, 안녕하다    good
+您	nín	你의 존칭표현 sir
+你们	nǐmen	너희들, 당신들    yours
+再见	zàijiàn	또 뵙겠습니다 see you
+老师	lǎoshī	선생님 teacher
+大家	dàjiā	모두, 여러분 everybody
+谢谢	xièxie	감사합니다, 고맙습니다    thanks
+不客气	bú kèqi	천만에요, 별말씀을요 you're welcome
+不谢	bú xiè	천만에요, 별말씀을요 you're welcome
+对不起	duìbuqǐ	미안합니다   sorry
+没关系	méi guānxi	괜찮다, 문제없다   no problem
 //1.2
 他	tā	그
 是	shì	~이다
