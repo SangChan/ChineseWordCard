@@ -104,7 +104,6 @@ extension AppInfo {
         }
         
         let lines = fileContents.components(separatedBy: CharacterSet.newlines)
-        guard (lines.count - realm.objects(ChineseWord.self).count) > 100 else { return }
         
         var chapter : Int = 0
         var level : Int   = 0
@@ -123,21 +122,18 @@ extension AppInfo {
                 let descEn = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
                 let descEs = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
                 
-                let predicate = NSPredicate(format: "hanyu = %@", hanyu)
-                if realm.objects(ChineseWord.self).filter(predicate).count == 0 {
-                    let chineseWord = ChineseWord(value: ["id" : idNum,
-                                                          "level" : level,
-                                                          "chapter" : chapter,
-                                                          "hanyu" : hanyu,
-                                                          "pinyin" : wordsInfo[1],
-                                                          "desc_kr" : wordsInfo[2],
-                                                          "desc_en" : descEn,
-                                                          "desc_es" : descEs,
-                                                          "likeIt" : false,
-                                                          "play" : 0,
-                                                          "isShown" : false])
-                    self.write(chineseWord: chineseWord)
+                let results = realm.objects(ChineseWord.self).filter("hanyu = \(hanyu)")
+                if results.count == 0 {
+                    let newChineseWord = ChineseWord(value: ["id" : idNum, "level" : level, "chapter" : chapter, "hanyu" : hanyu, "pinyin" : wordsInfo[1], "desc_kr" : wordsInfo[2], "desc_en" : descEn, "desc_es" : descEs, "likeIt" : false, "play" : 0, "isShown" : false])
+                    self.write(chineseWord: newChineseWord)
                     idNum += 1
+                } else {
+                    for oldWord in results {
+                        print("result = \(oldWord.description)")
+                        let newWord = ChineseWord(value: ["id" : idNum, "level" : oldWord.level, "chapter" : oldWord.chapter, "hanyu" : hanyu, "pinyin" : wordsInfo[1], "desc_kr" : wordsInfo[2], "desc_en" : descEn, "desc_es" : descEs, "likeIt" : oldWord.likeIt, "play" : oldWord.play, "isShown" : oldWord.isShown])
+                        self.update(oldWord, new: newWord)
+                        idNum += 1
+                    }
                 }
             }
         }
@@ -151,6 +147,27 @@ extension AppInfo {
             }
         } catch {
             print("error on writing:\(error)")
+        }
+    }
+    
+    func update(_ old : ChineseWord, new : ChineseWord) {
+        guard let realm = self.lazyRealm else { return }
+        do {
+            try realm.write {
+                old.id = new.id
+                old.level = new.level
+                old.chapter = new.chapter
+                old.hanyu = new.hanyu
+                old.pinyin = new.pinyin
+                old.desc_kr = new.desc_kr
+                old.desc_en = new.desc_en
+                old.desc_es = new.desc_es
+                old.likeIt = new.likeIt
+                old.play = new.play
+                old.isShown = new.isShown
+            }
+        } catch {
+            print("error on updating:\(error)")
         }
     }
 }
