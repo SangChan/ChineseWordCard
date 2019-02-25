@@ -118,11 +118,13 @@ extension AppInfo {
                 chapter = Int(chapterInfo[1]) ?? 1
             } else {
                 let wordsInfo = text.components(separatedBy: "\t")
+                guard wordsInfo.count >= 3 else { return }
                 let hanyu = wordsInfo[0]
                 let descEn = (wordsInfo.count > 3) ? wordsInfo[3] : wordsInfo[2]
                 let descEs = (wordsInfo.count > 4) ? wordsInfo[4] : wordsInfo[2]
                 
-                let results = realm.objects(ChineseWord.self).filter("hanyu = \(hanyu)")
+                let predicate = NSPredicate(format: "hanyu = %@", hanyu)
+                let results = realm.objects(ChineseWord.self).filter(predicate)
                 if results.count == 0 {
                     let newChineseWord = ChineseWord(value: ["id" : idNum, "level" : level, "chapter" : chapter, "hanyu" : hanyu, "pinyin" : wordsInfo[1], "desc_kr" : wordsInfo[2], "desc_en" : descEn, "desc_es" : descEs, "likeIt" : false, "play" : 0, "isShown" : false])
                     self.write(chineseWord: newChineseWord)
