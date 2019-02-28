@@ -213,12 +213,12 @@ extension WordViewController {
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
         let firstLang = Bundle.main.preferredLocalizations.first ?? "en"
-        if firstLang == "en" {
-            return currentWord.desc_en
+        if firstLang == "kr" {
+            return currentWord.desc_kr
         } else if firstLang == "es" {
             return currentWord.desc_es
         }
-        return currentWord.desc_kr
+        return currentWord.desc_en
     }
     
     func setButtonDefault() {
