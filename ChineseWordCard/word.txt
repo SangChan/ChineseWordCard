@@ -20,42 +20,42 @@
 对不起	duìbuqǐ	미안합니다	sorry
 没关系	méi guānxi	괜찮다, 문제없다	no problem
 //1.2
-他	tā	그
-是	shì	~이다
-谁	shéi	누구
-她	tā	그녀
-我	wǒ	나,저
-大学生	dàxuéshēng	대학생
-吗	ma	의문 어기조사
-不	bù	아니다
-高中生	gāozhōngshēng	고등학생
-医生	yīshēng	의사
-老板	lǎobǎn	사장님
-公司	gōngsī	회사
-职员	zhíyuán	직원
-空姐	kōngjiě	스튜어디스
+他	tā	그	he
+是	shì	~이다	is, be
+谁	shéi	누구	who
+她	tā	그녀	she
+我	wǒ	나,저	I
+大学生	dàxuéshēng	대학생	university student
+吗	ma	의문 어기조사	this word makes interrogative sentence
+不	bù	아니다	not
+高中生	gāozhōngshēng	고등학생	high school student
+医生	yīshēng	의사	medical doctor
+老板	lǎobǎn	사장님	owner, employer
+公司	gōngsī	회사	company
+职员	zhíyuán	직원	employee
+空姐	kōngjiě	스튜어디스	flight attendant
 //1.3
-什么	shénme	무엇
-词典	cídiǎn	사전
-这	zhè	이,이것
-这个	zhège	이,이것
-这些	zhèxiē	이것들
-那	nà	그,저,그것,저것
-那个	nàge	그,저,그것,저것
-那些	nàxiē	그것들,저것들
-哪	nǎ	어느,어느 것 
-哪个	nǎge	어느 것
-哪些	nǎxiē	어떤 것들
-也	yě	~도, 또한 
-都	dōu	모두, 다
-是	shì	예, 그렇습니다
-咖啡	kāfēi	커피
-牛奶	niúnǎi	우유
-报纸	bàozhǐ	신문
-汉语	Hànyǔ	중국어
-书	shū	책
-手机	shǒujī	휴대폰
-手表	shǒubiǎo	손목시계
+什么	shénme	무엇	what
+词典	cídiǎn	사전	dictionary
+这	zhè	이,이것	this
+这个	zhège	이,이것	this, this thing
+这些	zhèxiē	이것들	those
+那	nà	그,저,그것,저것	that
+那个	nàge	그,저,그것,저것	that, that thing
+那些	nàxiē	그것들,저것들	that things
+哪	nǎ	어느,어느 것	which
+哪个	nǎge	어느 것	which one
+哪些	nǎxiē	어떤 것들	which ones
+也	yě	~도, 또한	also, too
+都	dōu	모두, 다	all
+是	shì	예, 그렇습니다	yes
+咖啡	kāfēi	커피	coffee
+牛奶	niúnǎi	우유	milk
+报纸	bàozhǐ	신문	newspaper
+汉语	Hànyǔ	중국어	Chinese Language
+书	shū	책	book
+手机	shǒujī	휴대폰	cellphone
+手表	shǒubiǎo	손목시계	wristwatch
 //1.4
 吃	chī	먹다
 汉堡	hànbǎo	햄버거
