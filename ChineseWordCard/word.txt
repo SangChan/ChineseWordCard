@@ -57,43 +57,43 @@
 手机	shǒujī	휴대폰	cellphone
 手表	shǒubiǎo	손목시계	wristwatch
 //1.4
-吃	chī	먹다
-汉堡	hànbǎo	햄버거
-喝	hē	마시다
-可乐	kělè	콜라
-米饭	mǐfàn	쌀밥
-面包	miànbāo	빵
-看	kàn	보다
-买	mǎi	사다, 구입하다
-水果	shuǐguǒ	과일
-衣服	yīfu	옷,의복
+吃	chī	먹다	eat
+汉堡	hànbǎo	햄버거	hamburger
+喝	hē	마시다	drink
+可乐	kělè	콜라	coke
+米饭	mǐfàn	쌀밥	rice
+面包	miànbāo	빵	bread
+看	kàn	보다	look
+买	mǎi	사다, 구입하다	buy
+水果	shuǐguǒ	과일	fruit
+衣服	yīfu	옷,의복	clothes
 //1.5
-很	hěn	매우
-西瓜	xīguā	수박
-苹果	píngguǒ	사과
-鸡蛋	jīdàn	달걀
-电视	diànshì	텔레비전
-果汁儿	guǒzhīr	과일주스
-大	dà	크다
-小	xiǎo	작다
-多	duō	많다
-少	shǎo	적다
-贵	guì	비싸다
-便宜	piányi	싸다
-热	rè	뜨겁다,덥다
-冷	lěng	차다,춥다
-高	gāo	높다
-低	dī	낮다
-长	cháng	길다
-短	duǎn	짧다
-远	yuǎn	멀다
-近	jìn	가깝다
-快	kuài	빠르다
-慢	màn	느리다
-早	zǎo	이르다
-晚	wǎn	늦다
-好	hǎo	좋다
-坏	huài	나쁘다
+很	hěn	매우	very
+西瓜	xīguā	수박	water melon
+苹果	píngguǒ	사과	apple
+鸡蛋	jīdàn	달걀	chicken egg
+电视	diànshì	텔레비전	television
+果汁儿	guǒzhīr	과일주스	juice
+大	dà	크다	big
+小	xiǎo	작다	small
+多	duō	많다	many, much
+少	shǎo	적다	few, little
+贵	guì	비싸다	expensive
+便宜	piányi	싸다	cheap
+热	rè	뜨겁다,덥다	hot
+冷	lěng	차다,춥다	cold
+高	gāo	높다	high
+低	dī	낮다	low
+长	cháng	길다	long
+短	duǎn	짧다	short
+远	yuǎn	멀다	far
+近	jìn	가깝다	near
+快	kuài	빠르다	fast
+慢	màn	느리다	slow
+早	zǎo	이르다	early
+晚	wǎn	늦다	late
+好	hǎo	좋다	good
+坏	huài	나쁘다	bad
 //1.6
 的	de	~의,~의 것
 帽子	màozi	모자
