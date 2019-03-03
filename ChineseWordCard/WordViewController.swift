@@ -215,9 +215,10 @@ extension WordViewController {
         let firstLang = Bundle.main.preferredLocalizations.first ?? "en"
         if firstLang == "ko" {
             return currentWord.desc_kr
-        } else if firstLang == "es" {
-            return currentWord.desc_es
         }
+//        } else if firstLang == "es" {
+//            return currentWord.desc_es
+//        }
         return currentWord.desc_en
     }
     
