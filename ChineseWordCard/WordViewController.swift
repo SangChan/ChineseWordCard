@@ -216,9 +216,6 @@ extension WordViewController {
         if firstLang == "ko" {
             return currentWord.desc_kr
         }
-//        } else if firstLang == "es" {
-//            return currentWord.desc_es
-//        }
         return currentWord.desc_en
     }
     

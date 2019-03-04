@@ -95,103 +95,103 @@
 好	hǎo	좋다	good
 坏	huài	나쁘다	bad
 //1.6
-的	de	~의,~의 것
-帽子	màozi	모자
-口红	kǒuhóng	립스틱
-笔	bǐ	붓,필기구
-皮鞋	píxié	구두
-袜子	wàzi	양말
-书包	shūbāo	책가방
-电脑	diànnǎo	컴퓨터
+的	de	~의,~의 것	of
+帽子	màozi	모자	hat
+口红	kǒuhóng	립스틱	lipstick
+笔	bǐ	붓,필기구	brush
+皮鞋	píxié	구두	shoes
+袜子	wàzi	양말	socks
+书包	shūbāo	책가방	backpack
+电脑	diànnǎo	컴퓨터	computer
 //1.7
-好喝	hǎohē	(음료가)맛있다
-茶	chá	차
-红茶	hóngchá	홍차
-中国	Zhōngguó	중국
-菜	cài	요리
-好吃	hǎochī	맛있다
-蛋糕	dàngāo	케이크
-葡萄酒	pútáojiǔ	포도주
-听	tīng	듣다
-韩国	Hánguó	한국
-哥儿	gēr	노래
-好听	hǎotīng	듣기좋다
-穿	chuān	입다, 신다
-运动鞋	yùndòngxié	운동화
-好看	hǎokàn	보기좋다,예쁘다
+好喝	hǎohē	(음료가)맛있다	delicious (for drink)
+茶	chá	차	tea
+红茶	hóngchá	홍차	red tea
+中国	Zhōngguó	중국	China
+菜	cài	요리	food
+好吃	hǎochī	맛있다	delicious (for food)
+蛋糕	dàngāo	케이크	cake
+葡萄酒	pútáojiǔ	포도주	wine
+听	tīng	듣다	hear
+韩国	Hánguó	한국	Korea
+哥儿	gēr	노래	music
+好听	hǎotīng	듣기좋다	good to listen
+穿	chuān	입다, 신다	wear
+运动鞋	yùndòngxié	운동화	sneakers
+好看	hǎokàn	보기좋다,예쁘다	good to see
 //1.8
-哪国	nǎguó	어느 나라
-人	rén	사람,인간
-贵姓	guìxìng	성함,존함
-姓	xìng	성이 ~이다
-叫	jiào	~라고 부르다
-大卫	dàwèi	데이비드
-美国	Měiguó	미국
-英语	yīngyǔ	영어
-同事	tóngshì	동료	
-朋友	péngyou	친구
-日本	Rìběn	일본
-大学	dàxué	대학
-同学	tóngxué	학우,동급생
-英国	Yīngguó	영국
-法国	Fǎguó	프랑스
-印度	Yìndù	인도
+哪国	nǎguó	어느 나라	which country
+人	rén	사람,인간	people
+贵姓	guìxìng	성함,존함	given name
+姓	xìng	성이 ~이다	family name
+叫	jiào	~라고 부르다	called
+大卫	dàwèi	데이비드	David
+美国	Měiguó	미국	United States
+英语	yīngyǔ	영어	english
+同事	tóngshì	동료	colleague
+朋友	péngyou	친구	friend
+日本	Rìběn	일본	Japan
+大学	dàxué	대학	University
+同学	tóngxué	학우,동급생	classmate
+英国	Yīngguó	영국	United Kindom
+法国	Fǎguó	프랑스	France
+印度	Yìndù	인도	India
 //1.9
-有	yǒu	~이 있다
-没有	méiyǒu	~이 없다
-相机	xiàngjī	카메라
-眼镜	yǎnjìng	안경
-镜子	jìngzi	거울
-U盘	Upán	USB
-自行车	zìxíngchē	자전거
-家	jiā	집
-小猫	xiǎomāo	고양이,새끼고양이
-小狗	xiǎogǒu	강아지
+有	yǒu	~이 있다	have
+没有	méiyǒu	~이 없다	have no
+相机	xiàngjī	카메라	camera
+眼镜	yǎnjìng	안경	glasses
+镜子	jìngzi	거울	mirror
+U盘	Upán	USB	USB
+自行车	zìxíngchē	자전거	bicycle
+家	jiā	집	house
+小猫	xiǎomāo	고양이,새끼고양이	kitty
+小狗	xiǎogǒu	강아지	puppy
 //1.10
-要	yào	원하다
-几	jǐ	몇
-个	gè	개,명
-橘子	júzi	귤
-两	liǎng	2,둘
-葡萄	pútáo	포도
-斤	jīn	근
-草莓	cǎoméi	딸기
-杯	bēi	잔
-啤酒	píjiǔ	맥주
-听	tīng	캔,깡통
-本	běn	권
-一	yī	일
-二	èr	이
-三	sān	삼
-四	sì	사
-五	wǔ	오
-六	liù	육
-七	qī	칠
-八	bā	팔
-九	jiǔ	구
-十	shí	십
+要	yào	원하다	want
+几	jǐ	몇	how many
+个	gè	개,명	piece, person
+橘子	júzi	귤	tangerine
+两	liǎng	2,둘	two, both
+葡萄	pútáo	포도	grapefruit
+斤	jīn	근	jin, Chinese unit of weight
+草莓	cǎoméi	딸기	strawberry
+杯	bēi	잔	cup, glass
+啤酒	píjiǔ	맥주	beer
+听	tīng	캔,깡통	can, tin
+本	běn	권	volume, book, copy
+一	yī	일	one
+二	èr	이	two
+三	sān	삼	three
+四	sì	사	four
+五	wǔ	오	five
+六	liù	육	six
+七	qī	칠	seven
+八	bā	팔	eight
+九	jiǔ	구	nine
+十	shí	십	ten
 //1.11
-在	zài	~에 있다
-哪儿	nǎr	어디
-书桌	shūzhuō	책상
-这儿	zhèr	여기
-椅子	yǐzi	의자
-桌子	zhuōzi	탁자
+在	zài	~에 있다	exist
+哪儿	nǎr	어디	where
+书桌	shūzhuō	책상	desk
+这儿	zhèr	여기	here
+椅子	yǐzi	의자	chair
+桌子	zhuōzi	탁자	table
 呢	ne	의문 어기조사
-那儿	nàr	그곳,저곳
-空调	kōngtiáo	에어콘
-沙发	shāfā	소파
-冰箱	bīngxiāng	냉장고
-床	chuáng	침대
-上边儿	shàngbianr	위쪽
-下边儿	xiàbianr	아래쪽
-里边儿	lǐbianr	안쪽
-外边儿	wàibianr	바깥쪽
-前边儿	qiánbianr	앞쪽
-后边儿	hòubianr	뒤쪽
-左边儿	zuǒbianr	왼쪽
-右边儿	yòubianr	오른쪽
-旁边儿	pángbiānr	옆쪽
+那儿	nàr	그곳,저곳	there
+空调	kōngtiáo	에어콘	air conditioner
+沙发	shāfā	소파	couch
+冰箱	bīngxiāng	냉장고	refrigerator
+床	chuáng	침대	bed
+上边儿	shàngbianr	위쪽	upside
+下边儿	xiàbianr	아래쪽	downside
+里边儿	lǐbianr	안쪽	inside
+外边儿	wàibianr	바깥쪽	outside
+前边儿	qiánbianr	앞쪽	front
+后边儿	hòubianr	뒤쪽	behind
+左边儿	zuǒbianr	왼쪽	left
+右边儿	yòubianr	오른쪽	right
+旁边儿	pángbiānr	옆쪽	beside
 //1.12
 月	yuè	월
 号	hào	일
