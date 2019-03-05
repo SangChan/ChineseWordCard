@@ -193,76 +193,76 @@ U盘	Upán	USB	USB
 右边儿	yòubianr	오른쪽	right
 旁边儿	pángbiānr	옆쪽	beside
 //1.12
-月	yuè	월
-号	hào	일
-星期	xīngqī	주,요일
-星期一	xīngqīyī	월요일
-星期二	xīngqīèr	화요일
-星期三	xīngqīsān	수요일
-星期四	xīngqīsì	목요일
-星期五	xīngqīwǔ	금요일
-星期六	xīngqīliù	토요일
-星期天	xīngqītiān	일요일
-上个星期	shànggexīngqī	지난주
-这个星期	zhègexīngqī	이번주
-下个星期	xiàgexīngqī	다음주
-上个月	shànggèyuè	지난달
-这个月	zhègeyuè	이번달	
-下个月	xiàgèyuè	다음달
-前天	qiántiān	그저께
-昨天	zuótiān	어제
-今天	jīntiān	오늘
-明天	míngtiān	내일
-后天	hòutiān	모레
-前年	qiántiān	재작년
-去年	qùnián	작년
-今年	jīnnián	올해
-明年	míngtiān	내년
-后年	hòutiān	내후년
-生日	shēngrì	생일
-到	dào	~까지
-平日	píngrì	평일
-和	hé	~와
-周末	zhōumò	주말
+月	yuè	월	month
+号	hào	일	day
+星期	xīngqī	주,요일	day of the week
+星期一	xīngqīyī	월요일	monday
+星期二	xīngqīèr	화요일	tuesday
+星期三	xīngqīsān	수요일	wednesday
+星期四	xīngqīsì	목요일	thursday
+星期五	xīngqīwǔ	금요일	friday
+星期六	xīngqīliù	토요일	saturday
+星期天	xīngqītiān	일요일	sunday
+上个星期	shànggexīngqī	지난주	last week
+这个星期	zhègexīngqī	이번주	this week
+下个星期	xiàgexīngqī	다음주	next week
+上个月	shànggèyuè	지난달	last month
+这个月	zhègeyuè	이번달	this month
+下个月	xiàgèyuè	다음달	next month
+前天	qiántiān	그저께	day before yesterday
+昨天	zuótiān	어제	yesterday
+今天	jīntiān	오늘	today
+明天	míngtiān	내일	tommorow
+后天	hòutiān	모레	day after tomorrow
+前年	qiántiān	재작년	year before last year
+去年	qùnián	작년	last year
+今年	jīnnián	올해	this year
+明年	míngtiān	내년	next year
+后年	hòutiān	내후년	year after next year
+生日	shēngrì	생일	birthday
+到	dào	~까지	until
+平日	píngrì	평일	weekday
+和	hé	~와	and
+周末	zhōumò	주말	weekend
 //1.13
-现在	xiànzài	지금
-点	diǎn	시
-零	líng	0, 영
-分	fēn	분
-上班	shàngbān	출근하다
-下班	xiàbān	퇴근하다
-半	bàn	반, 절반
-早上	zǎoshang	아침
-上午	shàngwǔ	오전
-中午	zhōngwǔ	정오
-下午	xiàwǔ	오후
-晚上	wǎnshang	저녁
-起床	qǐchuáng	기상하다
-早饭	zǎofàn	아침밥
-午饭	wǔfàn	점심밥
-晚饭	wǎnfàn	저녁밥
-刻	kè	15분
-开会	kāihuì	회의하다
-跑步	pǎobù	달리기를 하다
-差	chà	부족하다, 모자라다
-睡觉	shuìjiào	잠자다
-上山	shàngshān	등산하다
-下山	xiàshān	하산하다
-上车	shàngchē	승차하다
-下车	xiàchē	하차하다
-上课	shàngkè	수업하다
-下课	xiàkè	수업을 마치다
-上学	shàngxué	등교하다
-放学	fàngxué	하교하다
+现在	xiànzài	지금	present, now
+点	diǎn	시	hour
+零	líng	0, 영	zero
+分	fēn	분	minute
+上班	shàngbān	출근하다	go to work
+下班	xiàbān	퇴근하다	go to home
+半	bàn	반, 절반	half
+早上	zǎoshang	아침	early morning
+上午	shàngwǔ	오전	morning
+中午	zhōngwǔ	정오	noon
+下午	xiàwǔ	오후	afternoon
+晚上	wǎnshang	저녁	evening
+起床	qǐchuáng	기상하다	wake up
+早饭	zǎofàn	아침밥	breakfast
+午饭	wǔfàn	점심밥	lunch
+晚饭	wǎnfàn	저녁밥	dinner
+刻	kè	15분	fifteen minutes, a quater
+开会	kāihuì	회의하다	have a meeting
+跑步	pǎobù	달리기를 하다	jog
+差	chà	부족하다, 모자라다	lack
+睡觉	shuìjiào	잠자다	sleep
+上山	shàngshān	등산하다	climb a mountain
+下山	xiàshān	하산하다	descend a mountain
+上车	shàngchē	승차하다	get in, get on
+下车	xiàchē	하차하다	get off
+上课	shàngkè	수업하다	take the class
+下课	xiàkè	수업을 마치다 finish the class
+上学	shàngxué	등교하다	go to school
+放学	fàngxué	하교하다	finish school
 //1.14
-多少	duōshao	얼마, 몇
-钱	qián	돈
-块	kuài	위안(화폐단위)
-一共	yígòng	모두, 합계
-香蕉	xiāngjiāo	바나나
-梨	lí	배
-西红柿	xīhóngshì	토마토
-毛	máo	마오(화폐단위)
+多少	duōshao	얼마, 몇	how much
+钱	qián	돈	money
+块	kuài	위안(화폐단위)	unit of Chinese money, usually bill
+一共	yígòng	모두, 합계	sum of all
+香蕉	xiāngjiāo	바나나	banana
+梨	lí	배	pear
+西红柿	xīhóngshì	토마토	tomato
+毛	máo	마오(화폐단위)	unit of Chinese money, usually coin
 //1.15
 去	qù	가다
 怎么	zěnme	어떻게
