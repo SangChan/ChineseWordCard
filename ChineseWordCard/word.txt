@@ -264,29 +264,29 @@ U盘	Upán	USB	USB
 西红柿	xīhóngshì	토마토	tomato
 毛	máo	마오(화폐단위)	unit of Chinese money, usually coin
 //1.15
-去	qù	가다
-怎么	zěnme	어떻게
-学校	xuéxiào	학교
-坐	zuò	앉다,타다
-地铁	dìtiě	지하철
-开车	kāichē	운전하다
-公共汽车	gōnggòngqìchē	버스
-医院	yīyuàn	병원
-出租车	chūzūchē	택시
-机场	jīchǎng	공항
-骑	qí	올라타다
+去	qù	가다	go
+怎么	zěnme	어떻게	how
+学校	xuéxiào	학교	scool
+坐	zuò	앉다,타다	sit, take
+地铁	dìtiě	지하철	subway
+开车	kāichē	운전하다	drive
+公共汽车	gōnggòngqìchē	버스	bus
+医院	yīyuàn	병원	hospital
+出租车	chūzūchē	택시	taxi
+机场	jīchǎng	공항	airport
+骑	qí	올라타다	ride
 //1.16
-什么时候	shénmeshíhòu	언제
-早	zǎo	일찍
-一点儿	yìdiǎnr	조금
-吧	ba	청유 어기조사
-白天	báitiān	낮,대낮
-走路	zǒulù	걷다
-飞机	fēijī	비행기
-船	chuán	배
-回来	huílái	돌아오다
-回去	huíqù	돌아가다
-上来	shànglái	올라오다
+什么时候	shénmeshíhòu	언제	when
+早	zǎo	일찍	early
+一点儿	yìdiǎnr	조금	a bit
+吧	ba	청유 어기조사	can you do me ~
+白天	báitiān	낮,대낮	noon
+走路	zǒulù	걷다	walk
+飞机	fēijī	비행기	airplane
+船	chuán	배	boat
+回来	huílái	돌아오다	come back
+回去	huíqù	돌아가다	
+上来	shànglái	올라오다	
 上去	shàngqù	올라가다
 下来	xiàlái	내려오다
 下去	xiàqù	내려가다
