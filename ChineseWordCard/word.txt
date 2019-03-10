@@ -297,22 +297,22 @@ U盘	Upán	USB	USB
 过来	guòlái	건너오다
 过去	guòqù	건너가다
 //2.1
-住	zhù	살다,거주하다
-前门	qiánmén	치엔먼
-附近	fùjìn	부근,근처
-口	kǒu	식구
-大家庭	dàjiātíng	대가족
-公园	gōngyuán	공원
-药典	yàodiǎn	약국
-车站	chēzhàn	정거장
-银行	yínháng	은행
-书店	shūdiàn	서점
-超市	chāoshì	슈퍼마켓
-对面	duìmiàn	맞은편
-妻子	qīzi	아내
-女儿	nǚ'ér	딸
-儿子	érzi	아들
-兄弟姐妹	xiōngdìjiěmèi	형제자매
+住	zhù	살다,거주하다	live
+前门	qiánmén	치엔먼	qianmen (located on Beijing)
+附近	fùjìn	부근,근처	near by
+口	kǒu	식구	family member
+大家庭	dàjiātíng	대가족	big family
+公园	gōngyuán	공원	park
+药典	yàodiǎn	약국	drug store
+车站	chēzhàn	정거장	bus stop
+银行	yínháng	은행	bank
+书店	shūdiàn	서점	book store
+超市	chāoshì	슈퍼마켓	super market
+对面	duìmiàn	맞은편	in front of
+妻子	qīzi	아내	wife
+女儿	nǚ'ér	딸	daughter
+儿子	érzi	아들	son
+兄弟姐妹	xiōngdìjiěmèi	형제자매	brother and sister
 //2.2
 做	zuò	~하다
 工作	gōngzuò	일,직업
