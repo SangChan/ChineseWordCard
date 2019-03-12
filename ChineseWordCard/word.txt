@@ -328,35 +328,35 @@ U盘	Upán	USB	USB
 饭	fàn	밥,식사	rice, meal
 咖啡厅	kāfēitīng	카페	cafe
 //2.3
-要	yào	~하려 하다
-玩儿	wánr	놀다
-东四医院	Dōngsìyīyuàn	동쓰병원
-天安门	Tiān'ānmén	티엔안먼
-北京	Běijīng	베이징
-市	shì	시(행정구역 단위)
-中心	zhōngxīn	중심,센터
-长城	Chángchéng	창청, 만리장성
-天坛	Tiāntán	티엔탄
+要	yào	~하려 하다	want
+玩儿	wánr	놀다	play, enjoy
+东四医院	Dōngsìyīyuàn	동쓰병원	Dongsi Hospital
+天安门	Tiān'ānmén	티엔안먼	Tiananmen
+北京	Běijīng	베이징	Beijing
+市	shì	시(행정구역 단위)	city, unit of city or state
+中心	zhōngxīn	중심,센터	centre
+长城	Chángchéng	창청, 만리장성	Great Wall
+天坛	Tiāntán	티엔탄	Tiantan
 颐和园	Yíhéyuán	이허위안
-北边儿	běibiānr	북쪽
-东北边儿	dōngběibiānr	북동쪽
-东边儿	dōngbiānr	동쪽
-东南边儿	dōngnánbiānr	남동쪽
-南边儿	nánbianr	남쪽
-西南边儿	xīnánbianr	남서쪽
-西边儿	xībianr	서쪽
-西北边儿	xīběibiānr	북서쪽
+北边儿	běibiānr	북쪽	north
+东北边儿	dōngběibiānr	북동쪽	north east
+东边儿	dōngbiānr	동쪽	east
+东南边儿	dōngnánbiānr	남동쪽	south east
+南边儿	nánbianr	남쪽	south
+西南边儿	xīnánbianr	남서쪽	south west
+西边儿	xībianr	서쪽	west
+西北边儿	xīběibiānr	북서쪽	north west
 //2.4
-厨房	chúfáng	부엌, 주방
-干	gàn	~하다(노동)
-在	zài	~하고 있다
-晚饭	wǎnfàn	저녁밥
+厨房	chúfáng	부엌, 주방	kitchen
+干	gàn	~하다(노동)	work
+在	zài	~하고 있다	exist, being
+晚饭	wǎnfàn	저녁밥	dinner
 上网	shàngwǎng	인터넷하다
-网吧	wǎngbā	PC방
-图书馆	túshūguǎn	도서관
-打电话	dǎdiànhuà	전화를 걸다
-音乐	yīnyuè	음악
-说话	shuōhuà	말하다, 이야기하다
+网吧	wǎngbā	PC방	internet cafe
+图书馆	túshūguǎn	도서관	library
+打电话	dǎdiànhuà	전화를 걸다	call (by phone)
+音乐	yīnyuè	음악	music
+说话	shuōhuà	말하다, 이야기하다	talk
 //2.5
 了	le	~했다/변화의 어기조사
 已经	yǐjing	이미,벌써
