@@ -358,35 +358,35 @@ U盘	Upán	USB	USB
 音乐	yīnyuè	음악	music
 说话	shuōhuà	말하다, 이야기하다	talk
 //2.5
-了	le	~했다/변화의 어기조사
-已经	yǐjing	이미,벌써
-还没	háiméi	아직 ~하지 않다
-为什么	wèishénme	왜, 어째서
-说	shuō	말하다
-饿	è	배고프다
-想	xiǎng	~하고 싶다
-东西	dōngxi	물건
-碗	wǎn	그릇
-休息	xiūxi	쉬다, 휴식
+了	le	~했다/변화의 어기조사		makes sentence as past
+已经	yǐjing	이미,벌써	already
+还没	háiméi	아직 ~하지 않다	not yet
+为什么	wèishénme	왜, 어째서	why
+说	shuō	말하다	talk
+饿	è	배고프다	hungry
+想	xiǎng	~하고 싶다	hope
+东西	dōngxi	물건	stuff
+碗	wǎn	그릇	bowl
+休息	xiūxi	쉬다, 휴식 take a rest
 //2.6
-喜欢	xǐhuan	좋아하다
-太	tài	너무
-爱	ài	즐기다, 좋아하다
-点	diǎn	주문하다
-比萨	bǐsà	피자
-药	yào	약
-有点儿	yǒudiǎnr	조금,약간
-四川	Sìchuān	쓰촨
-海水	hǎishuǐ	바닷물,해수
-非常	fēicháng	대단히,매우
-电影	diànyǐng	영화
-运动	yùndòng	운동
-甜	tián	달다
-酸	suān	시다
-苦	kǔ	쓰다
-辣	là	맵다
-咸	xián	짜다
-淡	dàn	싱겁다
+喜欢	xǐhuan	좋아하다	like
+太	tài	너무	very much
+爱	ài	즐기다, 좋아하다	love
+点	diǎn	주문하다	order
+比萨	bǐsà	피자	pizza
+药	yào	약	drug
+有点儿	yǒudiǎnr	조금,약간	little bit
+四川	Sìchuān	쓰촨	Sichuan
+海水	hǎishuǐ	바닷물,해수	seawater
+非常	fēicháng	대단히,매우	very much
+电影	diànyǐng	영화	movie
+运动	yùndòng	운동	work out
+甜	tián	달다	sweet
+酸	suān	시다	sour
+苦	kǔ	쓰다	bitter
+辣	là	맵다	spicy
+咸	xián	짜다	salty
+淡	dàn	싱겁다	flat
 //2.7
 一个人	yígèrén	혼자
 和~一起	héyìqǐ	~와 함께
