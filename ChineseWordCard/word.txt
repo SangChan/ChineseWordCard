@@ -412,57 +412,57 @@ U盘	Upán	USB	USB
 慢	màn	느리다	slow
 的	de	확인,긍정의 어기조사	of
 //2.10
-会	huì	~할 수 있다,~할 줄 알다
-多长时间	duō cháng shíjiān	얼마(시간)
-能	néng	~할 수 있다
-还	hái	아직, 아직도
-天	tiān	하루, 일
-小时	xiǎoshí	시간
-分钟	fēnzhōng	분
-游泳	yóuyǒng	수영하다
-酒	jiǔ	술
-瓶	píng	병
-写	xiě	쓰다
-字	zì	글자
+会	huì	~할 수 있다,~할 줄 알다	can
+多长时间	duō cháng shíjiān	얼마(시간)	how much (for time)
+能	néng	~할 수 있다	can
+还	hái	아직, 아직도	still
+天	tiān	하루, 일	a day
+小时	xiǎoshí	시간	time
+分钟	fēnzhōng	분	minute
+游泳	yóuyǒng	수영하다	swim
+酒	jiǔ	술	liquor
+瓶	píng	병	bottle
+写	xiě	쓰다	write
+字	zì	글자	word, character
 //2.11
-请问	qǐngwèn	말씀 좀 묻겠습니다
-楼	lóu	층,건물
-笔记本电脑	bǐjìběndiànnǎo	노트북
-颜色	yánsè	색
-白	bái	희다, 하얗다
-还是	háishi	또는, 아니면
-红	hóng	붉다, 빨갛다
-漂亮	piàoliang	아름답다, 예쁘다
-唱	chàng	노래하다, (노래를)부르다
-冰	bīng	아이스, 얼음을 넣은
+请问	qǐngwèn	말씀 좀 묻겠습니다	Can I ask ... ?
+楼	lóu	층,건물	floor
+笔记本电脑	bǐjìběndiànnǎo	노트북	laptop
+颜色	yánsè	색	color
+白	bái	희다, 하얗다	white
+还是	háishi	또는, 아니면	or
+红	hóng	붉다, 빨갛다	red
+漂亮	piàoliang	아름답다, 예쁘다	beautiful
+唱	chàng	노래하다, (노래를)부르다	sing
+冰	bīng	아이스, 얼음을 넣은	ice
 //2.12
 过	guo	~한 적이 있다
-台湾	Táiwān	타이완
-常	cháng	자주, 종종
-因为	yīnwèi	~때문에
-香港	Xiānggǎng	홍콩
-澳门	àomén	마카오
-次	cì	번, 회
-酒店	jiǔdiàn	호텔
-电影院	diànyǐngyuàn	영화관
-每	měi	매, ~마다
+台湾	Táiwān	타이완	taiwan
+常	cháng	자주, 종종	sometimes
+因为	yīnwèi	~때문에	because
+香港	Xiānggǎng	홍콩	Hongkong
+澳门	àomén	마카오	Macau
+次	cì	번, 회	times
+酒店	jiǔdiàn	호텔	hotel
+电影院	diànyǐngyuàn	영화관	theater
+每	měi	매, ~마다	everytime
 //2.13
-化妆品	huàzhuāngpǐn	화장품
-件	jiàn	벌(옷을 세는 단위)
-花	huā	소비하다, 쓰다
-千	qiān	1000,천
-给	gěi	~에게 주다
-百货商场	bǎihuò shāngchǎng	백화점
-真	zhēn	정말
-便宜	piányi	싸다
-张	zhāng	장 (종이를 세는 단위)
-地图	dìtú	지도
-双	shuāng	쌍, 켤레(신발, 양말을 세는 단위)
-矿泉水	kuàngquánshuǐ	광천수, 생수
-盒	hé	통,갑(상자를 세는 단위)
-百	bǎi	100,백
-元	yuán	위안(화폐 단위)
-酒吧	jiǔbā	술집, 바
+化妆品	huàzhuāngpǐn	화장품	cosmetics
+件	jiàn	벌(옷을 세는 단위)	unit of clothes
+花	huā	소비하다, 쓰다	spend
+千	qiān	1000,천	thousand
+给	gěi	~에게 주다	give
+百货商场	bǎihuò shāngchǎng	백화점	department store
+真	zhēn	정말	really
+便宜	piányi	싸다	cheap
+张	zhāng	장 (종이를 세는 단위) unit of paper
+地图	dìtú	지도	map
+双	shuāng	쌍, 켤레(신발, 양말을 세는 단위)	unit of socks
+矿泉水	kuàngquánshuǐ	광천수, 생수	mineral water
+盒	hé	통,갑(상자를 세는 단위)	unit of box	
+百	bǎi	100,백	hundred
+元	yuán	위안(화폐 단위)	unit of money (usually paper type)
+酒吧	jiǔbā	술집, 바	bar
 //2.14
 季节	jìjié	계절
 最	zuì	가장, 제일
