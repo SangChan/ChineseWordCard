@@ -464,31 +464,31 @@ U盘	Upán	USB	USB
 元	yuán	위안(화폐 단위)	unit of money (usually paper type)
 酒吧	jiǔbā	술집, 바	bar
 //2.14
-季节	jìjié	계절
-最	zuì	가장, 제일
-春天	chūntiān	봄
-比	bǐ	~보다, ~에 비하여
-夏天	xiàtiān	여름
-凉快	liángkuai	서늘하다, 시원하다
-冬天	dōngtiān	겨울
-暖和	nuǎnhuo	따뜻하다
-秋天	qiūtiān	가을
-怎么样	zěnmeyàng	어떻다, 어때
-可是	kěshì	그러나, 그런데
-想	xiǎng	그리워하다, 생각하다
-花儿	huār	꽃
-爬山	páshān	등산하다
-冷	lěng	춥다, 차다
-滑雪	huáxuě	스키를 타다
-哈尔滨	Hā'ěrbīn	하얼빈
-米	mǐ	미터
-高	gāo	높다, 크다
-矮	ǎi	낮다, 작다
+季节	jìjié	계절	season
+最	zuì	가장, 제일	most
+春天	chūntiān	봄	spring
+比	bǐ	~보다, ~에 비하여	than
+夏天	xiàtiān	여름	summer
+凉快	liángkuai	서늘하다, 시원하다	cool
+冬天	dōngtiān	겨울	winter
+暖和	nuǎnhuo	따뜻하다	warm
+秋天	qiūtiān	가을	autumn
+怎么样	zěnmeyàng	어떻다, 어때	how's going
+可是	kěshì	그러나, 그런데	but
+想	xiǎng	그리워하다, 생각하다	miss
+花儿	huār	꽃	flower
+爬山	páshān	등산하다	climb mountain
+冷	lěng	춥다, 차다	cold
+滑雪	huáxuě	스키를 타다	ski
+哈尔滨	Hā'ěrbīn	하얼빈	Haerbin
+米	mǐ	미터	meter
+高	gāo	높다, 크다	high, big
+矮	ǎi	낮다, 작다	low, small
 //2.15
-天气	tiānqì	날씨
-下雨	xiàyǔ	비가 내리다
-着	zhe	~하고 있다
-刮风	guāfēng	바람이 불다
+天气	tiānqì	날씨	weather
+下雨	xiàyǔ	비가 내리다	raining
+着	zhe	~하고 있다	
+刮风	guāfēng	바람이 불다	windy
 带	dài	지니다, 휴대하다
 雨伞	yǔsǎn	우산
 开	kāi	열다, 켜다
