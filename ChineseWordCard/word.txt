@@ -487,21 +487,21 @@ U盘	Upán	USB	USB
 //2.15
 天气	tiānqì	날씨	weather
 下雨	xiàyǔ	비가 내리다	raining
-着	zhe	~하고 있다	
+着	zhe	~하고 있다	...ing
 刮风	guāfēng	바람이 불다	windy
-带	dài	지니다, 휴대하다
-雨伞	yǔsǎn	우산
-开	kāi	열다, 켜다
-门窗	ménchuāng	문과 창문
-关	guān	닫다, 끄다
-站	zhàn	서다
-报	bào	신문
-躺	tǎng	눕다
-走	zǒu	걷다, 걸어가다
+带	dài	지니다, 휴대하다	carry
+雨伞	yǔsǎn	우산	umbrella
+开	kāi	열다, 켜다	open, on
+门窗	ménchuāng	문과 창문	door and window
+关	guān	닫다, 끄다	close, off
+站	zhàn	서다	stand
+报	bào	신문	newspaper
+躺	tǎng	눕다	lay down
+走	zǒu	걷다, 걸어가다	walk
 //2.16
 得	de	보어격 구조조사
-睡	shuì	(잠을)자다
-昨晚	zuówǎn	어제 저녁
-跳舞	tiàowǔ	춤을 추다
-忙	máng	바쁘다
-累	lèi	피곤하다, 지치다
+睡	shuì	(잠을)자다	sleep
+昨晚	zuówǎn	어제 저녁	yesterday evening
+跳舞	tiàowǔ	춤을 추다	dance
+忙	máng	바쁘다	busy
+累	lèi	피곤하다, 지치다	tired
