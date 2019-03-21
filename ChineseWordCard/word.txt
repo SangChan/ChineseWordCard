@@ -177,7 +177,7 @@ U盘	Upán	USB	USB
 这儿	zhèr	여기	here
 椅子	yǐzi	의자	chair
 桌子	zhuōzi	탁자	table
-呢	ne	의문 어기조사
+呢	ne	의문 어기조사	****
 那儿	nàr	그곳,저곳	there
 空调	kōngtiáo	에어콘	air conditioner
 沙发	shāfā	소파	couch
@@ -285,17 +285,17 @@ U盘	Upán	USB	USB
 飞机	fēijī	비행기	airplane
 船	chuán	배	boat
 回来	huílái	돌아오다	come back
-回去	huíqù	돌아가다	
-上来	shànglái	올라오다	
-上去	shàngqù	올라가다
-下来	xiàlái	내려오다
-下去	xiàqù	내려가다
-进来	jìnlái	들어오다
-进去	jìnqù	들어가다
-出来	chūlai	나오다
-出去	chūqu	나가다
-过来	guòlái	건너오다
-过去	guòqù	건너가다
+回去	huíqù	돌아가다	go back
+上来	shànglái	올라오다	****
+上去	shàngqù	올라가다	****
+下来	xiàlái	내려오다	****
+下去	xiàqù	내려가다	****
+进来	jìnlái	들어오다	come in
+进去	jìnqù	들어가다	go in
+出来	chūlai	나오다	come out
+出去	chūqu	나가다	go out
+过来	guòlái	건너오다	come across
+过去	guòqù	건너가다	go across
 //2.1
 住	zhù	살다,거주하다	live
 前门	qiánmén	치엔먼	qianmen (located on Beijing)
