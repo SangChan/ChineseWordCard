@@ -337,7 +337,7 @@ U盘	Upán	USB	USB
 中心	zhōngxīn	중심,센터	centre
 长城	Chángchéng	창청, 만리장성	Great Wall
 天坛	Tiāntán	티엔탄	Tiantan
-颐和园	Yíhéyuán	이허위안
+颐和园	Yíhéyuán	이허위안	Yiheyuan
 北边儿	běibiānr	북쪽	north
 东北边儿	dōngběibiānr	북동쪽	north east
 东边儿	dōngbiānr	동쪽	east
@@ -351,7 +351,7 @@ U盘	Upán	USB	USB
 干	gàn	~하다(노동)	work
 在	zài	~하고 있다	exist, being
 晚饭	wǎnfàn	저녁밥	dinner
-上网	shàngwǎng	인터넷하다
+上网	shàngwǎng	인터넷하다	surf through net
 网吧	wǎngbā	PC방	internet cafe
 图书馆	túshūguǎn	도서관	library
 打电话	dǎdiànhuà	전화를 걸다	call (by phone)
@@ -499,7 +499,7 @@ U盘	Upán	USB	USB
 躺	tǎng	눕다	lay down
 走	zǒu	걷다, 걸어가다	walk
 //2.16
-得	de	보어격 구조조사
+得	de	보어격 구조조사	****
 睡	shuì	(잠을)자다	sleep
 昨晚	zuówǎn	어제 저녁	yesterday evening
 跳舞	tiàowǔ	춤을 추다	dance
