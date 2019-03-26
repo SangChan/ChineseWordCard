@@ -177,7 +177,7 @@ U盘	Upán	USB	USB
 这儿	zhèr	여기	here
 椅子	yǐzi	의자	chair
 桌子	zhuōzi	탁자	table
-呢	ne	의문 어기조사	****
+呢	ne	의문 어기조사	used to apply the previously asked question to a new subject
 那儿	nàr	그곳,저곳	there
 空调	kōngtiáo	에어콘	air conditioner
 沙发	shāfā	소파	couch
@@ -286,10 +286,10 @@ U盘	Upán	USB	USB
 船	chuán	배	boat
 回来	huílái	돌아오다	come back
 回去	huíqù	돌아가다	go back
-上来	shànglái	올라오다	****
-上去	shàngqù	올라가다	****
-下来	xiàlái	내려오다	****
-下去	xiàqù	내려가다	****
+上来	shànglái	올라오다	come up
+上去	shàngqù	올라가다	go up
+下来	xiàlái	내려오다	come down
+下去	xiàqù	내려가다	go down
 进来	jìnlái	들어오다	come in
 进去	jìnqù	들어가다	go in
 出来	chūlai	나오다	come out
@@ -499,7 +499,7 @@ U盘	Upán	USB	USB
 躺	tǎng	눕다	lay down
 走	zǒu	걷다, 걸어가다	walk
 //2.16
-得	de	보어격 구조조사	****
+得	de	보어격 구조조사	interjective particle expressing approval or prohibition
 睡	shuì	(잠을)자다	sleep
 昨晚	zuówǎn	어제 저녁	yesterday evening
 跳舞	tiàowǔ	춤을 추다	dance
