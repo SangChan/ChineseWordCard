@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
-        GADMobileAds.sharedInstance().start { (status) in
+        GADMobileAds.sharedInstance().start { (_) in
             // todo : google what
         }
         AppInfo.sharedInstance.getAllDataFromRealm()
