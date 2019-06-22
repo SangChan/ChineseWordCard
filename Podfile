@@ -8,6 +8,8 @@ def default
 	pod 'FontAwesome.swift'
 	pod 'SwiftLint'
 	pod 'Google-Mobile-Ads-SDK'
+	pod 'RxSwift', '~> 5'
+    	pod 'RxCocoa', '~> 5'
 end
 
 target 'ChineseWordCard' do
