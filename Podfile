@@ -4,12 +4,12 @@ platform :ios, '10.0'
 use_frameworks!
 
 def default
-	pod 'RealmSwift'
-	pod 'FontAwesome.swift'
-	pod 'SwiftLint'
-	pod 'Google-Mobile-Ads-SDK'
+	pod 'RealmSwift', '~> 3.14'
+	pod 'FontAwesome.swift', '~> 1.6.0'
+	pod 'SwiftLint', '~> 0.31.0'
+	pod 'Google-Mobile-Ads-SDK', '~> 7.42.2'
 	pod 'RxSwift', '~> 5'
-    	pod 'RxCocoa', '~> 5'
+	pod 'RxCocoa', '~> 5'
 end
 
 target 'ChineseWordCard' do
