@@ -34,13 +34,21 @@ PODS:
   - Realm/Headers (3.14.0)
   - RealmSwift (3.14.0):
     - Realm (= 3.14.0)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
-  - FontAwesome.swift
-  - Google-Mobile-Ads-SDK
-  - RealmSwift
-  - SwiftLint
+  - FontAwesome.swift (~> 1.6.0)
+  - Google-Mobile-Ads-SDK (~> 7.42.2)
+  - RealmSwift (~> 3.14)
+  - RxCocoa (~> 5)
+  - RxSwift (~> 5)
+  - SwiftLint (~> 0.31.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -51,6 +59,9 @@ SPEC REPOS:
     - nanopb
     - Realm
     - RealmSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -61,8 +72,11 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
   RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 1df81ecb655d6a6dc48f00902dc9f5602a56aa5c
+PODFILE CHECKSUM: af33abb4593386a6d9511712c26acb56365e6950
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0
