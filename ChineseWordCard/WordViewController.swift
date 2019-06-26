@@ -257,7 +257,7 @@ extension WordViewController {
             [NSLayoutConstraint(item: bannerView,
                                 attribute: .bottom,
                                 relatedBy: .equal,
-                                toItem: view.safeAreaLayoutGuide.bottomAnchor,
+                                toItem: bottomLayoutGuide,
                                 attribute: .top,
                                 multiplier: 1,
                                 constant: 0),
