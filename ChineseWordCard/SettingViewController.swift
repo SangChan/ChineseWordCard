@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import RxSwift
 
 class SettingViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {

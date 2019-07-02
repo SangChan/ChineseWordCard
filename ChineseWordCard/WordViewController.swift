@@ -11,6 +11,7 @@ import AVFoundation
 import RealmSwift
 import FontAwesome_swift
 import GoogleMobileAds
+import RxSwift
 
 enum Direction {
     case previous
