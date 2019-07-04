@@ -37,6 +37,7 @@ class WordViewController: UIViewController {
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
     var bannerView: GADBannerView!
+    let disposeBag = DisposeBag()
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -51,6 +52,7 @@ class WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRx()
         setButtonDefault()
         resetView()
         getWordData()
@@ -338,4 +340,10 @@ extension WordViewController {
         }
     }
 
+}
+
+extension WordViewController {
+    func setupRx() {
+        
+    }
 }
