@@ -30,6 +30,7 @@ class WordViewController: UIViewController {
     @IBOutlet fileprivate weak var starButton : UIButton!
     @IBOutlet fileprivate weak var settingButton : UIButton!
     
+    var wordModel : WordViewModel!
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
     var copiedString : String?
@@ -346,4 +347,17 @@ extension WordViewController {
     func setupRx() {
         
     }
+}
+
+struct WordViewModel {
+    let index : Int
+    let currentWord : WordModel
+    let wordModels : [WordModel]
+}
+
+struct WordModel {
+    let wordHanyu : String
+    let wordDesc : String
+    let wordPinyin : String
+    let likeIt : Bool
 }
