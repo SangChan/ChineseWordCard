@@ -345,7 +345,11 @@ extension WordViewController {
 
 extension WordViewController {
     func setupRx() {
+        // TODO : get data and create View Model
         
+        // TODO : connect event on buttons
+        
+        // TODO : connect event with views
     }
 }
 
