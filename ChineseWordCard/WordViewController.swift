@@ -12,6 +12,7 @@ import RealmSwift
 import FontAwesome_swift
 import GoogleMobileAds
 import RxSwift
+import RxCocoa
 
 enum Direction {
     case previous
@@ -348,7 +349,7 @@ extension WordViewController {
         // TODO : get data and create View Model
         
         // TODO : connect event on buttons
-        self.nextButton.rx
+        nextButton.rx.tap.subscribe().disposed(by: disposeBag)
         // TODO : connect event with views
     }
 }
