@@ -30,15 +30,15 @@ class WordViewController: UIViewController {
     @IBOutlet fileprivate weak var starButton : UIButton!
     @IBOutlet fileprivate weak var settingButton : UIButton!
     
-    var wordModel : WordViewModel!
+    var wordModel    : WordViewModel!
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
     var copiedString : String?
     var touchCount   : Int = 0
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
-    var bannerView: GADBannerView!
-    let disposeBag = DisposeBag()
+    var bannerView   : GADBannerView!
+    let disposeBag   = DisposeBag()
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -348,7 +348,7 @@ extension WordViewController {
         // TODO : get data and create View Model
         
         // TODO : connect event on buttons
-        
+        self.nextButton.rx
         // TODO : connect event with views
     }
 }
