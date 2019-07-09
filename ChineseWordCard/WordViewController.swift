@@ -349,7 +349,11 @@ extension WordViewController {
         // TODO : get data and create View Model
         
         // TODO : connect event on buttons
-        nextButton.rx.tap.subscribe().disposed(by: disposeBag)
+        nextButton.rx.tap
+            .subscribe(onNext: {
+                print("next button tapped")
+            })
+            .disposed(by: disposeBag)
         // TODO : connect event with views
     }
 }
