@@ -354,6 +354,30 @@ extension WordViewController {
                 print("next button tapped")
             })
             .disposed(by: disposeBag)
+        
+        prevButton.rx.tap
+            .subscribe(onNext: {
+                print("prev button tapped")
+            })
+            .disposed(by: disposeBag)
+        
+        starButton.rx.tap
+            .subscribe(onNext: {
+                print("star button tapped")
+            })
+            .disposed(by: disposeBag)
+        
+        settingButton.rx.tap
+            .subscribe(onNext: {
+                print("setting button tapped")
+            })
+            .disposed(by: disposeBag)
+        
+        sliderBar.rx.value
+            .subscribe { (value) in
+                print("value changed : \(value)")
+            }
+            .disposed(by: disposeBag)
         // TODO : connect event with views
     }
 }
