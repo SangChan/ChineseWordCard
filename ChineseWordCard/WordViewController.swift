@@ -39,7 +39,7 @@ class WordViewController: UIViewController {
     var maxWordCount : Int = 0
     var bannerView   : GADBannerView!
     let disposeBag   = DisposeBag()
-    var wordModel : WordModel = WordModel(hanyu: Observable.just("test"), desc: Observable.just("test"), pinyin: Observable.just("test"), likeIt: Observable.just(false))
+    var wordModel : WordModel = WordModel()
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -86,10 +86,10 @@ class WordViewController: UIViewController {
 extension WordViewController {
     // IBActions only
     @IBAction func nextClicked(_ sender: AnyObject) {
-        self.goTo(direction:.next)
+        //self.goTo(direction:.next)
     }
     @IBAction func prevClicked(_ sender: AnyObject) {
-        self.goTo(direction:.previous)
+        //self.goTo(direction:.previous)
     }
     @IBAction func valueChanged(_ sender: AnyObject) {
         resetView()
@@ -209,24 +209,9 @@ extension WordViewController {
         self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
         
-        self.wordModel.hanyu = Observable.just(currentWord.hanyu)
-        wordModel.hanyu.asObservable()
-            .map({ $0 })
-            .bind(to: hanyuLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        self.wordModel.pinyin = Observable.just(currentWord.pinyin)
-        wordModel.pinyin.asObservable()
-            .map({ $0 })
-            .bind(to: pinyinLabel.rx.text)
-            .disposed(by: disposeBag)
-        
-        self.wordModel.desc = Observable.just(descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
-        wordModel.desc.asObservable()
-            .map({ $0 })
-            .bind(to: descriptionLabel.rx.text)
-            .disposed(by: disposeBag)
-        
+        self.wordModel.set(hanyu: currentWord.hanyu)
+        self.wordModel.set(pinyin: currentWord.pinyin)
+        self.wordModel.set(desc: descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
         //self.hanyuLabel.text = currentWord.hanyu
         //self.pinyinLabel.text = currentWord.pinyin
         //self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
@@ -367,14 +352,14 @@ extension WordViewController {
     func setupRx() {
         // TODO : get data and create View Model
         nextButton.rx.tap
-            .subscribe(onNext: {
-                print("next button tapped")
+            .subscribe(onNext: { [weak self] in
+                self?.goTo(direction:.next)
             })
             .disposed(by: disposeBag)
         
         prevButton.rx.tap
-            .subscribe(onNext: {
-                print("prev button tapped")
+            .subscribe(onNext: { [weak self] in
+                self?.goTo(direction:.previous)
             })
             .disposed(by: disposeBag)
         
@@ -396,6 +381,21 @@ extension WordViewController {
             }
             .disposed(by: disposeBag)
         // TODO : connect event with views
+        
+        wordModel.hanyu.asObservable()
+            .map({ $0 })
+            .bind(to: hanyuLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        wordModel.pinyin.asObservable()
+            .map({ $0 })
+            .bind(to: pinyinLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        wordModel.desc.asObservable()
+            .map({ $0 })
+            .bind(to: descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -406,12 +406,37 @@ struct WordViewModel {
 }
 
 struct WordModel {
-    var hanyu : Observable<String>
-    var desc : Observable<String>
-    var pinyin : Observable<String>
-    var likeIt : Observable<Bool>
+    var hanyu : Observable<String> {
+        return hanyuPublish
+    }
+    var desc : Observable<String> {
+        return descPublish
+    }
+    var pinyin : Observable<String> {
+        return pinyinPublish
+    }
+    var likeIt : Observable<Bool> {
+        return likeItPublish
+    }
     
-    func description() -> String {
-        return "\(hanyu),\(pinyin) = \(desc)"
+    private let hanyuPublish = PublishSubject<String>()
+    private let descPublish = PublishSubject<String>()
+    private let pinyinPublish = PublishSubject<String>()
+    private let likeItPublish = PublishSubject<Bool>()
+    
+    func set(hanyu : String) {
+        hanyuPublish.onNext(hanyu)
+    }
+    
+    func set(desc : String) {
+        descPublish.onNext(desc)
+    }
+    
+    func set(pinyin : String) {
+        pinyinPublish.onNext(pinyin)
+    }
+    
+    func set(likeIt : Bool) {
+        likeItPublish.onNext(likeIt)
     }
 }
