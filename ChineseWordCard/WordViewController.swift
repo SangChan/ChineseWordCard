@@ -31,7 +31,7 @@ class WordViewController: UIViewController {
     @IBOutlet fileprivate weak var starButton : UIButton!
     @IBOutlet fileprivate weak var settingButton : UIButton!
     
-    var wordModel    : WordViewModel!
+    var wordModel    : Driver<WordViewModel>!
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
     var copiedString : String?
@@ -348,6 +348,15 @@ extension WordViewController {
     func setupRx() {
         // TODO : get data and create View Model
         
+        wordModel
+            .drive(onNext: { [weak self] (vm) in
+                //print("[\(vm.index) : \(vm.currentWord)]")
+                self?.currentWord = vm.currentWord
+                self?.wordIndex = vm.wordIndex
+            }, onCompleted: {
+                print("done")
+            })
+            .disposed(by: disposeBag)
         // TODO : connect event on buttons
         nextButton.rx.tap
             .subscribe(onNext: {
@@ -379,11 +388,14 @@ extension WordViewController {
             }
             .disposed(by: disposeBag)
         // TODO : connect event with views
+        //pinyinLabel
+        //hanyuLabel
+        //descriptionLabel
     }
 }
 
 struct WordViewModel {
-    let index : Int
+    let wordIndex : Int
     let currentWord : WordModel
     let wordModels : [WordModel]
 }
@@ -393,4 +405,8 @@ struct WordModel {
     let wordDesc : String
     let wordPinyin : String
     let likeIt : Bool
+    
+    func description() -> String {
+        return "\(wordHanyu),\(wordPinyin) = \(wordDesc)"
+    }
 }
