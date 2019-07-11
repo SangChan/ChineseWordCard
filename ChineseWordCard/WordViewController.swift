@@ -31,7 +31,6 @@ class WordViewController: UIViewController {
     @IBOutlet fileprivate weak var starButton : UIButton!
     @IBOutlet fileprivate weak var settingButton : UIButton!
     
-    var wordModel    : Observable<WordModel>!
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
     var copiedString : String?
@@ -40,6 +39,7 @@ class WordViewController: UIViewController {
     var maxWordCount : Int = 0
     var bannerView   : GADBannerView!
     let disposeBag   = DisposeBag()
+    var wordModel : WordModel = WordModel(hanyu: Observable.just("test"), desc: Observable.just("test"), pinyin: Observable.just("test"), likeIt: Observable.just(false))
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -54,8 +54,6 @@ class WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wordModel = Observable.empty()
-        wordModel = Observable.never()
         setupRx()
         setButtonDefault()
         resetView()
@@ -209,11 +207,29 @@ extension WordViewController {
         self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
-        self.wordModel = Observable<WordModel>.just(WordModel(hanyu: currentWord.hanyu, desc: currentWord.desc_kr, pinyin: currentWord.pinyin, likeIt: currentWord.likeIt))
         self.hanyuLabel.alpha = 1.0
-        self.hanyuLabel.text = currentWord.hanyu
-        self.pinyinLabel.text = currentWord.pinyin
-        self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
+        
+        self.wordModel.hanyu = Observable.just(currentWord.hanyu)
+        wordModel.hanyu.asObservable()
+            .map({ $0 })
+            .bind(to: hanyuLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        self.wordModel.pinyin = Observable.just(currentWord.pinyin)
+        wordModel.pinyin.asObservable()
+            .map({ $0 })
+            .bind(to: pinyinLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        self.wordModel.desc = Observable.just(descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
+        wordModel.desc.asObservable()
+            .map({ $0 })
+            .bind(to: descriptionLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        //self.hanyuLabel.text = currentWord.hanyu
+        //self.pinyinLabel.text = currentWord.pinyin
+        //self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
@@ -350,15 +366,6 @@ extension WordViewController {
 extension WordViewController {
     func setupRx() {
         // TODO : get data and create View Model
-//        wordModel
-//            .drive(onNext: { [weak self] (vm) in
-//                //print("[\(vm.index) : \(vm.currentWord)]")
-//                self?.currentWord = vm.currentWord
-//                self?.wordIndex = vm.wordIndex
-//            }, onCompleted: {
-//                print("done")
-//            })
-//            .disposed(by: disposeBag)
         nextButton.rx.tap
             .subscribe(onNext: {
                 print("next button tapped")
@@ -389,14 +396,6 @@ extension WordViewController {
             }
             .disposed(by: disposeBag)
         // TODO : connect event with views
-        wordModel.asObservable()
-            .subscribe(onNext: { [weak self] (model) in
-                self?.hanyuLabel.text = model.hanyu
-                self?.pinyinLabel.text = model.pinyin
-                self?.descriptionLabel.text = model.desc
-                print("\(model.description())")
-            })
-            .disposed(by: disposeBag)
     }
 }
 
@@ -407,10 +406,10 @@ struct WordViewModel {
 }
 
 struct WordModel {
-    let hanyu : String
-    let desc : String
-    let pinyin : String
-    let likeIt : Bool
+    var hanyu : Observable<String>
+    var desc : Observable<String>
+    var pinyin : Observable<String>
+    var likeIt : Observable<Bool>
     
     func description() -> String {
         return "\(hanyu),\(pinyin) = \(desc)"
