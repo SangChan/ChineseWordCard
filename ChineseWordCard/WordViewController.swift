@@ -31,7 +31,7 @@ class WordViewController: UIViewController {
     @IBOutlet fileprivate weak var starButton : UIButton!
     @IBOutlet fileprivate weak var settingButton : UIButton!
     
-    var wordModel    : Driver<WordViewModel>!
+    var wordModel    : Observable<WordModel>!
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
     var copiedString : String?
@@ -54,6 +54,8 @@ class WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        wordModel = Observable.empty()
+        wordModel = Observable.never()
         setupRx()
         setButtonDefault()
         resetView()
@@ -207,6 +209,7 @@ extension WordViewController {
         self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
+        self.wordModel = Observable<WordModel>.just(WordModel(hanyu: currentWord.hanyu, desc: currentWord.desc_kr, pinyin: currentWord.pinyin, likeIt: currentWord.likeIt))
         self.hanyuLabel.alpha = 1.0
         self.hanyuLabel.text = currentWord.hanyu
         self.pinyinLabel.text = currentWord.pinyin
@@ -347,17 +350,15 @@ extension WordViewController {
 extension WordViewController {
     func setupRx() {
         // TODO : get data and create View Model
-        
-        wordModel
-            .drive(onNext: { [weak self] (vm) in
-                //print("[\(vm.index) : \(vm.currentWord)]")
-                self?.currentWord = vm.currentWord
-                self?.wordIndex = vm.wordIndex
-            }, onCompleted: {
-                print("done")
-            })
-            .disposed(by: disposeBag)
-        // TODO : connect event on buttons
+//        wordModel
+//            .drive(onNext: { [weak self] (vm) in
+//                //print("[\(vm.index) : \(vm.currentWord)]")
+//                self?.currentWord = vm.currentWord
+//                self?.wordIndex = vm.wordIndex
+//            }, onCompleted: {
+//                print("done")
+//            })
+//            .disposed(by: disposeBag)
         nextButton.rx.tap
             .subscribe(onNext: {
                 print("next button tapped")
@@ -388,9 +389,14 @@ extension WordViewController {
             }
             .disposed(by: disposeBag)
         // TODO : connect event with views
-        //pinyinLabel
-        //hanyuLabel
-        //descriptionLabel
+        wordModel.asObservable()
+            .subscribe(onNext: { [weak self] (model) in
+                self?.hanyuLabel.text = model.hanyu
+                self?.pinyinLabel.text = model.pinyin
+                self?.descriptionLabel.text = model.desc
+                print("\(model.description())")
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -401,12 +407,12 @@ struct WordViewModel {
 }
 
 struct WordModel {
-    let wordHanyu : String
-    let wordDesc : String
-    let wordPinyin : String
+    let hanyu : String
+    let desc : String
+    let pinyin : String
     let likeIt : Bool
     
     func description() -> String {
-        return "\(wordHanyu),\(wordPinyin) = \(wordDesc)"
+        return "\(hanyu),\(pinyin) = \(desc)"
     }
 }
