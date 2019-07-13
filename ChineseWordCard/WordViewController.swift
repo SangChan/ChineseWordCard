@@ -378,7 +378,7 @@ extension WordViewController {
         
         settingButton.rx.tap
             .subscribe(onNext: {
-                print("setting button tapped")
+                //print("setting button tapped")
             })
             .disposed(by: disposeBag)
         
@@ -387,6 +387,7 @@ extension WordViewController {
                 print("value changed : \(value)")
             }
             .disposed(by: disposeBag)
+        
         // TODO : connect event with views
         wordVM.hanyu.asObservable()
             .map({ $0 })
@@ -418,11 +419,19 @@ struct WordViewModel {
     var likeIt : Observable<Bool> {
         return likeItPublish
     }
+    var descHidden : Observable<Bool> {
+        return descHiddenPublish
+    }
+    var pinyinHidden : Observable<Bool> {
+        return pinyinHiddenPublish
+    }
     
     private let hanyuPublish = PublishSubject<String>()
     private let descPublish = PublishSubject<String>()
     private let pinyinPublish = PublishSubject<String>()
     private let likeItPublish = PublishSubject<Bool>()
+    private let descHiddenPublish = PublishSubject<Bool>()
+    private let pinyinHiddenPublish = PublishSubject<Bool>()
     
     func set(hanyu : String) {
         hanyuPublish.onNext(hanyu)
