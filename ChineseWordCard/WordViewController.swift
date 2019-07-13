@@ -31,13 +31,18 @@ class WordViewController: UIViewController {
     @IBOutlet fileprivate weak var starButton : UIButton!
     @IBOutlet fileprivate weak var settingButton : UIButton!
     
+    // legacy part
     var wordList     : Results<ChineseWord>!
     var currentWord  : ChineseWord!
     var copiedString : String?
     var touchCount   : Int = 0
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
+    
+    // Ad banner
     var bannerView   : GADBannerView!
+    
+    // RX part
     let disposeBag   = DisposeBag()
     var wordVM       = WordViewModel()
     
@@ -209,9 +214,6 @@ extension WordViewController {
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
-        //self.hanyuLabel.text = currentWord.hanyu
-        //self.pinyinLabel.text = currentWord.pinyin
-        //self.descriptionLabel.text = descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue)
         self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
@@ -220,6 +222,7 @@ extension WordViewController {
         wordVM.set(hanyu: currentWord.hanyu)
         wordVM.set(pinyin: currentWord.pinyin)
         wordVM.set(desc: descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
+        wordVM.set(likeIt: currentWord.likeIt)
     }
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
@@ -351,6 +354,8 @@ extension WordViewController {
 }
 
 extension WordViewController {
+    
+    /// setup ReactiveX codes
     func setupRx() {
         // TODO : get data and create View Model
         nextButton.rx.tap
