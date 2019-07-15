@@ -407,6 +407,10 @@ extension WordViewController {
 }
 
 struct WordViewModel {
+    var touchCount : Observable<Int> {
+        return touchCountPublish
+    }
+    
     var hanyu : Observable<String> {
         return hanyuPublish
     }
@@ -426,12 +430,17 @@ struct WordViewModel {
         return pinyinHiddenPublish
     }
     
+    private let touchCountPublish = PublishSubject<Int>()
     private let hanyuPublish = PublishSubject<String>()
     private let descPublish = PublishSubject<String>()
     private let pinyinPublish = PublishSubject<String>()
     private let likeItPublish = PublishSubject<Bool>()
     private let descHiddenPublish = PublishSubject<Bool>()
     private let pinyinHiddenPublish = PublishSubject<Bool>()
+    
+    func set(touchCount : Int) {
+        touchCountPublish.onNext(touchCount)
+    }
     
     func set(hanyu : String) {
         hanyuPublish.onNext(hanyu)
