@@ -403,6 +403,16 @@ extension WordViewController {
             .map({ $0 })
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        wordVM.descHidden.asObservable()
+            .map({ $0 })
+            .bind(to: descriptionLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        wordVM.pinyinHidden.asObservable()
+            .map({ $0 })
+            .bind(to: pinyinLabel.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 
