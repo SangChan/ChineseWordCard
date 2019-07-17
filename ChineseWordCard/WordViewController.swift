@@ -420,7 +420,12 @@ struct WordViewModel {
     var touchCount : Observable<Int> {
         return touchCountPublish
     }
-    
+    var prevEnable : Observable<Bool> {
+        return prevEnablePublish
+    }
+    var nextEnable : Observable<Bool> {
+        return nextEnablePublish
+    }
     var hanyu : Observable<String> {
         return hanyuPublish
     }
@@ -440,6 +445,8 @@ struct WordViewModel {
         return pinyinHiddenPublish
     }
     
+    private let prevEnablePublish = PublishSubject<Bool>()
+    private let nextEnablePublish = PublishSubject<Bool>()
     private let touchCountPublish = PublishSubject<Int>()
     private let hanyuPublish = PublishSubject<String>()
     private let descPublish = PublishSubject<String>()
@@ -447,6 +454,14 @@ struct WordViewModel {
     private let likeItPublish = PublishSubject<Bool>()
     private let descHiddenPublish = PublishSubject<Bool>()
     private let pinyinHiddenPublish = PublishSubject<Bool>()
+    
+    func set(prevEnable : Bool) {
+        prevEnablePublish.onNext(prevEnable)
+    }
+    
+    func set(nextEnable : Bool) {
+        nextEnablePublish.onNext(nextEnable)
+    }
     
     func set(touchCount : Int) {
         touchCountPublish.onNext(touchCount)
