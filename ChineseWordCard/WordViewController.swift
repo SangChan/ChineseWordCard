@@ -88,6 +88,9 @@ class WordViewController: UIViewController {
         return true
     }
 }
+
+// MARK: - actions
+
 extension WordViewController {
     // IBActions only
     @IBAction func nextClicked(_ sender: AnyObject) {
@@ -156,6 +159,8 @@ extension WordViewController {
         getWordData()
     }
 }
+
+// MARK: - control
 
 extension WordViewController {
     
@@ -245,42 +250,6 @@ extension WordViewController {
         setLabelHidden(byCount:touchCount)
     }
     
-    func getWordData() {
-        guard let wordList = self.getData(sortIndex: AppInfo.sharedInstance.sortInfo.sortValue) else { return }
-        self.wordList = wordList
-        self.maxWordCount = self.wordList.count
-        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        if self.wordIndex > self.maxWordCount {
-            AppInfo.sharedInstance.setWordIndex(0)
-            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        }
-    }
-    
-    func addBanner() {
-        self.bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBannerViewToView(self.bannerView)
-        self.bannerView.adUnitID = "ca-app-pub-7672230516236261/8258045034"
-        self.bannerView.rootViewController = self
-        self.bannerView.load(GADRequest())
-    }
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
-    }
-    
-    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
-        // Position the banner. Stick it to the bottom of the Safe Area.
-        // Make it constrained to the edges of the safe area.
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
-            guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
-            guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
-            ])
-    }
-    
     func setLabelHidden(byCount : Int) {
         switch byCount % 3 {
         case 1 :
@@ -333,6 +302,8 @@ extension WordViewController {
     }
 }
 
+// MARK: - realm
+
 extension WordViewController {
     func writeRealm(likeIt : Bool) {
         guard let realm = try? Realm() else { return }
@@ -350,8 +321,49 @@ extension WordViewController {
             self.currentWord.play += 1
         }
     }
-
+    
+    func getWordData() {
+        guard let wordList = self.getData(sortIndex: AppInfo.sharedInstance.sortInfo.sortValue) else { return }
+        self.wordList = wordList
+        self.maxWordCount = self.wordList.count
+        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        if self.wordIndex > self.maxWordCount {
+            AppInfo.sharedInstance.setWordIndex(0)
+            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+        }
+    }
 }
+
+// MARK: - about banner
+
+extension WordViewController {
+    func addBanner() {
+        self.bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        addBannerViewToView(self.bannerView)
+        self.bannerView.adUnitID = "ca-app-pub-7672230516236261/8258045034"
+        self.bannerView.rootViewController = self
+        self.bannerView.load(GADRequest())
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
+    }
+    
+    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
+        // Position the banner. Stick it to the bottom of the Safe Area.
+        // Make it constrained to the edges of the safe area.
+        let guide = view.safeAreaLayoutGuide
+        NSLayoutConstraint.activate([
+            guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+            guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+            guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+            ])
+    }
+}
+
+// MARK: - about RX
 
 extension WordViewController {
     

@@ -74,21 +74,21 @@ extension DetailSettingTableViewController : SetupData {
         details = nil
     }
 }
-
+// MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "SpeechRate"
         details    = [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast]
     }
 }
-
+// MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "LanguageSelect"
         details    = [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR]
     }
 }
-
+// MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
         detailName = "SortSelect"
