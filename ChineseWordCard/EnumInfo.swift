@@ -14,8 +14,26 @@ protocol InfoProtocol {
 
 protocol EnumInfo {
     var  index : InfoProtocol { get }
+    
+    /// Returns Enum from input
+    ///
+    /// - Parameter fromIndex: int value
+    /// - Returns: Enum from input
     func enumInfo(fromIndex:Int) -> InfoProtocol
+    
+    /// Returns rawValue from Enum
+    ///
+    /// - Returns: Enum's int value
     func indexFromEnum() -> Int
+    
+    /// Set Enum from input
+    ///
+    /// - Parameter setIndex: int value for new enum
     func enumInfo(setIndex:Int)
+    
+    /// Stringify this enum
+    ///
+    /// - Parameter fromIndex: int value for enum
+    /// - Returns: stringify this enum (for showing)
     func string(fromIndex:Int) -> String
 }
