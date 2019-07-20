@@ -214,8 +214,8 @@ extension WordViewController {
     func updateUIonView() {
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        self.prevButton.isEnabled = (wordIndex > 0) ? true : false
-        self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
+        //self.prevButton.isEnabled =  ? true : false
+        //self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
@@ -224,6 +224,8 @@ extension WordViewController {
         self.writeRealm(isShown: true)
         
         // RX part
+        wordVM.set(prevEnable: wordIndex > 0)
+        wordVM.set(nextEnable: wordIndex < wordList.count-1)
         wordVM.set(hanyu: currentWord.hanyu)
         wordVM.set(pinyin: currentWord.pinyin)
         wordVM.set(desc: descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
@@ -384,7 +386,7 @@ extension WordViewController {
         
         starButton.rx.tap
             .subscribe(onNext: {
-                print("star button tapped")
+                //print("star button tapped")
             })
             .disposed(by: disposeBag)
         
@@ -396,7 +398,7 @@ extension WordViewController {
         
         sliderBar.rx.value
             .subscribe { (value) in
-                print("value changed : \(value)")
+                //print("value changed : \(value)")
             }
             .disposed(by: disposeBag)
         
@@ -424,6 +426,16 @@ extension WordViewController {
         wordVM.pinyinHidden.asObservable()
             .map({ $0 })
             .bind(to: pinyinLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        wordVM.prevEnable.asObservable()
+            .map({ $0 })
+            .bind(to: prevButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        wordVM.nextEnable.asObservable()
+            .map({ $0 })
+            .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
 }
