@@ -94,20 +94,10 @@ class WordViewController: UIViewController {
 extension WordViewController {
     // IBActions only
     @IBAction func nextClicked(_ sender: AnyObject) {
-        //self.goTo(direction:.next)
     }
     @IBAction func prevClicked(_ sender: AnyObject) {
-        //self.goTo(direction:.previous)
     }
     @IBAction func valueChanged(_ sender: AnyObject) {
-        resetView()
-        self.wordIndex = Int(self.sliderBar.value * Float(wordList.count))
-        if wordIndex <= 0 {
-            wordIndex = 0
-        } else if wordIndex > wordList.count-1 {
-            wordIndex = wordList.count-1
-        }
-        self.updateUIonView()
     }
     
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
@@ -397,8 +387,21 @@ extension WordViewController {
             .disposed(by: disposeBag)
         
         sliderBar.rx.value
-            .subscribe { (value) in
-                //print("value changed : \(value)")
+            .map({ [weak self] (value) -> Int in
+                guard let self = self, let wordList = self.wordList else { return 0 }
+                return Int(value * Float(wordList.count))
+            })
+            .subscribe { [weak self] (value) in
+                guard let self = self, let wordList = self.wordList else { return }
+                self.wordIndex = value.element ?? 0
+                self.resetView()
+                if self.wordIndex <= 0 {
+                    self.wordIndex = 0
+                } else if self.wordIndex > wordList.count-1 {
+                    self.wordIndex = wordList.count-1
+                }
+                self.updateUIonView()
+
             }
             .disposed(by: disposeBag)
         
