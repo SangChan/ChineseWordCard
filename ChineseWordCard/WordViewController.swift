@@ -202,6 +202,7 @@ extension WordViewController {
     }
     
     func updateUIonView() {
+        guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
