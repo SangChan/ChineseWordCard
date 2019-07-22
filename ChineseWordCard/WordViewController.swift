@@ -204,8 +204,6 @@ extension WordViewController {
     func updateUIonView() {
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        //self.prevButton.isEnabled =  ? true : false
-        //self.nextButton.isEnabled = (wordIndex < wordList.count-1) ? true : false
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
@@ -389,17 +387,18 @@ extension WordViewController {
         sliderBar.rx.value
             .map({ [weak self] (value) -> Int in
                 guard let self = self, let wordList = self.wordList else { return 0 }
-                return Int(value * Float(wordList.count))
+                var newIndex = Int(value * Float(wordList.count))
+                if newIndex <= 0 {
+                    newIndex = 0
+                } else if newIndex >= wordList.count-1 {
+                    newIndex = wordList.count-1
+                }
+                return newIndex
             })
             .subscribe { [weak self] (value) in
-                guard let self = self, let wordList = self.wordList else { return }
+                guard let self = self else { return }
                 self.wordIndex = value.element ?? 0
                 self.resetView()
-                if self.wordIndex <= 0 {
-                    self.wordIndex = 0
-                } else if self.wordIndex > wordList.count-1 {
-                    self.wordIndex = wordList.count-1
-                }
                 self.updateUIonView()
 
             }
