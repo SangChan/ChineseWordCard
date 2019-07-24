@@ -207,8 +207,8 @@ extension WordViewController {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
-        self.hanyuLabel.alpha = 1.0
-        self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
+        //self.hanyuLabel.alpha = 1.0
+        //self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
         
