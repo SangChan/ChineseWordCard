@@ -207,7 +207,7 @@ extension WordViewController {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
-        //self.hanyuLabel.alpha = 1.0
+        self.hanyuLabel.alpha = 1.0
         //self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
@@ -346,11 +346,9 @@ extension WordViewController {
         // Position the banner. Stick it to the bottom of the Safe Area.
         // Make it constrained to the edges of the safe area.
         let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
-            guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
-            guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
-            ])
+        NSLayoutConstraint.activate([guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+                                     guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+                                     guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)])
     }
 }
 
