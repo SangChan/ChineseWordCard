@@ -205,7 +205,6 @@ extension WordViewController {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        self.starButton.isHidden = (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue)
         self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
         //self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
@@ -213,6 +212,7 @@ extension WordViewController {
         self.writeRealm(isShown: true)
         
         // RX part
+        wordVM.set(starButtonHidden: (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         wordVM.set(prevEnable: wordIndex > 0)
         wordVM.set(nextEnable: wordIndex < wordList.count-1)
         wordVM.set(hanyu: currentWord.hanyu)
@@ -438,6 +438,11 @@ extension WordViewController {
             .map({ $0 })
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
+        
+        wordVM.starButtonHidden.asObservable()
+            .map({ $0 })
+            .bind(to: starButton.rx.isHidden)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -469,6 +474,9 @@ struct WordViewModel {
     var pinyinHidden : Observable<Bool> {
         return pinyinHiddenPublish
     }
+    var starButtonHidden : Observable<Bool> {
+        return starButtonHiddenPublish
+    }
     
     private let prevEnablePublish = PublishSubject<Bool>()
     private let nextEnablePublish = PublishSubject<Bool>()
@@ -479,6 +487,7 @@ struct WordViewModel {
     private let likeItPublish = PublishSubject<Bool>()
     private let descHiddenPublish = PublishSubject<Bool>()
     private let pinyinHiddenPublish = PublishSubject<Bool>()
+    private let starButtonHiddenPublish = PublishSubject<Bool>()
     
     func set(prevEnable : Bool) {
         prevEnablePublish.onNext(prevEnable)
@@ -506,5 +515,9 @@ struct WordViewModel {
     
     func set(likeIt : Bool) {
         likeItPublish.onNext(likeIt)
+    }
+    
+    func set(starButtonHidden : Bool) {
+        starButtonHiddenPublish.onNext(starButtonHidden)
     }
 }
