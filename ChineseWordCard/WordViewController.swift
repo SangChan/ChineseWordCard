@@ -43,8 +43,8 @@ class WordViewController: UIViewController {
     var bannerView   : GADBannerView!
     
     // RX part
-    let disposeBag   = DisposeBag()
-    var wordVM       = WordViewModel()
+    let disposeBag  = DisposeBag()
+    var model       = WordViewModel(wordIndex: BehaviorSubject<Int>(value: 0))
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -212,13 +212,13 @@ extension WordViewController {
         self.writeRealm(isShown: true)
         
         // RX part
-        wordVM.set(starButtonHidden: (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
-        wordVM.set(prevEnable: wordIndex > 0)
-        wordVM.set(nextEnable: wordIndex < wordList.count-1)
-        wordVM.set(hanyu: currentWord.hanyu)
-        wordVM.set(pinyin: currentWord.pinyin)
-        wordVM.set(desc: descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
-        wordVM.set(likeIt: currentWord.likeIt)
+        model.set(starButtonHidden: (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
+        model.set(prevEnable: wordIndex > 0)
+        model.set(nextEnable: wordIndex < wordList.count-1)
+        model.set(hanyu: currentWord.hanyu)
+        model.set(pinyin: currentWord.pinyin)
+        model.set(desc: descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
+        model.set(likeIt: currentWord.likeIt)
     }
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
@@ -396,6 +396,7 @@ extension WordViewController {
             })
             .subscribe { [weak self] (value) in
                 guard let self = self else { return }
+                self.model.wordIndex.onNext(value.element ?? 0)
                 self.wordIndex = value.element ?? 0
                 self.resetView()
                 self.updateUIonView()
@@ -404,42 +405,50 @@ extension WordViewController {
             .disposed(by: disposeBag)
         
         // TODO : connect event with views
-        wordVM.hanyu.asObservable()
+        model.wordIndex.asObservable()
+            .map({ [weak self] (value) -> Float in
+                guard let self = self, let wordList = self.wordList else { return 0.0 }
+                return Float(value)/Float(wordList.count)
+            })
+            .bind(to: sliderBar.rx.value)
+            .disposed(by: disposeBag)
+        
+        model.hanyu.asObservable()
             .map({ $0 })
             .bind(to: hanyuLabel.rx.text)
             .disposed(by: disposeBag)
         
-        wordVM.pinyin.asObservable()
+        model.pinyin.asObservable()
             .map({ $0 })
             .bind(to: pinyinLabel.rx.text)
             .disposed(by: disposeBag)
         
-        wordVM.desc.asObservable()
+        model.desc.asObservable()
             .map({ $0 })
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
         
-        wordVM.descHidden.asObservable()
+        model.descHidden.asObservable()
             .map({ $0 })
             .bind(to: descriptionLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        wordVM.pinyinHidden.asObservable()
+        model.pinyinHidden.asObservable()
             .map({ $0 })
             .bind(to: pinyinLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        wordVM.prevEnable.asObservable()
+        model.prevEnable.asObservable()
             .map({ $0 })
             .bind(to: prevButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        wordVM.nextEnable.asObservable()
+        model.nextEnable.asObservable()
             .map({ $0 })
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        wordVM.starButtonHidden.asObservable()
+        model.starButtonHidden.asObservable()
             .map({ $0 })
             .bind(to: starButton.rx.isHidden)
             .disposed(by: disposeBag)
@@ -447,6 +456,7 @@ extension WordViewController {
 }
 
 struct WordViewModel {
+    var wordIndex : BehaviorSubject<Int>
     var touchCount : Observable<Int> {
         return touchCountPublish
     }
