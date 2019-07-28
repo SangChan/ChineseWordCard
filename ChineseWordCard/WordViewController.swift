@@ -44,7 +44,7 @@ class WordViewController: UIViewController {
     
     // RX part
     let disposeBag  = DisposeBag()
-    var model       = WordViewModel(wordIndex: BehaviorSubject<Int>(value: 0))
+    var model       = WordViewModel()
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -212,13 +212,13 @@ extension WordViewController {
         self.writeRealm(isShown: true)
         
         // RX part
-        model.set(starButtonHidden: (AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
-        model.set(prevEnable: wordIndex > 0)
-        model.set(nextEnable: wordIndex < wordList.count-1)
-        model.set(hanyu: currentWord.hanyu)
-        model.set(pinyin: currentWord.pinyin)
-        model.set(desc: descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
-        model.set(likeIt: currentWord.likeIt)
+        model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
+        model.prevEnable.onNext(wordIndex > 0)
+        model.nextEnable.onNext(wordIndex < wordList.count-1)
+        model.hanyu.onNext(currentWord.hanyu)
+        model.pinyin.onNext(currentWord.pinyin)
+        model.desc.onNext(descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
+        model.likeIt.onNext(currentWord.likeIt)
     }
     
     func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
@@ -456,78 +456,15 @@ extension WordViewController {
 }
 
 struct WordViewModel {
-    var wordIndex : BehaviorSubject<Int>
-    var touchCount : Observable<Int> {
-        return touchCountPublish
-    }
-    var prevEnable : Observable<Bool> {
-        return prevEnablePublish
-    }
-    var nextEnable : Observable<Bool> {
-        return nextEnablePublish
-    }
-    var hanyu : Observable<String> {
-        return hanyuPublish
-    }
-    var desc : Observable<String> {
-        return descPublish
-    }
-    var pinyin : Observable<String> {
-        return pinyinPublish
-    }
-    var likeIt : Observable<Bool> {
-        return likeItPublish
-    }
-    var descHidden : Observable<Bool> {
-        return descHiddenPublish
-    }
-    var pinyinHidden : Observable<Bool> {
-        return pinyinHiddenPublish
-    }
-    var starButtonHidden : Observable<Bool> {
-        return starButtonHiddenPublish
-    }
-    
-    private let prevEnablePublish = PublishSubject<Bool>()
-    private let nextEnablePublish = PublishSubject<Bool>()
-    private let touchCountPublish = PublishSubject<Int>()
-    private let hanyuPublish = PublishSubject<String>()
-    private let descPublish = PublishSubject<String>()
-    private let pinyinPublish = PublishSubject<String>()
-    private let likeItPublish = PublishSubject<Bool>()
-    private let descHiddenPublish = PublishSubject<Bool>()
-    private let pinyinHiddenPublish = PublishSubject<Bool>()
-    private let starButtonHiddenPublish = PublishSubject<Bool>()
-    
-    func set(prevEnable : Bool) {
-        prevEnablePublish.onNext(prevEnable)
-    }
-    
-    func set(nextEnable : Bool) {
-        nextEnablePublish.onNext(nextEnable)
-    }
-    
-    func set(touchCount : Int) {
-        touchCountPublish.onNext(touchCount)
-    }
-    
-    func set(hanyu : String) {
-        hanyuPublish.onNext(hanyu)
-    }
-    
-    func set(desc : String) {
-        descPublish.onNext(desc)
-    }
-    
-    func set(pinyin : String) {
-        pinyinPublish.onNext(pinyin)
-    }
-    
-    func set(likeIt : Bool) {
-        likeItPublish.onNext(likeIt)
-    }
-    
-    func set(starButtonHidden : Bool) {
-        starButtonHiddenPublish.onNext(starButtonHidden)
-    }
+    var wordIndex = BehaviorSubject<Int>(value: 0)
+    var touchCount = BehaviorSubject<Int>(value: 0)
+    var prevEnable = BehaviorSubject<Bool>(value: false)
+    var nextEnable = BehaviorSubject<Bool>(value: false)
+    var hanyu = BehaviorSubject<String>(value: "")
+    var desc = BehaviorSubject<String>(value: "")
+    var pinyin = BehaviorSubject<String>(value: "")
+    var likeIt = BehaviorSubject<Bool>(value: false)
+    var descHidden = BehaviorSubject<Bool>(value: true)
+    var pinyinHidden = BehaviorSubject<Bool>(value: true)
+    var starButtonHidden = BehaviorSubject<Bool>(value: false)
 }
