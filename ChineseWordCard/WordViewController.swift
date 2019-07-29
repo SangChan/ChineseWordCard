@@ -245,12 +245,14 @@ extension WordViewController {
         switch byCount % 3 {
         case 1 :
             UIView.animate(withDuration: 0.3, animations: {
+                self.model.pinyinHidden.onNext(false)
                 self.pinyinLabel.alpha = 1.0
             }, completion: { _ in
                 self.speakWord()
             })
         case 2 :
             UIView.animate(withDuration: 0.3, animations: {
+                self.model.descHidden.onNext(false)
                 self.descriptionLabel.alpha = 1.0
             }, completion: nil)
         default:
