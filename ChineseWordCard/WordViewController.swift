@@ -207,11 +207,11 @@ extension WordViewController {
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
-        //self.sliderBar.value =  Float(wordIndex)/Float(wordList.count)
         setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
         
         // RX part
+        model.wordIndex.onNext(wordIndex)
         model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         model.prevEnable.onNext(wordIndex > 0)
         model.nextEnable.onNext(wordIndex < wordList.count-1)
@@ -245,19 +245,17 @@ extension WordViewController {
         switch byCount % 3 {
         case 1 :
             UIView.animate(withDuration: 0.3, animations: {
-                self.model.pinyinHidden.onNext(false)
-                self.pinyinLabel.alpha = 1.0
+                self.model.pinyinAlpha.onNext(1.0)
             }, completion: { _ in
                 self.speakWord()
             })
         case 2 :
             UIView.animate(withDuration: 0.3, animations: {
-                self.model.descHidden.onNext(false)
-                self.descriptionLabel.alpha = 1.0
+                self.model.descAlpha.onNext(1.0)
             }, completion: nil)
         default:
-            pinyinLabel.alpha = 0.0
-            descriptionLabel.alpha = 0.0
+            self.model.pinyinAlpha.onNext(0.0)
+            self.model.descAlpha.onNext(0.0)
         }
     }
     
@@ -430,14 +428,14 @@ extension WordViewController {
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
         
-        model.descHidden.asObservable()
-            .map({ $0 })
-            .bind(to: descriptionLabel.rx.isHidden)
+        model.descAlpha.asObservable()
+            .map({ CGFloat($0) })
+            .bind(to: descriptionLabel.rx.alpha)
             .disposed(by: disposeBag)
         
-        model.pinyinHidden.asObservable()
-            .map({ $0 })
-            .bind(to: pinyinLabel.rx.isHidden)
+        model.pinyinAlpha.asObservable()
+            .map({ CGFloat($0) })
+            .bind(to: pinyinLabel.rx.alpha)
             .disposed(by: disposeBag)
         
         model.prevEnable.asObservable()
@@ -466,7 +464,7 @@ struct WordViewModel {
     var desc = BehaviorSubject<String>(value: "")
     var pinyin = BehaviorSubject<String>(value: "")
     var likeIt = BehaviorSubject<Bool>(value: false)
-    var descHidden = BehaviorSubject<Bool>(value: true)
-    var pinyinHidden = BehaviorSubject<Bool>(value: true)
+    var descAlpha = BehaviorSubject<Float>(value: 0.0)
+    var pinyinAlpha = BehaviorSubject<Float>(value: 0.0)
     var starButtonHidden = BehaviorSubject<Bool>(value: false)
 }
