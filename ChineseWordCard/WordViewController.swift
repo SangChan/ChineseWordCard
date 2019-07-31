@@ -457,6 +457,7 @@ extension WordViewController {
 
 struct WordViewModel {
     var wordIndex = BehaviorSubject<Int>(value: 0)
+    var currentWord = AsyncSubject<ChineseWord>()
     var touchCount = BehaviorSubject<Int>(value: 0)
     var prevEnable = BehaviorSubject<Bool>(value: false)
     var nextEnable = BehaviorSubject<Bool>(value: false)
