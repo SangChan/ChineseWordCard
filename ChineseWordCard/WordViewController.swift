@@ -413,6 +413,17 @@ extension WordViewController {
             .bind(to: sliderBar.rx.value)
             .disposed(by: disposeBag)
         
+        model.wordIndex.asObservable()
+            .map { [weak self] (value) -> ChineseWord? in
+                guard let self = self, let wordList = self.wordList else { return nil }
+                return wordList[value]
+            }
+            .subscribe { [weak self] (value) in
+                guard let chineseWord = value.element, let chineseWordNeverNil = chineseWord else { return }
+                self?.model.currentWord.onNext(chineseWordNeverNil)
+            }
+            .disposed(by: disposeBag)
+        
         model.hanyu.asObservable()
             .map({ $0 })
             .bind(to: hanyuLabel.rx.text)
