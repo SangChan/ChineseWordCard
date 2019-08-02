@@ -215,9 +215,9 @@ extension WordViewController {
         model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         model.prevEnable.onNext(wordIndex > 0)
         model.nextEnable.onNext(wordIndex < wordList.count-1)
-        model.hanyu.onNext(currentWord.hanyu)
-        model.pinyin.onNext(currentWord.pinyin)
-        model.desc.onNext(descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
+        //model.hanyu.onNext(currentWord.hanyu)
+        //model.pinyin.onNext(currentWord.pinyin)
+        //model.desc.onNext(descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
         model.likeIt.onNext(currentWord.likeIt)
     }
     
@@ -414,13 +414,19 @@ extension WordViewController {
             .disposed(by: disposeBag)
         
         model.wordIndex.asObservable()
-            .map { [weak self] (value) -> ChineseWord? in
-                guard let self = self, let wordList = self.wordList else { return nil }
-                return wordList[value]
-            }
             .subscribe { [weak self] (value) in
-                guard let chineseWord = value.element, let chineseWordNeverNil = chineseWord else { return }
-                self?.model.currentWord.onNext(chineseWordNeverNil)
+                guard let self = self, let wordList = self.wordList, let index = value.element else { return }
+                let currentWord = wordList[index]
+                self.model.currentWord.onNext(currentWord)
+            }
+            .disposed(by: disposeBag)
+        
+        model.currentWord.asObservable()
+            .subscribe { [weak self] (value) in
+                guard let self = self, let currentWord = value.element else { return }
+                self.model.hanyu.onNext(currentWord.hanyu)
+                self.model.pinyin.onNext(currentWord.pinyin)
+                self.model.desc.onNext(currentWord.desc_kr)
             }
             .disposed(by: disposeBag)
         
@@ -468,7 +474,7 @@ extension WordViewController {
 
 struct WordViewModel {
     var wordIndex = BehaviorSubject<Int>(value: 0)
-    var currentWord = AsyncSubject<ChineseWord>()
+    var currentWord = BehaviorSubject<ChineseWord>(value: ChineseWord())
     var touchCount = BehaviorSubject<Int>(value: 0)
     var prevEnable = BehaviorSubject<Bool>(value: false)
     var nextEnable = BehaviorSubject<Bool>(value: false)
