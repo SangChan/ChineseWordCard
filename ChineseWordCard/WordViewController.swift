@@ -215,9 +215,6 @@ extension WordViewController {
         model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         model.prevEnable.onNext(wordIndex > 0)
         model.nextEnable.onNext(wordIndex < wordList.count-1)
-        //model.hanyu.onNext(currentWord.hanyu)
-        //model.pinyin.onNext(currentWord.pinyin)
-        //model.desc.onNext(descriptionText(fromLanguageIndex:AppInfo.sharedInstance.languageInfo.languageValue))
         model.likeIt.onNext(currentWord.likeIt)
     }
     
@@ -426,7 +423,12 @@ extension WordViewController {
                 guard let self = self, let currentWord = value.element else { return }
                 self.model.hanyu.onNext(currentWord.hanyu)
                 self.model.pinyin.onNext(currentWord.pinyin)
-                self.model.desc.onNext(currentWord.desc_kr)
+                let firstLang = Bundle.main.preferredLocalizations.first ?? "en"
+                if firstLang == "ko" {
+                    self.model.desc.onNext(currentWord.desc_kr)
+                }
+                self.model.desc.onNext(currentWord.desc_en)
+                
             }
             .disposed(by: disposeBag)
         
