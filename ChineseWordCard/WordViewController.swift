@@ -140,9 +140,9 @@ extension WordViewController {
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
-        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
-        self.writeRealm(likeIt: !self.currentWord.likeIt)
-        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
+        //guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
+        //self.writeRealm(likeIt: !self.currentWord.likeIt)
+        //setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
@@ -205,9 +205,9 @@ extension WordViewController {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        self.currentWord = wordList[wordIndex]
+        //self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
-        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
+        //setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         self.writeRealm(isShown: true)
         
         // RX part
@@ -216,14 +216,6 @@ extension WordViewController {
         model.prevEnable.onNext(wordIndex > 0)
         model.nextEnable.onNext(wordIndex < wordList.count-1)
         model.likeIt.onNext(currentWord.likeIt)
-    }
-    
-    func descriptionText(fromLanguageIndex : InfoProtocol) -> String {
-        let firstLang = Bundle.main.preferredLocalizations.first ?? "en"
-        if firstLang == "ko" {
-            return currentWord.desc_kr
-        }
-        return currentWord.desc_en
     }
     
     func setButtonDefault() {
@@ -370,7 +362,7 @@ extension WordViewController {
         
         starButton.rx.tap
             .subscribe(onNext: {
-                //print("star button tapped")
+                guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
             })
             .disposed(by: disposeBag)
         
@@ -428,7 +420,6 @@ extension WordViewController {
                     self.model.desc.onNext(currentWord.desc_kr)
                 }
                 self.model.desc.onNext(currentWord.desc_en)
-                
             }
             .disposed(by: disposeBag)
         
