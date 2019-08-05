@@ -208,7 +208,7 @@ extension WordViewController {
         //self.currentWord = wordList[wordIndex]
         self.hanyuLabel.alpha = 1.0
         //setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
-        self.writeRealm(isShown: true)
+        //self.writeRealm(isShown: true)
         
         // RX part
         model.wordIndex.onNext(wordIndex)
