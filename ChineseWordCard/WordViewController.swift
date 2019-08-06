@@ -205,12 +205,11 @@ extension WordViewController {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        //self.currentWord = wordList[wordIndex]
-        self.hanyuLabel.alpha = 1.0
         //setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         //self.writeRealm(isShown: true)
         
         // RX part
+        model.hanyuAlpha.onNext(1.0)
         model.wordIndex.onNext(wordIndex)
         model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         model.prevEnable.onNext(wordIndex > 0)
@@ -438,6 +437,11 @@ extension WordViewController {
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
         
+        model.hanyuAlpha.asObservable()
+            .map({ CGFloat($0) })
+            .bind(to: hanyuLabel.rx.alpha)
+            .disposed(by: disposeBag)
+        
         model.descAlpha.asObservable()
             .map({ CGFloat($0) })
             .bind(to: descriptionLabel.rx.alpha)
@@ -475,6 +479,7 @@ struct WordViewModel {
     var desc = BehaviorSubject<String>(value: "")
     var pinyin = BehaviorSubject<String>(value: "")
     var likeIt = BehaviorSubject<Bool>(value: false)
+    var hanyuAlpha = BehaviorSubject<Float>(value: 1.0)
     var descAlpha = BehaviorSubject<Float>(value: 0.0)
     var pinyinAlpha = BehaviorSubject<Float>(value: 0.0)
     var starButtonHidden = BehaviorSubject<Bool>(value: false)
