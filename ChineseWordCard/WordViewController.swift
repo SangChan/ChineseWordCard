@@ -214,7 +214,6 @@ extension WordViewController {
         model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         model.prevEnable.onNext(wordIndex > 0)
         model.nextEnable.onNext(wordIndex < wordList.count-1)
-        model.likeIt.onNext(currentWord.likeIt)
     }
     
     func setButtonDefault() {
@@ -412,6 +411,7 @@ extension WordViewController {
         model.currentWord.asObservable()
             .subscribe { [weak self] (value) in
                 guard let self = self, let currentWord = value.element else { return }
+                self.model.likeIt.onNext(currentWord.likeIt)
                 self.model.hanyu.onNext(currentWord.hanyu)
                 self.model.pinyin.onNext(currentWord.pinyin)
                 let firstLang = Bundle.main.preferredLocalizations.first ?? "en"
