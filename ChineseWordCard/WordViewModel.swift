@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import AVFoundation
 
 struct WordViewModel {
     var wordIndex = BehaviorSubject<Int>(value: 0)
@@ -22,4 +23,14 @@ struct WordViewModel {
     var descAlpha = BehaviorSubject<Float>(value: 0.0)
     var pinyinAlpha = BehaviorSubject<Float>(value: 0.0)
     var starButtonHidden = BehaviorSubject<Bool>(value: false)
+}
+
+extension WordViewModel {
+    func speakWord() {
+        guard let textForSpeech = try? self.pinyin.value() else { return }
+        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
+        let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
+        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
+        synthesize.speak(utterance)
+    }
 }
