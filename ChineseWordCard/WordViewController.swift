@@ -205,7 +205,7 @@ extension WordViewController {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        //setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
+        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         //self.writeRealm(isShown: true)
         
         // RX part
