@@ -234,7 +234,7 @@ extension WordViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 self.model.pinyinAlpha.onNext(1.0)
             }, completion: { _ in
-                self.speakWord()
+                self.model.speakWord()
             })
         case 2 :
             UIView.animate(withDuration: 0.3, animations: {
@@ -246,14 +246,14 @@ extension WordViewController {
         }
     }
     
-    func speakWord() {
+    /*func speakWord() {
         guard let textForSpeech = hanyuLabel.text else { return }
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
         let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
         utterance.rate = getSpeechSpeed(fromIndex:AppInfo.sharedInstance.speechInfo.speechSpeedValue)
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
         synthesize.speak(utterance)
-    }
+    }*/
     
     func getSpeechSpeed(fromIndex : InfoProtocol) -> Float {
         switch fromIndex.rawValue {
