@@ -195,7 +195,7 @@ extension WordViewController {
         }
     }
     
-    func setButton(button: UIButton, withSize size: CGFloat, withType type: FontAwesome, withStyle style: FontAwesomeStyle = .solid) {
+    func setButton(button: UIButton, withSize size: CGFloat = 30.0, withType type: FontAwesome, withStyle style: FontAwesomeStyle = .solid) {
         let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
         button.titleLabel?.font = UIFont.fontAwesome(ofSize: sizeFromTrait, style: style)
         button.setTitle(String.fontAwesomeIcon(name: type), for: UIControl.State())
@@ -205,7 +205,7 @@ extension WordViewController {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
+        setButton(button:self.starButton, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         //self.writeRealm(isShown: true)
         
         // RX part
@@ -217,10 +217,10 @@ extension WordViewController {
     }
     
     func setButtonDefault() {
-        setButton(button:self.prevButton, withSize: 30, withType: .angleLeft)
-        setButton(button:self.nextButton, withSize: 30, withType: .angleRight)
-        setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: .regular)
-        setButton(button:self.settingButton, withSize: 30, withType: .cog)
+        setButton(button:self.prevButton, withType: .angleLeft)
+        setButton(button:self.nextButton, withType: .angleRight)
+        setButton(button:self.starButton, withType: .star, withStyle: .regular)
+        setButton(button:self.settingButton, withType: .cog)
     }
     
     func resetView() {
