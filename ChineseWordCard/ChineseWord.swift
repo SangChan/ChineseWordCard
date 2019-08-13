@@ -7,6 +7,7 @@
 //
 
 import RealmSwift
+import AVFoundation
 
 class ChineseWord: Object {
     @objc dynamic var id : Int = 0 //unique ID
@@ -20,4 +21,15 @@ class ChineseWord: Object {
     @objc dynamic var likeIt : Bool = false //value for star button
     @objc dynamic var play : Int = 0 //how many play this word
     @objc dynamic var isShown : Bool = false //shown to user
+}
+
+extension ChineseWord {
+    func speakWord() {
+        guard self.pinyin.count > 0 else { return }
+        let textForSpeech = self.pinyin
+        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
+        let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
+        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
+        synthesize.speak(utterance)
+    }
 }
