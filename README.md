@@ -1,7 +1,9 @@
 # ChineseWordCard
 
-#TODO
+#Doing
 - [ ] RX 대응
+
+#TODO
 - [ ] 다음 단어, 이전 단어 이동시 애니메이션 효과 넣기
 - [ ] 학습 진도
 - [ ] 단어 시험
