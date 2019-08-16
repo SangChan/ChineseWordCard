@@ -24,13 +24,3 @@ struct WordViewModel {
     var pinyinAlpha = BehaviorSubject<Float>(value: 0.0)
     var starButtonHidden = BehaviorSubject<Bool>(value: false)
 }
-
-extension WordViewModel {
-    func speakWord() {
-        guard let textForSpeech = try? self.pinyin.value() else { return }
-        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
-        let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
-        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
-        synthesize.speak(utterance)
-    }
-}

@@ -234,7 +234,7 @@ extension WordViewController {
             UIView.animate(withDuration: 0.3, animations: {
                 self.model.pinyinAlpha.onNext(1.0)
             }, completion: { _ in
-                self.model.speakWord()
+                try? self.model.currentWord.value().speakWord()
             })
         case 2 :
             UIView.animate(withDuration: 0.3, animations: {
