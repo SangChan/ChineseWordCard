@@ -20,6 +20,29 @@ enum Direction {
     case draw
 }
 
+enum ButtonType {
+    case star
+    case setting
+    case next
+    case prev
+    case unkown
+    
+    var fontIcon : FontAwesome {
+        switch self {
+        case .star:
+            return .star
+        case .setting:
+            return .cog
+        case .next:
+            return .angleRight
+        case .prev:
+            return .angleLeft
+        default:
+            return .question
+        }
+    }
+}
+
 class WordViewController: UIViewController {
 
     @IBOutlet fileprivate weak var pinyinLabel : UILabel!
