@@ -26,6 +26,7 @@
 		63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097ED1BABE16500ABC6EA /* AVFoundation.framework */; };
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
 		63D542561C52177900E1937B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542551C52177900E1937B /* AppInfo.swift */; };
+		63F086BA23093931002F01E4 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F086B923093931002F01E4 /* UIButton.swift */; };
 		69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		63D097ED1BABE16500ABC6EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63D542551C52177900E1937B /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		63F086B923093931002F01E4 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseWordCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard.release.xcconfig"; sourceTree = "<group>"; };
 		97BF1ABAF0B6E1248BF9E93E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		63458E771BA7CE9700D4A48D /* ChineseWordCard */ = {
 			isa = PBXGroup;
 			children = (
+				63F086B8230938FA002F01E4 /* Extension */,
 				0FDDFE3F22FA96D800759006 /* ViewModel */,
 				6327B59C1D4DB462009F0683 /* Controller */,
 				63C9FE0C1D0020560094164E /* View */,
@@ -156,6 +159,14 @@
 				638A50C4221854150049B2B7 /* Main.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		63F086B8230938FA002F01E4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63F086B923093931002F01E4 /* UIButton.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		D537103A42283B907FE93EBF /* Frameworks */ = {
@@ -331,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63458E7D1BA7CE9700D4A48D /* WordViewController.swift in Sources */,
+				63F086BA23093931002F01E4 /* UIButton.swift in Sources */,
 				63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */,
 				631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */,
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
