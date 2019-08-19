@@ -32,6 +32,14 @@ enum ButtonType {
     }
 }
 
+/// FontAwesome button
 extension UIButton {
-    
+    static func starButton() {
+    }
+    static func settingButton() {
+    }
+    static func nextButton() {
+    }
+    static func prevButton() {
+    }
 }
