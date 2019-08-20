@@ -34,12 +34,23 @@ enum ButtonType {
 
 /// FontAwesome button
 extension UIButton {
-    static func starButton() {
+    func starButton() {
+        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.setTitle(String.fontAwesomeIcon(name: FontAwesome.star), for: UIControl.State())
     }
-    static func settingButton() {
+    
+    func settingButton() {
+        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.setTitle(String.fontAwesomeIcon(name: FontAwesome.cog), for: UIControl.State())
     }
-    static func nextButton() {
+    
+    func nextButton() {
+        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.setTitle(String.fontAwesomeIcon(name: FontAwesome.angleRight), for: UIControl.State())
     }
-    static func prevButton() {
+    
+    func prevButton() {
+        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.setTitle(String.fontAwesomeIcon(name: FontAwesome.angleLeft), for: UIControl.State())
     }
 }
