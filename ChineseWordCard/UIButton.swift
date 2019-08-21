@@ -34,23 +34,27 @@ enum ButtonType {
 
 /// FontAwesome button
 extension UIButton {
-    func starButton() {
-        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+    func prepareForAwesomeFont(_ size : CGFloat, style : FontAwesomeStyle = .solid) {
+        self.titleLabel?.font = UIFont.fontAwesome(ofSize: size, style: style)
+    }
+    
+    func starButton(_ style : FontAwesomeStyle = .solid) {
+        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0, style: style)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.star), for: UIControl.State())
     }
     
     func settingButton() {
-        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.cog), for: UIControl.State())
     }
     
     func nextButton() {
-        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.angleRight), for: UIControl.State())
     }
     
     func prevButton() {
-        self.titleLabel?.font = UIFont.fontAwesome(ofSize: self.titleLabel?.font.pointSize ?? 30.0, style: .solid)
+        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.angleLeft), for: UIControl.State())
     }
 }
