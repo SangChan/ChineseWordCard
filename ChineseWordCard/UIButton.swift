@@ -38,23 +38,23 @@ extension UIButton {
         self.titleLabel?.font = UIFont.fontAwesome(ofSize: size, style: style)
     }
     
-    func starButton(_ style : FontAwesomeStyle = .solid) {
-        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0, style: style)
+    func starButton(size: CGFloat = 30.0, style : FontAwesomeStyle = .solid) {
+        self.prepareForAwesomeFont(size, style: style)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.star), for: UIControl.State())
     }
     
-    func settingButton() {
-        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0)
+    func settingButton(size: CGFloat = 30.0) {
+        self.prepareForAwesomeFont(size)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.cog), for: UIControl.State())
     }
     
-    func nextButton() {
-        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0)
+    func nextButton(size: CGFloat = 30.0) {
+        self.prepareForAwesomeFont(size)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.angleRight), for: UIControl.State())
     }
     
-    func prevButton() {
-        self.prepareForAwesomeFont(self.titleLabel?.font.pointSize ?? 30.0)
+    func prevButton(size: CGFloat = 30.0) {
+        self.prepareForAwesomeFont(size)
         self.setTitle(String.fontAwesomeIcon(name: FontAwesome.angleLeft), for: UIControl.State())
     }
 }
