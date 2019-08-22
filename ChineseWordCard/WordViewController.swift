@@ -217,10 +217,13 @@ extension WordViewController {
     }
     
     func setButtonDefault() {
-        setButton(button:self.prevButton, withType: .angleLeft)
-        setButton(button:self.nextButton, withType: .angleRight)
-        setButton(button:self.starButton, withType: .star, withStyle: .regular)
-        setButton(button:self.settingButton, withType: .cog)
+        let buttonSize : CGFloat = 30.0
+        let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? buttonSize * 1.5 : buttonSize
+        
+        self.prevButton.prevButton(size: sizeFromTrait)
+        self.nextButton.nextButton(size: sizeFromTrait)
+        self.starButton.starButton(size: sizeFromTrait, style: .regular)
+        self.settingButton.settingButton(size: sizeFromTrait)
     }
     
     func resetView() {
