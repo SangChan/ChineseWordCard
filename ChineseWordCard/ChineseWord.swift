@@ -29,7 +29,19 @@ extension ChineseWord {
         let textForSpeech = self.pinyin
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
         let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
+        utterance.rate = getSpeechSpeed(fromIndex:AppInfo.sharedInstance.speechInfo.speechSpeedValue)
         utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
         synthesize.speak(utterance)
+    }
+    
+    func getSpeechSpeed(fromIndex : InfoProtocol) -> Float {
+        switch fromIndex.rawValue {
+        case SpeechSpeedIndex.speechSpeedSlow.rawValue :
+            return AVSpeechUtteranceDefaultSpeechRate * 0.35
+        case SpeechSpeedIndex.speechSpeedFast.rawValue :
+            return AVSpeechUtteranceDefaultSpeechRate
+        default:
+            return AVSpeechUtteranceDefaultSpeechRate * 0.65
+        }
     }
 }

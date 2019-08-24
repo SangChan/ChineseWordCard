@@ -46,6 +46,11 @@ class WordViewController: UIViewController {
     let disposeBag  = DisposeBag()
     var model       = WordViewModel()
     
+    lazy var buttonSize : CGFloat =  {
+        let size : CGFloat = 30.0
+        return (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
+    }()
+    
     lazy var lazyRealm : Realm? = {
         do {
             return try Realm()
@@ -195,17 +200,11 @@ extension WordViewController {
         }
     }
     
-    func setButton(button: UIButton, withSize size: CGFloat = 30.0, withType type: FontAwesome, withStyle style: FontAwesomeStyle = .solid) {
-        let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
-        button.titleLabel?.font = UIFont.fontAwesome(ofSize: sizeFromTrait, style: style)
-        button.setTitle(String.fontAwesomeIcon(name: type), for: UIControl.State())
-    }
-    
     func updateUIonView() {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        setButton(button:self.starButton, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
+        //setButton(button:self.starButton, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
         //self.writeRealm(isShown: true)
         
         // RX part
@@ -217,13 +216,10 @@ extension WordViewController {
     }
     
     func setButtonDefault() {
-        let buttonSize : CGFloat = 30.0
-        let sizeFromTrait : CGFloat = (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? buttonSize * 1.5 : buttonSize
-        
-        self.prevButton.prevButton(size: sizeFromTrait)
-        self.nextButton.nextButton(size: sizeFromTrait)
-        self.starButton.starButton(size: sizeFromTrait, style: .regular)
-        self.settingButton.settingButton(size: sizeFromTrait)
+        self.prevButton.prevButton(size: buttonSize)
+        self.nextButton.nextButton(size: buttonSize)
+        self.starButton.starButton(size: buttonSize, style: .regular)
+        self.settingButton.settingButton(size: buttonSize)
     }
     
     func resetView() {
@@ -246,26 +242,6 @@ extension WordViewController {
         default:
             self.model.pinyinAlpha.onNext(0.0)
             self.model.descAlpha.onNext(0.0)
-        }
-    }
-    
-    /*func speakWord() {
-        guard let textForSpeech = hanyuLabel.text else { return }
-        let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
-        let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
-        utterance.rate = getSpeechSpeed(fromIndex:AppInfo.sharedInstance.speechInfo.speechSpeedValue)
-        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
-        synthesize.speak(utterance)
-    }*/
-    
-    func getSpeechSpeed(fromIndex : InfoProtocol) -> Float {
-        switch fromIndex.rawValue {
-        case SpeechSpeedIndex.speechSpeedSlow.rawValue :
-            return AVSpeechUtteranceDefaultSpeechRate * 0.35
-        case SpeechSpeedIndex.speechSpeedFast.rawValue :
-            return AVSpeechUtteranceDefaultSpeechRate
-        default:
-            return AVSpeechUtteranceDefaultSpeechRate * 0.65
         }
     }
     
@@ -468,6 +444,13 @@ extension WordViewController {
         model.starButtonHidden.asObservable()
             .map({ $0 })
             .bind(to: starButton.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        model.likeIt.asObservable()
+            .subscribe { [weak self] (value) in
+                guard let self = self, let _ = self.wordList, let likeIt = value.element else { return }
+                self.starButton.starButton(size: self.buttonSize, style: (likeIt == true) ? .solid : .regular )
+            }
             .disposed(by: disposeBag)
     }
 }
