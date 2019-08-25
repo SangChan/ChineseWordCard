@@ -46,7 +46,7 @@ class WordViewController: UIViewController {
     let disposeBag  = DisposeBag()
     var model       = WordViewModel()
     
-    lazy var buttonSize : CGFloat =  {
+    lazy var buttonSize : CGFloat = {
         let size : CGFloat = 30.0
         return (self.view.traitCollection.horizontalSizeClass == .regular && self.view.traitCollection.verticalSizeClass == .regular) ? size * 1.5 : size
     }()
@@ -448,7 +448,7 @@ extension WordViewController {
         
         model.likeIt.asObservable()
             .subscribe { [weak self] (value) in
-                guard let self = self, let _ = self.wordList, let likeIt = value.element else { return }
+                guard let self = self, self.wordList != nil, let likeIt = value.element else { return }
                 self.starButton.starButton(size: self.buttonSize, style: (likeIt == true) ? .solid : .regular )
             }
             .disposed(by: disposeBag)
