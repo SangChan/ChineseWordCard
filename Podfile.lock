@@ -1,5 +1,5 @@
 PODS:
-  - FontAwesome.swift (1.8.1)
+  - FontAwesome.swift (1.7.1)
   - Google-Mobile-Ads-SDK (7.42.2):
     - GoogleAppMeasurement (~> 5.7)
   - GoogleAppMeasurement (5.8.1):
@@ -43,7 +43,7 @@ PODS:
   - SwiftLint (0.31.0)
 
 DEPENDENCIES:
-  - FontAwesome.swift
+  - FontAwesome.swift (~> 1.7.1)
   - Google-Mobile-Ads-SDK (~> 7.42.2)
   - RealmSwift (~> 3.14)
   - RxCocoa (~> 5)
@@ -65,7 +65,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  FontAwesome.swift: 6f55c8ed22a30ab6a8ca94033473161f678dcd4b
+  FontAwesome.swift: 8d9792fa2d2347055da35bd97752b3960bd75952
   Google-Mobile-Ads-SDK: 8f4f7e793bfd3fff5b082181b54112f81b579a67
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
@@ -77,6 +77,6 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: 4213787c3e5fdf8d78a64cf63b65b77881191e33
+PODFILE CHECKSUM: de512836d42898a59e1f8c1e4a8b74b364ffc329
 
 COCOAPODS: 1.7.1
