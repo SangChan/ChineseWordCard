@@ -33,7 +33,7 @@ class WordViewController: UIViewController {
     
     // legacy part
     var wordList     : Results<ChineseWord>!
-    var currentWord  : ChineseWord!
+    //var currentWord  : ChineseWord!
     var copiedString : String?
     var touchCount   : Int = 0
     var wordIndex    : Int = 0
@@ -145,9 +145,8 @@ extension WordViewController {
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
-        //guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
-        //self.writeRealm(likeIt: !self.currentWord.likeIt)
-        //setButton(button:self.starButton, withSize: 30, withType: .star, withStyle: (currentWord.likeIt == true) ? .solid : .regular)
+        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
+        self.writeRealm(likeIt: !self.currentWord.likeIt)
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
