@@ -203,7 +203,7 @@ extension WordViewController {
         guard let wordList = self.wordList else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
-        //self.writeRealm(isShown: true)
+        self.writeRealm(isShown: true)
         
         // RX part
         model.hanyuAlpha.onNext(1.0)
