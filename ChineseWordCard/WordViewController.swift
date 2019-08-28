@@ -145,8 +145,8 @@ extension WordViewController {
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
-        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
-        self.writeRealm(likeIt: !self.currentWord.likeIt)
+        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue, let currentLikeIt = try? model.currentWord.value().likeIt else { return }
+        self.writeRealm(likeIt: currentLikeIt)
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
@@ -261,19 +261,19 @@ extension WordViewController {
 
 extension WordViewController {
     func writeRealm(likeIt : Bool) {
-        guard let realm = try? Realm() else { return }
+        guard let realm = try? Realm(), let currentWord = try? model.currentWord.value() else { return }
         
         try? realm.write {
-            self.currentWord.likeIt = likeIt
+            currentWord.likeIt = likeIt
         }
     }
 
     func writeRealm(isShown : Bool) {
-        guard let realm = try? Realm() else { return }
+        guard let realm = try? Realm(), let currentWord = try? model.currentWord.value() else { return }
         
         try? realm.write {
-            self.currentWord.isShown = isShown
-            self.currentWord.play += 1
+            currentWord.isShown = isShown
+            currentWord.play += 1
         }
     }
     
