@@ -33,9 +33,8 @@ class WordViewController: UIViewController {
     
     // legacy part
     var wordList     : Results<ChineseWord>!
-    //var currentWord  : ChineseWord!
     var copiedString : String?
-    var touchCount   : Int = 0
+    //var touchCount   : Int = 0
     var wordIndex    : Int = 0
     var maxWordCount : Int = 0
     
