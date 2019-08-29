@@ -146,7 +146,7 @@ extension WordViewController {
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
         guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue, let currentLikeIt = try? model.currentWord.value().likeIt else { return }
-        self.writeRealm(likeIt: currentLikeIt)
+        self.writeRealm(likeIt: !currentLikeIt)
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
@@ -184,18 +184,6 @@ extension WordViewController {
             self.updateUIonView()
         default :
             resetView()
-        }
-    }
-    
-    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord>? {
-        guard let realm = self.lazyRealm else { return .none }
-        switch sortIndex {
-        case SortIndex.sortIndexStar :
-            return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
-        case SortIndex.sortIndexAlphabet :
-            return realm.objects(ChineseWord.self).sorted(byKeyPath: "pinyin")
-        default :
-            return realm.objects(ChineseWord.self)
         }
     }
     
@@ -260,9 +248,21 @@ extension WordViewController {
 // MARK: - realm
 
 extension WordViewController {
+    func getData(sortIndex : InfoProtocol) -> Results<ChineseWord>? {
+        guard let realm = self.lazyRealm else { return .none }
+        switch sortIndex {
+        case SortIndex.sortIndexStar :
+            return (realm.objects(ChineseWord.self).filter("likeIt == true").count > 0) ? realm.objects(ChineseWord.self).filter("likeIt == true") : realm.objects(ChineseWord.self)
+        case SortIndex.sortIndexAlphabet :
+            return realm.objects(ChineseWord.self).sorted(byKeyPath: "pinyin")
+        default :
+            return realm.objects(ChineseWord.self)
+        }
+    }
+    
     func writeRealm(likeIt : Bool) {
         guard let realm = try? Realm(), let currentWord = try? model.currentWord.value() else { return }
-        
+        model.likeIt.onNext(likeIt)
         try? realm.write {
             currentWord.likeIt = likeIt
         }
@@ -270,7 +270,6 @@ extension WordViewController {
 
     func writeRealm(isShown : Bool) {
         guard let realm = try? Realm(), let currentWord = try? model.currentWord.value() else { return }
-        
         try? realm.write {
             currentWord.isShown = isShown
             currentWord.play += 1
