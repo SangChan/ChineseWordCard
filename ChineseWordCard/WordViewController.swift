@@ -121,9 +121,8 @@ extension WordViewController {
     }
     
     @IBAction func handleTap(_ sender: UITapGestureRecognizer) {
-        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended {
-            touchCount += 1
-            setLabelHidden(byCount:touchCount)
+        if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) && sender.state == .ended, let touchCount = try? model.touchCount.value() {
+            model.touchCount.onNext(touchCount + 1)
         }
     }
     
@@ -208,26 +207,7 @@ extension WordViewController {
     }
     
     func resetView() {
-        touchCount = 0
-        setLabelHidden(byCount:touchCount)
-    }
-    
-    func setLabelHidden(byCount : Int) {
-        switch byCount % 3 {
-        case 1 :
-            UIView.animate(withDuration: 0.3, animations: {
-                self.model.pinyinAlpha.onNext(1.0)
-            }, completion: { _ in
-                try? self.model.currentWord.value().speakWord()
-            })
-        case 2 :
-            UIView.animate(withDuration: 0.3, animations: {
-                self.model.descAlpha.onNext(1.0)
-            }, completion: nil)
-        default:
-            self.model.pinyinAlpha.onNext(0.0)
-            self.model.descAlpha.onNext(0.0)
-        }
+        model.touchCount.onNext(0)
     }
     
     func isTouched(onLocation : CGPoint, onRect: CGRect) -> Bool {
@@ -446,6 +426,27 @@ extension WordViewController {
             .subscribe { [weak self] (value) in
                 guard let self = self, self.wordList != nil, let likeIt = value.element else { return }
                 self.starButton.starButton(size: self.buttonSize, style: (likeIt == true) ? .solid : .regular )
+            }
+            .disposed(by: disposeBag)
+        
+        model.touchCount.asObservable()
+            .subscribe { [weak self] (value) in
+                guard let self = self, let touchCount = value.element else { return }
+                switch touchCount % 3 {
+                case 1 :
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.model.pinyinAlpha.onNext(1.0)
+                    }, completion: { _ in
+                        try? self.model.currentWord.value().speakWord()
+                    })
+                case 2 :
+                    UIView.animate(withDuration: 0.3, animations: {
+                        self.model.descAlpha.onNext(1.0)
+                    }, completion: nil)
+                default :
+                    self.model.pinyinAlpha.onNext(0.0)
+                    self.model.descAlpha.onNext(0.0)
+                }
             }
             .disposed(by: disposeBag)
     }

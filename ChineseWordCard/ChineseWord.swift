@@ -26,7 +26,7 @@ class ChineseWord: Object {
 extension ChineseWord {
     func speakWord() {
         guard self.pinyin.count > 0 else { return }
-        let textForSpeech = self.pinyin
+        let textForSpeech = self.hanyu
         let synthesize : AVSpeechSynthesizer = AVSpeechSynthesizer()
         let utterance : AVSpeechUtterance = AVSpeechUtterance(string: textForSpeech)
         utterance.rate = getSpeechSpeed(fromIndex:AppInfo.sharedInstance.speechInfo.speechSpeedValue)
