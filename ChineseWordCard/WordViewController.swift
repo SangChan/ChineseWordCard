@@ -34,9 +34,7 @@ class WordViewController: UIViewController {
     // legacy part
     var wordList     : Results<ChineseWord>!
     var copiedString : String?
-    //var touchCount   : Int = 0
-    var wordIndex    : Int = 0
-    var maxWordCount : Int = 0
+    //var wordIndex    : Int = 0
     
     // Ad banner
     var bannerView   : GADBannerView!
@@ -157,7 +155,7 @@ extension WordViewController {
 extension WordViewController {
     
     func wordIndex(toIncrease : Bool) -> Int {
-        var index : Int = wordIndex
+        guard var index = try? model.wordIndex.value() else { return 0}
         if toIncrease {
             index += 1
         } else {
@@ -167,18 +165,18 @@ extension WordViewController {
         if index >= 0 && index < wordList.count {
             return index
         }
-        return wordIndex
+        return index
     }
     
     func goTo(direction : Direction) {
         switch direction {
         case .next :
             resetView()
-            wordIndex = self.wordIndex(toIncrease:true)
+            model.wordIndex.onNext(self.wordIndex(toIncrease:true))
             self.updateUIonView()
         case .previous :
             resetView()
-            wordIndex = self.wordIndex(toIncrease:false)
+            model.wordIndex.onNext(self.wordIndex(toIncrease:false))
             self.updateUIonView()
         default :
             resetView()
@@ -186,14 +184,13 @@ extension WordViewController {
     }
     
     func updateUIonView() {
-        guard let wordList = self.wordList else { return  }
+        guard let wordList = self.wordList, let wordIndex = try? model.wordIndex.value() else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.writeRealm(isShown: true)
         
         // RX part
         model.hanyuAlpha.onNext(1.0)
-        model.wordIndex.onNext(wordIndex)
         model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
         model.prevEnable.onNext(wordIndex > 0)
         model.nextEnable.onNext(wordIndex < wordList.count-1)
@@ -258,12 +255,13 @@ extension WordViewController {
     func getWordData() {
         guard let wordList = self.getData(sortIndex: AppInfo.sharedInstance.sortInfo.sortValue) else { return }
         self.wordList = wordList
-        self.maxWordCount = self.wordList.count
-        self.wordIndex = AppInfo.sharedInstance.getWordIndex()
-        if self.wordIndex > self.maxWordCount {
+        let maxWordCount = self.wordList.count
+        var wordIndex = AppInfo.sharedInstance.getWordIndex()
+        if wordIndex > maxWordCount {
             AppInfo.sharedInstance.setWordIndex(0)
-            self.wordIndex = AppInfo.sharedInstance.getWordIndex()
+            wordIndex = AppInfo.sharedInstance.getWordIndex()
         }
+        self.model.wordIndex.onNext(wordIndex)
     }
 }
 
@@ -339,10 +337,8 @@ extension WordViewController {
             .subscribe { [weak self] (value) in
                 guard let self = self else { return }
                 self.model.wordIndex.onNext(value.element ?? 0)
-                self.wordIndex = value.element ?? 0
                 self.resetView()
                 self.updateUIonView()
-
             }
             .disposed(by: disposeBag)
         
