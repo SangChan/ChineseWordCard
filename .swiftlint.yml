@@ -28,6 +28,10 @@ type_body_length:
   - 400 #warning
   - 500 #error
 
+cyclomatic_complexity: 
+  - 25 #warning
+  - 50 #error
+
 opt_in_rules:
   - force_unwrapping
   - control_statement
