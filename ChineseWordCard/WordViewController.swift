@@ -295,7 +295,6 @@ extension WordViewController {
 // MARK: - about RX
 
 extension WordViewController {
-    // swiftlint:disable cyclomatic_complexity
     /// setup ReactiveX codes
     func setupRx() {
         // TODO : get data and create View Model
@@ -446,5 +445,4 @@ extension WordViewController {
             }
             .disposed(by: disposeBag)
     }
-    // swiftlint:enable cyclomatic_complexity
 }
