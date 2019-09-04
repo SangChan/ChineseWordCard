@@ -297,7 +297,6 @@ extension WordViewController {
 extension WordViewController {
     /// setup ReactiveX codes
     func setupRx() {
-        // TODO : get data and create View Model
         nextButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.goTo(direction:.next)
@@ -307,18 +306,6 @@ extension WordViewController {
         prevButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.goTo(direction:.previous)
-            })
-            .disposed(by: disposeBag)
-        
-        starButton.rx.tap
-            .subscribe(onNext: {
-                guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue else { return }
-            })
-            .disposed(by: disposeBag)
-        
-        settingButton.rx.tap
-            .subscribe(onNext: {
-                //print("setting button tapped")
             })
             .disposed(by: disposeBag)
         
@@ -341,7 +328,6 @@ extension WordViewController {
             }
             .disposed(by: disposeBag)
         
-        // TODO : connect event with views
         model.wordIndex.asObservable()
             .map({ [weak self] (value) -> Float in
                 guard let self = self, let wordList = self.wordList else { return 0.0 }
