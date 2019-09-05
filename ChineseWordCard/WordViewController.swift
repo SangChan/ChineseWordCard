@@ -34,7 +34,6 @@ class WordViewController: UIViewController {
     // legacy part
     var wordList     : Results<ChineseWord>!
     var copiedString : String?
-    //var wordIndex    : Int = 0
     
     // Ad banner
     var bannerView   : GADBannerView!
@@ -283,8 +282,6 @@ extension WordViewController {
     }
     
     func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
-        // Position the banner. Stick it to the bottom of the Safe Area.
-        // Make it constrained to the edges of the safe area.
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
                                      guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
