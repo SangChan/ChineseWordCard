@@ -1,7 +1,7 @@
 # ChineseWordCard
 
 #Doing
-- [ ] RX 대응
+- [x] RX 대응
 
 #TODO
 - [ ] 다음 단어, 이전 단어 이동시 애니메이션 효과 넣기
