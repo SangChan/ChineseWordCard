@@ -169,13 +169,9 @@ extension WordViewController {
     
     func goTo(direction : Direction) {
         switch direction {
-        case .next :
+        case .next, .previous :
             resetView()
-            model.wordIndex.onNext(self.wordIndex(toIncrease:true))
-            self.updateUIonView()
-        case .previous :
-            resetView()
-            model.wordIndex.onNext(self.wordIndex(toIncrease:false))
+            model.wordIndex.onNext(self.wordIndex(toIncrease:(direction == .next) ? true : false))
             self.updateUIonView()
         default :
             resetView()
