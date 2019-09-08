@@ -140,8 +140,7 @@ extension WordViewController {
     }
     
     @IBAction func starButtonPressed(_ sender: AnyObject) {
-        guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue, let currentLikeIt = try? model.currentWord.value().likeIt else { return }
-        self.writeRealm(likeIt: !currentLikeIt)
+        
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
@@ -299,6 +298,13 @@ extension WordViewController {
         prevButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.goTo(direction:.previous)
+            })
+            .disposed(by: disposeBag)
+        
+        starButton.rx.tap
+            .subscribe(onNext: {
+                guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue, let currentLikeIt = try? model.currentWord.value().likeIt else { return }
+                self.writeRealm(likeIt: !currentLikeIt)
             })
             .disposed(by: disposeBag)
         
