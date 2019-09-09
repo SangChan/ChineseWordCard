@@ -302,9 +302,9 @@ extension WordViewController {
             .disposed(by: disposeBag)
         
         starButton.rx.tap
-            .subscribe(onNext: {
-                guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue, let currentLikeIt = try? model.currentWord.value().likeIt else { return }
-                self.writeRealm(likeIt: !currentLikeIt)
+            .subscribe(onNext: { [weak self] in
+                guard AppInfo.sharedInstance.sortInfo.sortValue.rawValue != SortIndex.sortIndexStar.rawValue, let currentLikeIt = try? self?.model.currentWord.value().likeIt else { return }
+                self?.writeRealm(likeIt: !currentLikeIt)
             })
             .disposed(by: disposeBag)
         
