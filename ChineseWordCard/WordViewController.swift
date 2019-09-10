@@ -93,14 +93,6 @@ class WordViewController: UIViewController {
 // MARK: - actions
 
 extension WordViewController {
-    // IBActions only
-    @IBAction func nextClicked(_ sender: AnyObject) {
-    }
-    @IBAction func prevClicked(_ sender: AnyObject) {
-    }
-    @IBAction func valueChanged(_ sender: AnyObject) {
-    }
-    
     @IBAction func handleSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         if isTouched(onLocation:sender.location(in: hanyuLabel), onRect: hanyuLabel.frame) {
             if sender.state == .ended {
@@ -137,10 +129,6 @@ extension WordViewController {
             copyMenu.setMenuVisible(true, animated: true)
             copyMenu.menuItems = [copyMenuItem]
         }
-    }
-    
-    @IBAction func starButtonPressed(_ sender: AnyObject) {
-        
     }
     
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
