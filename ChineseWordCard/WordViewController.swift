@@ -69,7 +69,7 @@ class WordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateUIonView()
+        self.updateWordIndex()
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
@@ -159,13 +159,13 @@ extension WordViewController {
         case .next, .previous :
             resetView()
             model.wordIndex.onNext(self.wordIndex(toIncrease:(direction == .next) ? true : false))
-            self.updateUIonView()
+            self.updateWordIndex()
         default :
             resetView()
         }
     }
     
-    func updateUIonView() {
+    func updateWordIndex() {
         guard let wordIndex = try? model.wordIndex.value() else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
@@ -305,7 +305,7 @@ extension WordViewController {
                 guard let self = self else { return }
                 self.model.wordIndex.onNext(value.element ?? 0)
                 self.resetView()
-                self.updateUIonView()
+                self.updateWordIndex()
             }
             .disposed(by: disposeBag)
         
