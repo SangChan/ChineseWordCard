@@ -166,14 +166,10 @@ extension WordViewController {
     }
     
     func updateUIonView() {
-        guard let _ = self.wordList, let wordIndex = try? model.wordIndex.value() else { return  }
+        guard let wordIndex = try? model.wordIndex.value() else { return  }
         // legacy part
         AppInfo.sharedInstance.setWordIndex(wordIndex)
         self.writeRealm(isShown: true)
-        
-        // RX part
-        model.hanyuAlpha.onNext(1.0)
-        model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
     }
     
     func setButtonDefault() {
@@ -326,6 +322,8 @@ extension WordViewController {
                 guard let self = self, let wordList = self.wordList, let wordIndex = value.element else { return }
                 let currentWord = wordList[wordIndex]
                 self.model.currentWord.onNext(currentWord)
+                self.model.hanyuAlpha.onNext(1.0)
+                self.model.starButtonHidden.onNext((AppInfo.sharedInstance.sortInfo.sortValue.rawValue == SortIndex.sortIndexStar.rawValue))
                 self.model.prevEnable.onNext(wordIndex > 0)
                 self.model.nextEnable.onNext(wordIndex < wordList.count-1)
             }
