@@ -88,6 +88,10 @@ class WordViewController: UIViewController {
     override var canBecomeFirstResponder : Bool {
         return true
     }
+    
+    deinit {
+        self.lazyRealm = nil
+    }
 }
 
 // MARK: - actions
