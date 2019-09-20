@@ -14,6 +14,12 @@ protocol SetupData : class {
    func setupData()
 }
 
+enum SetupPageType {
+    case SpeechRate
+    case LanguageSelect
+    case SortSelect
+}
+
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
     internal var detailName : String!
