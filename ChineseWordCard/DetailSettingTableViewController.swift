@@ -10,14 +10,22 @@ import UIKit
 import RealmSwift
 import RxSwift
 
-protocol SetupData : class {
+protocol SetupData {
    func setupData()
 }
 
 enum SetupPageType {
-    case SpeechRate
-    case LanguageSelect
-    case SortSelect
+    case speechRate
+    case languageSelect
+    case sortSelect
+    
+    func rawValue() -> String {
+        switch self {
+        case .speechRate : return "SpeechRate"
+        case .languageSelect : return "LanguageSelect"
+        case .sortSelect : return "SortSelect"
+        }
+    }
 }
 
 class DetailSettingTableViewController: UITableViewController {
