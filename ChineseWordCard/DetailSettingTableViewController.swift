@@ -30,6 +30,7 @@ enum SetupPageType {
 
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
+    internal var detailType: SetupPageType!
     internal var detailName : String!
     internal var details : [InfoProtocol]!
     
@@ -91,21 +92,24 @@ extension DetailSettingTableViewController : SetupData {
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
-        detailName = "SpeechRate"
+        detailType = SetupPageType.speechRate
+        detailName = SetupPageType.speechRate.rawValue()
         details    = [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast]
     }
 }
 // MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        detailName = "LanguageSelect"
+        detailType = SetupPageType.languageSelect
+        detailName = SetupPageType.languageSelect.rawValue()
         details    = [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR]
     }
 }
 // MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        detailName = "SortSelect"
+        detailType = SetupPageType.sortSelect
+        detailName = SetupPageType.sortSelect.rawValue()
         details    = [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar]
     }
     
