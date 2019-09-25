@@ -28,6 +28,12 @@ enum SetupPageType {
     }
 }
 
+struct SettingViewModel {
+    let detailType : SetupPageType
+    let detailName : String
+    let details : [InfoProtocol]
+}
+
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
     internal var detailType: SetupPageType!
