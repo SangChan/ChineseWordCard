@@ -36,9 +36,10 @@ struct SettingViewModel {
 
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
-    internal var detailType: SetupPageType!
-    internal var detailName : String!
-    internal var details : [InfoProtocol]!
+    let model : SettingViewModel!
+    //internal var detailType: SetupPageType!
+    //internal var detailName : String!
+    //internal var details : [InfoProtocol]!
     
     lazy var lazyRealm : Realm? = {
         do {
