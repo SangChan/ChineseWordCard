@@ -36,10 +36,7 @@ struct SettingViewModel {
 
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
-    let model : SettingViewModel!
-    //internal var detailType: SetupPageType!
-    //internal var detailName : String!
-    //internal var details : [InfoProtocol]!
+    internal var model : SettingViewModel!
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -56,20 +53,20 @@ class DetailSettingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard details.count > 0, detailName.isEmpty == false else { return }
+        guard model.details.count > 0, model.detailName.isEmpty == false else { return }
         tableView.cellForRow(at: previousSelect)?.accessoryType = .none
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
         previousSelect = indexPath
-        let indexObject : EnumInfo = self.infoObject(fromName:detailName)
-        indexObject.enumInfo(setIndex:details[(indexPath as NSIndexPath).row].rawValue)
+        let indexObject : EnumInfo = self.infoObject(fromName:model.detailName)
+        indexObject.enumInfo(setIndex:model.details[(indexPath as NSIndexPath).row].rawValue)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard details.count > 0, detailName.isEmpty == false else { return }
-        let indexObject : EnumInfo = self.infoObject(fromName:detailName)
+        guard model.details.count > 0, model.detailName.isEmpty == false else { return }
+        let indexObject : EnumInfo = self.infoObject(fromName:model.detailName)
         let infoIndex : Int = indexObject.indexFromEnum()
-        if infoIndex ==  details[(indexPath as NSIndexPath).row].rawValue {
+        if infoIndex ==  model.details[(indexPath as NSIndexPath).row].rawValue {
             cell.accessoryType = .checkmark
             previousSelect = indexPath
         } else {
@@ -92,32 +89,33 @@ class DetailSettingTableViewController: UITableViewController {
 
 extension DetailSettingTableViewController : SetupData {
     @objc func setupData() {
-        detailName = nil
-        details = nil
+        model = SettingViewModel(detailType: SetupPageType.speechRate,
+                                 detailName: SetupPageType.speechRate.rawValue(),
+                                 details: [])
     }
 }
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
-        detailType = SetupPageType.speechRate
-        detailName = SetupPageType.speechRate.rawValue()
-        details    = [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast]
+        model = SettingViewModel(detailType: SetupPageType.speechRate,
+                                 detailName: SetupPageType.speechRate.rawValue(),
+                                 details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
     }
 }
 // MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        detailType = SetupPageType.languageSelect
-        detailName = SetupPageType.languageSelect.rawValue()
-        details    = [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR]
+        model = SettingViewModel(detailType: SetupPageType.languageSelect,
+                                 detailName: SetupPageType.languageSelect.rawValue(),
+                                 details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
     }
 }
 // MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        detailType = SetupPageType.sortSelect
-        detailName = SetupPageType.sortSelect.rawValue()
-        details    = [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar]
+        model = SettingViewModel(detailType: SetupPageType.sortSelect,
+                                 detailName: SetupPageType.sortSelect.rawValue(),
+                                 details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
