@@ -90,7 +90,7 @@ class DetailSettingTableViewController: UITableViewController {
 extension DetailSettingTableViewController : SetupData {
     @objc func setupData() {
         model = SettingViewModel(detailType: SetupPageType.speechRate,
-                                 detailName: SetupPageType.speechRate.rawValue(),
+                                 detailName: "TEST",
                                  details: [])
     }
 }
