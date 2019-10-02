@@ -35,12 +35,6 @@ class SettingViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
-            // TODO : check update
-        }
-    }
-    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .default
     }
