@@ -89,6 +89,7 @@ class DetailSettingTableViewController: UITableViewController {
 
 extension DetailSettingTableViewController : SetupData {
     @objc func setupData() {
+        // if app enters these era, it better to be fault
         model = SettingViewModel(detailType: SetupPageType.speechRate,
                                  detailName: "TEST",
                                  details: [])
