@@ -433,8 +433,7 @@ extension WordViewController : GADBannerViewDelegate {
     }
 
     /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-        didFailToReceiveAdWithError error: GADRequestError) {
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
       print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
 
