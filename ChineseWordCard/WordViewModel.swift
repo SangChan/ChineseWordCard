@@ -23,4 +23,5 @@ struct WordViewModel {
     var descAlpha = BehaviorSubject<Float>(value: 0.0)
     var pinyinAlpha = BehaviorSubject<Float>(value: 0.0)
     var starButtonHidden = BehaviorSubject<Bool>(value: false)
+    var autoPlay = BehaviorSubject<Bool>(value: false)
 }
