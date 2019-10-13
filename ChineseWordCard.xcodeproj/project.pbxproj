@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDFE4022FA96F100759006 /* WordViewModel.swift */; };
+		0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2762352B21B00F6031A /* SettingViewModel.swift */; };
+		0FEED2792352B23100F6031A /* DetailSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */; };
 		631B79CC1C771E1A009FBA45 /* DetailSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */; };
 		631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CE02F1CF9D76C0036DE72 /* SettingData.swift */; };
 		6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321B9F51C05E70F00E2186C /* ChineseWord.swift */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		0FDDFE4022FA96F100759006 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
+		0FEED2762352B21B00F6031A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewModel.swift; sourceTree = "<group>"; };
 		2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseWordCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseWordCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard.debug.xcconfig"; sourceTree = "<group>"; };
 		631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingTableViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				0FDDFE4022FA96F100759006 /* WordViewModel.swift */,
+				0FEED2762352B21B00F6031A /* SettingViewModel.swift */,
+				0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63458E7D1BA7CE9700D4A48D /* WordViewController.swift in Sources */,
+				0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */,
 				63F086BA23093931002F01E4 /* UIButton.swift in Sources */,
 				63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */,
 				631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */,
@@ -353,6 +360,7 @@
 				63C8DB8F1D03344600FAEC52 /* SortInfo.swift in Sources */,
 				63C8DB8D1D03322500FAEC52 /* SpeechInfo.swift in Sources */,
 				638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */,
+				0FEED2792352B23100F6031A /* DetailSettingViewModel.swift in Sources */,
 				63D542561C52177900E1937B /* AppInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
