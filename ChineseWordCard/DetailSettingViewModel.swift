@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct DetailSettingViewModel {
+    let detailType : SetupPageType
+    let detailName : String
+    let details : [InfoProtocol]
+}
