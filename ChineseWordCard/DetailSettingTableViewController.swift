@@ -28,15 +28,9 @@ enum SetupPageType {
     }
 }
 
-struct SettingViewModel {
-    let detailType : SetupPageType
-    let detailName : String
-    let details : [InfoProtocol]
-}
-
 class DetailSettingTableViewController: UITableViewController {
     internal var previousSelect : IndexPath!
-    internal var model : SettingViewModel!
+    internal var model : DetailSettingViewModel!
     
     lazy var lazyRealm : Realm? = {
         do {
@@ -90,7 +84,7 @@ class DetailSettingTableViewController: UITableViewController {
 extension DetailSettingTableViewController : SetupData {
     @objc func setupData() {
         // if app enters these era, it better to be fault
-        model = SettingViewModel(detailType: SetupPageType.speechRate,
+        model = DetailSettingViewModel(detailType: SetupPageType.speechRate,
                                  detailName: "TEST",
                                  details: [])
     }
@@ -98,7 +92,7 @@ extension DetailSettingTableViewController : SetupData {
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
-        model = SettingViewModel(detailType: SetupPageType.speechRate,
+        model = DetailSettingViewModel(detailType: SetupPageType.speechRate,
                                  detailName: SetupPageType.speechRate.rawValue(),
                                  details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
     }
@@ -106,7 +100,7 @@ class SpeechRateViewController: DetailSettingTableViewController {
 // MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        model = SettingViewModel(detailType: SetupPageType.languageSelect,
+        model = DetailSettingViewModel(detailType: SetupPageType.languageSelect,
                                  detailName: SetupPageType.languageSelect.rawValue(),
                                  details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
     }
@@ -114,7 +108,7 @@ class LanguageSelectViewController: DetailSettingTableViewController {
 // MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        model = SettingViewModel(detailType: SetupPageType.sortSelect,
+        model = DetailSettingViewModel(detailType: SetupPageType.sortSelect,
                                  detailName: SetupPageType.sortSelect.rawValue(),
                                  details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
     }
