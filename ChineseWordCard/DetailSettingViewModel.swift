@@ -13,3 +13,12 @@ struct DetailSettingViewModel {
     let detailName : String
     let details : [InfoProtocol]
 }
+
+extension DetailSettingViewModel {
+    func value(with type: String) {
+        switch type {
+        case :
+        default:
+        }
+    }
+}
