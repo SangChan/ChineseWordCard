@@ -15,10 +15,14 @@ struct DetailSettingViewModel {
 }
 
 extension DetailSettingViewModel {
-    func value(with type: String) {
+    static func value(with type: SetupPageType) -> DetailSettingViewModel {
         switch type {
-        case :
-        default:
+        case .speechRate:
+            return DetailSettingViewModel(detailType: SetupPageType.speechRate, detailName: SetupPageType.speechRate.rawValue(), details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
+        case .sortSelect:
+            return DetailSettingViewModel(detailType: SetupPageType.sortSelect, detailName: SetupPageType.sortSelect.rawValue(), details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
+        case .languageSelect:
+            return DetailSettingViewModel(detailType: SetupPageType.languageSelect, detailName: SetupPageType.languageSelect.rawValue(), details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
         }
     }
 }

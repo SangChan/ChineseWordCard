@@ -84,33 +84,25 @@ class DetailSettingTableViewController: UITableViewController {
 extension DetailSettingTableViewController : SetupData {
     @objc func setupData() {
         // if app enters these era, it better to be fault
-        model = DetailSettingViewModel(detailType: SetupPageType.speechRate,
-                                 detailName: "TEST",
-                                 details: [])
+        model = DetailSettingViewModel.value(with: .speechRate)
     }
 }
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
-        model = DetailSettingViewModel(detailType: SetupPageType.speechRate,
-                                 detailName: SetupPageType.speechRate.rawValue(),
-                                 details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
+        model = DetailSettingViewModel.value(with: .speechRate)
     }
 }
 // MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        model = DetailSettingViewModel(detailType: SetupPageType.languageSelect,
-                                 detailName: SetupPageType.languageSelect.rawValue(),
-                                 details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
+        model = DetailSettingViewModel.value(with: .languageSelect)
     }
 }
 // MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
     override func setupData() {
-        model = DetailSettingViewModel(detailType: SetupPageType.sortSelect,
-                                 detailName: SetupPageType.sortSelect.rawValue(),
-                                 details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
+        model = DetailSettingViewModel.value(with: .sortSelect)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
