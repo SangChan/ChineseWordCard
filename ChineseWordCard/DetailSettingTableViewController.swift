@@ -82,10 +82,7 @@ class DetailSettingTableViewController: UITableViewController {
 }
 
 extension DetailSettingTableViewController : SetupData {
-    @objc func setupData() {
-        // if app enters these era, it better to be fault
-        model = DetailSettingViewModel.value(with: .speechRate)
-    }
+    @objc func setupData() { }
 }
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
