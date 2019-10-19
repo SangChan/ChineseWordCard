@@ -79,11 +79,10 @@ class DetailSettingTableViewController: UITableViewController {
             return AppInfo.sharedInstance.languageInfo
         }
     }
+    
+    func setupData() { }
 }
 
-extension DetailSettingTableViewController : SetupData {
-    @objc func setupData() { }
-}
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
     override func setupData() {
