@@ -10,4 +10,11 @@ import Foundation
 
 struct SettingViewModel {
     let settings : [String]
+    let version : String
+}
+
+extension SettingViewModel {
+    static func model() -> SettingViewModel {
+        
+    }
 }
