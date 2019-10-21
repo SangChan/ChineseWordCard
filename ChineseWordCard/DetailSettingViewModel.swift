@@ -18,11 +18,11 @@ extension DetailSettingViewModel {
     static func value(with type: SetupPageType) -> DetailSettingViewModel {
         switch type {
         case .speechRate:
-            return DetailSettingViewModel(detailType: SetupPageType.speechRate, detailName: SetupPageType.speechRate.rawValue(), details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
+            return DetailSettingViewModel(detailType: type, detailName: type.rawValue(), details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
         case .sortSelect:
-            return DetailSettingViewModel(detailType: SetupPageType.sortSelect, detailName: SetupPageType.sortSelect.rawValue(), details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
+            return DetailSettingViewModel(detailType: type, detailName: type.rawValue(), details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
         case .languageSelect:
-            return DetailSettingViewModel(detailType: SetupPageType.languageSelect, detailName: SetupPageType.languageSelect.rawValue(), details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
+            return DetailSettingViewModel(detailType: type, detailName: type.rawValue(), details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
         }
     }
 }
