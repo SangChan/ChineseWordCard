@@ -15,6 +15,6 @@ struct SettingViewModel {
 
 extension SettingViewModel {
     static func model() -> SettingViewModel {
-        
+        SettingViewModel(settings: [], version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")
     }
 }
