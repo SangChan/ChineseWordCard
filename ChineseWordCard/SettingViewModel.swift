@@ -15,6 +15,11 @@ struct SettingViewModel {
 
 extension SettingViewModel {
     static func model() -> SettingViewModel {
-        SettingViewModel(settings: [], version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")
+        var settings = [String]()
+        for index in 1 ... 3 {
+            settings.append(AppInfo.sharedInstance.stringFrom(cellindex: index))
+        }
+        
+        return SettingViewModel(settings: settings, version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")
     }
 }
