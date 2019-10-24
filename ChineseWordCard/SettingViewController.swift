@@ -11,11 +11,13 @@ import AVFoundation
 import RxSwift
 
 class SettingViewController: UITableViewController {
+    private var model = SettingViewModel.model()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        for index in 1 ... self.tableView.numberOfRows(inSection: 0) {
-            if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index-1, section: 0)) {
-                cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFrom(cellindex: index)
+        for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
+            if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
+                cell.detailTextLabel?.text = model.settings[index]
             }
         }
     }
@@ -27,9 +29,9 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0 ... 2) :
-            cell.detailTextLabel?.text = AppInfo.sharedInstance.stringFrom(cellindex: indexPath.row+1)
+            cell.detailTextLabel?.text = model.settings[indexPath.row]
         case (1, 0) :
-            cell.detailTextLabel?.text = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+            cell.detailTextLabel?.text = model.version
         default :
             return
         }
