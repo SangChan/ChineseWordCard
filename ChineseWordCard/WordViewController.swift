@@ -145,16 +145,16 @@ extension WordViewController {
 extension WordViewController {
     
     func wordIndex(toIncrease : Bool) -> Int {
-        guard var index = try? model.wordIndex.value() else { return 0}
-        if toIncrease {
-            index += 1
-        } else {
-            index -= 1
+        guard var index = try? model.wordIndex.value() else { return 0 }
+        switch toIncrease {
+        case true   : index += 1
+        case false  : index -= 1
         }
         
         if index >= 0 && index < wordList.count {
             return index
         }
+        // TODO : miss case 
         return index
     }
     
