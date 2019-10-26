@@ -135,6 +135,18 @@ extension WordViewController {
         }
     }
     
+    @IBAction func valueChanged(_ sender: UISlider) {
+        var newIndex = Int(sender.value * Float(wordList.count))
+        if newIndex <= 0 {
+            newIndex = 0
+        } else if newIndex >= wordList.count-1 {
+            newIndex = wordList.count-1
+        }
+        self.model.wordIndex.onNext(newIndex)
+        self.resetView()
+        self.updateWordIndex()
+    }
+    
     @IBAction func unwindToSegue(_ segue: UIStoryboardSegue) {
         getWordData()
     }
@@ -296,25 +308,6 @@ extension WordViewController {
             })
             .disposed(by: disposeBag)
         
-        sliderBar.rx.value
-            .map({ [weak self] (value) -> Int in
-                guard let self = self, let wordList = self.wordList else { return 0 }
-                var newIndex = Int(value * Float(wordList.count))
-                if newIndex <= 0 {
-                    newIndex = 0
-                } else if newIndex >= wordList.count-1 {
-                    newIndex = wordList.count-1
-                }
-                return newIndex
-            })
-            .subscribe { [weak self] (value) in
-                guard let self = self else { return }
-                self.model.wordIndex.onNext(value.element ?? 0)
-                self.resetView()
-                self.updateWordIndex()
-            }
-            .disposed(by: disposeBag)
-        
         model.wordIndex.asObservable()
             .map({ [weak self] (value) -> Float in
                 guard let self = self, let wordList = self.wordList else { return 0.0 }
@@ -344,8 +337,9 @@ extension WordViewController {
                 let firstLang = Bundle.main.preferredLocalizations.first ?? "en"
                 if firstLang == "ko" {
                     self.model.desc.onNext(currentWord.desc_kr)
+                } else {
+                    self.model.desc.onNext(currentWord.desc_en)
                 }
-                self.model.desc.onNext(currentWord.desc_en)
             }
             .disposed(by: disposeBag)
         

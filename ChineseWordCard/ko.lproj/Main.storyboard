@@ -202,8 +202,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="left" text="Speak Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e0e-Xi-iUE">
-                                                    <rect key="frame" x="16" y="12.999999999999998" width="82.333333333333329" height="19.333333333333332"/>
+                                                <label opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="left" text="발음속도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e0e-Xi-iUE">
+                                                    <rect key="frame" x="15.999999999999996" y="12.999999999999998" width="55.666666666666664" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
@@ -228,8 +228,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="left" text="Sort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Mt-vH-vFj">
-                                                    <rect key="frame" x="16" y="12.999999999999998" width="31" height="19.333333333333332"/>
+                                                <label opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="left" text="정렬" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Mt-vH-vFj">
+                                                    <rect key="frame" x="16" y="12.999999999999998" width="28" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
@@ -258,8 +258,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Q7-MI-rVk">
-                                                    <rect key="frame" x="16" y="12.999999999999998" width="54" height="19.333333333333332"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="버전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Q7-MI-rVk">
+                                                    <rect key="frame" x="16" y="12.999999999999998" width="28" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
@@ -282,7 +282,7 @@
                             <outlet property="delegate" destination="1SD-2L-XkU" id="0Vb-Ev-NZr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="Y7n-mX-hA9">
+                    <navigationItem key="navigationItem" title="설정" id="Y7n-mX-hA9">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="iiK-Zw-38m">
                             <connections>
                                 <action selector="clickedDoneButton:" destination="1SD-2L-XkU" id="Esh-OH-coX"/>
@@ -297,16 +297,16 @@
             </objects>
             <point key="canvasLocation" x="1314" y="1243"/>
         </scene>
-        <!--Speak Rate-->
+        <!--발음속도-->
         <scene sceneID="stT-d3-HgH">
             <objects>
-                <tableViewController storyboardIdentifier="SpeakRateViewController" title="Speak Rate" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xk-lU-vva" customClass="SpeechRateViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SpeakRateViewController" title="발음속도" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xk-lU-vva" customClass="SpeechRateViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1yq-kI-QFy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Speak Rate" footerTitle="Choose Speak Rate" id="iyh-B2-0uj">
+                            <tableViewSection headerTitle="발음속도" footerTitle="발음 속도를 선택하세요" id="iyh-B2-0uj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="wDQ-45-scc" style="IBUITableViewCellStyleDefault" id="Z2j-s6-Rlh">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="44"/>
@@ -385,16 +385,16 @@
             </objects>
             <point key="canvasLocation" x="555" y="1243"/>
         </scene>
-        <!--Sort-->
+        <!--정렬방식-->
         <scene sceneID="Q7D-vH-Ete">
             <objects>
-                <tableViewController storyboardIdentifier="SortSelectViewController" title="Sort" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3tO-xD-7aE" customClass="SortSelectViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SortSelectViewController" title="정렬방식" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3tO-xD-7aE" customClass="SortSelectViewController" customModule="ChineseWordCard" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="1IP-R6-1pk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Sort By" footerTitle="Choose Sort Component" id="KJi-YA-4GN">
+                            <tableViewSection headerTitle="정렬방식" footerTitle="정렬 방식을 선택하세요." id="KJi-YA-4GN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pAb-7B-r8j" style="IBUITableViewCellStyleDefault" id="lTn-BQ-qmH">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="44"/>
@@ -455,7 +455,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGC-oC-adU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="2178"/>
+            <point key="canvasLocation" x="2106" y="1966"/>
         </scene>
     </scenes>
 </document>
