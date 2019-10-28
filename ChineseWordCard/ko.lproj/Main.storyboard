@@ -193,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Application Setting" id="6Sg-St-DYd">
+                            <tableViewSection headerTitle="앱 설정" id="6Sg-St-DYd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="e0e-Xi-iUE" detailTextLabel="uA4-qg-n0d" style="IBUITableViewCellStyleValue1" id="YB3-Xa-Kvr">
                                         <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="44"/>
@@ -249,7 +249,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Information" id="l6a-XB-lBe">
+                            <tableViewSection headerTitle="앱 정보" id="l6a-XB-lBe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="1Q7-MI-rVk" detailTextLabel="BiH-MC-XtQ" style="IBUITableViewCellStyleValue1" id="yIw-As-fq9">
                                         <rect key="frame" x="0.0" y="199.33333206176758" width="375" height="44"/>
