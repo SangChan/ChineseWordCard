@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="māma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="g0Y-yB-24r">
-                                <rect key="frame" x="66" y="338" width="243" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="māma" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0Y-yB-24r">
+                                <rect key="frame" x="26" y="338" width="323" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -25,7 +25,7 @@
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="JqA-4b-TnI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqA-4b-TnI">
                                 <rect key="frame" x="37" y="370" width="304" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,10 +34,10 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마. 어머니" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="nF6-cN-YyQ">
-                                <rect key="frame" x="66" y="450" width="243" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마. 어머니" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF6-cN-YyQ">
+                                <rect key="frame" x="26" y="450" width="323" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="PcQ-YO-5MB"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="PcQ-YO-5MB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,7 @@
                                 </state>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-Js-rYC">
-                                <rect key="frame" x="66" y="482" width="243" height="31"/>
+                                <rect key="frame" x="66" y="518" width="243" height="31"/>
                                 <connections>
                                     <action selector="valueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="tn1-6o-ar8"/>
                                 </connections>
@@ -101,22 +101,22 @@
                             <constraint firstItem="NS2-8g-fpN" firstAttribute="centerX" secondItem="nF6-cN-YyQ" secondAttribute="centerX" id="3ha-XN-4wh"/>
                             <constraint firstItem="wqo-Js-rYC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="52" id="5SH-8C-XOt"/>
                             <constraint firstItem="NS2-8g-fpN" firstAttribute="centerX" secondItem="g0Y-yB-24r" secondAttribute="centerX" id="9tw-ns-YeR"/>
+                            <constraint firstItem="NS2-8g-fpN" firstAttribute="bottom" secondItem="wqo-Js-rYC" secondAttribute="bottom" constant="230" id="EdA-11-9n3"/>
                             <constraint firstItem="NS2-8g-fpN" firstAttribute="centerX" secondItem="JqA-4b-TnI" secondAttribute="centerX" priority="750" constant="-1.5" id="GLW-N3-vHE"/>
                             <constraint firstItem="B6j-64-5po" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Gh6-MA-U7t"/>
                             <constraint firstItem="g0Y-yB-24r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="H5P-9c-eiX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wqo-Js-rYC" secondAttribute="trailing" constant="52" id="JwS-w6-J3l"/>
                             <constraint firstItem="2SL-es-Q3B" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JqA-4b-TnI" secondAttribute="trailing" constant="6" id="KY1-JA-S5K"/>
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="L80-x5-S3h"/>
-                            <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="QrK-h9-Bgu"/>
+                            <constraint firstItem="nF6-cN-YyQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="QrK-h9-Bgu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="19" id="Qu4-hS-IEi"/>
                             <constraint firstItem="hNt-AI-Hb9" firstAttribute="centerX" secondItem="NS2-8g-fpN" secondAttribute="centerX" id="RKv-gI-tfk"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="50" id="TNf-cA-7jt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g0Y-yB-24r" secondAttribute="trailing" constant="10" id="TNf-cA-7jt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JqA-4b-TnI" secondAttribute="trailing" constant="18" id="XaL-I7-39p"/>
-                            <constraint firstItem="wqo-Js-rYC" firstAttribute="top" secondItem="nF6-cN-YyQ" secondAttribute="bottom" constant="8" id="YYR-Bh-yLh"/>
                             <constraint firstItem="CUp-ah-dNC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NS2-8g-fpN" secondAttribute="leading" symbolic="YES" id="c0T-lE-Zjl"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="nF6-cN-YyQ" secondAttribute="trailing" constant="50" id="dif-gY-a36"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nF6-cN-YyQ" secondAttribute="trailing" constant="10" id="dif-gY-a36"/>
                             <constraint firstItem="JqA-4b-TnI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B6j-64-5po" secondAttribute="trailing" constant="8" symbolic="YES" id="fKv-0a-twV"/>
-                            <constraint firstItem="g0Y-yB-24r" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="gW0-RY-r8v"/>
+                            <constraint firstItem="g0Y-yB-24r" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="gW0-RY-r8v"/>
                             <constraint firstItem="nF6-cN-YyQ" firstAttribute="top" secondItem="JqA-4b-TnI" secondAttribute="bottom" priority="250" constant="8" id="h20-hg-UUZ"/>
                             <constraint firstItem="B6j-64-5po" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="hbm-HH-7ZJ"/>
                             <constraint firstItem="2SL-es-Q3B" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="iqv-1A-cNC"/>
