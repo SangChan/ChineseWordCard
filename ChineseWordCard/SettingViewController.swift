@@ -17,7 +17,8 @@ class SettingViewController: UITableViewController {
         super.viewWillAppear(animated)
         for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
             if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
-                cell.detailTextLabel?.text = model.settings[index]
+                cell.textLabel?.text = model.settings[index]
+                cell.detailTextLabel?.text = model.details[index]
             }
         }
     }
@@ -29,7 +30,8 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0 ... 2) :
-            cell.detailTextLabel?.text = model.settings[indexPath.row]
+            cell.textLabel?.text = model.settings[indexPath.row]
+            cell.detailTextLabel?.text = model.details[indexPath.row]
         case (1, 0) :
             cell.detailTextLabel?.text = model.version
         default :

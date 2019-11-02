@@ -10,6 +10,7 @@ import Foundation
 
 struct SettingViewModel {
     let settings : [String]
+    let details : [String]
     let version : String
 }
 
@@ -20,6 +21,11 @@ extension SettingViewModel {
             settings.append(AppInfo.sharedInstance.stringFrom(cellindex: index))
         }
         
-        return SettingViewModel(settings: settings, version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")
+        var details = [String]()
+        for index in 1 ... 3 {
+            settings.append(AppInfo.sharedInstance.stringFrom(cellindex: index))
+        }
+        
+        return SettingViewModel(settings: settings, details:details, version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")
     }
 }
