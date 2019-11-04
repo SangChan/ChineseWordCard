@@ -8,10 +8,10 @@
 
 "popup.copy" = "Copy";
 // setting page
-"1SD-2L-XkU.title" = "Setting";
-"1Q7-MI-rVk.text" = "Version";
-"5Xk-lU-vva.title" = "Speak Rate";
-"3tO-xD-7aE.title" = "Sort";
+"setting.title" = "Setting";
+"version.title" = "Version";
+"speakRate.title" = "Speak Rate";
+"sort.title" = "Sort";
 
 // detail setting page
 "speed.slow" = "Slow";
