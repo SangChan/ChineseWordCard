@@ -23,8 +23,19 @@ class AppInfo {
         }
     }()
     
-    func stringFrom(cellindex : Int) -> String {
-        switch cellindex {
+    func titleStringFrom(_ index : Int) -> String {
+        switch index {
+        case 1:
+            return NSLocalizedString("speakRate.title", comment: "Speak rate")
+        case 2 :
+            return NSLocalizedString("sort.title", comment: "Sort")
+        default:
+            return NSLocalizedString("sort.title", comment: "Sort")
+        }
+    }
+    
+    func detailStringFrom(_ index : Int) -> String {
+        switch index {
         case 1 :
             return speechInfo.string(speechSpeed:speechInfo.speechSpeedValue)
         case 2 :

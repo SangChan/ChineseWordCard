@@ -18,12 +18,12 @@ extension SettingViewModel {
     static func model() -> SettingViewModel {
         var settings = [String]()
         for index in 1 ... 3 {
-            settings.append(AppInfo.sharedInstance.stringFrom(cellindex: index))
+            settings.append(AppInfo.sharedInstance.titleStringFrom(index))
         }
         
         var details = [String]()
         for index in 1 ... 3 {
-            settings.append(AppInfo.sharedInstance.stringFrom(cellindex: index))
+            details.append(AppInfo.sharedInstance.detailStringFrom(index))
         }
         
         return SettingViewModel(settings: settings, details:details, version: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0")
