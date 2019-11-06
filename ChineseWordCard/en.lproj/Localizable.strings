@@ -12,6 +12,8 @@
 "version.title" = "Version";
 "speakRate.title" = "Speak Rate";
 "sort.title" = "Sort";
+"settingFirst.headerTitle" = "Application Setting";
+"settingSecond.headerTitle" = "Information";
 
 // detail setting page
 "speed.slow" = "Slow";

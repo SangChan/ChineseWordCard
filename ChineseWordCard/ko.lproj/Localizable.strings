@@ -12,6 +12,8 @@
 "version.title" = "앱 버전";
 "speakRate.title" = "발음속도";
 "sort.title" = "정렬방식";
+"settingFirst.headerTitle" = "앱 설정";
+"settingSecond.headerTitle" = "앱 정보";
 
 // detail setting page
 "speed.slow" = "천천히";
