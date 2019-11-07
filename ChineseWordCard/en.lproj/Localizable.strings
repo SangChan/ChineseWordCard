@@ -22,3 +22,7 @@
 "sort.all" = "All";
 "sort.alphabet" = "By Alphabet";
 "sort.star" = "By Star";
+"speakRate.headerTitle" = "Speak Rate";
+"speakRate.footerTitle" = "Choose Speak Rate";
+"sort.headerTitle" = "Sort By";
+"sort.footerTitle" = "Choose Sort Component";
