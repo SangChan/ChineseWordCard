@@ -33,8 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F1DA406236C294F007F6F4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		0F1DA407236C2953007F6F4C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		0F39D71E2374F1E600C215BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FDDFE4022FA96F100759006 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		0FEED2762352B21B00F6031A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewModel.swift; sourceTree = "<group>"; };
@@ -51,7 +50,6 @@
 		63617CCE2216A426004C35F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63617CD02216A43C004C35F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		636AF5421D4A40EF0078CE23 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/ChineseWordCard-buaosyfvjhgdwzaymiwrgdxklcwo/Build/Products/Debug-iphonesimulator/RealmSwift.framework"; sourceTree = "<group>"; };
-		638A50C3221854150049B2B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		639705E61D9E9CC400C52A9D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639705E81D9E9D9000C52A9D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -380,9 +378,7 @@
 		638A50C4221854150049B2B7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				638A50C3221854150049B2B7 /* Base */,
-				0F1DA406236C294F007F6F4C /* en */,
-				0F1DA407236C2953007F6F4C /* ko */,
+				0F39D71E2374F1E600C215BF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
