@@ -9,20 +9,44 @@
 import Foundation
 
 struct DetailSettingViewModel {
+    let title : String
     let detailType : SetupPageType
     let detailName : String
     let details : [InfoProtocol]
+    let sectionHeader : [String]
+    let sectionFooter : [String]
 }
 
 extension DetailSettingViewModel {
     static func value(with type: SetupPageType) -> DetailSettingViewModel {
+        var title : String
+        var details : [InfoProtocol]
+        var sectionHeader : [String]
+        var sectionFooter : [String]
         switch type {
         case .speechRate:
-            return DetailSettingViewModel(detailType: type, detailName: type.rawValue(), details: [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast])
+            title = NSLocalizedString("speakRate.title", comment: "speakRate.title")
+            details = [SpeechSpeedIndex.speechSpeedSlow, SpeechSpeedIndex.speechSpeedNormal, SpeechSpeedIndex.speechSpeedFast]
+            sectionHeader = [NSLocalizedString("speakRate.headerTitle", comment: "speakRate.headerTitle")]
+            sectionFooter = [NSLocalizedString("speakRate.footerTitle", comment: "speakRate.footerTitle")]
         case .sortSelect:
-            return DetailSettingViewModel(detailType: type, detailName: type.rawValue(), details: [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar])
+            title = NSLocalizedString("sort.title", comment: "sort.title")
+            details = [SortIndex.sortIndexNone, SortIndex.sortIndexAlphabet, SortIndex.sortIndexStar]
+            sectionHeader = [NSLocalizedString("sort.headerTitle", comment: "sort.headerTitle")]
+            sectionFooter = [NSLocalizedString("sort.footerTitle", comment: "sort.footerTitle")]
         case .languageSelect:
-            return DetailSettingViewModel(detailType: type, detailName: type.rawValue(), details: [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR])
+            title = type.rawValue()
+            details =  [LanguageIndex.languageIndexEN, LanguageIndex.langyageIndexES, LanguageIndex.languageIndexKR]
+            sectionHeader = []
+            sectionFooter = []
         }
+        return DetailSettingViewModel(
+            title: title,
+            detailType: type,
+            detailName: type.rawValue(),
+            details: details,
+            sectionHeader: sectionHeader,
+            sectionFooter: sectionFooter
+        )
     }
 }

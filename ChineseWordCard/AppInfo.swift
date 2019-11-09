@@ -45,6 +45,15 @@ class AppInfo {
         }
     }
     
+    func sectionHeader(_ index : Int) -> String {
+        switch index {
+        case 1 :
+            return NSLocalizedString("settingFirst.headerTitle", comment: "Application Setting")
+        default :
+            return NSLocalizedString("settingSecond.headerTitle", comment: "Information")
+        }
+    }
+    
     func getAllDataFromRealm() {
         makeSettingDataDB()
         makeDictionaryDB()

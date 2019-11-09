@@ -45,6 +45,10 @@ class DetailSettingTableViewController: UITableViewController {
         super.init(coder: aDecoder)
         self.setupData()
     }
+    
+    override func viewDidLoad() {
+        self.title = self.model.title
+    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard model.details.count > 0, model.detailName.isEmpty == false else { return }
@@ -67,6 +71,16 @@ class DetailSettingTableViewController: UITableViewController {
             cell.accessoryType = .none
         }
         cell.textLabel?.text = indexObject.string(fromIndex:(indexPath as NSIndexPath).row)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard model.sectionHeader.count >= section else { return nil }
+        return model.sectionHeader[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        guard model.sectionFooter.count >= section else { return nil }
+        return model.sectionFooter[section]
     }
     
     func infoObject(fromName : String) -> EnumInfo {

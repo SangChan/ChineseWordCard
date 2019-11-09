@@ -13,6 +13,10 @@ import RxSwift
 class SettingViewController: UITableViewController {
     private var model = SettingViewModel.model()
     
+    override func viewDidLoad() {
+        self.title = model.title
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
@@ -33,10 +37,16 @@ class SettingViewController: UITableViewController {
             cell.textLabel?.text = model.settings[indexPath.row]
             cell.detailTextLabel?.text = model.details[indexPath.row]
         case (1, 0) :
-            cell.detailTextLabel?.text = model.version
+            cell.textLabel?.text = model.versionTitle
+            cell.detailTextLabel?.text = model.versionInfo
         default :
             return
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard model.sectionHeaders.count >= section else { return nil }
+        return model.sectionHeaders[section]
     }
     
     override var preferredStatusBarStyle : UIStatusBarStyle {
