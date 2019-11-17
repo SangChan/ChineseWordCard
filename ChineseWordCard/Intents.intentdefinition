@@ -11,9 +11,9 @@
 	<key>INIntentDefinitionSystemVersion</key>
 	<string>19B88</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
-	<string>11B52</string>
+	<string>11B500</string>
 	<key>INIntentDefinitionToolsVersion</key>
-	<string>11.2</string>
+	<string>11.2.1</string>
 	<key>INIntents</key>
 	<array>
 		<dict>
@@ -27,9 +27,11 @@
 			<string>Show random Chinese word</string>
 			<key>INIntentDescriptionID</key>
 			<string>HFe4nv</string>
+			<key>INIntentLastParameterTag</key>
+			<integer>1</integer>
 			<key>INIntentManagedParameterCombinations</key>
 			<dict>
-				<key></key>
+				<key>parameter</key>
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
@@ -41,14 +43,38 @@
 			<string>Intent</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
-				<key></key>
+				<key>parameter</key>
 				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
+					<key>INIntentParameterCombinationIsLinked</key>
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
 				</dict>
 			</dict>
+			<key>INIntentParameters</key>
+			<array>
+				<dict>
+					<key>INIntentParameterDisplayName</key>
+					<string>Parameter</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>87fDsb</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterMetadata</key>
+					<dict>
+						<key>INIntentParameterMetadataCapitalization</key>
+						<string>Sentences</string>
+					</dict>
+					<key>INIntentParameterName</key>
+					<string>parameter</string>
+					<key>INIntentParameterSupportsResolution</key>
+					<true/>
+					<key>INIntentParameterTag</key>
+					<integer>1</integer>
+					<key>INIntentParameterType</key>
+					<string>String</string>
+				</dict>
+			</array>
 			<key>INIntentResponse</key>
 			<dict>
 				<key>INIntentResponseCodes</key>
