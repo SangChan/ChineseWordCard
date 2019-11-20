@@ -35,6 +35,10 @@
 				<dict>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Chinese Word Card</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>0TYL48</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
 					<true/>
 				</dict>
@@ -49,13 +53,17 @@
 					<true/>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Chinese Word Card</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>izB4LB</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
 					<key>INIntentParameterDisplayName</key>
-					<string>Parameter</string>
+					<string>Today's Word</string>
 					<key>INIntentParameterDisplayNameID</key>
 					<string>87fDsb</string>
 					<key>INIntentParameterDisplayPriority</key>
@@ -63,7 +71,7 @@
 					<key>INIntentParameterMetadata</key>
 					<dict>
 						<key>INIntentParameterMetadataCapitalization</key>
-						<string>Sentences</string>
+						<string>Words</string>
 					</dict>
 					<key>INIntentParameterName</key>
 					<string>parameter</string>
@@ -88,6 +96,27 @@
 					<dict>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
+					</dict>
+				</array>
+				<key>INIntentResponseLastParameterTag</key>
+				<integer>1</integer>
+				<key>INIntentResponseOutput</key>
+				<string>chinese_word</string>
+				<key>INIntentResponseParameters</key>
+				<array>
+					<dict>
+						<key>INIntentResponseParameterDisplayName</key>
+						<string>Word</string>
+						<key>INIntentResponseParameterDisplayNameID</key>
+						<string>Ms9HAv</string>
+						<key>INIntentResponseParameterDisplayPriority</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterName</key>
+						<string>chinese_word</string>
+						<key>INIntentResponseParameterTag</key>
+						<integer>1</integer>
+						<key>INIntentResponseParameterType</key>
+						<string>String</string>
 					</dict>
 				</array>
 			</dict>
