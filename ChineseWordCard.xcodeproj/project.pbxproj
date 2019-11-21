@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0FA29F1A237E67BC0000C816 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0FA29F19237E67BC0000C816 /* Intents.intentdefinition */; };
+		0F56C85E238621750073E814 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 0F56C860238621750073E814 /* Intents.intentdefinition */; };
 		0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDFE4022FA96F100759006 /* WordViewModel.swift */; };
 		0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2762352B21B00F6031A /* SettingViewModel.swift */; };
 		0FEED2792352B23100F6031A /* DetailSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */; };
@@ -73,7 +73,9 @@
 
 /* Begin PBXFileReference section */
 		0F39D71E2374F1E600C215BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0FA29F19237E67BC0000C816 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		0F56C85F238621750073E814 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
+		0F56C862238621750073E814 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
+		0F56C864238621750073E814 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Intents.strings; sourceTree = "<group>"; };
 		0FDDFE4022FA96F100759006 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		0FEED2762352B21B00F6031A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewModel.swift; sourceTree = "<group>"; };
@@ -216,7 +218,7 @@
 				63458E7A1BA7CE9700D4A48D /* AppDelegate.swift */,
 				63458E811BA7CE9700D4A48D /* Images.xcassets */,
 				63458E781BA7CE9700D4A48D /* Supporting Files */,
-				0FA29F19237E67BC0000C816 /* Intents.intentdefinition */,
+				0F56C860238621750073E814 /* Intents.intentdefinition */,
 			);
 			path = ChineseWordCard;
 			sourceTree = "<group>";
@@ -517,7 +519,7 @@
 				63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */,
 				631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */,
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
-				0FA29F1A237E67BC0000C816 /* Intents.intentdefinition in Sources */,
+				0F56C85E238621750073E814 /* Intents.intentdefinition in Sources */,
 				634AF3E41D2CEF1B00C3BE99 /* EnumInfo.swift in Sources */,
 				6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */,
 				0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */,
@@ -546,6 +548,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0F56C860238621750073E814 /* Intents.intentdefinition */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F56C85F238621750073E814 /* Base */,
+				0F56C862238621750073E814 /* en */,
+				0F56C864238621750073E814 /* ko */,
+			);
+			name = Intents.intentdefinition;
+			sourceTree = "<group>";
+		};
 		630EB29B237D7D7000E562CA /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
