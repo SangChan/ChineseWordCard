@@ -37,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         AppInfo.sharedInstance.getAllDataFromRealm()
+        
+        guard let launchOptions = launchOptions else { return true }
+        print(launchOptions)
+        // TODO : do something with launchOptions
         return true
     }
 }
