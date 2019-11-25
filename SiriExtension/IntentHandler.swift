@@ -102,11 +102,11 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         let response = INSearchForMessagesIntentResponse(code: .success, userActivity: userActivity)
         // Initialize with found message's attributes
         response.messages = [INMessage(
-            identifier: "identifier",
-            content: "I am so excited about SiriKit!",
+            identifier: "word-0001",
+            content: "Today's Word",
             dateSent: Date(),
-            sender: INPerson(personHandle: INPersonHandle(value: "sarah@example.com", type: .emailAddress), nameComponents: nil, displayName: "Sarah", image: nil,  contactIdentifier: nil, customIdentifier: nil),
-            recipients: [INPerson(personHandle: INPersonHandle(value: "+1-415-555-5555", type: .phoneNumber), nameComponents: nil, displayName: "John", image: nil,  contactIdentifier: nil, customIdentifier: nil)]
+            sender: INPerson(personHandle: INPersonHandle(value: "sender", type: .unknown), nameComponents: nil, displayName: nil, image: nil,  contactIdentifier: nil, customIdentifier: nil),
+            recipients: [INPerson(personHandle: INPersonHandle(value: "recipient", type: .unknown), nameComponents: nil, displayName: nil, image: nil,  contactIdentifier: nil, customIdentifier: nil)]
             )]
         completion(response)
     }
