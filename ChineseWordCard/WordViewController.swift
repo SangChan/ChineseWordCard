@@ -128,10 +128,9 @@ extension WordViewController {
             let copyMenuItemString = localizedCopyString
             let copyMenuItem = UIMenuItem(title: copyMenuItemString, action: #selector(copyText(_:)))
             let copyMenu = UIMenuController.shared
-            copyMenu.setTargetRect(hanyuLabel.frame, in: self.view)
             copyMenu.arrowDirection = .default
-            copyMenu.setMenuVisible(true, animated: true)
             copyMenu.menuItems = [copyMenuItem]
+            copyMenu.showMenu(from: self.view, rect: hanyuLabel.frame)
         }
     }
     
