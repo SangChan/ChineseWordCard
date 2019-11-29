@@ -42,6 +42,11 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="name" destination="XHd-Kk-drB" id="IsE-sh-Bwq"/>
+                        <outlet property="title" destination="XHd-Kk-drB" id="5D3-MB-qHo"/>
+                        <outlet property="word" destination="gLl-vO-x6d" id="fLE-4W-fWE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
