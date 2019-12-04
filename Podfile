@@ -6,7 +6,7 @@ inhibit_all_warnings!
 
 def default
 	pod 'RealmSwift'
-  	pod 'FontAwesome.swift'
+  pod 'FontAwesome.swift'
 	pod 'SwiftLint'
 	pod 'Google-Mobile-Ads-SDK'
 	pod 'RxSwift'
