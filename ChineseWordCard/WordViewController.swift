@@ -219,7 +219,6 @@ extension WordViewController {
         guard let realm = self.lazyRealm else { return .none }
         switch sortIndex {
         case SortIndex.sortIndexStar :
-            //guard realm.objects(ChineseWord.self).filter("likeIt == true").count > 0 else { return  realm.objects(ChineseWord.self) }
             return realm.objects(ChineseWord.self).filter("likeIt == true") 
         case SortIndex.sortIndexAlphabet :
             return realm.objects(ChineseWord.self).sorted(byKeyPath: "pinyin")
