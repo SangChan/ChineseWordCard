@@ -259,11 +259,11 @@ extension WordViewController {
 // MARK: - about banner
 
 extension WordViewController {
-    static let adId = "ca-app-pub-7672230516236261/8258045034"
+    static let adUnitID = "ca-app-pub-7672230516236261/8258045034"
     func addBanner() {
         self.bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBannerViewToView(self.bannerView)
-        self.bannerView.adUnitID = WordViewController.adId
+        self.bannerView.adUnitID = WordViewController.adUnitID
         self.bannerView.rootViewController = self
         self.bannerView.load(GADRequest())
         self.bannerView.delegate = self
