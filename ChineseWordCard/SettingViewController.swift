@@ -19,12 +19,12 @@ class SettingViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
+        /*for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
             if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
                 cell.textLabel?.text = model.settings[index]
                 cell.detailTextLabel?.text = model.details[index]
             }
-        }
+        }*/
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
