@@ -58,3 +58,15 @@ class SettingViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
 }
+
+struct CellInfo {
+    let title : String
+    let detail : String
+}
+
+extension SettingViewController {
+    private func setCell(_ cell: UITableViewCell, with info: CellInfo) {
+        cell.textLabel?.text = info.title
+        cell.detailTextLabel?.text = info.detail
+    }
+}
