@@ -20,12 +20,11 @@ class SettingViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // TODO : why it here?
-        /*for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
+        for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
             if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
-                cell.textLabel?.text = model.settings[index]
-                cell.detailTextLabel?.text = model.details[index]
+                setCell(cell, with: CellInfo(title: model.settings[index], detail: model.details[index]))
             }
-        }*/
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -35,11 +34,9 @@ class SettingViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (0, 0 ... 2) :
-            cell.textLabel?.text = model.settings[indexPath.row]
-            cell.detailTextLabel?.text = model.details[indexPath.row]
+            setCell(cell, with: CellInfo(title: model.settings[indexPath.row], detail: model.details[indexPath.row]))
         case (1, 0) :
-            cell.textLabel?.text = model.versionTitle
-            cell.detailTextLabel?.text = model.versionInfo
+            setCell(cell, with: CellInfo(title: model.versionTitle, detail: model.versionInfo))
         default :
             return
         }
