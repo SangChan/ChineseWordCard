@@ -177,9 +177,9 @@
 		6327B59C1D4DB462009F0683 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				63458E7C1BA7CE9700D4A48D /* WordViewController.swift */,
 				638FF3601C48A16C00A5D366 /* SettingViewController.swift */,
 				631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */,
-				63458E7C1BA7CE9700D4A48D /* WordViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

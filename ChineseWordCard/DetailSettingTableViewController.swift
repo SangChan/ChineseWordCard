@@ -56,13 +56,13 @@ class DetailSettingTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
         previousSelect = indexPath
-        let indexObject : EnumInfo = self.infoObject(fromName:model.detailName)
+        let indexObject : EnumInfo = model.indexObject
         indexObject.enumInfo(setIndex:model.details[(indexPath as NSIndexPath).row].rawValue)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard model.details.count > 0, model.detailName.isEmpty == false else { return }
-        let indexObject : EnumInfo = self.infoObject(fromName:model.detailName)
+        let indexObject : EnumInfo = model.indexObject
         let infoIndex : Int = indexObject.indexFromEnum()
         if infoIndex ==  model.details[(indexPath as NSIndexPath).row].rawValue {
             cell.accessoryType = .checkmark
@@ -83,16 +83,16 @@ class DetailSettingTableViewController: UITableViewController {
         return model.sectionFooter[section]
     }
     
-    func infoObject(fromName : String) -> EnumInfo {
-        switch fromName {
-        case "SpeechRate" :
-            return AppInfo.sharedInstance.speechInfo
-        case "SortSelect" :
-            return AppInfo.sharedInstance.sortInfo
-        default:
-            return AppInfo.sharedInstance.languageInfo
-        }
-    }
+//    func infoObject(fromName : String) -> EnumInfo {
+//        switch fromName {
+//        case "SpeechRate" :
+//            return AppInfo.sharedInstance.speechInfo
+//        case "SortSelect" :
+//            return AppInfo.sharedInstance.sortInfo
+//        default:
+//            return AppInfo.sharedInstance.languageInfo
+//        }
+//    }
     
     func setupData() { }
 }
