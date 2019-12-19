@@ -83,17 +83,6 @@ class DetailSettingTableViewController: UITableViewController {
         return model.sectionFooter[section]
     }
     
-//    func infoObject(fromName : String) -> EnumInfo {
-//        switch fromName {
-//        case "SpeechRate" :
-//            return AppInfo.sharedInstance.speechInfo
-//        case "SortSelect" :
-//            return AppInfo.sharedInstance.sortInfo
-//        default:
-//            return AppInfo.sharedInstance.languageInfo
-//        }
-//    }
-    
     func setupData() { }
 }
 
