@@ -14,6 +14,10 @@ protocol SetupData {
    func setupData()
 }
 
+extension SetupData {
+    func setupData() { }
+}
+
 enum SetupPageType {
     case speechRate
     case languageSelect
@@ -82,25 +86,23 @@ class DetailSettingTableViewController: UITableViewController {
         guard model.sectionFooter.count >= section else { return nil }
         return model.sectionFooter[section]
     }
-    
-    func setupData() { }
 }
 
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
-    override func setupData() {
+    func setupData() {
         model = DetailSettingViewModel.value(with: .speechRate)
     }
 }
 // MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
-    override func setupData() {
+    func setupData() {
         model = DetailSettingViewModel.value(with: .languageSelect)
     }
 }
 // MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
-    override func setupData() {
+    func setupData() {
         model = DetailSettingViewModel.value(with: .sortSelect)
     }
     
