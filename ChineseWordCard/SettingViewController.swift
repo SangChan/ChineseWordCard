@@ -31,14 +31,9 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        switch (indexPath.section, indexPath.row) {
-        case (0, 0 ... 2) :
-            setCell(cell, with: CellInfo(title: model.settings[indexPath.row], detail: model.details[indexPath.row]))
-        case (1, 0) :
-            setCell(cell, with: CellInfo(title: model.versionTitle, detail: model.versionInfo))
-        default :
-            return
-        }
+        let title   = (indexPath.section == 0) ? model.settings[indexPath.row] : model.versionTitle
+        let detail  = (indexPath.section == 0) ? model.details[indexPath.row] : model.versionInfo
+        setCell(cell, with: CellInfo(title: title, detail: detail))
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
