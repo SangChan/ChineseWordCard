@@ -21,7 +21,9 @@ class SettingViewController: UITableViewController {
         super.viewWillAppear(animated)
         for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
             if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
-                setCell(cell, with: CellInfo(title: model.settings[index], detail: model.details[index]))
+                let title   = model.settings[index]
+                let detail  = model.details[index]
+                setCell(cell, with: CellInfo(title: title, detail: detail))
             }
         }
     }
