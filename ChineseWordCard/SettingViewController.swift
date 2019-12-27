@@ -19,10 +19,11 @@ class SettingViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // TODO : why it here?
         for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
             if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
-                setCell(cell, with: CellInfo(title: model.settings[index], detail: model.details[index]))
+                let title   = model.settings[index]
+                let detail  = model.details[index]
+                setCell(cell, with: CellInfo(title: title, detail: detail))
             }
         }
     }
@@ -32,14 +33,9 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        switch (indexPath.section, indexPath.row) {
-        case (0, 0 ... 2) :
-            setCell(cell, with: CellInfo(title: model.settings[indexPath.row], detail: model.details[indexPath.row]))
-        case (1, 0) :
-            setCell(cell, with: CellInfo(title: model.versionTitle, detail: model.versionInfo))
-        default :
-            return
-        }
+        let title   = (indexPath.section == 0) ? model.settings[indexPath.row] : model.versionTitle
+        let detail  = (indexPath.section == 0) ? model.details[indexPath.row] : model.versionInfo
+        setCell(cell, with: CellInfo(title: title, detail: detail))
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
