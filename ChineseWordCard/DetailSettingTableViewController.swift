@@ -32,7 +32,7 @@ enum SetupPageType {
     }
 }
 
-class DetailSettingTableViewController: UITableViewController {
+class DetailSettingTableViewController: UITableViewController, SetupData {
     internal var previousSelect : IndexPath!
     internal var model : DetailSettingViewModel!
     
