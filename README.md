@@ -1,6 +1,7 @@
 # ChineseWordCard
 
 ## DOING
+- [ ] Swift UI 대응
 - [ ] 학습 진도
 - [ ] 단어 시험
 - [ ] 로비 기능
