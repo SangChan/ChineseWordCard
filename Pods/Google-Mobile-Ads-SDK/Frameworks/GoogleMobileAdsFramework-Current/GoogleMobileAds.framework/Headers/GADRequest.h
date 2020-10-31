@@ -44,11 +44,6 @@ typedef NS_ENUM(NSInteger, GADGender) {
 /// extras type.
 - (void)removeAdNetworkExtrasFor:(nonnull Class<GADAdNetworkExtras>)aClass;
 
-#pragma mark Collecting SDK Information
-
-/// Returns the version of the SDK.
-+ (nonnull NSString *)sdkVersion;
-
 #pragma mark Publisher Provided
 
 /// Scene object. Used in multiscene apps to request ads of the appropriate size.
@@ -73,6 +68,11 @@ typedef NS_ENUM(NSInteger, GADGender) {
 /// is used for targeting and brand safety purposes.
 @property(nonatomic, copy, nullable) NSString *contentURL;
 
+/// URL strings for non-primary web content near an ad. Promotes brand safety and allows displayed
+/// ads to have an app level rating (MA, T, PG, etc) that is more appropriate to neighboring
+/// content.
+@property(nonatomic, copy, nullable) NSArray<NSString *> *neighboringContentURLStrings;
+
 #pragma mark Request Agent Information
 
 /// String that identifies the ad request's origin. Third party libraries that reference the Mobile
@@ -93,6 +93,10 @@ typedef NS_ENUM(NSInteger, GADGender) {
 
 /// Deprecated property. The user's birthday.
 @property(nonatomic, copy, nullable) NSDate *birthday GAD_DEPRECATED_ATTRIBUTE;
+
+/// Returns the version of the SDK.
++ (nonnull NSString *)
+    sdkVersion GAD_DEPRECATED_MSG_ATTRIBUTE("Use GADMobileAds.sharedInstance.sdkVersion");
 
 /// Provide the user's birthday to increase ad relevancy.
 - (void)setBirthdayWithMonth:(NSInteger)month

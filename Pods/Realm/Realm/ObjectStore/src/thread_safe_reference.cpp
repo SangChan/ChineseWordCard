@@ -109,19 +109,6 @@ private:
     std::string m_object_schema_name;
 };
 
-template<typename T>
-struct ListType {
-    using type = Lst<std::remove_reference_t<T>>;
-};
-
-// The code path which would instantiate List<Obj> isn't reachable, but still
-// produces errors about the type not being instantiable so we instead map it
-// to an arbitrary valid type
-template<>
-struct ListType<Obj&> {
-    using type = Lst<int64_t>;
-};
-
 template<>
 class ThreadSafeReference::PayloadImpl<Results> : public ThreadSafeReference::Payload {
 public:
@@ -155,13 +142,13 @@ public:
             try {
                 list = table->get_object(m_key).get_listbase_ptr(m_col_key);
             }
-            catch (InvalidKey const&) {
+            catch (KeyNotFound const&) {
                 // Create a detached list of the appropriate type so that we
                 // return an invalid Results rather than an Empty Results, to
                 // match what happens for other types of handover where the
                 // object doesn't exist.
-                switch_on_type(ObjectSchema::from_core_type(*table, m_col_key), [&](auto* t) -> void {
-                    list = std::make_unique<typename ListType<decltype(*t)>::type>();
+                switch_on_type(ObjectSchema::from_core_type(m_col_key), [&](auto* t) -> void {
+                    list = std::make_unique<Lst<NonObjTypeT<decltype(*t)>>>();
                 });
             }
             return Results(r, std::move(list), m_ordering);
@@ -233,7 +220,7 @@ T ThreadSafeReference::resolve(std::shared_ptr<Realm> const& realm)
     try {
         return payload.import_into(realm);
     }
-    catch (InvalidKey const&) {
+    catch (KeyNotFound const&) {
         // Object was deleted in a version after when the TSR was created
         return {};
     }

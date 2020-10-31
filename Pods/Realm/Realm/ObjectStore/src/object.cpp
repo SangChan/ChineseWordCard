@@ -27,6 +27,13 @@
 
 using namespace realm;
 
+/* The nice syntax is not supported by MSVC */
+CreatePolicy CreatePolicy::Skip = {/*.create =*/ false, /*.copy =*/ false, /*.update =*/ false, /*.diff =*/ false};
+CreatePolicy CreatePolicy::ForceCreate = {/*.create =*/ true, /*.copy =*/ true, /*.update =*/ false, /*.diff =*/ false};
+CreatePolicy CreatePolicy::UpdateAll = {/*.create =*/ true, /*.copy =*/ true, /*.update =*/ true, /*.diff =*/ false};
+CreatePolicy CreatePolicy::UpdateModified = {/*.create =*/ true, /*.copy =*/ true, /*.update =*/ true, /*.diff =*/ true};
+CreatePolicy CreatePolicy::SetLink = {/*.create =*/ true, /*.copy =*/ false, /*.update =*/ false, /*.diff =*/ false};
+
 Object Object::freeze(std::shared_ptr<Realm> frozen_realm) const
 {
     return Object(frozen_realm, frozen_realm->import_copy_of(m_obj));
@@ -73,6 +80,7 @@ Object::Object(SharedRealm r, Obj const& o)
 , m_object_schema(&*m_realm->schema().find(ObjectStore::object_type_for_table_name(o.get_table()->get_name())))
 , m_obj(o)
 {
+    REALM_ASSERT(!m_obj.get_table() || (&m_realm->read_group() == _impl::TableFriend::get_parent_group(*m_obj.get_table())));
 }
 
 Object::Object(SharedRealm r, StringData object_type, ObjKey key)
@@ -80,6 +88,7 @@ Object::Object(SharedRealm r, StringData object_type, ObjKey key)
 , m_object_schema(&*m_realm->schema().find(object_type))
 , m_obj(ObjectStore::table_for_object_type(m_realm->read_group(), object_type)->get_object(key))
 {
+    REALM_ASSERT(!m_obj.get_table() || (&m_realm->read_group() == _impl::TableFriend::get_parent_group(*m_obj.get_table())));
 }
 
 Object::Object(SharedRealm r, StringData object_type, size_t index)
@@ -87,6 +96,7 @@ Object::Object(SharedRealm r, StringData object_type, size_t index)
 , m_object_schema(&*m_realm->schema().find(object_type))
 , m_obj(ObjectStore::table_for_object_type(m_realm->read_group(), object_type)->get_object(index))
 {
+    REALM_ASSERT(!m_obj.get_table() || (&m_realm->read_group() == _impl::TableFriend::get_parent_group(*m_obj.get_table())));
 }
 
 Object::Object() = default;
@@ -124,23 +134,19 @@ Property const& Object::property_for_name(StringData prop_name) const
     return *prop;
 }
 
-#if REALM_ENABLE_SYNC
-void Object::ensure_user_in_everyone_role()
+void Object::validate_property_for_setter(Property const& property) const
 {
-    if (auto role_table = m_realm->read_group().get_table("class___Role")) {
-        if (ObjKey ndx = role_table->find_first_string(role_table->get_column_key("name"), "everyone")) {
-            auto role = role_table->get_object(ndx);
-            auto users = role.get_linklist(role_table->get_column_key("members"));
-            if (users.find_first(m_obj.get_key()) == realm::npos) {
-                users.add(m_obj.get_key());
-            }
-        }
+    verify_attached();
+    m_realm->verify_in_write();
+
+    // Modifying primary keys is allowed in migrations to make it possible to
+    // add a new primary key to a type (or change the property type), but it
+    // is otherwise considered the immutable identity of the row
+    if (property.is_primary) {
+        if (!m_realm->is_in_migration())
+            throw ModifyPrimaryKeyException(m_object_schema->name, property.name);
+        // Modifying the PK property while it's the PK will corrupt the table,
+        // so remove it and then restore it at the end of the migration (which will rebuild the table)
+        m_obj.get_table()->set_primary_key_column({});
     }
 }
-
-void Object::ensure_private_role_exists_for_user()
-{
-    auto user_id = m_obj.get<StringData>("id");
-    ObjectStore::ensure_private_role_exists_for_user(static_cast<Transaction&>(m_realm->read_group()), user_id);
-}
-#endif
