@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F480AA025D28022000458ED /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480A9F25D28022000458ED /* RealmSwift */; };
+		0F480AA225D28022000458ED /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480AA125D28022000458ED /* Realm */; };
+		0F480AB425D280A3000458ED /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480AB325D280A3000458ED /* RxCocoa */; };
+		0F480AB625D280A3000458ED /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480AB525D280A3000458ED /* RxSwift */; };
 		0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDFE4022FA96F100759006 /* WordViewModel.swift */; };
 		0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2762352B21B00F6031A /* SettingViewModel.swift */; };
 		0FEED2792352B23100F6031A /* DetailSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */; };
@@ -85,9 +89,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F480AB425D280A3000458ED /* RxCocoa in Frameworks */,
+				0F480AA025D28022000458ED /* RealmSwift in Frameworks */,
 				63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */,
 				63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */,
 				69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */,
+				0F480AA225D28022000458ED /* Realm in Frameworks */,
+				0F480AB625D280A3000458ED /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +239,12 @@
 			dependencies = (
 			);
 			name = ChineseWordCard;
+			packageProductDependencies = (
+				0F480A9F25D28022000458ED /* RealmSwift */,
+				0F480AA125D28022000458ED /* Realm */,
+				0F480AB325D280A3000458ED /* RxCocoa */,
+				0F480AB525D280A3000458ED /* RxSwift */,
+			);
 			productName = ChineseWordCard;
 			productReference = 63458E751BA7CE9700D4A48D /* ChineseWordCard.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +282,10 @@
 				ko,
 			);
 			mainGroup = 63458E6C1BA7CE9700D4A48D;
+			packageReferences = (
+				0F480A9E25D28022000458ED /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				0F480AB225D280A3000458ED /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 63458E761BA7CE9700D4A48D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "#${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -732,6 +750,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0F480A9E25D28022000458ED /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.5.1;
+			};
+		};
+		0F480AB225D280A3000458ED /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0F480A9F25D28022000458ED /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F480A9E25D28022000458ED /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		0F480AA125D28022000458ED /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F480A9E25D28022000458ED /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		0F480AB325D280A3000458ED /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F480AB225D280A3000458ED /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		0F480AB525D280A3000458ED /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0F480AB225D280A3000458ED /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63458E6D1BA7CE9700D4A48D /* Project object */;
 }
