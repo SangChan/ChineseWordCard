@@ -9,8 +9,6 @@
 import UIKit
 import AVFoundation
 import RealmSwift
-import FontAwesome_swift
-import GoogleMobileAds
 import RxSwift
 import RxCocoa
 
@@ -34,9 +32,6 @@ class WordViewController: UIViewController {
     // legacy part
     var wordList     : Results<ChineseWord>!
     var copiedString : String?
-    
-    // Ad banner
-    var bannerView   : GADBannerView!
     
     // RX part
     let disposeBag  = DisposeBag()
@@ -64,7 +59,6 @@ class WordViewController: UIViewController {
         setButtonDefault()
         resetView()
         getWordData()
-        addBanner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -258,33 +252,6 @@ extension WordViewController {
     }
 }
 
-// MARK: - about banner
-
-extension WordViewController {
-    static let adUnitID = "ca-app-pub-7672230516236261/8258045034"
-    func addBanner() {
-        self.bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBannerViewToView(self.bannerView)
-        self.bannerView.adUnitID = WordViewController.adUnitID
-        self.bannerView.rootViewController = self
-        self.bannerView.load(GADRequest())
-        self.bannerView.delegate = self
-    }
-    
-    func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
-    }
-    
-    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
-                                     guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
-                                     guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)])
-    }
-}
-
 // MARK: - about RX
 
 extension WordViewController {
@@ -416,20 +383,5 @@ extension WordViewController {
                 }
             }
             .disposed(by: disposeBag)
-    }
-}
-
-// MARK: - about Google Ads SDK
-
-extension WordViewController : GADBannerViewDelegate {
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
     }
 }

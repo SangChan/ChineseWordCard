@@ -11,6 +11,22 @@
 		0F480AA225D28022000458ED /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480AA125D28022000458ED /* Realm */; };
 		0F480AB425D280A3000458ED /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480AB325D280A3000458ED /* RxCocoa */; };
 		0F480AB625D280A3000458ED /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0F480AB525D280A3000458ED /* RxSwift */; };
+		0F480AFE25D2868C000458ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0F480AED25D2868C000458ED /* LICENSE */; };
+		0F480AFF25D2868C000458ED /* FontAwesomeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AEF25D2868C000458ED /* FontAwesomeBarButtonItem.swift */; };
+		0F480B0025D2868C000458ED /* FontAwesomeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF025D2868C000458ED /* FontAwesomeSegmentedControl.swift */; };
+		0F480B0125D2868C000458ED /* FontAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF125D2868C000458ED /* FontAwesomeView.swift */; };
+		0F480B0225D2868C000458ED /* FontAwesomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF225D2868C000458ED /* FontAwesomeExtension.swift */; };
+		0F480B0325D2868C000458ED /* FontAwesomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF325D2868C000458ED /* FontAwesomeTabBarItem.swift */; };
+		0F480B0425D2868C000458ED /* FontAwesomeImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF425D2868C000458ED /* FontAwesomeImageRepresentable.swift */; };
+		0F480B0525D2868C000458ED /* FontAwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF525D2868C000458ED /* FontAwesomeImageView.swift */; };
+		0F480B0625D2868C000458ED /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F480AF625D2868C000458ED /* Font Awesome 5 Brands-Regular-400.otf */; };
+		0F480B0725D2868C000458ED /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F480AF725D2868C000458ED /* Font Awesome 5 Free-Solid-900.otf */; };
+		0F480B0825D2868C000458ED /* FontAwesomeTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AF825D2868C000458ED /* FontAwesomeTextRepresentable.swift */; };
+		0F480B0925D2868C000458ED /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0F480AF925D2868C000458ED /* Font Awesome 5 Free-Regular-400.otf */; };
+		0F480B0A25D2868C000458ED /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AFA25D2868C000458ED /* FontAwesome.swift */; };
+		0F480B0B25D2868C000458ED /* FontAwesomeStateRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AFB25D2868C000458ED /* FontAwesomeStateRequirement.swift */; };
+		0F480B0C25D2868C000458ED /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F480AFC25D2868C000458ED /* Enum.swift */; };
+		0F480B0D25D2868C000458ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0F480AFD25D2868C000458ED /* README.md */; };
 		0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDFE4022FA96F100759006 /* WordViewModel.swift */; };
 		0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2762352B21B00F6031A /* SettingViewModel.swift */; };
 		0FEED2792352B23100F6031A /* DetailSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */; };
@@ -33,7 +49,6 @@
 		63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D097EF1BABE19100ABC6EA /* UIKit.framework */; };
 		63D542561C52177900E1937B /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D542551C52177900E1937B /* AppInfo.swift */; };
 		63F086BA23093931002F01E4 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F086B923093931002F01E4 /* UIButton.swift */; };
-		69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,11 +66,25 @@
 
 /* Begin PBXFileReference section */
 		0F39D71E2374F1E600C215BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0F480AED25D2868C000458ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		0F480AEF25D2868C000458ED /* FontAwesomeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeBarButtonItem.swift; sourceTree = "<group>"; };
+		0F480AF025D2868C000458ED /* FontAwesomeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeSegmentedControl.swift; sourceTree = "<group>"; };
+		0F480AF125D2868C000458ED /* FontAwesomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeView.swift; sourceTree = "<group>"; };
+		0F480AF225D2868C000458ED /* FontAwesomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeExtension.swift; sourceTree = "<group>"; };
+		0F480AF325D2868C000458ED /* FontAwesomeTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeTabBarItem.swift; sourceTree = "<group>"; };
+		0F480AF425D2868C000458ED /* FontAwesomeImageRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageRepresentable.swift; sourceTree = "<group>"; };
+		0F480AF525D2868C000458ED /* FontAwesomeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageView.swift; sourceTree = "<group>"; };
+		0F480AF625D2868C000458ED /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		0F480AF725D2868C000458ED /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		0F480AF825D2868C000458ED /* FontAwesomeTextRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeTextRepresentable.swift; sourceTree = "<group>"; };
+		0F480AF925D2868C000458ED /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		0F480AFA25D2868C000458ED /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		0F480AFB25D2868C000458ED /* FontAwesomeStateRequirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeStateRequirement.swift; sourceTree = "<group>"; };
+		0F480AFC25D2868C000458ED /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		0F480AFD25D2868C000458ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0FDDFE4022FA96F100759006 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		0FEED2762352B21B00F6031A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewModel.swift; sourceTree = "<group>"; };
-		2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChineseWordCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseWordCard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard.debug.xcconfig"; sourceTree = "<group>"; };
 		630EB287237D7CB600E562CA /* ChineseWordCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChineseWordCard.entitlements; sourceTree = "<group>"; };
 		630EB296237D7D7000E562CA /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingTableViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +97,6 @@
 		634AF3E31D2CEF1B00C3BE99 /* EnumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumInfo.swift; sourceTree = "<group>"; };
 		63617CCE2216A426004C35F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		63617CD02216A43C004C35F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		636AF5421D4A40EF0078CE23 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/ChineseWordCard-buaosyfvjhgdwzaymiwrgdxklcwo/Build/Products/Debug-iphonesimulator/RealmSwift.framework"; sourceTree = "<group>"; };
 		638FF3601C48A16C00A5D366 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		639705E61D9E9CC400C52A9D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639705E81D9E9D9000C52A9D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,8 +108,6 @@
 		63D097EF1BABE19100ABC6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		63D542551C52177900E1937B /* AppInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		63F086B923093931002F01E4 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChineseWordCard.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard.release.xcconfig"; sourceTree = "<group>"; };
-		97BF1ABAF0B6E1248BF9E93E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +119,6 @@
 				0F480AA025D28022000458ED /* RealmSwift in Frameworks */,
 				63D097F01BABE19100ABC6EA /* UIKit.framework in Frameworks */,
 				63D097EE1BABE16600ABC6EA /* AVFoundation.framework in Frameworks */,
-				69267BA0566870E9D58D8C6F /* Pods_ChineseWordCard.framework in Frameworks */,
 				0F480AA225D28022000458ED /* Realm in Frameworks */,
 				0F480AB625D280A3000458ED /* RxSwift in Frameworks */,
 			);
@@ -102,6 +127,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F480AEC25D2868C000458ED /* FontAwesome.swift */ = {
+			isa = PBXGroup;
+			children = (
+				0F480AED25D2868C000458ED /* LICENSE */,
+				0F480AEE25D2868C000458ED /* FontAwesome */,
+				0F480AFD25D2868C000458ED /* README.md */,
+			);
+			name = FontAwesome.swift;
+			path = ChineseWordCard/FontAwesome.swift;
+			sourceTree = "<group>";
+		};
+		0F480AEE25D2868C000458ED /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				0F480AEF25D2868C000458ED /* FontAwesomeBarButtonItem.swift */,
+				0F480AF025D2868C000458ED /* FontAwesomeSegmentedControl.swift */,
+				0F480AF125D2868C000458ED /* FontAwesomeView.swift */,
+				0F480AF225D2868C000458ED /* FontAwesomeExtension.swift */,
+				0F480AF325D2868C000458ED /* FontAwesomeTabBarItem.swift */,
+				0F480AF425D2868C000458ED /* FontAwesomeImageRepresentable.swift */,
+				0F480AF525D2868C000458ED /* FontAwesomeImageView.swift */,
+				0F480AF625D2868C000458ED /* Font Awesome 5 Brands-Regular-400.otf */,
+				0F480AF725D2868C000458ED /* Font Awesome 5 Free-Solid-900.otf */,
+				0F480AF825D2868C000458ED /* FontAwesomeTextRepresentable.swift */,
+				0F480AF925D2868C000458ED /* Font Awesome 5 Free-Regular-400.otf */,
+				0F480AFA25D2868C000458ED /* FontAwesome.swift */,
+				0F480AFB25D2868C000458ED /* FontAwesomeStateRequirement.swift */,
+				0F480AFC25D2868C000458ED /* Enum.swift */,
+			);
+			path = FontAwesome;
+			sourceTree = "<group>";
+		};
 		0FDDFE3F22FA96D800759006 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +182,10 @@
 		63458E6C1BA7CE9700D4A48D = {
 			isa = PBXGroup;
 			children = (
+				0F480AEC25D2868C000458ED /* FontAwesome.swift */,
 				63458E771BA7CE9700D4A48D /* ChineseWordCard */,
 				63458E761BA7CE9700D4A48D /* Products */,
 				D537103A42283B907FE93EBF /* Frameworks */,
-				F01BBC3F1CBACB29EF187526 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,23 +257,11 @@
 		D537103A42283B907FE93EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				636AF5421D4A40EF0078CE23 /* RealmSwift.framework */,
 				63D097EF1BABE19100ABC6EA /* UIKit.framework */,
 				63D097ED1BABE16500ABC6EA /* AVFoundation.framework */,
-				97BF1ABAF0B6E1248BF9E93E /* Pods.framework */,
-				2FB3A683E6438CB282949B76 /* Pods_ChineseWordCard.framework */,
 				630EB296237D7D7000E562CA /* IntentsUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F01BBC3F1CBACB29EF187526 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */,
-				8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,11 +271,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63458E941BA7CE9700D4A48D /* Build configuration list for PBXNativeTarget "ChineseWordCard" */;
 			buildPhases = (
-				1557E6DCAA4E96A3F3B5183B /* [CP] Check Pods Manifest.lock */,
 				63458E711BA7CE9700D4A48D /* Sources */,
 				63458E721BA7CE9700D4A48D /* Frameworks */,
 				63458E731BA7CE9700D4A48D /* Resources */,
-				156B6A343BD6C1067D031B70 /* [CP] Embed Pods Frameworks */,
 				639DFA241F8DC41C00B23F99 /* ShellScript */,
 				630EB2AB237D7D7000E562CA /* Embed App Extensions */,
 			);
@@ -300,52 +343,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F480AFE25D2868C000458ED /* LICENSE in Resources */,
 				63617CCD2216A426004C35F8 /* Localizable.strings in Resources */,
+				0F480B0D25D2868C000458ED /* README.md in Resources */,
 				639705EA1D9E9D9000C52A9D /* LaunchScreen.xib in Resources */,
 				638A50C2221854150049B2B7 /* Main.storyboard in Resources */,
 				63A7C8511BB58C1B007548BB /* word.txt in Resources */,
+				0F480B0625D2868C000458ED /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				63458E821BA7CE9700D4A48D /* Images.xcassets in Resources */,
+				0F480B0925D2868C000458ED /* Font Awesome 5 Free-Regular-400.otf in Resources */,
+				0F480B0725D2868C000458ED /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1557E6DCAA4E96A3F3B5183B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChineseWordCard-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		156B6A343BD6C1067D031B70 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChineseWordCard/Pods-ChineseWordCard-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		639DFA241F8DC41C00B23F99 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,8 +380,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				63458E7D1BA7CE9700D4A48D /* WordViewController.swift in Sources */,
+				0F480B0825D2868C000458ED /* FontAwesomeTextRepresentable.swift in Sources */,
+				0F480B0525D2868C000458ED /* FontAwesomeImageView.swift in Sources */,
+				0F480B0325D2868C000458ED /* FontAwesomeTabBarItem.swift in Sources */,
+				0F480B0A25D2868C000458ED /* FontAwesome.swift in Sources */,
+				0F480AFF25D2868C000458ED /* FontAwesomeBarButtonItem.swift in Sources */,
+				0F480B0025D2868C000458ED /* FontAwesomeSegmentedControl.swift in Sources */,
+				0F480B0425D2868C000458ED /* FontAwesomeImageRepresentable.swift in Sources */,
+				0F480B0225D2868C000458ED /* FontAwesomeExtension.swift in Sources */,
 				0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */,
 				63F086BA23093931002F01E4 /* UIButton.swift in Sources */,
+				0F480B0125D2868C000458ED /* FontAwesomeView.swift in Sources */,
+				0F480B0B25D2868C000458ED /* FontAwesomeStateRequirement.swift in Sources */,
 				63C8DB8B1D02966200FAEC52 /* LanguageInfo.swift in Sources */,
 				631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */,
 				63458E7B1BA7CE9700D4A48D /* AppDelegate.swift in Sources */,
@@ -376,6 +399,7 @@
 				6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */,
 				0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */,
 				631B79CC1C771E1A009FBA45 /* DetailSettingTableViewController.swift in Sources */,
+				0F480B0C25D2868C000458ED /* Enum.swift in Sources */,
 				63C8DB8F1D03344600FAEC52 /* SortInfo.swift in Sources */,
 				63C8DB8D1D03322500FAEC52 /* SpeechInfo.swift in Sources */,
 				638FF3611C48A16C00A5D366 /* SettingViewController.swift in Sources */,
@@ -519,7 +543,6 @@
 		};
 		63458E951BA7CE9700D4A48D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F21F192894CC6A9CC5DE7AA /* Pods-ChineseWordCard.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -545,72 +568,6 @@
 					"-l\"c++\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"CoreVideo\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FontAwesome_swift\"",
-					"-framework",
-					"\"GoogleAppMeasurement\"",
-					"-framework",
-					"\"GoogleMobileAds\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MessageUI\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Realm\"",
-					"-framework",
-					"\"RealmSwift\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxRelay\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"StoreKit\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"UserMessagingPlatform\"",
-					"-framework",
-					"\"WebKit\"",
-					"-framework",
-					"\"nanopb\"",
-					"-weak_framework",
-					"\"AdSupport\"",
-					"-weak_framework",
-					"\"JavaScriptCore\"",
-					"-weak_framework",
-					"\"SafariServices\"",
-					"-weak_framework",
-					"\"WebKit\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.WordCard;
@@ -625,7 +582,6 @@
 		};
 		63458E961BA7CE9700D4A48D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F5F91EA3E31979B17432986 /* Pods-ChineseWordCard.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -650,72 +606,6 @@
 					"-l\"c++\"",
 					"-l\"sqlite3\"",
 					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreMedia\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"CoreVideo\"",
-					"-framework",
-					"\"FBLPromises\"",
-					"-framework",
-					"\"FontAwesome_swift\"",
-					"-framework",
-					"\"GoogleAppMeasurement\"",
-					"-framework",
-					"\"GoogleMobileAds\"",
-					"-framework",
-					"\"GoogleUtilities\"",
-					"-framework",
-					"\"MediaPlayer\"",
-					"-framework",
-					"\"MessageUI\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Realm\"",
-					"-framework",
-					"\"RealmSwift\"",
-					"-framework",
-					"\"RxCocoa\"",
-					"-framework",
-					"\"RxRelay\"",
-					"-framework",
-					"\"RxSwift\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"StoreKit\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"UserMessagingPlatform\"",
-					"-framework",
-					"\"WebKit\"",
-					"-framework",
-					"\"nanopb\"",
-					"-weak_framework",
-					"\"AdSupport\"",
-					"-weak_framework",
-					"\"JavaScriptCore\"",
-					"-weak_framework",
-					"\"SafariServices\"",
-					"-weak_framework",
-					"\"WebKit\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.verandastudio.WordCard;

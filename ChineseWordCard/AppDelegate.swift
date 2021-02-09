@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
         AppInfo.sharedInstance.getAllDataFromRealm()
         
         guard let launchOptions = launchOptions else { return true }
