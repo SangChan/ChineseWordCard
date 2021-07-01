@@ -1,5 +1,10 @@
 # ChineseWordCard
 
+## Project preferences
+- Swift Package Manager
+- above Xcode 12
+- can build from M1
+
 ## DOING
 - [ ] Swift UI 대응
 - [ ] 학습 진도
