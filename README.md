@@ -3,7 +3,7 @@
 ## Project preferences
 - Swift Package Manager
 - above Xcode 12
-- can build from M1
+- can build from M1 as native mode 
 
 ## DOING
 - [ ] Swift UI 대응
