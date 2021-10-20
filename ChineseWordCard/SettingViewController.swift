@@ -11,14 +11,16 @@ import AVFoundation
 import RxSwift
 
 class SettingViewController: UITableViewController {
-    private var model = SettingViewModel.model()
+    private var model : SettingViewModel!
     
     override func viewDidLoad() {
+        setupData()
         self.title = model.title
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupData()
         for index in 0 ..< self.tableView.numberOfRows(inSection: 0) {
             if let cell = self.tableView.cellForRow(at: IndexPath.init(row: index, section: 0)) {
                 let title   = model.settings[index]
@@ -49,6 +51,10 @@ class SettingViewController: UITableViewController {
     
     @IBAction func clickedDoneButton(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    private func setupData() {
+        self.model = SettingViewModel.model()
     }
 }
 

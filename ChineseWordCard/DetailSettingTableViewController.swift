@@ -47,11 +47,6 @@ class DetailSettingTableViewController: UITableViewController, SetupData {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setupData()
-    }
-    
-    override func viewDidLoad() {
-        self.title = self.model.title
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -90,18 +85,32 @@ class DetailSettingTableViewController: UITableViewController, SetupData {
 
 // MARK: - speech rate select
 class SpeechRateViewController: DetailSettingTableViewController {
+    override func viewDidLoad() {
+        setupData()
+        self.title = self.model.title
+    }
+    
     func setupData() {
         model = DetailSettingViewModel.value(with: .speechRate)
     }
 }
 // MARK: - language select
 class LanguageSelectViewController: DetailSettingTableViewController {
+    override func viewDidLoad() {
+        setupData()
+        self.title = self.model.title
+    }
     func setupData() {
         model = DetailSettingViewModel.value(with: .languageSelect)
     }
 }
 // MARK: - sort select
 class SortSelectViewController: DetailSettingTableViewController {
+    override func viewDidLoad() {
+        setupData()
+        self.title = self.model.title
+    }
+    
     func setupData() {
         model = DetailSettingViewModel.value(with: .sortSelect)
     }
