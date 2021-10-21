@@ -22,7 +22,7 @@
 
 import UIKit
 
-protocol FontAwesomeImageRepresentable: class {
+protocol FontAwesomeImageRepresentable: AnyObject {
 
     typealias ImageConfig = (cssIconName: String, style: FontAwesomeStyle, color: UIColor?, backgroundColor: UIColor?)
 
