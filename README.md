@@ -1,8 +1,8 @@
 # ChineseWordCard
 
 ## Project preferences
-- Swift Package Manager
-- above Xcode 12
+- Swift Package Manage
+- above Xcode 13r
 - can build from M1 as native mode 
 
 ## DOING
