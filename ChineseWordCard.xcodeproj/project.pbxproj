@@ -549,7 +549,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChineseWordCard/ChineseWordCard.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = CBUJK8CFZ3;
 				ENABLE_BITCODE = YES;
@@ -562,7 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
@@ -588,7 +588,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChineseWordCard/ChineseWordCard.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = CBUJK8CFZ3;
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = NO;
@@ -600,7 +600,7 @@
 					"@executable_path/Frameworks",
 				);
 				LLVM_LTO = YES;
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
