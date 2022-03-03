@@ -7,7 +7,7 @@
 
 ## DOING
 - [ ] Swift UI 대응
-- [ ] RX 제거 혹은 대체
+- [ ] RX -> Comine
 
 ## DONE
 - [x] RX 처리방향
