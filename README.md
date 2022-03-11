@@ -5,7 +5,7 @@
 - above Xcode 13
 - can build from M1 as native mode 
 
-## DOING
+## Things to Do
 - [ ] Swift UI 대응
 - [ ] RX -> Comine
 
