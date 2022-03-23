@@ -1,8 +1,8 @@
 # ChineseWordCard
 
 ## Project preferences
-- support spm
-- above Xcode 13
+- support swift package manager
+- above Xcode 13.2
 - can build from M1 as native mode 
 
 ## Things to Do
