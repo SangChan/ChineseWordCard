@@ -2,7 +2,7 @@
 
 ## Project preferences
 - support swift package manager
-- above Xcode 13.2
+- above Xcode 13.3
 - can build from M1 as native mode 
 
 ## Things to Do
