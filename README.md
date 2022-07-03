@@ -3,7 +3,6 @@
 ## Project preferences
 - support spm
 - above Xcode 13
-- can build from M1 as native mode 
 
 ## DOING
 - [ ] Swift UI 대응
