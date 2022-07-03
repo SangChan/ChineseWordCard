@@ -1,12 +1,12 @@
 # ChineseWordCard
 
 ## Project preferences
-- support spm
-- above Xcode 13
+- support swift package manager
+- above Xcode 13.3
 
-## DOING
+## Things to Do
 - [ ] Swift UI 대응
-- [ ] RX 제거 혹은 대체
+- [ ] RX -> Comine
 
 ## DONE
 - [x] RX 처리방향
