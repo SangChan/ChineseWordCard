@@ -30,6 +30,7 @@
 		0FDDFE4122FA96F100759006 /* WordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDDFE4022FA96F100759006 /* WordViewModel.swift */; };
 		0FEED2772352B21B00F6031A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2762352B21B00F6031A /* SettingViewModel.swift */; };
 		0FEED2792352B23100F6031A /* DetailSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */; };
+		630DE52728BB3D81009AF74A /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630DE52628BB3D81009AF74A /* WordView.swift */; };
 		631B79CC1C771E1A009FBA45 /* DetailSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */; };
 		631CE0301CF9D76C0036DE72 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CE02F1CF9D76C0036DE72 /* SettingData.swift */; };
 		6321B9F61C05E70F00E2186C /* ChineseWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321B9F51C05E70F00E2186C /* ChineseWord.swift */; };
@@ -85,6 +86,7 @@
 		0FDDFE4022FA96F100759006 /* WordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewModel.swift; sourceTree = "<group>"; };
 		0FEED2762352B21B00F6031A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		0FEED2782352B23100F6031A /* DetailSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSettingViewModel.swift; sourceTree = "<group>"; };
+		630DE52628BB3D81009AF74A /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
 		630EB287237D7CB600E562CA /* ChineseWordCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChineseWordCard.entitlements; sourceTree = "<group>"; };
 		630EB296237D7D7000E562CA /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		631B79CB1C771E1A009FBA45 /* DetailSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSettingTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,14 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
+		630DE52528BB3D4D009AF74A /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				630DE52628BB3D81009AF74A /* WordView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		6327B59C1D4DB462009F0683 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 		63458E771BA7CE9700D4A48D /* ChineseWordCard */ = {
 			isa = PBXGroup;
 			children = (
+				630DE52528BB3D4D009AF74A /* SwiftUI */,
 				630EB287237D7CB600E562CA /* ChineseWordCard.entitlements */,
 				63F086B8230938FA002F01E4 /* Extension */,
 				6327B59C1D4DB462009F0683 /* Controller */,
@@ -384,6 +395,7 @@
 				0F480B0525D2868C000458ED /* FontAwesomeImageView.swift in Sources */,
 				0F480B0325D2868C000458ED /* FontAwesomeTabBarItem.swift in Sources */,
 				0F480B0A25D2868C000458ED /* FontAwesome.swift in Sources */,
+				630DE52728BB3D81009AF74A /* WordView.swift in Sources */,
 				0F480AFF25D2868C000458ED /* FontAwesomeBarButtonItem.swift in Sources */,
 				0F480B0025D2868C000458ED /* FontAwesomeSegmentedControl.swift in Sources */,
 				0F480B0425D2868C000458ED /* FontAwesomeImageRepresentable.swift in Sources */,
