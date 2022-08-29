@@ -315,7 +315,6 @@
 				TargetAttributes = {
 					63458E741BA7CE9700D4A48D = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = CBUJK8CFZ3;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -563,7 +562,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 9;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = CBUJK8CFZ3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_UNROLL_LOOPS = YES;
@@ -602,7 +601,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = CBUJK8CFZ3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = NO;
 				GCC_UNROLL_LOOPS = YES;
@@ -614,6 +613,7 @@
 				);
 				LLVM_LTO = YES;
 				MARKETING_VERSION = 1.6;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"c++\"",
